@@ -1,0 +1,23 @@
+.sharing-icon {
+  background-color: #525f7f;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 13px;
+
+  & img {
+    height: 18px;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    height: 32px;
+    width: 32px;
+
+    & img {
+      height: 16px;
+    }
+  }
+}

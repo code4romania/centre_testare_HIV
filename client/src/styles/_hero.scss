@@ -1,0 +1,27 @@
+.hero-container {
+  background-color: #fff;
+}
+
+.hero-body {
+  text-align: left;
+  background-color: #fff;
+
+  img {
+    width: 100%;
+  }
+
+  h3.hero-title {
+    margin-top: 0;
+  }
+}
+
+h2.hero-title {
+  color: $primary-color;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.hero-btn-primary {
+  margin-right: 16px;
+  margin-top: 16px;
+}

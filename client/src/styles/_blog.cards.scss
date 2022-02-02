@@ -1,0 +1,53 @@
+.blog-post-card {
+  border-radius: $blog-card-radius;
+  height: 365px;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    background-color: #fafafa;
+  }
+
+  .ant-card-head {
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    font-size: 20px;
+    flex: 0 1 100px;
+  }
+
+  .ant-card-cover {
+    flex-grow: 1;
+
+    &,
+    div {
+      border-bottom-left-radius: inherit;
+      border-bottom-right-radius: inherit;
+    }
+
+    div {
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100%;
+    }
+  }
+
+  .ant-card-body {
+    padding: 0;
+  }
+
+  img {
+    height: 100%;
+  }
+}
+
+@each $i, $color in $card-colors {
+  .card-#{$i} {
+    .ant-card-head {
+      border-top: 1rem solid $color;
+    }
+
+    &:hover .ant-card-head {
+      border-color: #525f7f;
+    }
+  }
+}

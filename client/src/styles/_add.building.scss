@@ -1,0 +1,47 @@
+div.add-building {
+  margin-top: 3rem;
+  text-align: left;
+
+  & > h2.ant-typography {
+    color: $primary-color;
+    font-size: 1.5rem;
+  }
+
+  & h3.ant-typography {
+    font-size: 1.25rem;
+
+    img {
+      margin-right: 1rem;
+    }
+  }
+
+  .ant-form-item-label {
+    font-size: 1rem;
+    font-weight: 600;
+    padding-bottom: 0;
+  }
+
+  .form-loading {
+    text-align: center;
+    height: 300px;
+  }
+
+  label.ant-radio-wrapper {
+    white-space: normal;
+  }
+}
+
+.upload-btn {
+  align-items: center;
+  justify-content: center;
+  color: $primary-color;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  white-space: nowrap;
+
+  & .anticon {
+    font-size: 28px;
+  }
+}

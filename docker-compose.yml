@@ -1,0 +1,44 @@
+version: "3.8"
+
+services:
+  db:
+    container_name: seismic-risc-db
+    build:
+      context: ./db
+    env_file:
+      - .env
+    ports:
+      - "5444:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  api:
+    container_name: seismic-risc-api
+    build:
+      context: ./api
+    command: dockerize -wait tcp://db:5444 -timeout 90s
+    env_file:
+      - .env
+    volumes:
+      - ./api:/code
+    ports:
+      - "8030:8030"
+    depends_on:
+      - db
+
+  client:
+    container_name: seismic-risc-client
+    build:
+      context: ./client
+    env_file:
+      - .env
+    volumes:
+      - ./client:/code
+    ports:
+      - "3030:3000"
+    depends_on:
+      - api
+
+volumes:
+  pgdata:
+    name: seismic-risc_pgdata
