@@ -1,9 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Row, Col, Typography, message, AutoComplete, Input, Icon, Spin, Tooltip } from 'antd';
+import { Row, Col, Typography, message, AutoComplete, Input, Icon, Spin } from 'antd';
 import { Trans } from '@lingui/macro';
 import { debounce, groupBy } from 'lodash';
-
-import { ReactComponent as InfoIcon } from '../../images/info-circle-solid.svg';
 
 import { useGlobalContext } from '../../context';
 
@@ -26,12 +24,11 @@ export default () => {
     searchResults,
     searchLoading,
     searchError,
-    onSearchInputChange,
     onSearchLoading,
     onSearchSelectBuilding,
-    searchInput,
-    riskCategory,
   } = useGlobalContext();
+
+  const [searchInput, setSearchInput] = useState('');
 
   const [searchPlaceholderText, setSearchPlaceholderText] = useState('');
 
@@ -44,12 +41,12 @@ export default () => {
   useEffect(() => {
     switch (currentLanguage) {
       case 'ro':
-        setSearchPlaceholderText('Caută o adresă aici');
+        setSearchPlaceholderText('Adresa ta curenta');
         break;
 
       case 'hu':
       default:
-        setSearchPlaceholderText('Search for an address here');
+        setSearchPlaceholderText('Your current address');
     }
   }, [currentLanguage]);
 
@@ -69,7 +66,7 @@ export default () => {
   const onSearch = (value) => {
     if (value.length > 2) {
       onSearchLoading(true);
-      debounceSearch(value, riskCategory);
+      debounceSearch(value);
     }
   };
 
@@ -78,6 +75,10 @@ export default () => {
     if (selectedBuilding) {
       onSearchSelectBuilding(dataByGeneralId[value][0]);
     }
+  };
+
+  const onSearchInputChange = (newSearchInput) => {
+    setSearchInput(newSearchInput);
   };
 
   return (
@@ -89,26 +90,7 @@ export default () => {
     >
       <Col sm={26} md={16}>
         <Title level={3}>
-          <Trans>
-            Check here if a building is on the{' '}
-            {/* @TODO replace lorem text with actual text + translations */}
-            <Tooltip
-              title="
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam nemo, cum ratione
-                  explicabo architecto ex dolore incidunt nisi quisquam dolores? Facere ipsa quam
-                  modi laborum possimus, accusantium dolor a adipisci.
-                "
-              placement="top"
-              trigger={['hover', 'click']}
-            >
-              <div className="badge">
-                <span>seismic risk</span>
-                <InfoIcon />
-              </div>
-            </Tooltip>{' '}
-            list
-          </Trans>
-          :
+          <Trans>Search for a testing center near your location</Trans>:
         </Title>
 
         <AutoComplete
