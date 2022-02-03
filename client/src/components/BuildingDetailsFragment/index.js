@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import BuildingDetails from '../../components/BuildingDetails';
+import BuildingDetails from '../BuildingDetails';
 
 import config from '../../config';
 

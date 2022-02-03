@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { Button, Dropdown, Layout, Menu } from 'antd';
-import { DownOutlined, GlobalOutlined, MenuOutlined, PlusCircleFilled } from '@ant-design/icons';
+import { DownOutlined, GlobalOutlined, MenuOutlined } from '@ant-design/icons';
 import { Trans } from '@lingui/macro';
 import logo from '../../logo.svg';
 
@@ -69,6 +69,7 @@ export default () => {
         <div className="container">
           <div className="App-logo">
             <Link to="/">
+              {/* @TODO update logo */}
               <img src={logo} alt="Bulina Roșie logo" />
             </Link>
           </div>
@@ -76,11 +77,6 @@ export default () => {
             <li>
               <NavLink className="menu-item" to="/despre" exact activeClassName="active">
                 <Trans>About Project</Trans>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink className="menu-item" to="/ghid" activeClassName="active">
-                <Trans>Guide</Trans>
               </NavLink>
             </li>
             <li>
@@ -92,20 +88,6 @@ export default () => {
               <NavLink className="menu-item" to="/contact" activeClassName="active">
                 <Trans>Contact us</Trans>
               </NavLink>
-            </li>
-            <li>
-              <Button
-                className="add-building"
-                type="primary"
-                ghost
-                size="large"
-                href="/adauga-cladire"
-              >
-                <PlusCircleFilled />
-                <span>
-                  <Trans>Add a building</Trans>
-                </span>
-              </Button>
             </li>
             {languageButtons(langText, handleLanguageBtnClick)}
           </ul>

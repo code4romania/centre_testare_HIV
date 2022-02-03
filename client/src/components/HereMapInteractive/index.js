@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Col, Row } from 'antd';
 
-import BuildingDetailsFragment from '../../containers/building/BuildingDetailsFragment';
+import BuildingDetailsFragment from '../BuildingDetailsFragment';
 import MapPlaceholder from '../MapPlaceholder';
 
 import { useGlobalContext } from '../../context';
