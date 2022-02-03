@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useCallback, useRef, useState } from 'react';
 import ClusterLayerBuilder from './ClusterLayerBuilder';
 
 const { H } = window;
@@ -13,22 +13,28 @@ export default function useDecoratedClusteredMap(currentMap, points) {
 
   const prevSelectedMarker = useRef();
 
-  const onClusterClick = (marker) => {
-    currentMap.getViewModel().setLookAtData(
-      {
-        position: marker.getData().getPosition(),
-        zoom: currentMap.getZoom() + 2,
-      },
-      true,
-    );
-  };
+  const onClusterClick = useCallback(
+    (marker) => {
+      currentMap.getViewModel().setLookAtData(
+        {
+          position: marker.getData().getPosition(),
+          zoom: currentMap.getZoom() + 2,
+        },
+        true,
+      );
+    },
+    [currentMap],
+  );
 
-  const onNoiseClick = (marker, zoomToSet = 15) => {
-    const currentZoom = currentMap.getZoom();
-    setZoom(currentZoom > zoomToSet ? currentZoom : zoomToSet);
-    setSelectedMarker(marker);
-    setBuildingDetails(marker.getData().getData());
-  };
+  const onNoiseClick = useCallback(
+    (marker, zoomToSet = 15) => {
+      const currentZoom = currentMap.getZoom();
+      setZoom(currentZoom > zoomToSet ? currentZoom : zoomToSet);
+      setSelectedMarker(marker);
+      setBuildingDetails(marker.getData().getData());
+    },
+    [currentMap],
+  );
 
   const calculateBounds = () => {
     if (points.length > 1) {
@@ -71,14 +77,14 @@ export default function useDecoratedClusteredMap(currentMap, points) {
     }
   };
 
-  const clearMap = () => {
+  const clearMap = useCallback(() => {
     currentMap
       .getLayers()
       .asArray()
       .forEach((layer) => {
         currentMap.removeLayer(layer);
       });
-  };
+  }, [currentMap]);
 
   useEffect(() => {
     setDetailsOpen(buildingDetails !== undefined);
@@ -93,7 +99,7 @@ export default function useDecoratedClusteredMap(currentMap, points) {
       const position = { ...selectedMarker.getData().getPosition() };
       currentMap.getViewModel().setLookAtData({ position, zoom }, true);
     }
-  }, [detailsOpen, selectedMarker]);
+  }, [currentMap, detailsOpen, selectedMarker, zoom]);
 
   useEffect(() => {
     if (prevSelectedMarker.current) {
@@ -113,7 +119,7 @@ export default function useDecoratedClusteredMap(currentMap, points) {
         ClusterLayerBuilder.buildClusterLayer(points, onClusterClick, onNoiseClick),
       );
     }
-  }, [points, currentMap]);
+  }, [points, currentMap, clearMap, onClusterClick, onNoiseClick]);
 
   return { buildingDetails, onSelectBuilding, onHideBuilding };
 }

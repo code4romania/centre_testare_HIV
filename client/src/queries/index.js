@@ -25,7 +25,7 @@ const useBasicFetch = (url, options) => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   return { data, isError, isLoading };
 };

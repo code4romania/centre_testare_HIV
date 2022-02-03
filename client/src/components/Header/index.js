@@ -61,7 +61,7 @@ export default () => {
 
   useEffect(() => {
     setLangText(filterLanguages(currentLanguage));
-  }, []);
+  }, [currentLanguage]);
 
   return (
     <div className="navbar">

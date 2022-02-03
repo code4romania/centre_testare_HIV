@@ -3,7 +3,7 @@
     "browser": true,
     "jest": true
   },
-  "plugins": ["prettier"],
+  "plugins": ["prettier", "react-hooks"],
   "extends": ["airbnb-base", "airbnb/rules/react", "plugin:prettier/recommended", "prettier"],
   "parser": "babel-eslint",
   "ignorePatterns": ["serviceWorker.js", "node_modules/", "src/locales/"],
@@ -18,6 +18,8 @@
     "react/jsx-one-expression-per-line": 0,
     "no-return-assign": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "no-useless-escape": "off"
+    "no-useless-escape": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   }
 }

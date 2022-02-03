@@ -34,7 +34,7 @@ const BlogPostDetailsFragment = ({ handlePostLoaded }) => {
           requestError: true,
         }));
       });
-  }, [slug]);
+  }, [handlePostLoaded, slug]);
 
   if (state.postDetails === null) {
     return state.requestError ? (

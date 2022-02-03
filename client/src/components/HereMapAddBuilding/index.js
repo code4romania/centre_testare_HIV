@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import HereMapDomIconFactory from '../HereMapDomIconFactory';
 
 const { H } = window;
@@ -10,33 +10,36 @@ const HereMapAddBuilding = (props) => {
   const [currentMap, setCurrentMap] = useState(undefined);
   const [currentPlatform, setCurrentPlatform] = useState(undefined);
 
-  const clearMap = () => {
+  const clearMap = useCallback(() => {
     currentMap.removeObjects(currentMap.getObjects());
-  };
+  }, [currentMap]);
 
-  const onSuccess = (result) => {
-    if (currentMap && result.items.length > 0) {
-      const { position } = result.items[0];
-      const icon = HereMapDomIconFactory.makeMarkerIcon();
-      const marker = new H.map.DomMarker(position, {
-        volatility: true,
-        icon,
-      });
-      marker.draggable = true;
-      onCoordinatesChange(position);
-      clearMap();
-      currentMap.addObject(marker);
-      currentMap.getViewModel().setLookAtData(
-        {
-          position,
-          zoom: 16,
-        },
-        true,
-      );
-    }
-  };
+  const onSuccess = useCallback(
+    (result) => {
+      if (currentMap && result.items.length > 0) {
+        const { position } = result.items[0];
+        const icon = HereMapDomIconFactory.makeMarkerIcon();
+        const marker = new H.map.DomMarker(position, {
+          volatility: true,
+          icon,
+        });
+        marker.draggable = true;
+        onCoordinatesChange(position);
+        clearMap();
+        currentMap.addObject(marker);
+        currentMap.getViewModel().setLookAtData(
+          {
+            position,
+            zoom: 16,
+          },
+          true,
+        );
+      }
+    },
+    [clearMap, currentMap, onCoordinatesChange],
+  );
 
-  const geocode = () => {
+  const geocode = useCallback(() => {
     if (!currentPlatform) {
       return;
     }
@@ -45,13 +48,13 @@ const HereMapAddBuilding = (props) => {
       q: searchText,
     };
     geocoder.geocode(geocodingParameters, onSuccess);
-  };
+  }, [currentPlatform, onSuccess, searchText]);
 
   useEffect(() => {
     if (searchText) {
       geocode(searchText);
     }
-  }, [searchText]);
+  }, [geocode, searchText]);
 
   useLayoutEffect(() => {
     if (!mapRef.current) return;
@@ -126,7 +129,7 @@ const HereMapAddBuilding = (props) => {
 
     // eslint-disable-next-line consistent-return
     return () => map.dispose();
-  }, [apiKey]);
+  }, [apiKey, onCoordinatesChange]);
 
   return apiKey ? (
     <div
