@@ -10,7 +10,6 @@ import BlogPost from './containers/blog-post';
 import Terms from './containers/Terms';
 import Policy from './containers/Policy';
 import NotFound from './containers/404/404';
-import ThankYou from './containers/thankyou';
 import ScrollToTop from './components/ScrollToTop';
 
 import './styles/theme.scss';
@@ -45,9 +44,6 @@ const App = () => {
           </Route>
           <Route path="/politica-de-confidentialitate">
             <Policy />
-          </Route>
-          <Route path="/multumim">
-            <ThankYou />
           </Route>
           <Route component={NotFound} />
         </Switch>
