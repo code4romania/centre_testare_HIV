@@ -1,10 +1,5 @@
 @use 'variables';
 
-.languageChangeButton {
-  user-select: none;
-}
-
-.languageChangeButton,
 .App-menu .menu-item {
   cursor: pointer;
   transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
