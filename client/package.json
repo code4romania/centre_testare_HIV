@@ -27,7 +27,7 @@
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject",
     "add-locale": "lingui add-locale",
-    "extract": "lingui extract",
+    "extract": "lingui extract --clean",
     "compile": "lingui compile",
     "lint": "eslint ./src --ext .js,.jsx",
     "precommit": "lint-staged",

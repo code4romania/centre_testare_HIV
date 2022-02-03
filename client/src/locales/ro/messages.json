@@ -34,11 +34,11 @@
     "origin": [
       [
         "components/Footer/index.js",
-        24
+        25
       ],
       [
         "containers/about/AuthorsFragment.js",
-        15
+        16
       ]
     ],
     "extractedComments": []
@@ -48,7 +48,7 @@
     "origin": [
       [
         "components/Header/index.js",
-        78
+        79
       ]
     ],
     "extractedComments": []
@@ -68,7 +68,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        45
+        47
       ],
       [
         "containers/404/HeroFragment.js",
@@ -79,37 +79,7 @@
         15
       ],
       [
-        "containers/about/TitleFragment.js",
-        10
-      ],
-      [
         "containers/home/ParagraphFragment.js",
-        13
-      ],
-      [
-        "containers/thankyou/HeroFragment.js",
-        28
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Add a building": {
-    "translation": "Adaugă o clădire",
-    "origin": [
-      [
-        "components/Footer/index.js",
-        50
-      ],
-      [
-        "components/Header/index.js",
-        106
-      ],
-      [
-        "containers/add-building/FormFragment.js",
-        156
-      ],
-      [
-        "containers/add-building/HeroFragment.js",
         13
       ]
     ],
@@ -121,16 +91,6 @@
       [
         "components/BuildingDetails/BuildingDetailsFooter.js",
         25
-      ]
-    ],
-    "extractedComments": []
-  },
-  "All seismic risk classes": {
-    "translation": "Toate clasele de risc seismic",
-    "origin": [
-      [
-        "containers/home/MapFragment.js",
-        59
       ]
     ],
     "extractedComments": []
@@ -151,10 +111,6 @@
       [
         "containers/404/HeroFragment.js",
         22
-      ],
-      [
-        "containers/thankyou/HeroFragment.js",
-        25
       ]
     ],
     "extractedComments": []
@@ -163,16 +119,12 @@
     "translation": "Blog",
     "origin": [
       [
-        "containers/404/BlogPreviewFragment.js",
-        6
+        "containers/404/404.js",
+        10
       ],
       [
-        "containers/home/BlogPreviewFragment.js",
-        6
-      ],
-      [
-        "containers/thankyou/BlogPreviewFragment.js",
-        6
+        "containers/home/index.js",
+        16
       ]
     ],
     "extractedComments": []
@@ -182,27 +134,7 @@
     "origin": [
       [
         "components/BuildingDetails/index.js",
-        27
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Check here if a building is on the <0><1><2>seismic risk</2><3/></1></0> list": {
-    "translation": "Verifică aici dacă o clădire se află pe lista de <0><1><2>risc seismic</2><3/></1></0>",
-    "origin": [
-      [
-        "containers/home/SearchFragment.js",
-        92
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Consolidated buildings": {
-    "translation": "Clădiri consolidate",
-    "origin": [
-      [
-        "containers/home/StatisticFragment.js",
-        81
+        28
       ]
     ],
     "extractedComments": []
@@ -212,7 +144,7 @@
     "origin": [
       [
         "components/BuildingDetails/index.js",
-        11
+        12
       ]
     ],
     "extractedComments": []
@@ -222,17 +154,7 @@
     "origin": [
       [
         "components/Header/index.js",
-        93
-      ]
-    ],
-    "extractedComments": []
-  },
-  "DONATE": {
-    "translation": "DONEAZĂ",
-    "origin": [
-      [
-        "components/SocialBar/index.js",
-        87
+        89
       ]
     ],
     "extractedComments": []
@@ -242,11 +164,11 @@
     "origin": [
       [
         "components/Footer/index.js",
-        36
+        38
       ],
       [
         "containers/about/AuthorsFragment.js",
-        21
+        23
       ]
     ],
     "extractedComments": []
@@ -266,27 +188,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        60
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Download": {
-    "translation": "Descarcă",
-    "origin": [
-      [
-        "containers/guide/index.js",
-        36
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Evaluated buildings": {
-    "translation": "Clădiri evaluate",
-    "origin": [
-      [
-        "containers/home/StatisticFragment.js",
-        73
+        57
       ]
     ],
     "extractedComments": []
@@ -296,17 +198,7 @@
     "origin": [
       [
         "components/BuildingDetails/index.js",
-        23
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Guide": {
-    "translation": "Ghid",
-    "origin": [
-      [
-        "components/Header/index.js",
-        83
+        24
       ]
     ],
     "extractedComments": []
@@ -316,17 +208,7 @@
     "origin": [
       [
         "components/BuildingDetails/index.js",
-        15
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Homeowners associations guide": {
-    "translation": "Ghid pentru asociații de proprietari",
-    "origin": [
-      [
-        "containers/guide/index.js",
-        22
+        16
       ]
     ],
     "extractedComments": []
@@ -336,27 +218,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        30
-      ]
-    ],
-    "extractedComments": []
-  },
-  "In the meantime, keep being awesome!": {
-    "translation": "Între timp, continuă să fii minunat!",
-    "origin": [
-      [
-        "containers/thankyou/HeroFragment.js",
-        22
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Information being updated": {
-    "translation": "Informații în curs de actualizare",
-    "origin": [
-      [
-        "containers/home/StatisticFragment.js",
-        25
+        32
       ]
     ],
     "extractedComments": []
@@ -366,7 +228,7 @@
     "origin": [
       [
         "components/BuildingDetails/index.js",
-        53
+        54
       ]
     ],
     "extractedComments": []
@@ -391,62 +253,12 @@
     ],
     "extractedComments": []
   },
-  "Next page": {
-    "translation": "Pagina următoare",
-    "origin": [
-      [
-        "containers/guide/PdfViewer.js",
-        89
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Other": {
-    "translation": "Altele",
-    "origin": [
-      [
-        "containers/home/MapFragment.js",
-        68
-      ]
-    ],
-    "extractedComments": []
-  },
   "Other articles": {
     "translation": "Alte articole",
     "origin": [
       [
-        "containers/blog-post/BlogPreviewFragment.js",
-        7
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Page {pageNumber} of {numPages}": {
-    "translation": "Pagina {pageNumber} din {numPages}",
-    "origin": [
-      [
-        "containers/guide/PdfViewer.js",
-        80
-      ]
-    ],
-    "extractedComments": []
-  },
-  "People under risk": {
-    "translation": "Oameni sub risc",
-    "origin": [
-      [
-        "containers/home/StatisticFragment.js",
-        65
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Previous page": {
-    "translation": "Pagina anterioară",
-    "origin": [
-      [
-        "containers/guide/PdfViewer.js",
-        86
+        "containers/blog-post/index.js",
+        14
       ]
     ],
     "extractedComments": []
@@ -456,7 +268,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        67
+        64
       ]
     ],
     "extractedComments": []
@@ -466,17 +278,17 @@
     "origin": [
       [
         "components/BuildingDetails/index.js",
-        19
+        20
       ]
     ],
     "extractedComments": []
   },
-  "Search Results": {
-    "translation": "Rezultate Căutare",
+  "Search for a testing center near your location": {
+    "translation": "Cauta un centru de testare aproape de tine",
     "origin": [
       [
-        "components/SearchResults/index.js",
-        20
+        "containers/home/SearchFragment.js",
+        93
       ]
     ],
     "extractedComments": []
@@ -500,7 +312,7 @@
     "origin": [
       [
         "components/Sharing/index.js",
-        19
+        21
       ]
     ],
     "extractedComments": []
@@ -510,17 +322,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        72
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Thank you": {
-    "translation": "Îți mulțumim",
-    "origin": [
-      [
-        "containers/thankyou/HeroFragment.js",
-        13
+        69
       ]
     ],
     "extractedComments": []
@@ -550,11 +352,11 @@
     "extractedComments": []
   },
   "about.first_paragraph": {
-    "translation": "În cadrul programului de cercetare și proiectare de soluții derulat de Code for Romania ne-am aplecat atenția asupra sectorului neguvernamental pentru a identifica punctele nevralgice ale societății civile și pentru a interveni cu soluții digitale acolo unde putem produce o schimbare în bine. Adesea proiectăm soluții care digitalizează procese și care simplifică proceduri și mecanici care au nevoie de eficientizare, dar în multe dintre cazuri venim cu propuneri de soluții care răspund nevoii de a construi instrumente complet noi care rezolvă probleme cu sprijinul tehnologiei.",
+    "translation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque nec nam aliquam sem et tortor consequat id. Varius morbi enim nunc faucibus a pellentesque sit amet porttitor. Diam donec adipiscing tristique risus nec feugiat in. Purus in mollis nunc sed id semper. Adipiscing at in tellus integer feugiat scelerisque. Vitae nunc sed velit dignissim sodales ut eu sem. Lacus viverra vitae congue eu consequat.",
     "origin": [
       [
         "containers/about/FirstParagraphsFragment.js",
-        12
+        13
       ]
     ],
     "extractedComments": []
@@ -564,27 +366,27 @@
     "origin": [
       [
         "containers/about/ThirdParagraphFragment.js",
-        12
-      ]
-    ],
-    "extractedComments": []
-  },
-  "about.project_details": {
-    "translation": "Bulina Roșie este proiectat de Code for Romania în Civic Labs și dezvoltat pro-bono de către voluntarii organizației noastre. Acest proiect nu are nicio altă sursă de finanțare și este administrat în întregime din donațiile voastre.",
-    "origin": [
-      [
-        "containers/about/TextBoxFragment.js",
         13
       ]
     ],
     "extractedComments": []
   },
+  "about.project_details": {
+    "translation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque nec nam aliquam sem et tortor consequat id. Varius morbi enim nunc faucibus a pellentesque sit amet porttitor. Diam donec adipiscing tristique risus nec feugiat in. Purus in mollis nunc sed id semper. Adipiscing at in tellus integer feugiat scelerisque. Vitae nunc sed velit dignissim sodales ut eu sem. Lacus viverra vitae congue eu consequat.",
+    "origin": [
+      [
+        "containers/about/TextBoxFragment.js",
+        14
+      ]
+    ],
+    "extractedComments": []
+  },
   "about.second_paragraph": {
-    "translation": "The solution you are using right now is a platform that responds to the need to increase the the representativeness of non-profit organizations, through clear and transparent selection mechanisms that carry out the sector's missions in decision-making forums. VotONG is, therefore, the necessary piece of infrastructure for the self-regulation of the NGO sector in Romania, which in time, through the active participation of organizations, will lead to an efficient communication and consultation between all actors in the field. That is why we invite you to join us in this endeavor because together we can trigger the positive changes we want for the Romanian society. Together we are invincible. Both us and our beneficiaries. Romania.",
+    "translation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque nec nam aliquam sem et tortor consequat id. Varius morbi enim nunc faucibus a pellentesque sit amet porttitor. Diam donec adipiscing tristique risus nec feugiat in. Purus in mollis nunc sed id semper. Adipiscing at in tellus integer feugiat scelerisque. Vitae nunc sed velit dignissim sodales ut eu sem. Lacus viverra vitae congue eu consequat.",
     "origin": [
       [
         "containers/about/FirstParagraphsFragment.js",
-        15
+        17
       ]
     ],
     "extractedComments": []
@@ -594,608 +396,7 @@
     "origin": [
       [
         "containers/about/SecondParagraphFragment.js",
-        12
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.adress.label": {
-    "translation": "Stradă:",
-    "origin": [
-      [
-        "containers/add-building/FirstFormSection.js",
-        64
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.apartment_count.label": {
-    "translation": "Câte locuințe sunt în clădire?",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        74
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.apartments_with_6_months_debt.label": {
-    "translation": "Câte dintre apartamentele din clădire înregistrează datorii la întreținere mai mari de 6 luni?",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        138
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.broken_utilities.label": {
-    "translation": "Imobilul înregistrează elemente tehnice nefuncționale?",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        152
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.broken_utilities.note": {
-    "translation": "Spre exemplu: conductele, rețeaua de încălzire etc.",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        153
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.commercial_space_count.label": {
-    "translation": "Câte spații comerciale și de servicii există în clădire?",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        168
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.commercial_space_count.note": {
-    "translation": "Notă: Prin spații comerciale și de servicii ne referim la magazine, ateliere, restaurante, cinema-uri, teatre ș.a., a căror activitate a fost suspendată în urma adoptării Legii 282/2015 pentru modificarea si completarea OG 20/1994 privind masuri pentru reducerea riscului seismic al constructiilor existente.",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        169
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.consolidation_status.demolished": {
-    "translation": "Clădirea cu risc seismic a fost demolată și s-a construit clădire nouă în locul ei",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        61
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.consolidation_status.label": {
-    "translation": "Clădirea a fost consolidată/reabilitată de la data expertizării?",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        51
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.consolidation_status.yes_private": {
-    "translation": "Da, fonduri proprii",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        57
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.consolidation_status.yes_public": {
-    "translation": "Da, fonduri publice",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        58
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.county.label": {
-    "translation": "Județ:",
-    "origin": [
-      [
-        "containers/add-building/FirstFormSection.js",
-        85
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.disconnected_utilities.label": {
-    "translation": "Imobilul este deconectat de la vreun serviciu de utilitate publică?",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        145
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.disconnected_utilities.note": {
-    "translation": "Dacă da, indicați de la ce serviciu/servicii este deconectat. (Serviciu de utilitate publică: apă, canalizare, electricitate, termoficare)",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        146
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.email_address.label": {
-    "translation": "Adesă de e-mail:",
-    "origin": [
-      [
-        "containers/add-building/SecondFormSection.js",
-        49
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.error.add_building": {
-    "translation": "Clădirea nu a putut fi adăugată, vă rugăm încercați mai târziu.",
-    "origin": [
-      [
-        "containers/add-building/FormFragment.js",
-        49
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.error.fetch_risk_categories": {
-    "translation": "Server indisponibil, vă rugăm încercați din nou mai târziu.",
-    "origin": [
-      [
-        "containers/add-building/FormFragment.js",
-        85
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.error.validate_fields": {
-    "translation": "Nu sunt valide toate câmpurile. Vă rugăm verificați formularul și încercați din nou.",
-    "origin": [
-      [
-        "containers/add-building/FormFragment.js",
-        42
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.first_section.extra": {
-    "translation": "Text despre punerea pin-ului pe harta si descrierea procesului si informatiile aditionale de mai jos & stuff.",
-    "origin": [
-      [
-        "containers/add-building/FirstFormSection.js",
-        122
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.first_section.title": {
-    "translation": "Despre clădire",
-    "origin": [
-      [
-        "containers/add-building/FirstFormSection.js",
-        55
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.full_name.label": {
-    "translation": "Nume complet:",
-    "origin": [
-      [
-        "containers/add-building/SecondFormSection.js",
-        40
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.gdpr_agreement": {
-    "translation": "Prin această bifă îți exprimi acordul ca datele furnizate de tine prin acest formular să fie procesate exclusiv in scopul de a încărca în platformă acest document și ca echipa MKBT să te contacteze doar în legătură cu această submisie. Aici puteți găsi <0>regulamentul nostru cu privire la prelucrarea datelor cu caracter personal</0>.",
-    "message": "By this check, you agree that the data provided by you through this form will be processed exclusively to upload this document on the platform and that the MKBT team will contact you only in connection with this submission. Here you can find <0>our regulations on the processing of personal data</0>.",
-    "origin": [
-      [
-        "containers/add-building/FormFragment.js",
-        120
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.has_owners_association.label": {
-    "translation": "Există asociație de proprietari?",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        125
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.has_owners_association.note": {
-    "translation": "Conform legii, asociațiile de proprietari se înființează pentru condominii cu minim 3 unități de locuit.",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        126
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.height_regime.label": {
-    "translation": "Regim de înălțime:",
-    "origin": [
-      [
-        "containers/add-building/FirstFormSection.js",
-        115
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.images.label": {
-    "translation": "Vă rugăm să încărcați câteva fotografii ale clădirii",
-    "origin": [
-      [
-        "containers/add-building/FirstFormSection.js",
-        135
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.images.note": {
-    "translation": "Notă: sugerăm încărcarea în medie a 3 fotografii ilustrând dacă imobilul arată semnul bulină roșie, clădirea în ansamblul său și proximitatea acesteia.",
-    "origin": [
-      [
-        "containers/add-building/FirstFormSection.js",
-        138
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.is_still_present.info": {
-    "translation": "Unele clădiri au fost demolate de la data expertizării lor, iar dacă aceasta este situația în cazul clădirii dumneavoastră, nu mai trebuie să continuați completarea chestionarului după bifarea opțiunii. Vă mulțumim!",
-    "origin": [
-      [
-        "containers/add-building/ThirdFormSection.js",
-        72
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.is_still_present.label": {
-    "translation": "Mai există clădirea la adresa indicată?",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        39
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.locality.label": {
-    "translation": "Localitate:",
-    "origin": [
-      [
-        "containers/add-building/FirstFormSection.js",
-        94
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.necessary_support.label": {
-    "translation": "În opinia dumneavoastră, ca locatar al imobilului, de ce sprijin aveți nevoie și cu ce dificultăți v-ați confruntat, în demersul de a crește siguranța imobilului în care locuiți?",
-    "origin": [
-      [
-        "containers/add-building/SecondFormSection.js",
-        84
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.office_count.label": {
-    "translation": "Câte apartamente sunt folosite ca birou de firmă?",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        161
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.owners_count.label": {
-    "translation": "Câți proprietari dețin apartamente în acest imobil?",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        95
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.permanently_occupied_apartment_count.label": {
-    "translation": "Număr de locuințe ocupate permanent:",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        81
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.phone_number.label": {
-    "translation": "Telefon:",
-    "origin": [
-      [
-        "containers/add-building/SecondFormSection.js",
-        64
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.proximal_utilities.label": {
-    "translation": "Ce există în imediata vecinătate a clădirii?",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        183
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.proximal_utilities.note": {
-    "translation": "Notă: Prin vecinătate ne referim la clădiri și funcțiuni la o distanță de până la 10m de clădirea vizată.",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        184
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.proximal_utilities_description.label": {
-    "translation": "Comentarii privind funcțiunile din proximitatea imobilului",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        190
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.public_apartment_count.label": {
-    "translation": "Din care, câte apartamente în proprietate publică?",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        102
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.public_owners.label": {
-    "translation": "Vă rugăm menționați proprietarii publici:",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        109
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.public_owners.note": {
-    "translation": "Notă: Prin proprietate publică înțelegem locuințe deținute de Administrația Fondului Imobiliar – AFI (fostul ICRAL), RAPPS, Birouri de primarie, ANAF ș.a.",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        110
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.rented_apartment_count.label": {
-    "translation": "Câte apartamente sunt locuite în regim de chirie?",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        116
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.residents_count.label": {
-    "translation": "Câte persoane locuiesc în aceste locuințe?",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        88
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.risk_class.label": {
-    "translation": "Clasă de risc:",
-    "origin": [
-      [
-        "containers/add-building/FirstFormSection.js",
-        105
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.second_section.description": {
-    "translation": "Datele de contact ale persoanei care completează prezentul formular",
-    "origin": [
-      [
-        "containers/add-building/SecondFormSection.js",
-        31
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.second_section.title": {
-    "translation": "Despre tine",
-    "origin": [
-      [
-        "containers/add-building/SecondFormSection.js",
-        30
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.self_owned_commercial_space_count.label": {
-    "translation": "Din aceste spații/apartamente cu altă funcțiune decât locuire, câte sunt proprietate a firmelor care le utilizează?",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        176
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.street_number.label": {
-    "translation": "Număr clădire:",
-    "origin": [
-      [
-        "containers/add-building/FirstFormSection.js",
-        74
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.third_section.other_info_btn": {
-    "translation": "Completează cu alte informații",
-    "origin": [
-      [
-        "containers/add-building/ThirdFormSection.js",
-        53
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.third_section.sub_one.description": {
-    "translation": "Notă: Întrebările din secțiunea A se referă la numărul de locuințe și persoane care locuiesc în clădirea care face obiectul prezentului formular.",
-    "origin": [
-      [
-        "containers/add-building/ThirdFormSection.js",
-        61
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.third_section.sub_one.title": {
-    "translation": "Date generale",
-    "origin": [
-      [
-        "containers/add-building/ThirdFormSection.js",
-        60
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.third_section.sub_three.title": {
-    "translation": "Structura și tipul ocupării clădirii",
-    "origin": [
-      [
-        "containers/add-building/ThirdFormSection.js",
-        125
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.third_section.sub_two.description": {
-    "translation": "Notă: Întrebările din secțiunea B se referă la problemele și nevoile de ansamblu ale clădirii și ale celor ce locuiesc în aceasta.",
-    "origin": [
-      [
-        "containers/add-building/ThirdFormSection.js",
-        113
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.third_section.sub_two.title": {
-    "translation": "Funcționarea imobilului",
-    "origin": [
-      [
-        "containers/add-building/ThirdFormSection.js",
-        112
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.third_section.title": {
-    "translation": "Ai și alte informații despre această clădire?",
-    "origin": [
-      [
-        "containers/add-building/ThirdFormSection.js",
-        48
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.type_of_contract.admin": {
-    "translation": "Reprezentant cu funcție de conducere din asociația de proprietari",
-    "origin": [
-      [
-        "containers/add-building/SecondFormSection.js",
-        22
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.type_of_contract.label": {
-    "translation": "Calitate:",
-    "origin": [
-      [
-        "containers/add-building/SecondFormSection.js",
-        74
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.type_of_contract.owner": {
-    "translation": "Proprietar",
-    "origin": [
-      [
-        "containers/add-building/SecondFormSection.js",
-        14
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.type_of_contract.tenant": {
-    "translation": "Chiriaș",
-    "origin": [
-      [
-        "containers/add-building/SecondFormSection.js",
-        18
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.upload_button.label": {
-    "translation": "Adaugă una sau mai multe fotografii",
-    "origin": [
-      [
-        "containers/add-building/FirstFormSection.js",
-        151
+        13
       ]
     ],
     "extractedComments": []
@@ -1226,16 +427,6 @@
       [
         "hooks/form/useFormValidationRules.js",
         31
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.validation.image_size": {
-    "translation": "Fișierele sunt limitate la 20Mb, vă rugăm alegeți un alt fișier.",
-    "origin": [
-      [
-        "containers/add-building/FirstFormSection.js",
-        36
       ]
     ],
     "extractedComments": []
@@ -1271,65 +462,12 @@
     ],
     "extractedComments": []
   },
-  "form.work_performed.label": {
-    "translation": "Ce lucrări au fost efectuate?",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        68
-      ]
-    ],
-    "extractedComments": []
-  },
-  "general.no": {
-    "translation": "Nu",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        45
-      ],
-      [
-        "containers/add-building/utils/index.js",
-        55
-      ],
-      [
-        "containers/add-building/utils/index.js",
-        132
-      ]
-    ],
-    "extractedComments": []
-  },
-  "general.yes": {
-    "translation": "Da",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        43
-      ],
-      [
-        "containers/add-building/utils/index.js",
-        130
-      ]
-    ],
-    "extractedComments": []
-  },
   "see images": {
     "translation": "vezi imagini",
     "origin": [
       [
         "components/BuildingDetails/BuildingDetailsTitle.js",
         24
-      ]
-    ],
-    "extractedComments": []
-  },
-  "thank-you-message": {
-    "translation": "Îți mulțumim pentru informațiile pe care ni le-ai transmis. În zilele următoare cineva din echipa noastră va evalua informațiile transmise către noi și, de îndată ce avem toate datele necesare pentru a adăuga clădirea pe hartă, te vom anunța.",
-    "message": "Thank you for the information that you sent us. In the following days someone from our team will evaluate the information sent to us and, as soon as we will have all the necessary data to add the building on the map, we will notify you.",
-    "origin": [
-      [
-        "containers/thankyou/HeroFragment.js",
-        15
       ]
     ],
     "extractedComments": []
