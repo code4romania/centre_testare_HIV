@@ -20,6 +20,7 @@ export default {
         return clusterMarker;
       },
       getNoisePresentation: (noisePoint) => {
+        // @TODO update to new API schema
         const riskCategory = noisePoint.getData().risk_category;
         const icon = HereMapDomIconFactory.makeMarkerIcon(riskCategory);
         const noiseMarker = new H.map.DomMarker(noisePoint.getPosition(), {
@@ -41,6 +42,7 @@ export default {
     return new H.map.layer.ObjectLayer(clusteredDataProvider);
   },
   unhighlightMarker: (marker) => {
+    // @TODO update to new API schema
     marker.setIcon(HereMapDomIconFactory.makeMarkerIcon(marker.getData().getData().risk_category));
   },
   highlightMarker: (marker) => {
