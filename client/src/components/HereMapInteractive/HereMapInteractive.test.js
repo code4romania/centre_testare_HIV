@@ -11,9 +11,7 @@ const { H } = window;
 jest.mock('../../context', () => ({
   __esModule: true,
   useGlobalContext: () => ({
-    onHereMapLoaded: jest.fn(),
     searchResults: [],
-    onCloseSearchResults: jest.fn(),
   }),
 }));
 

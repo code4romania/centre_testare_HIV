@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Row, Col, Typography, message, AutoComplete, Input, Icon, Spin } from 'antd';
 import { Trans } from '@lingui/macro';
-import { debounce, groupBy } from 'lodash';
+import { debounce } from 'lodash';
 
 import { useGlobalContext } from '../../context';
 
@@ -25,7 +25,6 @@ export default () => {
     searchLoading,
     searchError,
     onSearchLoading,
-    onSearchSelectBuilding,
   } = useGlobalContext();
 
   const [searchInput, setSearchInput] = useState('');
@@ -50,7 +49,6 @@ export default () => {
     }
   }, [currentLanguage]);
 
-  const dataByGeneralId = groupBy(searchResults, (item) => item.general_id);
   const dataSource = searchResults
     ? searchResults.map((item) => {
         return {
@@ -67,13 +65,6 @@ export default () => {
     if (value.length > 2) {
       onSearchLoading(true);
       debounceSearch(value);
-    }
-  };
-
-  const onSelect = (value) => {
-    const selectedBuilding = dataByGeneralId[value] && dataByGeneralId[value][0];
-    if (selectedBuilding) {
-      onSearchSelectBuilding(dataByGeneralId[value][0]);
     }
   };
 
@@ -99,7 +90,6 @@ export default () => {
           dataSource={dataSource}
           onChange={onSearchInputChange}
           onSearch={onSearch}
-          onSelect={onSelect}
           placeholder={searchPlaceholderText}
           style={{ width: '80%' }}
         >

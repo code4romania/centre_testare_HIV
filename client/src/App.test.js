@@ -9,16 +9,11 @@ afterEach(cleanup);
 describe('App component', () => {
   it('should render correctly', () => {
     const contextValues = {
-      hereMap: null,
-      searchInput: '',
       searchResults: [],
-      showSearchResults: false,
       searchError: null,
       currentLanguage: 'ro',
       searchBuildings: jest.fn(),
       onSearchLoading: jest.fn(),
-      onSearchSelectBuilding: jest.fn(),
-      onHereMapLoaded: jest.fn(),
       languageChange: jest.fn(),
     };
 
