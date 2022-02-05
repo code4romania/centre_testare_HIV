@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Button, Dropdown, Layout, Menu } from 'antd';
 import { DownOutlined, GlobalOutlined, MenuOutlined } from '@ant-design/icons';
-import { Trans } from '@lingui/macro';
 import logo from '../../logo.svg';
 
 import { useGlobalContext } from '../../context';
+import { HeaderMenu } from '../HeaderMenu';
+import { useMenuItems } from '../../hooks';
 
-const { Header } = Layout;
+const { Header: AntHeader } = Layout;
 
 const LANGUAGES = {
   en: 'English',
@@ -27,21 +28,23 @@ const languageMenu = (langText, handleMenuClick) => {
 
 const languageButtons = (langText, handleBtnClick) => {
   return (
-    <li className="language-btn-mobile">
+    <div className="language-btn-mobile">
       <GlobalOutlined />
       {langText.map((language) => (
         <Button key={language} onClick={() => handleBtnClick(language)} type="link">
           {language}
         </Button>
       ))}
-    </li>
+    </div>
   );
 };
 
-export default () => {
+export const Header = () => {
   const { currentLanguage, languageChange } = useGlobalContext();
   const [langText, setLangText] = useState([]);
   const [showMenu, setShowMenu] = useState(false);
+
+  const menuItems = useMenuItems();
 
   const handleMenuClick = () => {
     setShowMenu(!showMenu);
@@ -65,7 +68,7 @@ export default () => {
 
   return (
     <div className="navbar">
-      <Header className={showMenu ? 'overlay' : ''}>
+      <AntHeader className={showMenu ? 'overlay' : ''}>
         <div className="container">
           <div className="App-logo">
             <Link to="/">
@@ -73,24 +76,13 @@ export default () => {
               <img src={logo} alt="Bulina Roșie logo" />
             </Link>
           </div>
-          <ul className={`App-menu ${showMenu ? 'show' : ''}`}>
-            <li>
-              <NavLink className="menu-item" to="/despre" exact activeClassName="active">
-                <Trans>About Project</Trans>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink className="menu-item" to="/blog" activeClassName="active">
-                Blog
-              </NavLink>
-            </li>
-            <li>
-              <NavLink className="menu-item" to="/contact" activeClassName="active">
-                <Trans>Contact us</Trans>
-              </NavLink>
-            </li>
-            {languageButtons(langText, handleLanguageBtnClick)}
-          </ul>
+
+          <HeaderMenu
+            menuItems={menuItems}
+            showMenu={showMenu}
+            endAction={languageButtons(langText, handleLanguageBtnClick)}
+          />
+
           <Dropdown
             className="language-btn-desktop"
             overlay={() => languageMenu(langText, handleLanguageBtnClick)}
@@ -106,7 +98,9 @@ export default () => {
           </Button>
           <div className={`overlay ${showMenu ? 'show' : ''}`} onClick={handleMenuClick} />
         </div>
-      </Header>
+      </AntHeader>
     </div>
   );
 };
+
+export default { Header };
