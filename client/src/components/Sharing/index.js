@@ -13,7 +13,7 @@ function Sharing() {
 
   const copyToClipboard = useCallback(() => {
     navigator.clipboard.writeText(URL);
-  }, []);
+  }, [URL]);
 
   return (
     <Row className="sharing" type="flex" gutter={[10, 10]} align="middle">

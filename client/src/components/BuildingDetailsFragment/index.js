@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import BuildingDetails from '../../components/BuildingDetails';
+import BuildingDetails from '../BuildingDetails';
 
 import config from '../../config';
 
@@ -10,6 +10,7 @@ export default (props) => {
   const [completeDetails, setCompleteDetails] = useState(undefined);
   const [isLoading, setIsLoading] = useState(false);
 
+  // @TODO update to new API endpoints and schema
   React.useEffect(() => {
     if (incompleteDetails == null) return;
     if (completeDetails?.general_id !== incompleteDetails?.general_id) {
@@ -28,7 +29,7 @@ export default (props) => {
       };
       fetchData();
     }
-  }, [incompleteDetails]);
+  }, [completeDetails, incompleteDetails]);
 
   return <BuildingDetails onClose={onClose} details={completeDetails} isLoading={isLoading} />;
 };

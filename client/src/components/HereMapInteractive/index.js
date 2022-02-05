@@ -1,10 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { Col, Row } from 'antd';
 
-import BuildingDetailsFragment from '../../containers/building/BuildingDetailsFragment';
+import BuildingDetailsFragment from '../BuildingDetailsFragment';
 import MapPlaceholder from '../MapPlaceholder';
 
-import { useGlobalContext } from '../../context';
 import useDecoratedClusteredMap from '../../hooks/map/useDecoratedClusteredMap';
 import { useCreateMap } from '../../hooks/map/useCreateMap';
 
@@ -15,18 +14,7 @@ const HereMapInteractive = (props) => {
 
   const { map: currentMap, isMapLoading } = useCreateMap(mapRef);
 
-  const { searchSelectedBuilding } = useGlobalContext();
-
-  const { buildingDetails, onSelectBuilding, onHideBuilding } = useDecoratedClusteredMap(
-    currentMap,
-    points,
-  );
-
-  useEffect(() => {
-    if (searchSelectedBuilding) {
-      onSelectBuilding(searchSelectedBuilding);
-    }
-  }, [searchSelectedBuilding]);
+  const { buildingDetails, onHideBuilding } = useDecoratedClusteredMap(currentMap, points);
 
   const showSearchResults = buildingDetails;
   const showRightPanel = showSearchResults || buildingDetails;

@@ -5,6 +5,7 @@ import BuildingDetailsTitle from './BuildingDetailsTitle';
 import BuildingDetailsFooter from './BuildingDetailsFooter';
 
 const BuildingDetails = ({ onClose, isLoading, details }) => {
+  // @TODO update fields to new testing centre schema
   const detailsItems = details
     ? [
         {

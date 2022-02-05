@@ -3,12 +3,6 @@ const reducer = (state, action) => {
     case 'LANGUAGE_CHANGE':
       return { ...state, currentLanguage: action.payload };
 
-    case 'MAP_LOADED':
-      return { ...state, hereMap: action.payload };
-
-    case 'SEARCH_INPUT':
-      return { ...state, searchInput: action.payload, searchError: null };
-
     case 'DISPLAY_SEARCH_RESULTS':
       return { ...state, searchResults: action.payload, searchError: null };
 
@@ -53,19 +47,6 @@ const reducer = (state, action) => {
         searchLoading: action.payload,
       };
     }
-
-    case 'SEARCH_SELECTED_BUILDING': {
-      return {
-        ...state,
-        searchSelectedBuilding: action.payload,
-      };
-    }
-
-    case 'CLEAR_SEARCH':
-      return { ...state, searchResults: [], searchError: null, searchInput: '' };
-
-    case 'RISK_CATEGORY_CHANGED':
-      return { ...state, riskCategory: action.payload };
 
     default:
       return state;

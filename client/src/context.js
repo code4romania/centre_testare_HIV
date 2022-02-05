@@ -9,15 +9,10 @@ const { BUILDINGS_URL } = config;
 const AppContext = createContext();
 
 const initialState = {
-  hereMap: null,
-  searchInput: '',
   searchResults: [],
   searchLoading: false,
-  searchSelectedBuilding: null,
-  showSearchResults: false,
   searchError: null,
   currentLanguage: 'ro',
-  riskCategory: '',
 };
 
 const AppProvider = ({ children }) => {
@@ -30,19 +25,14 @@ const AppProvider = ({ children }) => {
     dispatch({ type: 'LANGUAGE_CHANGE', payload: locale });
   };
 
-  const onSearchInputChange = (searchInput) => {
-    dispatch({ type: 'SEARCH_INPUT', payload: searchInput });
-  };
-
   const onSearchLoading = (isLoading) => {
     dispatch({ type: 'SEARCH_LOADING', payload: isLoading });
   };
 
-  const searchBuildings = async (searchInput, riskCategory) => {
+  // @TODO update to new API endpoint and new schema
+  const searchBuildings = async (searchInput) => {
     try {
-      const res = await fetch(
-        `${BUILDINGS_URL}/search/?query=${searchInput}&riskCategory=${riskCategory}`,
-      );
+      const res = await fetch(`${BUILDINGS_URL}/search/?query=${searchInput}`);
       const searchResults = await res.json();
       onSearchLoading(false);
       if (searchResults.length > 0) {
@@ -55,34 +45,13 @@ const AppProvider = ({ children }) => {
     }
   };
 
-  const onSearchSelectBuilding = (building) => {
-    dispatch({ type: 'SEARCH_SELECTED_BUILDING', payload: building });
-  };
-
-  const onCloseSearchResults = () => {
-    dispatch({ type: 'CLEAR_SEARCH' });
-  };
-
-  const onHereMapLoaded = (map) => {
-    dispatch({ type: 'MAP_LOADED', payload: map });
-  };
-
-  const onCategoryChange = (riskCategory) => {
-    dispatch({ type: 'RISK_CATEGORY_CHANGED', payload: riskCategory });
-  };
-
   return (
     <AppContext.Provider
       value={{
         ...state,
         searchBuildings,
         onSearchLoading,
-        onSearchSelectBuilding,
-        onCloseSearchResults,
-        onHereMapLoaded,
-        onSearchInputChange,
         languageChange,
-        onCategoryChange,
       }}
     >
       {children}

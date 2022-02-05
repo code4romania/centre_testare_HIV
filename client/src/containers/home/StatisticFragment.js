@@ -2,9 +2,10 @@ import React from 'react';
 import { Row, Col, Card } from 'antd';
 import { Trans } from '@lingui/macro';
 
-import { ReactComponent as PeopleRisk } from '../../images/people_risk_icon.svg';
-import { ReactComponent as EvaluatedBuildings } from '../../images/evaluated_buildings_icon.svg';
-import { ReactComponent as ConsolidatedBuildings } from '../../images/consolidated_buildings_icon.svg';
+// @TODO replace with new icons
+// import { ReactComponent as PeopleRisk } from '../../images/people_risk_icon.svg';
+// import { ReactComponent as EvaluatedBuildings } from '../../images/evaluated_buildings_icon.svg';
+// import { ReactComponent as ConsolidatedBuildings } from '../../images/consolidated_buildings_icon.svg';
 import { ReactComponent as StatsIconBackground } from '../../images/stats-icon-background.svg';
 
 import config from '../../config';
@@ -65,7 +66,8 @@ export default () => {
         <StatisticCard
           title={<Trans>People under risk</Trans>}
           value={state.statistics.people_under_risk}
-          icon={<PeopleRisk />}
+          // @TODO replace with new icon
+          // icon={<PeopleRisk />}
           type="people-under-risk"
         />
       </Col>
@@ -73,7 +75,8 @@ export default () => {
         <StatisticCard
           title={<Trans>Evaluated buildings</Trans>}
           value={state.statistics.evaluated_buildings}
-          icon={<EvaluatedBuildings />}
+          // @TODO replace with new icon
+          // icon={<EvaluatedBuildings />}
           type="evaluated-buildings"
         />
       </Col>
@@ -81,7 +84,8 @@ export default () => {
         <StatisticCard
           title={<Trans>Consolidated buildings</Trans>}
           value={state.statistics.consolidated_buildings}
-          icon={<ConsolidatedBuildings />}
+          // @TODO replace with new icon
+          // icon={<ConsolidatedBuildings />}
           type="consolidated-buildings"
         />
       </Col>

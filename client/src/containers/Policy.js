@@ -5,6 +5,7 @@ const Policy = () => {
   return (
     <Layout>
       <div className="page">
+        {/* @TODO check text and add translation */}
         <h1>Politică de confidențialitate</h1>
         <p>
           Acest website folosește cookie-uri pentru a furniza vizitatorilor o experiență mult mai

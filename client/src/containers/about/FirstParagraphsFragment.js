@@ -9,9 +9,11 @@ export default () => {
     <Row type="flex" justify="space-around" style={{ marginTop: '4rem', textAlign: 'left' }}>
       <Col span={24}>
         <Paragraph style={{ paddingBottom: '2rem' }}>
+          {/* @TODO replace lorem text */}
           <Trans id="about.first_paragraph" />
         </Paragraph>
         <Paragraph>
+          {/* @TODO replace lorem text */}
           <Trans id="about.second_paragraph" />
         </Paragraph>
       </Col>

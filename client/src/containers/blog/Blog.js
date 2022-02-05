@@ -52,7 +52,7 @@ const Blog = () => {
 
   useEffect(() => {
     loadPosts();
-  }, []);
+  }, [loadPosts]);
 
   if (state.loading) {
     return (

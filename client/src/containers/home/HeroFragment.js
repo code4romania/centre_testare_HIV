@@ -11,6 +11,7 @@ const { Paragraph } = Typography;
 export default () => {
   return (
     <Hero heroImage={heroImage} title={<Trans>Welcome!</Trans>}>
+      {/* @TODO replace text + translate */}
       <Paragraph>
         Many desktop publishing packages and web page editors now use Lorem Ipsum as their default
         model text, and a search for 'lorem ipsum' will uncover many web sites still in their

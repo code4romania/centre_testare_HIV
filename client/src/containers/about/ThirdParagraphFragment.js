@@ -9,6 +9,7 @@ export default () => {
     <Row type="flex" justify="space-around" style={{ textAlign: 'left', marginBottom: '6rem' }}>
       <Col span={24}>
         <Paragraph>
+          {/* @TODO replace lorem text */}
           <Trans id="about.last_paragraph" />
         </Paragraph>
       </Col>

@@ -5,8 +5,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 #root {
@@ -40,7 +39,7 @@ code {
 }
 
 .navbar {
-    height: $header-height;
+  height: $header-height;
 }
 
 .stats-card {
@@ -49,11 +48,14 @@ code {
   border-radius: 16px;
   padding: 30px 10px 10px;
 
-  &, & h3, & h4 {
+  &,
+  & h3,
+  & h4 {
     color: #fff;
   }
 
-  & h3, & h4 {
+  & h3,
+  & h4 {
     text-align: left;
     margin-bottom: 0;
   }
@@ -73,15 +75,15 @@ code {
   }
 
   &.people-under-risk {
-    background-color: #FF7648;
+    background-color: #ff7648;
   }
 
   &.evaluated-buildings {
-    background-color: #FE6262;
+    background-color: #fe6262;
   }
 
   &.consolidated-buildings {
-    background-color: #FF6984;
+    background-color: #ff6984;
   }
 
   .stats-background {
@@ -92,15 +94,15 @@ code {
     border-top-right-radius: 16px;
 
     &.people-under-risk {
-      color: #FFC278;
+      color: #ffc278;
     }
 
     &.evaluated-buildings {
-      color: #FA0F00;
+      color: #fa0f00;
     }
 
     &.consolidated-buildings {
-      color: #BE3386;
+      color: #be3386;
     }
   }
 
@@ -118,23 +120,8 @@ code {
   }
 }
 
-.badge {
-  background-color: $primary-color;
-  border-radius: 8px;
-  color: #fff;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  height: 34px;
-  padding: 0 9px;
-
-  svg {
-    margin-left: 5px;
-    width: 16px;
-  }
-}
-
-.blog-preview, .about-preview {
+.blog-preview,
+.about-preview {
   margin-top: 4rem;
   text-align: left;
 

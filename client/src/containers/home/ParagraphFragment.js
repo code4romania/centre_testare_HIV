@@ -15,6 +15,7 @@ export default () => {
       </Row>
       <Row gutter={[0, 32]} type="flex" justify="space-between">
         <Col sm={24} md={11}>
+          {/* @TODO replace text + translate */}
           <Paragraph ellipsis={{ rows: 10, expandable: true }}>
             Many desktop publishing packages and web page editors now use Lorem Ipsum as their
             default model text, and a search for 'lorem ipsum' will uncover many web sites still in
@@ -27,6 +28,7 @@ export default () => {
           </Paragraph>
         </Col>
         <Col sm={24} md={11}>
+          {/* @TODO replace text + translate */}
           <Paragraph ellipsis={{ rows: 10, expandable: true }}>
             Many desktop publishing packages and web page editors now use Lorem Ipsum as their
             default model text, and a search for 'lorem ipsum' will uncover many web sites still in

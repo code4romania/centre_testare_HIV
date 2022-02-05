@@ -4,7 +4,8 @@ import { Trans } from '@lingui/macro';
 import { Link } from 'react-router-dom';
 import FooterLogo from './FooterLogo';
 
-import Mkbt from '../../images/MKBT-logo-black.png';
+// @TODO update logo for project owner
+// import Mkbt from '../../images/MKBT-logo-black.png';
 import CfR from '../../images/footer_CfR.svg';
 import Tfsg from '../../images/footer_tfsg.svg';
 
@@ -22,8 +23,9 @@ const FooterFragment = () => {
         <div className="footer__logos">
           <FooterLogo
             label={<Trans>A project by </Trans>}
-            href={`https://mkbt.ro/?lang=${currentLanguage}`}
-            src={Mkbt}
+            // @TODO update logo and link for project owner
+            // href={`https://mkbt.ro/?lang=${currentLanguage}`}
+            // src={Mkbt}
             height="70px"
           />
           <FooterLogo
@@ -43,11 +45,6 @@ const FooterFragment = () => {
           <Link to="/despre">
             <Text>
               <Trans>About the project</Trans>
-            </Text>
-          </Link>
-          <Link to="/adauga-cladire">
-            <Text>
-              <Trans>Add a building</Trans>
             </Text>
           </Link>
           <a

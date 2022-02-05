@@ -1,12 +1,13 @@
 import React from 'react';
+import { Trans } from '@lingui/macro';
 import Layout from '../../components/Layout';
 
 import MapFragment from './MapFragment';
 import ParagraphFragment from './ParagraphFragment';
 import SearchFragment from './SearchFragment';
-import StatisticFragment from './StatisticFragment';
-import BlogPreviewFragment from './BlogPreviewFragment';
 import HeroFragment from './HeroFragment';
+import BlogPreview from '../../components/BlogPreview';
+import StatisticFragment from './StatisticFragment';
 
 export default () => (
   <Layout hero={<HeroFragment />}>
@@ -14,6 +15,6 @@ export default () => (
     <MapFragment />
     <StatisticFragment />
     <ParagraphFragment />
-    <BlogPreviewFragment />
+    <BlogPreview title={<Trans>Blog</Trans>} />
   </Layout>
 );

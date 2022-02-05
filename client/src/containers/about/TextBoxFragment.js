@@ -10,6 +10,7 @@ export default () => {
     <Row type="flex" justify="space-around" className="aboutTextBox">
       <Col sm={24} md={20} className="aboutTextBoxCol">
         <Paragraph className="aboutTextBox-paragraph">
+          {/* @TODO replace lorem text */}
           <Trans id="about.project_details" />
         </Paragraph>
       </Col>
