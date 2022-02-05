@@ -1,7 +1,7 @@
 {
-  "buildings": [
+  "centers": [
     {
-      "model": "buildings.building",
+      "model": "centers.testing_center",
       "pk": 70,
       "fields": {
         "risk_category": "RS3",
@@ -26,7 +26,7 @@
       }
     },
     {
-      "model": "buildings.building",
+      "model": "centers.testing_center",
       "pk": 71,
       "fields": {
         "risk_category": "RS2",
@@ -51,7 +51,7 @@
       }
     },
     {
-      "model": "buildings.building",
+      "model": "centers.testing_center",
       "pk": 72,
       "fields": {
         "risk_category": "RS1",
@@ -76,7 +76,7 @@
       }
     },
     {
-      "model": "buildings.building",
+      "model": "centers.testing_center",
       "pk": 73,
       "fields": {
         "risk_category": "NA",
@@ -101,7 +101,7 @@
       }
     },
     {
-      "model": "buildings.building",
+      "model": "centers.testing_center",
       "pk": 74,
       "fields": {
         "risk_category": "U3",
@@ -126,7 +126,7 @@
       }
     },
     {
-      "model": "buildings.building",
+      "model": "centers.testing_center",
       "pk": 75,
       "fields": {
         "risk_category": "U1",

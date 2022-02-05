@@ -59,8 +59,8 @@ db.sqlite3
 
 api/static/*
 api/public/*
-api/seismic_site/static/*
-api/seismic_site/public/*
+api/testing_centers_site/static/*
+api/testing_centers_site/public/*
 
 # Flask stuff:
 instance/

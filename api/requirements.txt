@@ -8,15 +8,15 @@ asgiref==3.4.1
     # via django
 attrs==21.2.0
     # via jsonschema
-boto3==1.20.22
+boto3==1.20.46
     # via -r requirements.in
-botocore==1.23.22
+botocore==1.23.46
     # via
     #   boto3
     #   s3transfer
 brotlipy==0.7.0
     # via -r requirements.in
-cffi==1.14.6
+cffi==1.15.0
     # via brotlipy
 defusedxml==0.7.1
     # via odfpy
@@ -36,11 +36,11 @@ django==3.2.11
     #   drf-spectacular
 django-ckeditor==6.2.0
     # via -r requirements.in
-django-cors-headers==3.10.1
+django-cors-headers==3.11.0
     # via -r requirements.in
 django-environ==0.8.1
     # via -r requirements.in
-django-import-export==2.7.0
+django-import-export==2.7.1
     # via -r requirements.in
 django-jquery==3.1.0
     # via -r requirements.in
@@ -48,21 +48,21 @@ django-js-asset==1.2.2
     # via django-ckeditor
 django-storages==1.12.3
     # via -r requirements.in
-django-taggit==1.5.1
+django-taggit==2.1.0
     # via
     #   -r requirements.in
     #   django-taggit-serializer
 django-taggit-serializer==0.1.7
     # via -r requirements.in
-djangorestframework==3.12.4
+djangorestframework==3.13.1
     # via
     #   -r requirements.in
     #   drf-spectacular
-drf-spectacular==0.19.0
+drf-spectacular==0.21.1
     # via -r requirements.in
 et-xmlfile==1.1.0
     # via openpyxl
-gevent==21.8.0
+gevent==21.12.0
     # via -r requirements.in
 greenlet==1.1.2
     # via gevent
@@ -74,7 +74,7 @@ jmespath==0.10.0
     # via
     #   boto3
     #   botocore
-jsonschema==3.2.0
+jsonschema==4.4.0
     # via drf-spectacular
 markuppy==1.14
     # via tablib
@@ -84,17 +84,17 @@ openpyxl==3.0.9
     # via tablib
 pillow==9.0.0
     # via -r requirements.in
-psycopg2==2.9.2
+psycopg2==2.9.3
     # via -r requirements.in
-pycparser==2.20
+pycparser==2.21
     # via cffi
-pyrsistent==0.18.0
+pyrsistent==0.18.1
     # via jsonschema
 python-dateutil==2.8.2
     # via botocore
 pytz==2021.1
     # via django
-pyyaml==5.4.1
+pyyaml==6.0
     # via
     #   drf-spectacular
     #   tablib
@@ -107,13 +107,13 @@ six==1.16.0
     #   python-dateutil
 sqlparse==0.4.2
     # via django
-tablib[html,ods,xls,xlsx,yaml]==3.1.0
+tablib[html,ods,xls,xlsx,yaml]==3.2.0
     # via
     #   -r requirements.in
     #   django-import-export
-uritemplate==3.0.1
+uritemplate==4.1.1
     # via drf-spectacular
-urllib3==1.26.7
+urllib3==1.26.8
     # via botocore
 whitenoise==5.3.0
     # via -r requirements.in

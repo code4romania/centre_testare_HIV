@@ -20,24 +20,36 @@ export const decorators = [
       value={{
         searchResults: [
           {
-            general_id: '1',
-            address: 'Bucuresti, Str. Dambovita',
+            pk: '1',
+            street_name: 'Str. Dambovita',
             street_number: '10',
+            county: 'Bucuresti',
+            locality: 'Sector 6',
+            county_code: 'B'
           },
           {
-            general_id: '2',
-            address: 'Bucuresti, Str. Dambovita',
+            pk: '2',
+            street_name: 'Str. Dambovita',
             street_number: '12',
+            county: 'Bucuresti',
+            locality: 'Sector 6',
+            county_code: 'B'
           },
           {
-            general_id: '3',
-            address: 'Bucuresti, Str. Dambovita',
+            pk: '3',
+            street_name: 'Str. Dambovita',
             street_number: '14',
+            county: 'Bucuresti',
+            locality: 'Sector 6',
+            county_code: 'B'
           },
           {
-            general_id: '4',
-            address: 'Bucuresti, Str. Dambovita',
+            pk: '4',
+            street_name: 'Str. Dambovita',
             street_number: '16',
+            county: 'Bucuresti',
+            locality: 'Sector 6',
+            county_code: 'B'
           },
         ],
       }}

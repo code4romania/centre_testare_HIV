@@ -3,7 +3,7 @@ FROM python:3.9-slim
 ARG ENVIRONMENT
 
 ENV ENVIRONMENT ${ENVIRONMENT:-production}
-ENV DJANGO_SETTINGS_MODULE seismic_site.settings.${ENVIRONMENT}
+ENV DJANGO_SETTINGS_MODULE testing_centers_site.settings.${ENVIRONMENT}
 ENV DOCKERIZE_VERSION v0.6.1
 
 RUN apt-get update && \
@@ -25,7 +25,10 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/${DOCKERIZE_VERS
 WORKDIR /opt/
 
 COPY ./requirements*.txt ./
-RUN if [ "${ENVIRONMENT}" = "production" ]; then pip install -r requirements.txt; else pip install -r requirements-dev.txt; fi
+RUN if [ "${ENVIRONMENT}" = "production" ]; \
+    then pip install -r requirements.txt; \
+    else pip install -r requirements-dev.txt; \
+    fi
 
 WORKDIR /code/
 
@@ -33,4 +36,4 @@ COPY ./docker-entrypoint /
 COPY ./ /code/
 
 ENTRYPOINT ["/docker-entrypoint"]
-EXPOSE 8030
+EXPOSE 8050

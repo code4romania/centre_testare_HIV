@@ -1,5 +1,5 @@
 # base image
-FROM node:12-alpine
+FROM node:16-alpine
 
 ARG ENVIRONMENT
 
@@ -14,7 +14,10 @@ ENV PATH /code/node_modules/.bin:${PATH}
 
 # install and cache app dependencies
 COPY ./package*.json ./
-RUN if [ "${ENVIRONMENT}" = "production" ]; then npm install --production; else npm install; fi
+RUN if [ "${ENVIRONMENT}" = "production" ]; \
+    then npm install --production; \
+    else npm install; \
+    fi
 
 COPY ./docker-entrypoint /
 COPY ./ /code/

@@ -2,18 +2,18 @@ version: "3.8"
 
 services:
   db:
-    container_name: seismic-risc-db
+    container_name: testing-centers-db
     build:
       context: ./db
     env_file:
       - .env
     ports:
-      - "5444:5432"
+      - "5445:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
 
   api:
-    container_name: seismic-risc-api
+    container_name: testing-centers-api
     build:
       context: ./api
     command: dockerize -wait tcp://db:5444 -timeout 90s
@@ -22,12 +22,12 @@ services:
     volumes:
       - ./api:/code
     ports:
-      - "8030:8030"
+      - "8050:8050"
     depends_on:
       - db
 
   client:
-    container_name: seismic-risc-client
+    container_name: testing-centers-client
     build:
       context: ./client
     env_file:
@@ -35,10 +35,10 @@ services:
     volumes:
       - ./client:/code
     ports:
-      - "3030:3000"
+      - "3050:3000"
     depends_on:
       - api
 
 volumes:
   pgdata:
-    name: seismic-risc_pgdata
+    name: testing_centers-pgdata

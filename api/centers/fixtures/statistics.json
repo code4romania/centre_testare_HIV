@@ -1,0 +1,10 @@
+[
+  {
+    "model": "center.statistic",
+    "pk": 1,
+    "fields": {
+      "mobile_caravans": 12,
+      "hotline": 8457
+    }
+  }
+]

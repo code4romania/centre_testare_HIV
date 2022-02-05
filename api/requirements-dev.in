@@ -20,3 +20,5 @@ black==21.12b0
 
 # dependency management
 pip-tools
+
+-r requirements.txt

@@ -3,13 +3,13 @@ import HereMapInteractive from '../../components/HereMapInteractive';
 
 import config from '../../config';
 
-const { BUILDINGS_URL } = config;
+const { TESTING_CENTERS_URL } = config;
 
 export default () => {
   const [testingCenters, setTestingCenters] = React.useState([]);
 
   React.useEffect(() => {
-    fetch(`${BUILDINGS_URL}/`)
+    fetch(`${TESTING_CENTERS_URL}/`)
       .then((res) => res.json())
       .then((locations) => {
         setTestingCenters(locations);
