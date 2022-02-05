@@ -3,7 +3,7 @@ import BuildingDetails from '../../components/BuildingDetails';
 
 import config from '../../config';
 
-const { BUILDINGS_URL } = config;
+const { TESTING_CENTERS_URL } = config;
 
 export default (props) => {
   const { onClose, incompleteDetails } = props;
@@ -12,8 +12,8 @@ export default (props) => {
 
   React.useEffect(() => {
     if (incompleteDetails == null) return;
-    if (completeDetails?.general_id !== incompleteDetails?.general_id) {
-      const buildingURL = `${BUILDINGS_URL}/${incompleteDetails.general_id}/`;
+    if (completeDetails?.pk !== incompleteDetails?.pk) {
+      const buildingURL = `${TESTING_CENTERS_URL}/${incompleteDetails.pk}/`;
       const fetchData = async () => {
         try {
           setIsLoading(true);

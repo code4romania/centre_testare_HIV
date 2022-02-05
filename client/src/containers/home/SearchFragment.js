@@ -53,11 +53,11 @@ export default () => {
     }
   }, [currentLanguage]);
 
-  const dataByGeneralId = groupBy(searchResults, (item) => item.general_id);
+  const dataByGeneralId = groupBy(searchResults, (item) => item.pk);
   const dataSource = searchResults
     ? searchResults.map((item) => {
         return {
-          value: item.general_id,
+          value: item.pk,
           text: item.street_number
             ? `${item.address}, ${item.street_number} (${item.locality}, ${item.county_code})`
             : `${item.address} (${item.locality}, ${item.county_code})`,

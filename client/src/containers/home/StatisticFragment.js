@@ -34,9 +34,9 @@ const StatisticCard = ({ title, value, icon, type = '' }) => (
 export default () => {
   const [state, setState] = React.useState({
     statistics: {
-      people_under_risk: '',
-      evaluated_buildings: '',
-      consolidated_buildings: '',
+      mobile_caravans: '',
+      public_centers: '',
+      hotline: '',
     },
   });
   React.useEffect(() => {
@@ -63,24 +63,24 @@ export default () => {
     >
       <Col xs={24} md={8}>
         <StatisticCard
-          title={<Trans>People under risk</Trans>}
-          value={state.statistics.people_under_risk}
+          title={<Trans>testing centers</Trans>}
+          value={state.statistics.mobile_caravans}
           icon={<PeopleRisk />}
           type="people-under-risk"
         />
       </Col>
       <Col xs={24} md={8}>
         <StatisticCard
-          title={<Trans>Evaluated buildings</Trans>}
-          value={state.statistics.evaluated_buildings}
+          title={<Trans>mobile caravans</Trans>}
+          value={state.statistics.public_centers}
           icon={<EvaluatedBuildings />}
           type="evaluated-buildings"
         />
       </Col>
       <Col xs={24} md={8}>
         <StatisticCard
-          title={<Trans>Consolidated buildings</Trans>}
-          value={state.statistics.consolidated_buildings}
+          title={<Trans>hotline</Trans>}
+          value={state.statistics.hotline}
           icon={<ConsolidatedBuildings />}
           type="consolidated-buildings"
         />

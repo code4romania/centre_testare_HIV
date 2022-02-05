@@ -51,9 +51,7 @@ export default function useDecoratedClusteredMap(currentMap, points) {
     const foundMarker = markers
       .flat()
       .find(
-        (marker) =>
-          marker.getData().getData &&
-          marker.getData().getData().general_id === buildingDetail.general_id,
+        (marker) => marker.getData().getData && marker.getData().getData().pk === buildingDetail.pk,
       );
     if (foundMarker) {
       onNoiseClick(foundMarker, 20);

@@ -8,7 +8,7 @@ import config from '../../config';
 
 const { TabPane } = Tabs;
 
-const { BUILDINGS_URL } = config;
+const { TESTING_CENTERS_URL } = config;
 
 export default () => {
   const [state, setState] = React.useState({
@@ -19,7 +19,7 @@ export default () => {
   const { onCategoryChange } = useGlobalContext();
 
   React.useEffect(() => {
-    fetch(`${BUILDINGS_URL}/`)
+    fetch(`${TESTING_CENTERS_URL}/`)
       .then((res) => res.json())
       .then((points) => {
         setState((prevState) => ({

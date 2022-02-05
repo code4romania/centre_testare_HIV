@@ -25,7 +25,7 @@ export default function SearchResults(props) {
       </Row>
       <ul className="search-results">
         {searchResults.map((building) => (
-          <li key={building.general_id} onClick={() => onItemClick(building)}>
+          <li key={building.pk} onClick={() => onItemClick(building)}>
             <p>
               {building.address}, {building.street_number}
             </p>

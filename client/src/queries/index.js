@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import config from '../config';
 import { mapKeysToCamelCase } from '../utils';
 
-const { BUILDINGS_URL, PROXIMAL_UTILITIES, WORK_PERFORMED } = config;
+const { TESTING_CENTERS_URL, CENTER_TYPES, WORK_PERFORMED } = config;
 
 const useBasicFetch = (url, options) => {
   const [data, setData] = useState();
@@ -48,7 +48,9 @@ const useGetOptions = (url, options = defaultGetOptsOptions) => {
 };
 
 export const useRiskCategoriesQuery = () => {
-  const { postActions, isLoading, isError } = useGetOptions(`${BUILDINGS_URL}/public_create/`);
+  const { postActions, isLoading, isError } = useGetOptions(
+    `${TESTING_CENTERS_URL}/public_create/`,
+  );
 
   const { riskCategory } = postActions ?? {};
   const { choices: riskCategories } = riskCategory ?? {};
@@ -57,7 +59,7 @@ export const useRiskCategoriesQuery = () => {
 };
 
 export const useProximalUtilitiesQuery = () => {
-  const { data: proximalUtilities, isLoading, isError } = useGet(PROXIMAL_UTILITIES);
+  const { data: proximalUtilities, isLoading, isError } = useGet(CENTER_TYPES);
 
   return { isError, isLoading, proximalUtilities };
 };

@@ -8,24 +8,12 @@ const BuildingDetails = ({ onClose, isLoading, details }) => {
   const detailsItems = details
     ? [
         {
-          label: <Trans>Construction Year</Trans>,
-          value: details.year_built,
+          label: <Trans>Schedule</Trans>,
+          value: details.schedule,
         },
         {
-          label: <Trans>Height regime</Trans>,
-          value: details.height_regime,
-        },
-        {
-          label: <Trans>Risk category</Trans>,
-          value: details.risk_category,
-        },
-        {
-          label: <Trans>Examination year</Trans>,
-          value: details.examination_year,
-        },
-        {
-          label: <Trans>Certified expert name</Trans>,
-          value: details.certified_expert,
+          label: <Trans>Test types</Trans>,
+          value: details.test_types,
         },
       ].filter(({ value }) => value)
     : [];
@@ -34,7 +22,7 @@ const BuildingDetails = ({ onClose, isLoading, details }) => {
     <Card className="building-details">
       <Skeleton loading={isLoading}>
         <BuildingDetailsTitle
-          address={details?.address}
+          address={details?.street_name}
           streetNumber={details?.street_number}
           locality={details?.locality}
           countyCode={details?.county_code}

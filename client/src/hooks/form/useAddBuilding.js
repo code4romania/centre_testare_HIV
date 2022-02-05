@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import config from '../../config';
 import { mapKeysToSnakeCase } from '../../utils';
 
-const { BUILDINGS_URL } = config;
+const { TESTING_CENTERS_URL } = config;
 
 export const useAddBuilding = () => {
   return useCallback(async (formValues) => {
@@ -45,7 +45,7 @@ export const useAddBuilding = () => {
 
       const valuestoSendSnakeCase = mapKeysToSnakeCase(valuesToSend);
 
-      const res = await fetch(`${BUILDINGS_URL}/public_create/`, {
+      const res = await fetch(`${TESTING_CENTERS_URL}/public_create/`, {
         method: 'POST',
         headers: { 'Content-type': 'application/json' },
         body: JSON.stringify(valuestoSendSnakeCase),
