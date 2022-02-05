@@ -42,6 +42,84 @@ code {
   height: $header-height;
 }
 
+.stats-card {
+  border: none;
+  background-color: $primary-color;
+  border-radius: 16px;
+  padding: 30px 10px 10px;
+
+  &,
+  & h3,
+  & h4 {
+    color: #fff;
+  }
+
+  & h3,
+  & h4 {
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  & .stats-heading {
+    font-size: 48px;
+    font-weight: 700;
+  }
+
+  & .stats-heading.no-data {
+    font-size: 30px;
+  }
+
+  & .stats-sub-heading {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  &.people-under-risk {
+    background-color: #ff7648;
+  }
+
+  &.evaluated-buildings {
+    background-color: #fe6262;
+  }
+
+  &.consolidated-buildings {
+    background-color: #ff6984;
+  }
+
+  .stats-background {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 122px;
+    border-top-right-radius: 16px;
+
+    &.people-under-risk {
+      color: #ffc278;
+    }
+
+    &.evaluated-buildings {
+      color: #fa0f00;
+    }
+
+    &.consolidated-buildings {
+      color: #be3386;
+    }
+  }
+
+  .stats-icon {
+    position: absolute;
+    color: #fff;
+    width: 28px;
+    right: 40px;
+    top: 12px;
+
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+
 .blog-preview,
 .about-preview {
   margin-top: 4rem;

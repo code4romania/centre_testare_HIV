@@ -29,7 +29,7 @@ export default (props) => {
       };
       fetchData();
     }
-  }, [completeDetails.general_id, incompleteDetails]);
+  }, [completeDetails, incompleteDetails]);
 
   return <BuildingDetails onClose={onClose} details={completeDetails} isLoading={isLoading} />;
 };
