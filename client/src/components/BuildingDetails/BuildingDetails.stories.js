@@ -7,13 +7,13 @@ const buildingDetails = (
   <BuildingDetails
     isLoading={false}
     details={{
-      address: 'Bucuresti, Sector 6, Str. Dambovita',
+      pk: '1',
+      county: 'Bucuresti',
+      locality: 'Sector 6',
+      street_name: 'Str. Dambovita',
       street_number: '10',
-      year_built: '2001',
-      height_regime: 'U2',
-      risk_category: 'A',
-      examination_year: '2002',
-      certified_expert: 'Ion Iliescu',
+      schedule: '10:00 - 18:00',
+      test_types: [1, 2, 3],
     }}
   />
 );

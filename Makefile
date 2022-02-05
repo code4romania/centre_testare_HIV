@@ -35,21 +35,21 @@ superuser:                        ## creates a superuser for the API
 
 init-db: superuser                ## sets up the database and fixtures
 	docker-compose exec api ./manage.py loaddata statistics
-	docker-compose exec api ./manage.py loaddata buildings
+	docker-compose exec api ./manage.py loaddata centers
 	docker-compose exec api ./manage.py loaddata pages
 
 drop-db:                          ## drops the database
 	docker-compose down -t 60
-	docker volume rm seismic-risc_pgdata
+	docker volume rm testing_centers-pgdata
 
 redo-db: drop-db init-db          ## drops the database, then sets up the database and fixtures
 
 ## [UTILS]
 requirements-build:               ## run pip compile and add requirements from the *.in files
-	docker-compose run --rm --no-deps --entrypoint "bash -c" api "cd /code && pip-compile -o requirements-dev.txt requirements-dev.in requirements.in && pip-compile -o requirements.txt requirements.in"
+	docker-compose run --rm --no-deps --entrypoint "bash -c" api "cd /code && pip-compile -o requirements.txt requirements.in && pip-compile -o requirements-dev.txt requirements-dev.in"
 
 requirements-update:              ## run pip compile and rebuild the requirements files
-	docker-compose run --rm --no-deps --entrypoint "bash -c" api "cd /code && pip-compile -r -U -o requirements-dev.txt requirements-dev.in requirements.in && pip-compile -r -U -o requirements.txt requirements.in && chmod a+r requirements.txt && chmod a+r requirements-dev.txt"
+	docker-compose run --rm --no-deps --entrypoint "bash -c" api "cd /code && pip-compile -r -U -o requirements.txt requirements.in && chmod a+r requirements.txt && chmod a+r requirements-dev.txt && pip-compile -r -U -o requirements-dev.txt requirements-dev.in"
 
 migrations:                       ## generate migrations in a clean container
 	docker-compose exec api ./manage.py makemigrations

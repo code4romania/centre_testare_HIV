@@ -4,7 +4,7 @@ import { i18n } from '@lingui/core';
 import reducer from './reducer';
 import config from './config';
 
-const { BUILDINGS_URL } = config;
+const { TESTING_CENTERS_URL } = config;
 
 const AppContext = createContext();
 
@@ -32,7 +32,7 @@ const AppProvider = ({ children }) => {
   // @TODO update to new API endpoint and new schema
   const searchBuildings = async (searchInput) => {
     try {
-      const res = await fetch(`${BUILDINGS_URL}/search/?query=${searchInput}`);
+      const res = await fetch(`${TESTING_CENTERS_URL}/search/?query=${searchInput}`);
       const searchResults = await res.json();
       onSearchLoading(false);
       if (searchResults.length > 0) {

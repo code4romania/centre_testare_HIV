@@ -14,7 +14,7 @@ const reducer = (state, action) => {
           break;
         case 'hu':
         default:
-          searchResultsMessage = 'No building was found matching the address';
+          searchResultsMessage = 'No testing_center was found matching the address';
       }
       return {
         ...state,

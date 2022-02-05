@@ -11,7 +11,9 @@ json-server --watch db.json
 
 ## Node version
 
-Requires at least version 10.13.0 of Node
+Requires at least version 16 of Node. In order to install the required version of node,
+[install nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+and run `nvm use || nvm install`.
 
 ## Available Scripts
 

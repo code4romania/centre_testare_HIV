@@ -1,6 +1,6 @@
 set -e
 
-cd /root/seismic-risc
+cd /root/testing-centers
 git reset --hard HEAD
 git pull
 
