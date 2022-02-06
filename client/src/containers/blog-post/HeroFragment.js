@@ -1,7 +1,7 @@
 import React from 'react';
 import { Trans } from '@lingui/macro';
 
-import Hero from '../../components/Hero';
+import { Hero } from '../../components/Hero';
 import Sharing from '../../components/Sharing';
 
 import heroImage from '../../images/blog_post_hero.png';

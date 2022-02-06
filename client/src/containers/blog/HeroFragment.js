@@ -2,15 +2,18 @@ import React from 'react';
 import { Typography } from 'antd';
 import { Trans } from '@lingui/macro';
 
-import Hero from '../../components/Hero';
+import { Hero } from '../../components/Hero';
 
+// @TODO change hero image
 import heroImage from '../../images/blog_hero.png';
 
 const { Paragraph } = Typography;
 
 export default () => {
   return (
+    // @TODO update hero title
     <Hero heroImage={heroImage} title={<Trans>About Vulnerable Romania</Trans>}>
+      {/* @TODO update text + translation */}
       <Paragraph>
         Many desktop publishing packages and web page editors now use Lorem Ipsum as their default
         model text, and a search for 'lorem ipsum' will uncover many web sites still in their
