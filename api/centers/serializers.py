@@ -19,23 +19,6 @@ class TestingCenterSerializer(BaseCenterSerializer):
         fields = ("pk", "lat", "lng", "street_name", "street_number", "locality", "county_code")
 
 
-class PublicCenterCreateSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = TestingCenter
-        fields = (
-            "street_number",
-            "street_name",
-            "county",
-            "locality",
-            "lat",
-            "lng",
-            "website",
-            "phone_number",
-            "schedule",
-            "test_types",
-        )
-
-
 class TestingCenterListSerializer(serializers.ModelSerializer):
     class Meta:
         model = TestingCenter

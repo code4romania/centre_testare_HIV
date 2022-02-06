@@ -16,7 +16,7 @@ pdbpp
 ipython
 
 # style checker
-black==21.12b0
+black==22.1.0
 
 # dependency management
 pip-tools

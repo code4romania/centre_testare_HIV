@@ -1,15 +1,14 @@
 from django.conf import settings
-from django.contrib.postgres.search import TrigramSimilarity
+from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector, TrigramSimilarity
+from django.db.models import Q
 from drf_spectacular.utils import extend_schema, OpenApiParameter
-from rest_framework import permissions, status, viewsets
+from rest_framework import permissions, viewsets
 from rest_framework.decorators import action, api_view, permission_classes
 from rest_framework.response import Response
-from rest_framework.throttling import AnonRateThrottle
 
 from centers.models import CenterTestTypes, Statistic, TestingCenter
 from centers.serializers import (
     CenterSearchSerializer,
-    PublicCenterCreateSerializer,
     SearchQuerySerializer,
     StatisticSerializer,
     TestingCenterListSerializer,
@@ -18,13 +17,9 @@ from centers.serializers import (
 )
 
 
-class PublicCreateAnonRateThrottle(AnonRateThrottle):
-    rate = "10/day"
-
-
-class TestingCenterViewSet(viewsets.ModelViewSet):
+class TestingCenterViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint that allows testing centers to be viewed or edited.
+    API endpoint that allows testing centers to be viewed.
     """
 
     lookup_field = "pk"
@@ -35,32 +30,10 @@ class TestingCenterViewSet(viewsets.ModelViewSet):
     def get_serializer_class(self):
         if self.action == "list":
             return TestingCenterListSerializer
-        elif self.action == "public_create":
-            return PublicCenterCreateSerializer
         elif self.action == "search":
             return SearchQuerySerializer
         return TestingCenterSerializer
 
-    @action(
-        detail=False,
-        methods=["post"],
-        permission_classes=[permissions.AllowAny],
-        throttle_classes=[PublicCreateAnonRateThrottle],
-    )
-    def public_create(self, request):
-        """
-        Special action to allow the public to create a testing center, while
-        keeping the default create action available for staff only
-        """
-        serializer = PublicCenterCreateSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            headers = self.get_success_headers(serializer.data)
-            return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
-        else:
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    @api_view(["GET"])
     @extend_schema(
         parameters=[
             OpenApiParameter(
@@ -74,6 +47,7 @@ class TestingCenterViewSet(viewsets.ModelViewSet):
     )
     @action(
         detail=False,
+        methods=["get"],
         permission_classes=[permissions.AllowAny],
     )
     def search(self, request):
@@ -85,12 +59,18 @@ class TestingCenterViewSet(viewsets.ModelViewSet):
 
         if serializer.is_valid():
             query = serializer.data["query"]
-            search_category = ("", serializer.data["riskCategory"])[bool(serializer.data["riskCategory"])]
+
+            search_query = SearchQuery(query, config="romanian_unaccent")
+
+            vector = SearchVector("full_address", weight="A", config="romanian_unaccent")
+
             centers = (
-                TestingCenter.approved.annotate(similarity=TrigramSimilarity("full_address", query))
+                TestingCenter.approved.annotate(
+                    rank=SearchRank(vector, search_query), similarity=TrigramSimilarity("full_address", query)
+                )
                 .filter(
-                    similarity__gt=settings.TRIGRAM_SIMILARITY_THRESHOLD,
-                    risk_category__icontains=search_category,
+                    Q(rank__gte=settings.SEARCH_RANKING_THRESHOLD)
+                    | Q(similarity__gt=settings.TRIGRAM_SIMILARITY_THRESHOLD),
                 )
                 .order_by("-similarity")
             )

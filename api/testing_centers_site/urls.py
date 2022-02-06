@@ -18,7 +18,7 @@ admin.site.site_header = admin_site_string
 admin.site.index_title = admin_site_string
 
 router = routers.DefaultRouter()
-router.register(r"testing_centers", TestingCenterViewSet, basename="testing_centers")
+router.register(r"centers", TestingCenterViewSet, basename="centers")
 router.register(r"pages", PagesViewSet, basename="pages")
 router.register(r"posts", PostViewSet, basename="posts")
 router.register(r"tags", TagViewSet, basename="tags")
