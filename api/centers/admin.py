@@ -6,10 +6,11 @@ from django.conf import settings
 from django.contrib import admin, messages
 from django.contrib.admin import display
 from django.utils.safestring import mark_safe
-from django.utils.translation import gettext_lazy as _, ngettext
+from django.utils.translation import gettext_lazy as _
 from import_export import resources
 
 from centers import models
+from testing_centers_site.utils import AdminWithStatusChanges
 
 
 @admin.register(models.Statistic)
@@ -29,7 +30,7 @@ class TestingCenterAttributes(admin.ModelAdmin):
 
 
 @admin.register(models.TestingCenter)
-class TestingCenterAdmin(admin.ModelAdmin):
+class TestingCenterAdmin(AdminWithStatusChanges):
     list_filter = ("status", "county", "locality", "test_types")
     list_display = (
         "get_testing_center_address",
@@ -57,31 +58,40 @@ class TestingCenterAdmin(admin.ModelAdmin):
         return mark_safe("{} {} ({}, {})".format(obj.street_name, obj.street_number, obj.locality, county))
 
     def make_pending(self, request, queryset):
-        self._perform_status_change(request, queryset, "0")
+        self._perform_status_change(
+            "0",
+            request,
+            queryset,
+            models.TestingCenter.CENTER_STATUS_CHOICES,
+            _("testing center"),
+            _("testing centers"),
+        )
 
     make_pending.short_description = _("Mark selected testing centers as pending")
 
     def make_accepted(self, request, queryset):
-        self._perform_status_change(request, queryset, "1")
+        self._perform_status_change(
+            "1",
+            request,
+            queryset,
+            models.TestingCenter.CENTER_STATUS_CHOICES,
+            _("testing center"),
+            _("testing centers"),
+        )
 
     make_accepted.short_description = _("Mark selected testing centers as accepted")
 
     def make_rejected(self, request, queryset):
-        self._perform_status_change(request, queryset, "-1")
+        self._perform_status_change(
+            "-1",
+            request,
+            queryset,
+            models.TestingCenter.CENTER_STATUS_CHOICES,
+            _("testing center"),
+            _("testing centers"),
+        )
 
     make_rejected.short_description = _("Mark selected testing centers as rejected")
-
-    def _perform_status_change(self, request, queryset, status):
-        updated = queryset.update(status=status)
-
-        status_str = self.choice_to_string(status)
-        message = ngettext(
-            "{updated} testing center was successfully marked as {status}.",
-            "{updated} testing centers were successfully marked as {status}.",
-            updated,
-        ).format(updated=updated, status=status_str)
-
-        self.message_user(request, message, messages.SUCCESS)
 
     class Media:
         """
@@ -125,17 +135,6 @@ class TestingCenterAdmin(admin.ModelAdmin):
         extra = extra_context or {}
         extra["HERE_MAPS"] = settings.HERE_MAPS
         return super(TestingCenterAdmin, self).changelist_view(request, extra_context=extra)
-
-    @staticmethod
-    def choice_to_string(status):
-        status = int(status)
-        for status_choice in models.TestingCenter.CENTER_STATUS_CHOICES:
-            if status_choice[0] == status:
-                status_str = status_choice[1]
-                break
-        else:
-            status_str = ""
-        return status_str
 
 
 class TestingCenterResource(resources.ModelResource):

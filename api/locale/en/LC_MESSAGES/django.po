@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-05 17:49+0200\n"
+"POT-Creation-Date: 2022-02-06 19:14+0200\n"
 "PO-Revision-Date: 2022-02-03 20:22+0200\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -66,67 +66,68 @@ msgstr ""
 msgid "posts"
 msgstr ""
 
-#: centers/admin.py:48
+#: centers/admin.py:49
 msgid "Operational Data"
 msgstr ""
 
-#: centers/admin.py:49
+#: centers/admin.py:50
 msgid "Geo Data"
 msgstr ""
 
-#: centers/admin.py:50
+#: centers/admin.py:51
 msgid "Testing Center Data"
 msgstr ""
 
-#: centers/admin.py:53
+#: centers/admin.py:54
 msgid "Address"
 msgstr ""
 
-#: centers/admin.py:62
+#: centers/admin.py:66 centers/admin.py:78 centers/admin.py:90
+msgid "testing center"
+msgstr ""
+
+#: centers/admin.py:67 centers/admin.py:79 centers/admin.py:91
+msgid "testing centers"
+msgstr ""
+
+#: centers/admin.py:70
 msgid "Mark selected testing centers as pending"
 msgstr ""
 
-#: centers/admin.py:67
+#: centers/admin.py:82
 msgid "Mark selected testing centers as accepted"
 msgstr ""
 
-#: centers/admin.py:72
+#: centers/admin.py:94
 msgid "Mark selected testing centers as rejected"
 msgstr ""
 
-#: centers/admin.py:79
-#, python-brace-format
-msgid "{updated} testing center was successfully marked as {status}."
-msgid_plural "{updated} testing centers were successfully marked as {status}."
-msgstr[0] ""
-msgstr[1] ""
-
-#: centers/admin.py:153
+#: centers/admin.py:152
 msgid "testing center resource"
 msgstr ""
 
-#: centers/admin.py:154
+#: centers/admin.py:153
 msgid "testing center resources"
 msgstr ""
 
-#: centers/admin.py:179
+#: centers/admin.py:178
 #, python-brace-format
 msgid "File with name '{file_name}' wasn't imported. Errors: {row_errors}"
 msgstr ""
 
-#: centers/admin.py:186
+#: centers/admin.py:185
 #, python-brace-format
 msgid "File with name '{file_name}' was imported."
 msgstr ""
 
-#: centers/admin.py:193
+#: centers/admin.py:192
 #, python-brace-format
 msgid ""
 "File with name '{file_name}' wasn't a proper data file. Accepted formats "
 "are: CSV, XLSX."
 msgstr ""
 
-#: centers/admin.py:202
+#: centers/admin.py:201
 #, python-brace-format
 msgid ""
 "File with name '{file_name}' couldn't be imported. The error received was: "
@@ -193,7 +194,7 @@ msgstr ""
 msgid "website"
 msgstr ""
 
-#: centers/models.py:55
+#: centers/models.py:55 contact/models.py:15
 msgid "phone number"
 msgstr ""
 
@@ -229,7 +230,8 @@ msgstr ""
 msgid "Import failed"
 msgstr ""
 
-#: centers/models.py:95 pages/models.py:9 pages/models.py:95
+#: centers/models.py:95 contact/models.py:13 pages/models.py:9
+#: pages/models.py:95
 msgid "name"
 msgstr ""
 
@@ -243,6 +245,66 @@ msgstr ""
 
 #: centers/models.py:103
 msgid "Data files"
+msgstr ""
+
+#: contact/admin.py:19
+msgid "Contact info"
+msgstr ""
+
+#: contact/admin.py:20
+msgid "Message"
+msgstr ""
+
+#: contact/admin.py:21
+msgid "Status"
+msgstr ""
+
+#: contact/admin.py:26 contact/admin.py:33 contact/models.py:16
+msgid "message"
+msgstr ""
+
+#: contact/admin.py:26 contact/admin.py:33
+msgid "messages"
+msgstr ""
+
+#: contact/admin.py:29
+msgid "Mark selected messages as unread"
+msgstr ""
+
+#: contact/admin.py:36
+msgid "Mark selected messages as read"
+msgstr ""
+
+#: contact/apps.py:7
+msgid "Contact Message"
+msgstr ""
+
+#: contact/models.py:9
+msgid "Unread"
+msgstr ""
+
+#: contact/models.py:10
+msgid "Read"
+msgstr ""
+
+#: contact/models.py:14
+msgid "email address"
+msgstr ""
+
+#: contact/models.py:19
+msgid "message status"
+msgstr ""
+
+#: contact/models.py:22
+msgid "creation date"
+msgstr ""
+
+#: contact/models.py:27
+msgid "contact message"
+msgstr ""
+
+#: contact/models.py:28
+msgid "contact messages"
 msgstr ""
 
 #: pages/apps.py:7
@@ -341,6 +403,13 @@ msgstr ""
 msgid "English"
 msgstr ""
 
-#: testing_centers_site/urls.py:15
+#: testing_centers_site/urls.py:16
 msgid "Testing Centers Admin"
 msgstr ""
+
+#: testing_centers_site/utils.py:11
+#, python-brace-format
+msgid "{updated} {item_sg} was successfully marked as {status}."
+msgid_plural "{updated} {item_pl} were successfully marked as {status}."
+msgstr[0] ""
+msgstr[1] ""

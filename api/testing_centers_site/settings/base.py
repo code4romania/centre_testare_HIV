@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     "ckeditor_uploader",
     # project apps
     "centers",
+    "contact",
     "pages",
     "blog",
     # api documentation
