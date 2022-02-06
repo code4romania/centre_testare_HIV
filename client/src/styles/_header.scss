@@ -27,12 +27,15 @@
 }
 
 .App-menu {
-  list-style-type: none;
-  text-align: center;
   display: flex;
+  font-size: 16px;
+  font-weight: 700;
+  gap: 24px;
+  list-style-type: none;
   margin-bottom: 0;
   margin-right: 1rem;
   padding-left: 0;
+  text-align: center;
   white-space: nowrap;
 
   @media (max-width: $breakpoint-desktop) {
@@ -61,15 +64,10 @@
   .menu-item {
     color: unset;
     display: inline-block;
-    padding: 0 15px;
     width: 100%;
 
     &.active {
       color: $primary-color !important;
-    }
-
-    @media (max-width: $breakpoint-desktop) {
-      padding: 0 0.8rem;
     }
   }
 

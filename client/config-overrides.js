@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 const { override, fixBabelImports, addLessLoader } = require('customize-cra');
 
 module.exports = override(
@@ -10,7 +11,7 @@ module.exports = override(
     lessOptions: {
       javascriptEnabled: true,
       modifyVars: {
-        '@primary-color': '#EE4036',
+        '@primary-color': '#BE3386',
         '@font-family': '"Source Sans Pro", sans-serif',
       },
     },

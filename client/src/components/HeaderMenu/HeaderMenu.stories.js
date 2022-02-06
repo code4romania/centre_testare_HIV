@@ -1,12 +1,12 @@
 import React from 'react';
-import { Header } from './index';
+import { HeaderMenu } from './index';
 
 export default {
-  title: 'Header',
-  component: Header,
+  title: 'HeaderMenu',
+  component: HeaderMenu,
 };
 
-const Template = (args) => <Header {...args} />;
+const Template = (args) => <HeaderMenu {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

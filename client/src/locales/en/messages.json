@@ -42,20 +42,20 @@
     ],
     "extractedComments": []
   },
-  "About Project": {
-    "origin": [
-      [
-        "components/Header/index.js",
-        79
-      ]
-    ],
-    "extractedComments": []
-  },
   "About Vulnerable Romania": {
     "origin": [
       [
         "containers/blog/HeroFragment.js",
         13
+      ]
+    ],
+    "extractedComments": []
+  },
+  "About project": {
+    "origin": [
+      [
+        "hooks/useMenuItems.js",
+        9
       ]
     ],
     "extractedComments": []
@@ -117,34 +117,29 @@
       ],
       [
         "containers/home/index.js",
-        16
+        18
+      ],
+      [
+        "hooks/useMenuItems.js",
+        17
       ]
     ],
     "extractedComments": []
   },
-  "Certified expert name": {
+  "Centers list": {
     "origin": [
       [
-        "components/BuildingDetails/index.js",
-        28
+        "hooks/useMenuItems.js",
+        13
       ]
     ],
     "extractedComments": []
   },
-  "Construction Year": {
+  "Contact": {
     "origin": [
       [
-        "components/BuildingDetails/index.js",
-        12
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Contact us": {
-    "origin": [
-      [
-        "components/Header/index.js",
-        89
+        "hooks/useMenuItems.js",
+        21
       ]
     ],
     "extractedComments": []
@@ -181,24 +176,6 @@
     ],
     "extractedComments": []
   },
-  "Examination year": {
-    "origin": [
-      [
-        "components/BuildingDetails/index.js",
-        24
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Height regime": {
-    "origin": [
-      [
-        "components/BuildingDetails/index.js",
-        16
-      ]
-    ],
-    "extractedComments": []
-  },
   "Implemented by": {
     "origin": [
       [
@@ -208,11 +185,20 @@
     ],
     "extractedComments": []
   },
+  "Information being updated": {
+    "origin": [
+      [
+        "containers/home/StatisticFragment.js",
+        26
+      ]
+    ],
+    "extractedComments": []
+  },
   "Information missing": {
     "origin": [
       [
         "components/BuildingDetails/index.js",
-        54
+        42
       ]
     ],
     "extractedComments": []
@@ -254,11 +240,11 @@
     ],
     "extractedComments": []
   },
-  "Risk category": {
+  "Schedule": {
     "origin": [
       [
         "components/BuildingDetails/index.js",
-        20
+        12
       ]
     ],
     "extractedComments": []
@@ -268,7 +254,7 @@
     "origin": [
       [
         "containers/home/SearchFragment.js",
-        93
+        84
       ]
     ],
     "extractedComments": []
@@ -295,11 +281,29 @@
     ],
     "extractedComments": []
   },
+  "Support the project": {
+    "origin": [
+      [
+        "hooks/useMenuItems.js",
+        25
+      ]
+    ],
+    "extractedComments": []
+  },
   "Terms & conditions": {
     "origin": [
       [
         "components/Footer/index.js",
         69
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Test types": {
+    "origin": [
+      [
+        "components/BuildingDetails/index.js",
+        16
       ]
     ],
     "extractedComments": []
@@ -437,12 +441,39 @@
     ],
     "extractedComments": []
   },
+  "hotline": {
+    "origin": [
+      [
+        "containers/home/StatisticFragment.js",
+        85
+      ]
+    ],
+    "extractedComments": []
+  },
+  "mobile caravans": {
+    "origin": [
+      [
+        "containers/home/StatisticFragment.js",
+        76
+      ]
+    ],
+    "extractedComments": []
+  },
   "see images": {
     "translation": "see images",
     "origin": [
       [
         "components/BuildingDetails/BuildingDetailsTitle.js",
         24
+      ]
+    ],
+    "extractedComments": []
+  },
+  "testing centers": {
+    "origin": [
+      [
+        "containers/home/StatisticFragment.js",
+        67
       ]
     ],
     "extractedComments": []
