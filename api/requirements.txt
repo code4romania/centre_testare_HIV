@@ -4,13 +4,13 @@
 #
 #    pip-compile --output-file=requirements.txt requirements.in
 #
-asgiref==3.4.1
+asgiref==3.5.0
     # via django
-attrs==21.2.0
+attrs==21.4.0
     # via jsonschema
-boto3==1.20.46
+boto3==1.20.49
     # via -r requirements.in
-botocore==1.23.46
+botocore==1.23.49
     # via
     #   boto3
     #   s3transfer
@@ -24,7 +24,7 @@ diff-match-patch==20200713
     # via django-import-export
 dj-database-url==0.5.0
     # via -r requirements.in
-django==3.2.11
+django==3.2.12
     # via
     #   -r requirements.in
     #   django-cors-headers
@@ -58,7 +58,7 @@ djangorestframework==3.13.1
     # via
     #   -r requirements.in
     #   drf-spectacular
-drf-spectacular==0.21.1
+drf-spectacular==0.21.2
     # via -r requirements.in
 et-xmlfile==1.1.0
     # via openpyxl
@@ -82,7 +82,7 @@ odfpy==1.4.1
     # via tablib
 openpyxl==3.0.9
     # via tablib
-pillow==9.0.0
+pillow==9.0.1
     # via -r requirements.in
 psycopg2==2.9.3
     # via -r requirements.in
@@ -92,18 +92,19 @@ pyrsistent==0.18.1
     # via jsonschema
 python-dateutil==2.8.2
     # via botocore
-pytz==2021.1
-    # via django
+pytz==2021.3
+    # via
+    #   django
+    #   djangorestframework
 pyyaml==6.0
     # via
     #   drf-spectacular
     #   tablib
-s3transfer==0.5.0
+s3transfer==0.5.1
     # via boto3
 six==1.16.0
     # via
     #   django-taggit-serializer
-    #   jsonschema
     #   python-dateutil
 sqlparse==0.4.2
     # via django

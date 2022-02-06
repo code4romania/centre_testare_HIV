@@ -15,8 +15,7 @@ from django.utils.translation import gettext_lazy as _
 
 env = environ.Env(
     # set casting, default value
-    DEBUG=(bool, True),
-    ENVIRONMENT=(str, "dev"),
+    ENVIRONMENT=(str, "production"),
     ENABLE_DEBUG_TOOLBAR=(bool, True),
     LANGUAGE_CODE=(str, "en"),
     NO_REPLY_EMAIL=(str, "noreply@code4.ro"),
@@ -32,7 +31,9 @@ env = environ.Env(
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../..")
 
-DEBUG = env("DEBUG")
+DEBUG = bool(env("ENVIRONMENT") != "production")
+
+ENABLE_DEBUG_TOOLBAR = bool(DEBUG and env("ENABLE_DEBUG_TOOLBAR"))
 
 ALLOWED_HOSTS = []
 CORS_ORIGIN_ALLOW_ALL = False
@@ -79,8 +80,6 @@ MIDDLEWARE = [
 ]
 
 SITE_ID = 1
-
-ENABLE_DEBUG_TOOLBAR = env("ENABLE_DEBUG_TOOLBAR")
 
 ROOT_URLCONF = "testing_centers_site.urls"
 
