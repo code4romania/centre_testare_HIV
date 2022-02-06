@@ -16,7 +16,7 @@ install-docker-ubuntu:            ## installs docker and docker-compose on Ubunt
 	sudo curl -L "https://github.com/docker/compose/releases/download/v2.2.3/docker-compose-$(shell uname -s)-$(shell uname -m)" -o /usr/local/bin/docker-compose
 	sudo chmod +x /usr/local/bin/docker-compose
 
-install-docker-osx:               ## installs homebrew (you can skip this at runtime), docker and docker-compose on OSX
+install-docker-macos:               ## installs homebrew (you can skip this at runtime), docker and docker-compose on MacOS
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	brew update
 	brew cask install docker
@@ -49,7 +49,7 @@ requirements-build:               ## run pip compile and add requirements from t
 	docker-compose run --rm --no-deps --entrypoint "bash -c" api "cd /code && pip-compile -o requirements.txt requirements.in && pip-compile -o requirements-dev.txt requirements-dev.in"
 
 requirements-update:              ## run pip compile and rebuild the requirements files
-	docker-compose run --rm --no-deps --entrypoint "bash -c" api "cd /code && pip-compile -r -U -o requirements.txt requirements.in && chmod a+r requirements.txt && chmod a+r requirements-dev.txt && pip-compile -r -U -o requirements-dev.txt requirements-dev.in"
+	docker-compose run --rm --no-deps --entrypoint "bash -c" api "cd /code && pip-compile -r -U -o requirements.txt requirements.in && pip-compile -r -U -o requirements-dev.txt requirements-dev.in && chmod a+r requirements.txt && chmod a+r requirements-dev.txt"
 
 migrations:                       ## generate migrations in a clean container
 	docker-compose exec api ./manage.py makemigrations
