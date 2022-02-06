@@ -9,6 +9,7 @@ from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 from rest_framework import routers
 
 from blog.views import PostViewSet, TagViewSet
+from contact.views import ContactViewSet
 from pages.views import PagesViewSet
 from centers.views import CenterTestTypesViewSet, statistics, TestingCenterViewSet
 
@@ -19,6 +20,7 @@ admin.site.index_title = admin_site_string
 
 router = routers.DefaultRouter()
 router.register(r"centers", TestingCenterViewSet, basename="centers")
+router.register(r"contact", ContactViewSet, basename="contact"),
 router.register(r"pages", PagesViewSet, basename="pages")
 router.register(r"posts", PostViewSet, basename="posts")
 router.register(r"tags", TagViewSet, basename="tags")
