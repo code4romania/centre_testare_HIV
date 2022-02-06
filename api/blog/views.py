@@ -7,7 +7,7 @@ from taggit.models import Tag
 from .models import Post
 
 
-class TagViewSet(viewsets.ModelViewSet):
+class TagViewSet(viewsets.ReadOnlyModelViewSet):
     """
     API endpoint that lists blog posts tags
     """
@@ -23,7 +23,7 @@ class PostsPagination(pagination.LimitOffsetPagination):
     max_limit = 10
 
 
-class PostViewSet(viewsets.ModelViewSet):
+class PostViewSet(viewsets.ReadOnlyModelViewSet):
     """
     API endpoint that lists blog posts
     """
