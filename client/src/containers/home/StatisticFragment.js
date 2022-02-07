@@ -2,10 +2,9 @@ import React from 'react';
 import { Row, Col, Card } from 'antd';
 import { Trans } from '@lingui/macro';
 
-// @TODO replace with new icons
-// import { ReactComponent as PeopleRisk } from '../../images/people_risk_icon.svg';
-// import { ReactComponent as EvaluatedBuildings } from '../../images/evaluated_buildings_icon.svg';
-// import { ReactComponent as ConsolidatedBuildings } from '../../images/consolidated_buildings_icon.svg';
+import { ReactComponent as PublicCentersIcon } from '../../images/hospital-solid.svg';
+import { ReactComponent as MobileCaravansIcon } from '../../images/ambulance-solid.svg';
+import { ReactComponent as HotlineIcon } from '../../images/phone-alt-solid.svg';
 import { ReactComponent as StatsIconBackground } from '../../images/stats-icon-background.svg';
 
 import config from '../../config';
@@ -64,29 +63,26 @@ export default () => {
     >
       <Col xs={24} md={8}>
         <StatisticCard
-          title={<Trans>testing centers</Trans>}
-          value={state.statistics.mobile_caravans}
-          // @TODO replace with new icon
-          // icon={<PeopleRisk />}
-          type="people-under-risk"
-        />
-      </Col>
-      <Col xs={24} md={8}>
-        <StatisticCard
-          title={<Trans>mobile caravans</Trans>}
+          title={<Trans>Testing centers</Trans>}
           value={state.statistics.public_centers}
-          // @TODO replace with new icon
-          // icon={<EvaluatedBuildings />}
-          type="evaluated-buildings"
+          icon={<PublicCentersIcon />}
+          type="public-centers"
         />
       </Col>
       <Col xs={24} md={8}>
         <StatisticCard
-          title={<Trans>hotline</Trans>}
+          title={<Trans>Mobile caravans</Trans>}
+          value={state.statistics.mobile_caravans}
+          icon={<MobileCaravansIcon />}
+          type="mobile-caravans"
+        />
+      </Col>
+      <Col xs={24} md={8}>
+        <StatisticCard
+          title={<Trans>Hotline</Trans>}
           value={state.statistics.hotline}
-          // @TODO replace with new icon
-          // icon={<ConsolidatedBuildings />}
-          type="consolidated-buildings"
+          icon={<HotlineIcon />}
+          type="hotline"
         />
       </Col>
     </Row>
