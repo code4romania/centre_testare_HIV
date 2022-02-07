@@ -74,15 +74,15 @@ code {
     font-weight: 700;
   }
 
-  &.people-under-risk {
-    background-color: #ff7648;
+  &.public-centers {
+    background-color: #f3747b;
   }
 
-  &.evaluated-buildings {
+  &.mobile-caravans {
     background-color: #fe6262;
   }
 
-  &.consolidated-buildings {
+  &.hotline {
     background-color: #ff6984;
   }
 
@@ -93,15 +93,15 @@ code {
     width: 122px;
     border-top-right-radius: 16px;
 
-    &.people-under-risk {
+    &.public-centers {
       color: #ffc278;
     }
 
-    &.evaluated-buildings {
+    &.mobile-caravans {
       color: #fa0f00;
     }
 
-    &.consolidated-buildings {
+    &.hotline {
       color: #be3386;
     }
   }
