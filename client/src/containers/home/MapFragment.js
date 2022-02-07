@@ -9,7 +9,7 @@ export default () => {
   const [testingCenters, setTestingCenters] = React.useState([]);
 
   React.useEffect(() => {
-    fetch(`${CENTER_URL}/`)
+    fetch(`${CENTER_URL}`)
       .then((res) => res.json())
       .then((locations) => {
         setTestingCenters(locations);

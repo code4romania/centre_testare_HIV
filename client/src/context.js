@@ -32,7 +32,7 @@ const AppProvider = ({ children }) => {
   // @TODO update to new API endpoint and new schema
   const searchBuildings = async (searchInput) => {
     try {
-      const res = await fetch(`${CENTER_URL}/search/?query=${searchInput}`);
+      const res = await fetch(`${CENTER_URL}search/?query=${searchInput}`);
       const searchResults = await res.json();
       onSearchLoading(false);
       if (searchResults.length > 0) {
