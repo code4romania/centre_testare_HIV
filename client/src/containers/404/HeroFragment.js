@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Typography } from 'antd';
 import { Trans } from '@lingui/macro';
 
-import Hero from '../../components/Hero';
+import { Hero } from '../../components/Hero';
 
 import heroImage from '../../images/home_hero.png';
 

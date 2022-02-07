@@ -3,7 +3,7 @@ import React from 'react';
 import { Typography } from 'antd';
 import { Trans } from '@lingui/macro';
 
-import Hero from '../../components/Hero';
+import { Hero } from '../../components/Hero';
 import Share from '../../components/Sharing';
 
 import heroImage from '../../images/about_hero.png';
