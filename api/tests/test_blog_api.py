@@ -3,7 +3,7 @@ import pytest
 from blog.models import Post
 from blog.views import PostsPagination
 
-base_url = "/api/v1/posts"
+base_url = "/api/v1/post"
 
 
 @pytest.mark.django_db

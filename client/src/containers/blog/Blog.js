@@ -7,7 +7,7 @@ import LoadMore from '../../components/LoadMoreArticlesLink';
 
 const { Title } = Typography;
 
-const { POSTS_URL } = config;
+const { POST_URL } = config;
 
 const LIMIT = 3;
 
@@ -23,7 +23,7 @@ const Blog = () => {
   const loadPosts = useCallback(async () => {
     try {
       const res = await fetch(
-        `${POSTS_URL}/?limit=${LIMIT}&offset=${state.index}&ordering=-published`,
+        `${POST_URL}/?limit=${LIMIT}&offset=${state.index}&ordering=-published`,
       );
       if (res.ok) {
         const { results: posts, next } = await res.json();
