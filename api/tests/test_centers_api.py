@@ -7,7 +7,7 @@ from django.conf import settings
 from centers.models import TestingCenter
 from centers.serializers import TestingCenterSerializer
 
-base_url = "/api/v1/testing_centers"
+base_url = "/api/v1/center"
 
 
 @pytest.mark.django_db

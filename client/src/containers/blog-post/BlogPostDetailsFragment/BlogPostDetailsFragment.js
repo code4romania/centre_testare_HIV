@@ -7,7 +7,7 @@ import useWindowSize from '../../../hooks/useWindowSize';
 import config from '../../../config';
 
 const { Paragraph } = Typography;
-const { POSTS_URL } = config;
+const { POST_URL } = config;
 
 const BlogPostDetailsFragment = ({ handlePostLoaded }) => {
   const { slug } = useParams();
@@ -17,7 +17,7 @@ const BlogPostDetailsFragment = ({ handlePostLoaded }) => {
     requestError: false,
   });
   React.useEffect(() => {
-    fetch(`${POSTS_URL}/${slug}/`)
+    fetch(`${POST_URL}/${slug}/`)
       .then((res) => (res.status === 200 ? res.json() : null))
       .then((postDetails) => {
         setState((prevState) => ({

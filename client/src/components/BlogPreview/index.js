@@ -6,7 +6,7 @@ import BlogCard from '../BlogCard';
 
 const { Title } = Typography;
 
-const { POSTS_URL } = config;
+const { POST_URL } = config;
 
 const LIMIT = 4;
 
@@ -20,7 +20,7 @@ export default ({ title, postSlug = null }) => {
   useEffect(() => {
     const loadPosts = async (slug) => {
       try {
-        const res = await fetch(`${POSTS_URL}/?limit=${LIMIT}&ordering=-published`);
+        const res = await fetch(`${POST_URL}/?limit=${LIMIT}&ordering=-published`);
         if (res.ok) {
           let { results: posts } = await res.json();
           if (slug) {
