@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Row, Col, Typography, message, AutoComplete, Input, Icon, Spin } from 'antd';
+import { Row, Col, Typography, message, AutoComplete, Input, Icon, Spin, Tooltip } from 'antd';
 import { Trans } from '@lingui/macro';
 import { debounce } from 'lodash';
+import { ReactComponent as InfoIcon } from '../../images/info-circle-solid.svg';
 
 import { useGlobalContext } from '../../context';
 
@@ -40,12 +41,12 @@ export default () => {
   useEffect(() => {
     switch (currentLanguage) {
       case 'ro':
-        setSearchPlaceholderText('Adresa ta curenta');
+        setSearchPlaceholderText('Unde ești acum?');
         break;
 
       case 'hu':
       default:
-        setSearchPlaceholderText('Your current address');
+        setSearchPlaceholderText('Where are you now?');
     }
   }, [currentLanguage]);
 
@@ -81,17 +82,34 @@ export default () => {
     >
       <Col sm={26} md={16}>
         <Title level={3}>
-          <Trans>Search for a testing center near your location</Trans>:
+          <Trans>
+            Find the nearest{' '}
+            <Tooltip
+              // @TODO replace lorem text with actual text + translations
+              title="
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam nemo, cum ratione
+                  explicabo architecto ex dolore incidunt nisi quisquam dolores? Facere ipsa quam
+                  modi laborum possimus, accusantium dolor a adipisci.
+                "
+              placement="top"
+              trigger={['hover', 'click']}
+            >
+              <div className="badge">
+                <span>testing center</span>
+                <InfoIcon />
+              </div>
+            </Tooltip>{' '}
+          </Trans>
         </Title>
 
         <AutoComplete
+          className="search-box"
           allowClear={!searchLoading}
           value={searchInput}
           dataSource={dataSource}
           onChange={onSearchInputChange}
           onSearch={onSearch}
           placeholder={searchPlaceholderText}
-          style={{ width: '80%' }}
         >
           <Input minLength={3} suffix={<Suffix input={searchInput} loading={searchLoading} />} />
         </AutoComplete>

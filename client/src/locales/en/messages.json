@@ -176,6 +176,15 @@
     ],
     "extractedComments": []
   },
+  "Find the nearest <0><1><2>testing center</2><3/></1></0>": {
+    "origin": [
+      [
+        "containers/home/SearchFragment.js",
+        85
+      ]
+    ],
+    "extractedComments": []
+  },
   "Implemented by": {
     "origin": [
       [
@@ -245,16 +254,6 @@
       [
         "components/BuildingDetails/index.js",
         12
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Search for a testing center near your location": {
-    "translation": "Search for a testing center near your location",
-    "origin": [
-      [
-        "containers/home/SearchFragment.js",
-        84
       ]
     ],
     "extractedComments": []

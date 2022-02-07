@@ -120,6 +120,22 @@ code {
   }
 }
 
+.badge {
+  background-color: $primary-color;
+  border-radius: 8px;
+  color: #fff;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+  padding: 0 9px;
+
+  svg {
+    margin-left: 5px;
+    width: 16px;
+  }
+}
+
 .blog-preview,
 .about-preview {
   margin-top: 4rem;
@@ -149,4 +165,10 @@ h2.ant-typography,
   color: #ee4036;
   font-weight: 700;
   font-size: 2rem;
+}
+
+.search-box {
+  width: 80%;
+  box-shadow: 2px 3px 6px -1px rgb(0, 0, 0, 0.4);
+  border-radius: 4px;
 }
