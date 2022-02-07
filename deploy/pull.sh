@@ -1,6 +1,6 @@
 set -e
 
-cd /root/testing-centers
+cd /root/centre_testare_HIV
 git reset --hard HEAD
 git pull
 
