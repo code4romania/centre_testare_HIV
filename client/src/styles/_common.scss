@@ -154,15 +154,11 @@ code {
 
 .blog-preview {
   margin-bottom: 4rem;
-
-  i {
-    color: $secondary-main;
-  }
 }
 
 h2.ant-typography,
 .ant-typography h2 {
-  color: #ee4036;
+  color: $primary-color;
   font-weight: 700;
   font-size: 2rem;
 }

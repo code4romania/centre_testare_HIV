@@ -23,7 +23,7 @@ const Blog = () => {
   const loadPosts = useCallback(async () => {
     try {
       const res = await fetch(
-        `${POST_URL}/?limit=${LIMIT}&offset=${state.index}&ordering=-published`,
+        `${POST_URL}?limit=${LIMIT}&offset=${state.index}&ordering=-published`,
       );
       if (res.ok) {
         const { results: posts, next } = await res.json();

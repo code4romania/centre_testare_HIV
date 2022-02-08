@@ -6,7 +6,7 @@ import MapFragment from './MapFragment';
 import ParagraphFragment from './ParagraphFragment';
 import SearchFragment from './SearchFragment';
 import HeroFragment from './HeroFragment';
-import BlogPreview from '../../components/BlogPreview';
+import { BlogPreviewContainer } from '../../components/BlogPreviewContainer';
 import StatisticFragment from './StatisticFragment';
 
 export default () => (
@@ -15,6 +15,6 @@ export default () => (
     <MapFragment />
     <StatisticFragment />
     <ParagraphFragment />
-    <BlogPreview title={<Trans>Blog</Trans>} />
+    <BlogPreviewContainer title={<Trans>Blog</Trans>} />
   </Layout>
 );

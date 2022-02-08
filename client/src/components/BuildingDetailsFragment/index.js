@@ -10,11 +10,10 @@ export default (props) => {
   const [completeDetails, setCompleteDetails] = useState(undefined);
   const [isLoading, setIsLoading] = useState(false);
 
-  // @TODO update to new API endpoints and schema
   React.useEffect(() => {
     if (incompleteDetails == null) return;
     if (completeDetails?.pk !== incompleteDetails?.pk) {
-      const buildingURL = `${CENTER_URL}/${incompleteDetails.pk}/`;
+      const buildingURL = `${CENTER_URL}${incompleteDetails.pk}/`;
       const fetchData = async () => {
         try {
           setIsLoading(true);

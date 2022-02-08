@@ -2,12 +2,12 @@ import React from 'react';
 import { Trans } from '@lingui/macro';
 import Layout from '../../components/Layout';
 import HeroFragment from './HeroFragment';
-import BlogPreview from '../../components/BlogPreview';
+import { BlogPreviewContainer } from '../../components/BlogPreviewContainer';
 
 const NotFound = () => {
   return (
     <Layout hero={<HeroFragment />}>
-      <BlogPreview title={<Trans>Blog</Trans>} />
+      <BlogPreviewContainer title={<Trans>Blog</Trans>} />
     </Layout>
   );
 };
