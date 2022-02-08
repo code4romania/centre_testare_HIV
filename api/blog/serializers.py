@@ -1,10 +1,20 @@
+from django.conf import settings
 from rest_framework import serializers
 from taggit_serializer.serializers import (
     TagListSerializerField,
     TaggitSerializer,
 )
 from taggit.models import Tag
-from .models import Post
+from blog.models import Post
+
+
+class FixAbsolutePathSerializer(serializers.ReadOnlyField):
+    SEARCH_PATTERN = 'img src="/media/uploads/'
+    REPLACE_WITH = f'img src="{settings.SITE_URL}/media/uploads/'
+
+    def to_representation(self, value):
+        text = value.replace(self.SEARCH_PATTERN, self.REPLACE_WITH)
+        return text
 
 
 class TagSerializer(serializers.HyperlinkedModelSerializer):
@@ -17,6 +27,7 @@ class PostSerializer(TaggitSerializer, serializers.ModelSerializer):
     tags = TagListSerializerField()
     author_first_name = serializers.ReadOnlyField(source="author.first_name")
     author_last_name = serializers.ReadOnlyField(source="author.last_name")
+    text = FixAbsolutePathSerializer()
 
     class Meta:
         model = Post

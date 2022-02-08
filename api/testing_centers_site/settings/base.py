@@ -21,6 +21,8 @@ env = environ.Env(
     NO_REPLY_EMAIL=(str, "noreply@code4.ro"),
     DEFAULT_FROM_EMAIL=(str, "noreply@code4.ro"),
     HERE_MAPS_API_KEY=(str, ""),
+    REACT_APP_DJANGO_SITE_URL=(str, "http://localhost"),
+    REACT_APP_DJANGO_PORT=(str, "8050"),
     USE_S3=(bool, False),
     AWS_ACCESS_KEY_ID=(str, ""),
     AWS_SECRET_ACCESS_KEY=(str, ""),
@@ -34,6 +36,12 @@ BASE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../..")
 DEBUG = bool(env("ENVIRONMENT") != "production")
 
 ENABLE_DEBUG_TOOLBAR = bool(DEBUG and env("ENABLE_DEBUG_TOOLBAR"))
+
+DJANGO_SITE_URL = env("REACT_APP_DJANGO_SITE_URL")
+DJANGO_PORT = env("REACT_APP_DJANGO_PORT")
+DJANGO_PORT = f":{DJANGO_PORT}" if DJANGO_PORT else ""
+
+SITE_URL = f"{DJANGO_SITE_URL}{DJANGO_PORT}"
 
 ALLOWED_HOSTS = []
 CORS_ORIGIN_ALLOW_ALL = False
