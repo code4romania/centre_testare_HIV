@@ -29,11 +29,7 @@ const HereMapInteractive = (props) => {
           lg={{ span: showRightPanel ? 16 : 24 }}
         >
           {isMapLoading && <MapPlaceholder />}
-          <div
-            className="map-container"
-            ref={mapRef}
-            style={{ width: '100%', height: '422px', background: 'grey' }}
-          />
+          <div className="map-container" ref={mapRef} />
         </Col>
         <Col
           xs={{ span: showRightPanel ? 24 : 0 }}
