@@ -87,18 +87,20 @@ celerybeat-schedule
 # SageMath parsed files
 *.sage.py
 
-# Environments
+# Environment files
 .env
-.venv
 .env.bak
 .env.*.bak
+prod.env
+
+# Virtual environments
+.venv
 .venv.bak
 env/
 venv/
 ENV/
 env.bak/
 venv.bak/
-prod.env
 
 # Spyder project settings
 .spyderproject

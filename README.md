@@ -48,7 +48,7 @@ Guide users through getting your code up and running on their own system. In thi
 1. Make a copy of the `.env` file, change the variables and run the build command
 
     ```shell
-    cp .env.dist .env
+    cp .env.dev .env
     # modify the variables in the .env and then build the development container
     make build-dev
     ```
