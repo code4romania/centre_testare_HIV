@@ -20,10 +20,17 @@ env = environ.Env(
     LANGUAGE_CODE=(str, "en"),
     NO_REPLY_EMAIL=(str, "noreply@code4.ro"),
     DEFAULT_FROM_EMAIL=(str, "noreply@code4.ro"),
-    HERE_MAPS_API_KEY=(str, ""),
+    HOME_SITE_URL=(str, ""),
+    EMAIL_HOST=(str, "localhost"),
+    EMAIL_PORT=(str, "25"),
+    EMAIL_HOST_USER=(str, "user"),
+    EMAIL_HOST_PASSWORD=(str, "password"),
+    EMAIL_USE_TLS=(str, "yes"),
+    EMAIL_USE_SSL=(str, "no"),
     REACT_APP_DJANGO_SITE_URL=(str, ""),
     REACT_APP_DJANGO_PORT=(str, ""),
     USE_S3=(bool, False),
+    HERE_MAPS_API_KEY=(str, ""),
     AWS_ACCESS_KEY_ID=(str, ""),
     AWS_SECRET_ACCESS_KEY=(str, ""),
     AWS_STORAGE_BUCKET_NAME=(str, ""),
@@ -42,6 +49,7 @@ DJANGO_PORT = env("REACT_APP_DJANGO_PORT")
 DJANGO_PORT = f":{DJANGO_PORT}" if DJANGO_PORT else ""
 
 SITE_URL = f"{DJANGO_SITE_URL}{DJANGO_PORT}"
+HOME_SITE_URL = env("HOME_SITE_URL") or SITE_URL
 
 ALLOWED_HOSTS = []
 CORS_ORIGIN_ALLOW_ALL = False
@@ -150,6 +158,17 @@ LANGUAGES = [
     ("ro", _("Romanian")),
     ("en", _("English")),
 ]
+
+# SMTP
+NO_REPLY_EMAIL = env("NO_REPLY_EMAIL")
+DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL")
+
+EMAIL_HOST = env("EMAIL_HOST")
+EMAIL_PORT = env("EMAIL_PORT")
+EMAIL_HOST_USER = env("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
+EMAIL_USE_TLS = env("EMAIL_USE_TLS") == "yes"
+EMAIL_USE_SSL = env("EMAIL_USE_SSL") == "yes"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/

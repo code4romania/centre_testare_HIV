@@ -1,5 +1,21 @@
+from django.conf import settings
 from django.contrib import admin, messages
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import get_template
 from django.utils.translation import ngettext
+
+
+def send_email(template: str, context: dict, subject: str, to: str):
+    html = get_template(template)
+    html_content = html.render(context)
+
+    from_email = settings.NO_REPLY_EMAIL if hasattr(settings, "NO_REPLY_EMAIL") else settings.DEFAULT_FROM_EMAIL
+    headers = {"X-SES-CONFIGURATION-SET": "centre-testare-hiv"}
+
+    msg = EmailMultiAlternatives(subject, html_content, from_email, [to], headers=headers)
+    msg.attach_alternative(html_content, "text/html")
+
+    return msg.send(fail_silently=True)
 
 
 class AdminWithStatusChanges(admin.ModelAdmin):
