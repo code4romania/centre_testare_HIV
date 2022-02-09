@@ -1,4 +1,14 @@
 {
+  "23 Grigore Pamfil, Sector 1, Bucharest": {
+    "translation": "Strada Grigore Pamfil, Sector 1, București",
+    "origin": [
+      [
+        "containers/contact/MapFragment.js",
+        18
+      ]
+    ],
+    "extractedComments": []
+  },
   "404.contact_message": {
     "translation": "Dacă mai întâmpini probleme, te rugăm să ne trimiți un e-mail la ",
     "origin": [
@@ -25,6 +35,16 @@
       [
         "containers/404/HeroFragment.js",
         13
+      ]
+    ],
+    "extractedComments": []
+  },
+  "<0>open in Google Maps</0>": {
+    "translation": "<0>deschide în Google Maps</0>",
+    "origin": [
+      [
+        "containers/contact/MapFragment.js",
+        22
       ]
     ],
     "extractedComments": []
@@ -81,6 +101,16 @@
       [
         "containers/home/ParagraphFragment.js",
         13
+      ]
+    ],
+    "extractedComments": []
+  },
+  "About you": {
+    "translation": "Despre tine",
+    "origin": [
+      [
+        "containers/contact/FormFragment.js",
+        33
       ]
     ],
     "extractedComments": []
@@ -149,6 +179,16 @@
       [
         "hooks/useMenuItems.js",
         21
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Contact us": {
+    "translation": "Ia legătura cu noi",
+    "origin": [
+      [
+        "containers/contact/HeroFragment.js",
+        13
       ]
     ],
     "extractedComments": []
@@ -252,7 +292,7 @@
     "origin": [
       [
         "components/MapPlaceholder/index.js",
-        13
+        14
       ]
     ],
     "extractedComments": []
@@ -267,12 +307,32 @@
     ],
     "extractedComments": []
   },
+  "No posts found": {
+    "translation": "Nu au fost găsite articole",
+    "origin": [
+      [
+        "components/BlogPreview/index.js",
+        29
+      ]
+    ],
+    "extractedComments": []
+  },
   "Other articles": {
     "translation": "Alte articole",
     "origin": [
       [
         "containers/blog-post/index.js",
         14
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Our address": {
+    "translation": "Adresa noastră",
+    "origin": [
+      [
+        "containers/contact/MapFragment.js",
+        15
       ]
     ],
     "extractedComments": []
@@ -297,13 +357,19 @@
     ],
     "extractedComments": []
   },
+  "Send": {
+    "translation": "Trimite",
+    "origin": [
+      [
+        "containers/contact/FormFragment.js",
+        108
+      ]
+    ],
+    "extractedComments": []
+  },
   "Server unavailable": {
     "translation": "Server indisponibil",
     "origin": [
-      [
-        "components/BlogPreview/index.js",
-        77
-      ],
       [
         "containers/blog/Blog.js",
         69
@@ -431,6 +497,57 @@
       [
         "containers/about/SecondParagraphFragment.js",
         13
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.email": {
+    "translation": "Email:",
+    "origin": [
+      [
+        "containers/contact/FormFragment.js",
+        48
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.gdpr_agreement": {
+    "translation": "Prin această bifă îți exprimi acordul ca datele furnizate de tine prin acest formular să fie procesate exclusiv in scopul de a încărca în platformă acest document și ca echipa MKBT să te contacteze doar în legătură cu această submisie. Aici puteți găsi <0>regulamentul nostru cu privire la prelucrarea datelor cu caracter personal</0>.",
+    "message": "By this check, you agree that the data provided by you through this form will be processed exclusively to upload this document on the platform and that the MKBT team will contact you only in connection with this submission. Here you can find <0>our regulations on the processing of personal data</0>.",
+    "origin": [
+      [
+        "containers/contact/FormFragment.js",
+        77
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.message": {
+    "translation": "Mesajul tău:",
+    "origin": [
+      [
+        "containers/contact/FormFragment.js",
+        67
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.name": {
+    "translation": "Nume complet:",
+    "origin": [
+      [
+        "containers/contact/FormFragment.js",
+        40
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.phoneNumber": {
+    "translation": "Telefon (opțional):",
+    "origin": [
+      [
+        "containers/contact/FormFragment.js",
+        58
       ]
     ],
     "extractedComments": []

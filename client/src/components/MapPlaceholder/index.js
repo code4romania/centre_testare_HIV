@@ -1,10 +1,11 @@
 import { Trans } from '@lingui/macro';
 import { Empty, Spin, Typography } from 'antd';
+import { bool } from 'prop-types';
 import React from 'react';
 
 const { Text } = Typography;
 
-const MapPlaceholder = () => (
+const MapPlaceholder = ({ noMargin }) => (
   <Empty
     image={<Spin size="large" />}
     imageStyle={{ height: 'auto' }}
@@ -19,7 +20,7 @@ const MapPlaceholder = () => (
       backgroundColor: 'white',
       height: '100%',
       left: 0,
-      margin: '0 15px',
+      margin: noMargin ? 0 : '0 15px',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
@@ -28,5 +29,13 @@ const MapPlaceholder = () => (
     }}
   />
 );
+
+MapPlaceholder.defaultProps = {
+  noMargin: false,
+};
+
+MapPlaceholder.propTypes = {
+  noMargin: bool,
+};
 
 export default MapPlaceholder;

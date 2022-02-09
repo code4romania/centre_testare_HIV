@@ -1,4 +1,13 @@
 {
+  "23 Grigore Pamfil, Sector 1, Bucharest": {
+    "origin": [
+      [
+        "containers/contact/MapFragment.js",
+        18
+      ]
+    ],
+    "extractedComments": []
+  },
   "404.contact_message": {
     "translation": "If you encounter other issues, please send us an e-mail at ",
     "origin": [
@@ -25,6 +34,15 @@
       [
         "containers/404/HeroFragment.js",
         13
+      ]
+    ],
+    "extractedComments": []
+  },
+  "<0>open in Google Maps</0>": {
+    "origin": [
+      [
+        "containers/contact/MapFragment.js",
+        22
       ]
     ],
     "extractedComments": []
@@ -77,6 +95,15 @@
       [
         "containers/home/ParagraphFragment.js",
         13
+      ]
+    ],
+    "extractedComments": []
+  },
+  "About you": {
+    "origin": [
+      [
+        "containers/contact/FormFragment.js",
+        33
       ]
     ],
     "extractedComments": []
@@ -140,6 +167,15 @@
       [
         "hooks/useMenuItems.js",
         21
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Contact us": {
+    "origin": [
+      [
+        "containers/contact/HeroFragment.js",
+        13
       ]
     ],
     "extractedComments": []
@@ -235,7 +271,7 @@
     "origin": [
       [
         "components/MapPlaceholder/index.js",
-        13
+        14
       ]
     ],
     "extractedComments": []
@@ -249,11 +285,29 @@
     ],
     "extractedComments": []
   },
+  "No posts found": {
+    "origin": [
+      [
+        "components/BlogPreview/index.js",
+        29
+      ]
+    ],
+    "extractedComments": []
+  },
   "Other articles": {
     "origin": [
       [
         "containers/blog-post/index.js",
         14
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Our address": {
+    "origin": [
+      [
+        "containers/contact/MapFragment.js",
+        15
       ]
     ],
     "extractedComments": []
@@ -276,12 +330,17 @@
     ],
     "extractedComments": []
   },
-  "Server unavailable": {
+  "Send": {
     "origin": [
       [
-        "components/BlogPreview/index.js",
-        77
-      ],
+        "containers/contact/FormFragment.js",
+        108
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Server unavailable": {
+    "origin": [
       [
         "containers/blog/Blog.js",
         69
@@ -402,6 +461,57 @@
       [
         "containers/about/SecondParagraphFragment.js",
         13
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.email": {
+    "translation": "Email:",
+    "origin": [
+      [
+        "containers/contact/FormFragment.js",
+        48
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.gdpr_agreement": {
+    "translation": "By this check, you agree that the data provided by you through this form will be processed exclusively to upload this document on the platform and that the MKBT team will contact you only in connection with this submission. Here you can find <0>our regulations on the processing of personal data</0>.",
+    "message": "By this check, you agree that the data provided by you through this form will be processed exclusively to upload this document on the platform and that the MKBT team will contact you only in connection with this submission. Here you can find <0>our regulations on the processing of personal data</0>.",
+    "origin": [
+      [
+        "containers/contact/FormFragment.js",
+        77
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.message": {
+    "translation": "Your message:",
+    "origin": [
+      [
+        "containers/contact/FormFragment.js",
+        67
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.name": {
+    "translation": "Full name:",
+    "origin": [
+      [
+        "containers/contact/FormFragment.js",
+        40
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.phoneNumber": {
+    "translation": "Phone number (optional):",
+    "origin": [
+      [
+        "containers/contact/FormFragment.js",
+        58
       ]
     ],
     "extractedComments": []

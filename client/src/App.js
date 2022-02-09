@@ -7,6 +7,7 @@ import Home from './containers/home';
 import About from './containers/about';
 import Blog from './containers/blog';
 import BlogPost from './containers/blog-post';
+import Contact from './containers/contact';
 import Terms from './containers/Terms';
 import Policy from './containers/Policy';
 import NotFound from './containers/404/404';
@@ -38,6 +39,9 @@ const App = () => {
           </Route>
           <Route path="/blog/:slug">
             <BlogPost />
+          </Route>
+          <Route path="/contact">
+            <Contact />
           </Route>
           <Route path="/termeni-si-conditii">
             <Terms />
