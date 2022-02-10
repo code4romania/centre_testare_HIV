@@ -23,8 +23,10 @@ export const useBlogPreviewPostsQuery = (postSlug) => {
   const { results: posts } = data ?? {};
 
   useEffect(() => {
+    if (data) return;
+
     getPosts(blogPreviewPostsQueryParams);
-  }, []);
+  }, [data, getPosts]);
 
   const blogPreviewPosts = useMemo(
     () => posts?.filter(({ slug }) => slug !== postSlug).slice(SLICE_START, SLICE_END),
