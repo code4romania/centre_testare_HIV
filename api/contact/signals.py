@@ -20,7 +20,7 @@ def _get_user_emails_by_permission_name(permission_name):
 
 
 @receiver(post_save, sender=ContactMessage)
-def send_new_mail_on_contact_message_received(sender: ContactMessage, instance: ContactMessage, created, **kwargs):
+def send_email_on_new_contact_message(sender: ContactMessage, instance: ContactMessage, created: bool, **kwargs):
     if not created:
         return
 
