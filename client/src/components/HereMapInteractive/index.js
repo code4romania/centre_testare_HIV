@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { Col, Row } from 'antd';
 
-import BuildingDetailsFragment from '../BuildingDetailsFragment';
+import CenterDetailsFragment from '../CenterDetailsFragment';
 import MapPlaceholder from '../MapPlaceholder';
 
 import useDecoratedClusteredMap from '../../hooks/map/useDecoratedClusteredMap';
@@ -14,10 +14,12 @@ const HereMapInteractive = (props) => {
 
   const { map: currentMap, isMapLoading } = useCreateMap(mapRef);
 
-  const { buildingDetails, onHideBuilding } = useDecoratedClusteredMap(currentMap, points);
+  const { buildingDetails: centerDetails, onHideBuilding } = useDecoratedClusteredMap(
+    currentMap,
+    points,
+  );
 
-  const showSearchResults = buildingDetails;
-  const showRightPanel = showSearchResults || buildingDetails;
+  const showRightPanel = centerDetails;
   mapRef?.current?.addEventListener('wheel', (e) => e.preventDefault());
 
   return (
@@ -36,7 +38,7 @@ const HereMapInteractive = (props) => {
           sm={{ span: showRightPanel ? 12 : 0 }}
           lg={{ span: showRightPanel ? 8 : 0 }}
         >
-          <BuildingDetailsFragment onClose={onHideBuilding} incompleteDetails={buildingDetails} />
+          <CenterDetailsFragment onClose={onHideBuilding} incompleteDetails={centerDetails} />
         </Col>
       </Row>
     </div>

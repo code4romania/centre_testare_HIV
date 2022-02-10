@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import BuildingDetails from '../BuildingDetails';
+import { CenterDetails } from '../CenterDetails';
 
 import config from '../../config';
+import { mapKeysToCamelCase } from '../../utils';
 
 const { CENTER_URL } = config;
 
@@ -20,7 +21,8 @@ export default (props) => {
           setCompleteDetails(null);
           const res = await fetch(buildingURL);
           const data = await res.json();
-          setCompleteDetails(data);
+          const mappedData = mapKeysToCamelCase(data);
+          setCompleteDetails(mappedData);
           setIsLoading(false);
         } catch {
           setIsLoading(false);
@@ -30,5 +32,5 @@ export default (props) => {
     }
   }, [completeDetails, incompleteDetails]);
 
-  return <BuildingDetails onClose={onClose} details={completeDetails} isLoading={isLoading} />;
+  return <CenterDetails onClose={onClose} details={completeDetails} isLoading={isLoading} />;
 };
