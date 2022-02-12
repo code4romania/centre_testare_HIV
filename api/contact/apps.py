@@ -10,5 +10,6 @@ class ContactConfig(AppConfig):
     def ready(self):
         # Implicitly connect a signal handlers decorated with @receiver.
         from . import signals
+
         # Explicitly connect a signal handler.
         post_save.connect(signals.send_email_on_new_contact_message, dispatch_uid="contact_email")

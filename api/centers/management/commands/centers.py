@@ -31,9 +31,7 @@ class Command(BaseCommand):
         if options["delete"]:
             testing_centers_count = TestingCenter.objects.count()
             TestingCenter.objects.filter(
-                pk__in=list(
-                    TestingCenter.objects.values_list("pk", flat=True)[: int(options["total_testing_centers"])]
-                )
+                pk__in=list(TestingCenter.objects.values_list("pk", flat=True)[: int(options["total_testing_centers"])])
             ).delete()
             self.stdout.write(
                 self.style.SUCCESS("Successfully deleted %s testing_center(s)." % (int(testing_centers_count)))

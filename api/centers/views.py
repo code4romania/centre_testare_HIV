@@ -2,19 +2,26 @@ from django.conf import settings
 from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector, TrigramSimilarity
 from django.db.models import Q
 from drf_spectacular.utils import extend_schema, OpenApiParameter
-from rest_framework import permissions, viewsets
+from rest_framework import permissions, status, viewsets
 from rest_framework.decorators import action, api_view, permission_classes
 from rest_framework.response import Response
+from rest_framework.throttling import AnonRateThrottle
 
-from centers.models import CenterTestTypes, Statistic, TestingCenter
+from centers.models import CenterRating, CenterTestTypes, Statistic, TestingCenter
 from centers.serializers import (
+    CenterRatingSerializer,
     CenterSearchSerializer,
     SearchQuerySerializer,
     StatisticSerializer,
+    TestingCenterAddRatingSerializer,
     TestingCenterListSerializer,
     TestingCenterSerializer,
     TestTypesSerializer,
 )
+
+
+class AddRatingQueryBurstAnonRateThrottle(AnonRateThrottle):
+    rate = "5/min"
 
 
 class TestingCenterViewSet(viewsets.ReadOnlyModelViewSet):
@@ -32,6 +39,8 @@ class TestingCenterViewSet(viewsets.ReadOnlyModelViewSet):
             return TestingCenterListSerializer
         elif self.action == "search":
             return SearchQuerySerializer
+        elif self.action == "rating":
+            return TestingCenterAddRatingSerializer
         return TestingCenterSerializer
 
     @extend_schema(
@@ -79,6 +88,37 @@ class TestingCenterViewSet(viewsets.ReadOnlyModelViewSet):
 
         result_serializer = CenterSearchSerializer(centers, many=True)
         return Response(result_serializer.data)
+
+    @extend_schema(
+        parameters=[
+            OpenApiParameter(
+                name="ratings",
+                type=TestingCenterAddRatingSerializer,
+                location=OpenApiParameter.QUERY,
+                description="Ratings for the testing center",
+            )
+        ],
+        responses=CenterRatingSerializer,
+    )
+    @action(
+        detail=True,
+        methods=["post"],
+        permission_classes=[permissions.AllowAny],
+        throttle_classes=[AddRatingQueryBurstAnonRateThrottle],
+    )
+    def rating(self, request, pk):
+        serializer = TestingCenterAddRatingSerializer(data=request.data)
+
+        if not serializer.is_valid():
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        center_ratings = []
+        ratings = serializer.data.pop("ratings")
+        for rating in ratings:
+            center_ratings.append(CenterRating.objects.create(testing_center_id=pk, **rating))
+
+        center_ratings_serializer = CenterRatingSerializer(center_ratings, many=True)
+        return Response(center_ratings_serializer.data)
 
 
 class CenterTestTypesViewSet(viewsets.ReadOnlyModelViewSet):

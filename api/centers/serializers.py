@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.db.models import Avg
 from rest_framework import serializers
 
 from centers.models import CenterRating, CenterTestTypes, Statistic, TestingCenter
@@ -13,12 +14,14 @@ class TestTypesSerializer(serializers.ModelSerializer):
 class CenterRatingSerializer(serializers.ModelSerializer):
     class Meta:
         model = CenterRating
-        fields = ("rating", "comment", "created_at",)
+        fields = ("rating", "comment", "created_at")
 
 
 class TestingCenterSerializer(serializers.ModelSerializer):
     test_types = serializers.SerializerMethodField("get_test_types")
     county_code = serializers.SerializerMethodField("get_county_code")
+    average_rating = serializers.SerializerMethodField("get_average_rating")
+
     ratings = CenterRatingSerializer(many=True, read_only=True)
 
     @staticmethod
@@ -29,6 +32,12 @@ class TestingCenterSerializer(serializers.ModelSerializer):
     def get_county_code(obj: TestingCenter) -> str:
         county = obj.county
         return settings.COUNTIES_SHORTNAME.get(county, county[0:2].upper())
+
+    @staticmethod
+    def get_average_rating(obj: TestingCenter) -> float:
+        average = CenterRating.objects.filter(testing_center_id=obj.pk).aggregate(Avg("rating"))["rating__avg"]
+        average = average or 0
+        return round(average, 2)
 
     class Meta:
         model = TestingCenter
@@ -44,8 +53,23 @@ class TestingCenterSerializer(serializers.ModelSerializer):
             "phone_number",
             "schedule",
             "test_types",
+            "average_rating",
             "ratings",
         )
+
+
+class TestingCenterAddRatingSerializer(serializers.ModelSerializer):
+    ratings = CenterRatingSerializer(many=True)
+
+    class Meta:
+        model = TestingCenter
+        fields = ("pk", "ratings")
+
+    def update(self, testing_center, validated_data):
+        ratings = validated_data.pop("ratings")
+        for rating in ratings:
+            CenterRating.objects.create(testing_center=testing_center, **rating)
+        return testing_center
 
 
 class TestingCenterListSerializer(serializers.ModelSerializer):
