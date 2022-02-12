@@ -54,6 +54,7 @@ class TestingCenter(models.Model):
     website = models.CharField(_("website"), max_length=200, null=True, blank=True)
     phone_number = models.CharField(_("phone number"), max_length=13, null=True, blank=True)
     schedule = models.CharField(_("schedule"), max_length=20, null=True, blank=True)
+
     test_types = models.ManyToManyField(CenterTestTypes, verbose_name=_("test types"), blank=True)
 
     objects = models.Manager()
@@ -65,6 +66,26 @@ class TestingCenter(models.Model):
 
     def __str__(self):
         return self.full_address
+
+
+class CenterRating(models.Model):
+    RATING_CHOICES = [(0, "0"), (1, "1"), (2, "2"), (3, "3"), (4, "4"), (5, "5")]
+
+    rating = models.SmallIntegerField(_("rating"), default=0, choices=RATING_CHOICES, db_index=True)
+    comment = models.CharField(_("comment"), max_length=1000, blank=True)
+
+    testing_center = models.ForeignKey(TestingCenter, on_delete=models.CASCADE, related_name=_("ratings"))
+
+    created_at = models.DateTimeField(_("creation date"), auto_now_add=True)
+
+    objects = models.Manager()
+
+    def __str__(self):
+        return f"{self.rating}/{self.RATING_CHOICES[-1][-1]} ({self.created_at.strftime('%d/%m/%Y')})"
+
+    class Meta:
+        verbose_name = _("center rating")
+        verbose_name_plural = _("center ratings")
 
 
 class Statistic(models.Model):
