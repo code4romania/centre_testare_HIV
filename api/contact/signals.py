@@ -21,7 +21,7 @@ def _get_user_emails_by_permission_name(permission_name):
 
 @receiver(post_save, sender=ContactMessage)
 def send_email_on_new_contact_message(sender: ContactMessage, instance: ContactMessage, created: bool, **kwargs):
-    if not created:
+    if not created or not isinstance(instance, ContactMessage):
         return
 
     subject: str = "Mesaj nou prin formularul de contact"
