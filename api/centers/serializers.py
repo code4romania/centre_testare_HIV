@@ -1,19 +1,35 @@
 from django.conf import settings
 from rest_framework import serializers
 
-from centers.models import CenterTestTypes, Statistic, TestingCenter
+from centers.models import CenterRating, CenterTestTypes, Statistic, TestingCenter
 
 
-class BaseCenterSerializer(serializers.ModelSerializer):
+class TestTypesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CenterTestTypes
+        fields = ("pk", "name_ro", "name_en")
+
+
+class CenterRatingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CenterRating
+        fields = ("rating", "comment", "created_at",)
+
+
+class TestingCenterSerializer(serializers.ModelSerializer):
+    test_types = serializers.SerializerMethodField("get_test_types")
     county_code = serializers.SerializerMethodField("get_county_code")
+    ratings = CenterRatingSerializer(many=True, read_only=True)
+
+    @staticmethod
+    def get_test_types(obj: TestingCenter) -> list:
+        return [{"pk": t.pk, "name_ro": t.name_ro, "name_en": t.name_en} for t in obj.test_types.all()]
 
     @staticmethod
     def get_county_code(obj: TestingCenter) -> str:
         county = obj.county
         return settings.COUNTIES_SHORTNAME.get(county, county[0:2].upper())
 
-
-class TestingCenterSerializer(BaseCenterSerializer):
     class Meta:
         model = TestingCenter
         fields = (
@@ -28,6 +44,7 @@ class TestingCenterSerializer(BaseCenterSerializer):
             "phone_number",
             "schedule",
             "test_types",
+            "ratings",
         )
 
 
@@ -42,7 +59,7 @@ class SearchQuerySerializer(serializers.Serializer):
     riskCategory = serializers.CharField(required=False, default="")
 
 
-class CenterSearchSerializer(BaseCenterSerializer):
+class CenterSearchSerializer(serializers.ModelSerializer):
     class Meta:
         model = TestingCenter
         fields = ("pk", "lat", "lng", "full_address")
@@ -59,9 +76,3 @@ class StatisticSerializer(serializers.ModelSerializer):
     class Meta:
         model = Statistic
         fields = ("mobile_caravans", "public_centers", "hotline")
-
-
-class TestTypesSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = CenterTestTypes
-        fields = "__all__"

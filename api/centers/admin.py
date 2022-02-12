@@ -25,31 +25,35 @@ class StatisticAdmin(admin.ModelAdmin):
 
 
 @admin.register(models.CenterTestTypes)
-class TestingCenterAttributes(admin.ModelAdmin):
+class TestTypesAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(models.CenterRating)
+class TestingCenterRatings(admin.ModelAdmin):
     pass
 
 
 @admin.register(models.TestingCenter)
 class TestingCenterAdmin(AdminWithStatusChanges):
+    class RatingInline(admin.TabularInline):
+        model = models.CenterRating
+        extra = 1
+
     list_filter = ("status", "county", "locality", "test_types")
-    list_display = (
-        "get_testing_center_address",
-        "status",
-        "website",
-        "phone_number",
-        "schedule",
-    )
+    list_display = ("get_testing_center_address", "status", "website", "phone_number", "schedule")
+    list_editable = ("status",)
+
     search_fields = ("full_address",)
-    actions = (
-        "make_pending",
-        "make_accepted",
-        "make_rejected",
-    )
+
+    actions = ("make_pending", "make_accepted", "make_rejected")
+
     fieldsets = (
         (_("Operational Data"), {"fields": ("status",)}),
         (_("Geo Data"), {"fields": ("street_name", "street_number", "county", "locality", "lat", "lng")}),
         (_("Testing Center Data"), {"fields": ("website", "phone_number", "schedule", "test_types")}),
     )
+    inlines = (RatingInline,)
 
     @display(ordering="testing_center__full_address", description=_("Address"))
     def get_testing_center_address(self, obj: models.TestingCenter):

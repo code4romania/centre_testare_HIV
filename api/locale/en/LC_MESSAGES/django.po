@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-06 19:14+0200\n"
+"POT-Creation-Date: 2022-02-12 17:47+0200\n"
 "PO-Revision-Date: 2022-02-03 20:22+0200\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -66,68 +66,68 @@ msgstr ""
 msgid "posts"
 msgstr ""
 
-#: centers/admin.py:49
+#: centers/admin.py:52
 msgid "Operational Data"
 msgstr ""
 
-#: centers/admin.py:50
+#: centers/admin.py:53
 msgid "Geo Data"
 msgstr ""
 
-#: centers/admin.py:51
+#: centers/admin.py:54
 msgid "Testing Center Data"
 msgstr ""
 
-#: centers/admin.py:54
+#: centers/admin.py:58
 msgid "Address"
 msgstr ""
 
-#: centers/admin.py:66 centers/admin.py:78 centers/admin.py:90
+#: centers/admin.py:70 centers/admin.py:82 centers/admin.py:94
 msgid "testing center"
 msgstr ""
 
-#: centers/admin.py:67 centers/admin.py:79 centers/admin.py:91
+#: centers/admin.py:71 centers/admin.py:83 centers/admin.py:95
 msgid "testing centers"
 msgstr ""
 
-#: centers/admin.py:70
+#: centers/admin.py:74
 msgid "Mark selected testing centers as pending"
 msgstr ""
 
-#: centers/admin.py:82
+#: centers/admin.py:86
 msgid "Mark selected testing centers as accepted"
 msgstr ""
 
-#: centers/admin.py:94
+#: centers/admin.py:98
 msgid "Mark selected testing centers as rejected"
 msgstr ""
 
-#: centers/admin.py:152
+#: centers/admin.py:156
 msgid "testing center resource"
 msgstr ""
 
-#: centers/admin.py:153
+#: centers/admin.py:157
 msgid "testing center resources"
 msgstr ""
 
-#: centers/admin.py:178
+#: centers/admin.py:182
 #, python-brace-format
 msgid "File with name '{file_name}' wasn't imported. Errors: {row_errors}"
 msgstr ""
 
-#: centers/admin.py:185
+#: centers/admin.py:189
 #, python-brace-format
 msgid "File with name '{file_name}' was imported."
 msgstr ""
 
-#: centers/admin.py:192
+#: centers/admin.py:196
 #, python-brace-format
 msgid ""
 "File with name '{file_name}' wasn't a proper data file. Accepted formats "
 "are: CSV, XLSX."
 msgstr ""
 
-#: centers/admin.py:201
+#: centers/admin.py:205
 #, python-brace-format
 msgid ""
 "File with name '{file_name}' couldn't be imported. The error received was: "
@@ -142,7 +142,7 @@ msgstr ""
 msgid "test type"
 msgstr ""
 
-#: centers/models.py:24 centers/models.py:57
+#: centers/models.py:24 centers/models.py:58
 msgid "test types"
 msgstr ""
 
@@ -158,7 +158,7 @@ msgstr ""
 msgid "Rejected"
 msgstr ""
 
-#: centers/models.py:42 centers/models.py:97
+#: centers/models.py:42 centers/models.py:118
 msgid "status"
 msgstr ""
 
@@ -202,48 +202,72 @@ msgstr ""
 msgid "schedule"
 msgstr ""
 
-#: centers/models.py:71
-msgid "mobile caravans"
+#: centers/models.py:74
+msgid "rating"
 msgstr ""
 
-#: centers/models.py:72
-msgid "hotline"
+#: centers/models.py:75
+msgid "comment"
 msgstr ""
 
 #: centers/models.py:77
-msgid "statistic"
+msgid "ratings"
 msgstr ""
 
-#: centers/models.py:78
-msgid "statistics"
+#: centers/models.py:79 contact/models.py:22
+msgid "creation date"
 msgstr ""
 
-#: centers/models.py:90
-msgid "Not tried"
+#: centers/models.py:87
+msgid "center rating"
 msgstr ""
 
-#: centers/models.py:91
-msgid "Imported successfully"
+#: centers/models.py:88
+msgid "center ratings"
 msgstr ""
 
 #: centers/models.py:92
+msgid "mobile caravans"
+msgstr ""
+
+#: centers/models.py:93
+msgid "hotline"
+msgstr ""
+
+#: centers/models.py:98
+msgid "statistic"
+msgstr ""
+
+#: centers/models.py:99
+msgid "statistics"
+msgstr ""
+
+#: centers/models.py:111
+msgid "Not tried"
+msgstr ""
+
+#: centers/models.py:112
+msgid "Imported successfully"
+msgstr ""
+
+#: centers/models.py:113
 msgid "Import failed"
 msgstr ""
 
-#: centers/models.py:95 contact/models.py:13 pages/models.py:9
+#: centers/models.py:116 contact/models.py:13 pages/models.py:9
 #: pages/models.py:95
 msgid "name"
 msgstr ""
 
-#: centers/models.py:96
+#: centers/models.py:117
 msgid "file"
 msgstr ""
 
-#: centers/models.py:102
+#: centers/models.py:123
 msgid "Data file"
 msgstr ""
 
-#: centers/models.py:103
+#: centers/models.py:124
 msgid "Data files"
 msgstr ""
 
@@ -275,7 +299,7 @@ msgstr ""
 msgid "Mark selected messages as read"
 msgstr ""
 
-#: contact/apps.py:7
+#: contact/apps.py:8
 msgid "Contact Message"
 msgstr ""
 
@@ -293,10 +317,6 @@ msgstr ""
 
 #: contact/models.py:19
 msgid "message status"
-msgstr ""
-
-#: contact/models.py:22
-msgid "creation date"
 msgstr ""
 
 #: contact/models.py:27
@@ -395,11 +415,11 @@ msgstr ""
 msgid "attachments"
 msgstr ""
 
-#: testing_centers_site/settings/base.py:142
+#: testing_centers_site/settings/base.py:165
 msgid "Romanian"
 msgstr ""
 
-#: testing_centers_site/settings/base.py:143
+#: testing_centers_site/settings/base.py:166
 msgid "English"
 msgstr ""
 
@@ -407,7 +427,7 @@ msgstr ""
 msgid "Testing Centers Admin"
 msgstr ""
 
-#: testing_centers_site/utils.py:11
+#: testing_centers_site/utils.py:27
 #, python-brace-format
 msgid "{updated} {item_sg} was successfully marked as {status}."
 msgid_plural "{updated} {item_pl} were successfully marked as {status}."

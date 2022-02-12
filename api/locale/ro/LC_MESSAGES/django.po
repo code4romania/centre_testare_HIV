@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-06 19:14+0200\n"
+"POT-Creation-Date: 2022-02-12 17:47+0200\n"
 "PO-Revision-Date: 2022-02-03 20:22+0200\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -67,62 +67,62 @@ msgstr "actualizat"
 msgid "posts"
 msgstr "articole"
 
-#: centers/admin.py:49
+#: centers/admin.py:52
 msgid "Operational Data"
 msgstr "Date operaționale"
 
-#: centers/admin.py:50
+#: centers/admin.py:53
 msgid "Geo Data"
 msgstr "Date geografice"
 
-#: centers/admin.py:51
+#: centers/admin.py:54
 msgid "Testing Center Data"
 msgstr "Date despre Centru"
 
-#: centers/admin.py:54
+#: centers/admin.py:58
 msgid "Address"
 msgstr "Adresă"
 
-#: centers/admin.py:66 centers/admin.py:78 centers/admin.py:90
+#: centers/admin.py:70 centers/admin.py:82 centers/admin.py:94
 msgid "testing center"
 msgstr "centru de testare"
 
-#: centers/admin.py:67 centers/admin.py:79 centers/admin.py:91
+#: centers/admin.py:71 centers/admin.py:83 centers/admin.py:95
 msgid "testing centers"
 msgstr "centre de testare"
 
-#: centers/admin.py:70
+#: centers/admin.py:74
 msgid "Mark selected testing centers as pending"
 msgstr "Marchează centrele selectate ca în așteptare"
 
-#: centers/admin.py:82
+#: centers/admin.py:86
 msgid "Mark selected testing centers as accepted"
 msgstr "Marchează centrele selectate ca acceptate"
 
-#: centers/admin.py:94
+#: centers/admin.py:98
 msgid "Mark selected testing centers as rejected"
 msgstr "Marchează centrele selectate ca respinse"
 
-#: centers/admin.py:152
+#: centers/admin.py:156
 msgid "testing center resource"
 msgstr "resursă centru de testare"
 
-#: centers/admin.py:153
+#: centers/admin.py:157
 msgid "testing center resources"
 msgstr "resurse centru de testare"
 
-#: centers/admin.py:178
+#: centers/admin.py:182
 #, python-brace-format
 msgid "File with name '{file_name}' wasn't imported. Errors: {row_errors}"
 msgstr ""
 "Fișierul cu numele '{file_name}' nu a fost importat. Erori: {row_errors}"
 
-#: centers/admin.py:185
+#: centers/admin.py:189
 #, python-brace-format
 msgid "File with name '{file_name}' was imported."
 msgstr "Fișierul cu numele '{file_name}' a fost importat."
 
-#: centers/admin.py:192
+#: centers/admin.py:196
 #, python-brace-format
 msgid ""
 "File with name '{file_name}' wasn't a proper data file. Accepted formats "
@@ -131,7 +131,7 @@ msgstr ""
 "Fișierul cu numele '{file_name}' un fișier de date corect. Formatele "
 "acceptate sunt: CSV, XLSX."
 
-#: centers/admin.py:201
+#: centers/admin.py:205
 #, python-brace-format
 msgid ""
 "File with name '{file_name}' couldn't be imported. The error received was: "
@@ -148,7 +148,7 @@ msgstr "Centre de Testare"
 msgid "test type"
 msgstr "tip de test"
 
-#: centers/models.py:24 centers/models.py:57
+#: centers/models.py:24 centers/models.py:58
 msgid "test types"
 msgstr "tipuri de teste"
 
@@ -164,7 +164,7 @@ msgstr "Acceptat"
 msgid "Rejected"
 msgstr "Respins"
 
-#: centers/models.py:42 centers/models.py:97
+#: centers/models.py:42 centers/models.py:118
 msgid "status"
 msgstr "stare"
 
@@ -208,48 +208,74 @@ msgstr "număr de telefon"
 msgid "schedule"
 msgstr "program de funcționare"
 
-#: centers/models.py:71
+#: centers/models.py:74
+msgid "rating"
+msgstr "evaluare"
+
+#: centers/models.py:75
+msgid "comment"
+msgstr "comentariu"
+
+#: centers/models.py:77
+#, fuzzy
+#| msgid "rating"
+msgid "ratings"
+msgstr "evaluare"
+
+#: centers/models.py:79 contact/models.py:22
+msgid "creation date"
+msgstr "data primirii"
+
+#: centers/models.py:87
+msgid "center rating"
+msgstr "evaluarea centrului"
+
+#: centers/models.py:88
+msgid "center ratings"
+msgstr "evaluările centrului"
+
+#: centers/models.py:92
 msgid "mobile caravans"
 msgstr "caravane mobile"
 
-#: centers/models.py:72
+#: centers/models.py:93
 msgid "hotline"
 msgstr "linia de asistenta directa"
 
-#: centers/models.py:77
+#: centers/models.py:98
 msgid "statistic"
 msgstr "statistică"
 
-#: centers/models.py:78
+#: centers/models.py:99
 msgid "statistics"
 msgstr "statistici"
 
-#: centers/models.py:90
+#: centers/models.py:111
 msgid "Not tried"
 msgstr "Neîncercat"
 
-#: centers/models.py:91
+#: centers/models.py:112
 msgid "Imported successfully"
 msgstr "Importat cu succes"
 
-#: centers/models.py:92
+#: centers/models.py:113
 msgid "Import failed"
 msgstr "Importare eșuată"
 
-#: centers/models.py:95 contact/models.py:13 pages/models.py:9
+#: centers/models.py:116 contact/models.py:13 pages/models.py:9
 #: pages/models.py:95
 msgid "name"
 msgstr "nume"
 
-#: centers/models.py:96
+#: centers/models.py:117
 msgid "file"
 msgstr "nume"
 
-#: centers/models.py:102
+#: centers/models.py:123
 msgid "Data file"
 msgstr "fișier"
 
-#: centers/models.py:103
+#: centers/models.py:124
 msgid "Data files"
 msgstr "Fișier de date"
 
@@ -281,7 +307,7 @@ msgstr "Marchează mesajele selectate ca respinse"
 msgid "Mark selected messages as read"
 msgstr "Marchează mesajele selectate ca respinse"
 
-#: contact/apps.py:7
+#: contact/apps.py:8
 msgid "Contact Message"
 msgstr "Mesaj de contact"
 
@@ -300,10 +326,6 @@ msgstr "adresă de e-mail"
 #: contact/models.py:19
 msgid "message status"
 msgstr "stare mesaj"
-
-#: contact/models.py:22
-msgid "creation date"
-msgstr "data primirii"
 
 #: contact/models.py:27
 msgid "contact message"
@@ -401,11 +423,11 @@ msgstr "fișier încărcat"
 msgid "attachments"
 msgstr "atașamente"
 
-#: testing_centers_site/settings/base.py:142
+#: testing_centers_site/settings/base.py:165
 msgid "Romanian"
 msgstr "Română"
 
-#: testing_centers_site/settings/base.py:143
+#: testing_centers_site/settings/base.py:166
 msgid "English"
 msgstr "Engleză"
 
@@ -413,7 +435,7 @@ msgstr "Engleză"
 msgid "Testing Centers Admin"
 msgstr "Administrare Centre de Testare HIV"
 
-#: testing_centers_site/utils.py:11
+#: testing_centers_site/utils.py:27
 #, python-brace-format
 msgid "{updated} {item_sg} was successfully marked as {status}."
 msgid_plural "{updated} {item_pl} were successfully marked as {status}."
