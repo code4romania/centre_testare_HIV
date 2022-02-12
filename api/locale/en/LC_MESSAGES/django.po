@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-12 17:47+0200\n"
+"POT-Creation-Date: 2022-02-12 20:02+0200\n"
 "PO-Revision-Date: 2022-02-03 20:22+0200\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -138,136 +138,136 @@ msgstr ""
 msgid "Testing Centers"
 msgstr ""
 
-#: centers/models.py:23
+#: centers/models.py:24
 msgid "test type"
 msgstr ""
 
-#: centers/models.py:24 centers/models.py:58
+#: centers/models.py:25 centers/models.py:59
 msgid "test types"
 msgstr ""
 
-#: centers/models.py:37
+#: centers/models.py:38
 msgid "Pending"
 msgstr ""
 
-#: centers/models.py:38
+#: centers/models.py:39
 msgid "Accepted"
 msgstr ""
 
-#: centers/models.py:39
+#: centers/models.py:40
 msgid "Rejected"
 msgstr ""
 
-#: centers/models.py:42 centers/models.py:118
+#: centers/models.py:43 centers/models.py:121
 msgid "status"
 msgstr ""
 
-#: centers/models.py:44
+#: centers/models.py:45
 msgid "street number"
 msgstr ""
 
-#: centers/models.py:45
+#: centers/models.py:46
 msgid "street name"
 msgstr ""
 
-#: centers/models.py:46
+#: centers/models.py:47
 msgid "county"
 msgstr ""
 
-#: centers/models.py:47
+#: centers/models.py:48
 msgid "locality"
 msgstr ""
 
-#: centers/models.py:49
+#: centers/models.py:50
 msgid "full address"
 msgstr ""
 
-#: centers/models.py:51
+#: centers/models.py:52
 msgid "latitude"
 msgstr ""
 
-#: centers/models.py:52
+#: centers/models.py:53
 msgid "longitude"
 msgstr ""
 
-#: centers/models.py:54
+#: centers/models.py:55
 msgid "website"
 msgstr ""
 
-#: centers/models.py:55 contact/models.py:15
+#: centers/models.py:56 contact/models.py:15
 msgid "phone number"
 msgstr ""
 
-#: centers/models.py:56
+#: centers/models.py:57
 msgid "schedule"
 msgstr ""
 
-#: centers/models.py:74
+#: centers/models.py:77
 msgid "rating"
 msgstr ""
 
-#: centers/models.py:75
+#: centers/models.py:79
 msgid "comment"
 msgstr ""
 
-#: centers/models.py:77
-msgid "ratings"
-msgstr ""
-
-#: centers/models.py:79 contact/models.py:22
+#: centers/models.py:80 contact/models.py:22
 msgid "creation date"
 msgstr ""
 
-#: centers/models.py:87
+#: centers/models.py:82
+msgid "ratings"
+msgstr ""
+
+#: centers/models.py:90
 msgid "center rating"
 msgstr ""
 
-#: centers/models.py:88
+#: centers/models.py:91
 msgid "center ratings"
 msgstr ""
 
-#: centers/models.py:92
+#: centers/models.py:95
 msgid "mobile caravans"
 msgstr ""
 
-#: centers/models.py:93
+#: centers/models.py:96
 msgid "hotline"
 msgstr ""
 
-#: centers/models.py:98
+#: centers/models.py:101
 msgid "statistic"
 msgstr ""
 
-#: centers/models.py:99
+#: centers/models.py:102
 msgid "statistics"
 msgstr ""
 
-#: centers/models.py:111
+#: centers/models.py:114
 msgid "Not tried"
 msgstr ""
 
-#: centers/models.py:112
+#: centers/models.py:115
 msgid "Imported successfully"
 msgstr ""
 
-#: centers/models.py:113
+#: centers/models.py:116
 msgid "Import failed"
 msgstr ""
 
-#: centers/models.py:116 contact/models.py:13 pages/models.py:9
+#: centers/models.py:119 contact/models.py:13 pages/models.py:9
 #: pages/models.py:95
 msgid "name"
 msgstr ""
 
-#: centers/models.py:117
+#: centers/models.py:120
 msgid "file"
 msgstr ""
 
-#: centers/models.py:123
+#: centers/models.py:126
 msgid "Data file"
 msgstr ""
 
-#: centers/models.py:124
+#: centers/models.py:127
 msgid "Data files"
 msgstr ""
 

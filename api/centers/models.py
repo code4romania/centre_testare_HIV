@@ -1,3 +1,4 @@
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django.utils.translation import get_language, gettext_lazy as _
 
@@ -69,19 +70,23 @@ class TestingCenter(models.Model):
 
 
 class CenterRating(models.Model):
-    RATING_CHOICES = [(0, "0"), (1, "1"), (2, "2"), (3, "3"), (4, "4"), (5, "5")]
+    MIN_VALUE = 1
+    MAX_VALUE = 5
 
-    rating = models.SmallIntegerField(_("rating"), default=0, choices=RATING_CHOICES, db_index=True)
+    rating = models.SmallIntegerField(
+        _("rating"),
+        validators=[MinValueValidator(MIN_VALUE), MaxValueValidator(MAX_VALUE)],
+        db_index=True,
+    )
     comment = models.CharField(_("comment"), max_length=1000, blank=True)
+    created_at = models.DateTimeField(_("creation date"), auto_now_add=True)
 
     testing_center = models.ForeignKey(TestingCenter, on_delete=models.CASCADE, related_name=_("ratings"))
-
-    created_at = models.DateTimeField(_("creation date"), auto_now_add=True)
 
     objects = models.Manager()
 
     def __str__(self):
-        return f"{self.rating}/{self.RATING_CHOICES[-1][-1]} ({self.created_at.strftime('%d/%m/%Y')})"
+        return f"{self.rating}/{self.MAX_VALUE} ({self.created_at.strftime('%d/%m/%Y')})"
 
     class Meta:
         verbose_name = _("center rating")
