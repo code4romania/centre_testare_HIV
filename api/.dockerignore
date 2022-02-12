@@ -2,6 +2,5 @@ tests/
 requirements-dev.in
 requirements.in
 setup.cfg
-wait_for_db.py
 venv
 virtualenv
