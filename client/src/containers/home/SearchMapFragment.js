@@ -41,9 +41,7 @@ export const SearchMapFragment = () => {
     return searchResults?.map((item) => {
       return {
         value: item.pk,
-        text: item.street_number
-          ? `${item.address}, ${item.street_number} (${item.locality}, ${item.county_code})`
-          : `${item.address} (${item.locality}, ${item.county_code})`,
+        text: item.fullAddress,
       };
     });
   }, [searchOption.value, searchResults]);
