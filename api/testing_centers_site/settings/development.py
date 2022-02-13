@@ -21,9 +21,10 @@ if ENABLE_DEBUG_TOOLBAR:
         "SHOW_TOOLBAR_CALLBACK": show_toolbar,
     }
 
-CACHES = {
+DEVELOPMENT_CACHES = {
     "default": {"BACKEND": "django.core.cache.backends.dummy.DummyCache"},
 }
+CACHES.update(DEVELOPMENT_CACHES)
 
 if not DEBUG:
     STATIC_ROOT = os.path.join(BASE_DIR, "static")

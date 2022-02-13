@@ -9,12 +9,20 @@ services:
       - .env
     ports:
       - "5445:5432"
+    networks:
+      - internal
     volumes:
       - pgdata:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=${DATABASE_USER}
       - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
       - POSTGRES_DB=${DATABASE_NAME}
+
+  cache:
+    container_name: testing-centers-cache
+    image: memcached:1.6.14-alpine
+    networks:
+      - internal
 
   api:
     container_name: testing-centers-api
@@ -27,8 +35,11 @@ services:
       - ./api:/code
     ports:
       - "8050:8050"
+    networks:
+      - internal
     depends_on:
       - db
+      - cache
 
   client:
     container_name: testing-centers-client
@@ -42,6 +53,10 @@ services:
       - "3050:3000"
     depends_on:
       - api
+
+networks:
+  internal:
+    driver: bridge
 
 volumes:
   pgdata:

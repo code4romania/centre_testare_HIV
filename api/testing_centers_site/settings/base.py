@@ -21,6 +21,7 @@ env = environ.Env(
     NO_REPLY_EMAIL=(str, "noreply@code4.ro"),
     DEFAULT_FROM_EMAIL=(str, "noreply@code4.ro"),
     HOME_SITE_URL=(str, ""),
+    MEMCACHED_HOST=(str, "cache:11211"),
     EMAIL_HOST=(str, "localhost"),
     EMAIL_PORT=(str, "25"),
     EMAIL_HOST_USER=(str, "user"),
@@ -210,6 +211,14 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
+
+MEMCACHED_HOST = env("MEMCACHED_HOST")
+CACHES = {
+    "throttling": {
+        "BACKEND": "django.core.cache.backends.memcached.PyMemcacheCache",
+        "LOCATION": MEMCACHED_HOST,
+    },
+}
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,

@@ -4,8 +4,6 @@
 #
 #    pip-compile --output-file=requirements-dev.txt requirements-dev.in
 #
-appnope==0.1.2
-    # via ipython
 asgiref==3.5.0
     # via
     #   -r requirements.txt
@@ -199,6 +197,8 @@ pygments==2.10.0
     # via
     #   ipython
     #   pdbpp
+pymemcache==3.5.0
+    # via -r requirements.txt
 pyparsing==2.4.7
     # via packaging
 pyrepl==0.9.0
@@ -242,6 +242,7 @@ six==1.16.0
     # via
     #   -r requirements.txt
     #   django-taggit-serializer
+    #   pymemcache
     #   python-dateutil
 sqlparse==0.4.2
     # via

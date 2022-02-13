@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector, TrigramSimilarity
+from django.core.cache import caches
 from django.db.models import Q
 from drf_spectacular.utils import extend_schema, OpenApiParameter
 from rest_framework import permissions, status, viewsets
@@ -21,6 +22,7 @@ from centers.serializers import (
 
 
 class AddRatingQueryBurstAnonRateThrottle(AnonRateThrottle):
+    cache = caches["throttling"]
     rate = "5/min"
 
 
