@@ -1,7 +1,8 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { Row, Col, Typography, AutoComplete, Input, Icon, Spin, Tooltip } from 'antd';
+import { AutoComplete, Col, Icon, Input, Radio, Row, Spin, Tooltip, Typography } from 'antd';
 import { Trans } from '@lingui/macro';
 import { debounce } from 'lodash';
+import { arrayOf, bool, element, func, oneOf, oneOfType, shape, string } from 'prop-types';
 import { ReactComponent as InfoIcon } from '../../images/info-circle-solid.svg';
 
 import { useGlobalContext } from '../../context';
@@ -18,11 +19,18 @@ const Suffix = ({ input, loading }) => {
   return <span />;
 };
 
-export default ({ onSearch }) => {
+export const SearchFragment = ({
+  data,
+  defaultSearchOption,
+  isLoading,
+  onChangeSearchOption,
+  onSearch,
+  onSelectResult,
+  searchOptions,
+}) => {
   const { currentLanguage } = useGlobalContext();
 
   const [searchInput, setSearchInput] = useState('');
-
   const [searchPlaceholderText, setSearchPlaceholderText] = useState('');
 
   useEffect(() => {
@@ -36,17 +44,6 @@ export default ({ onSearch }) => {
         setSearchPlaceholderText('Where are you now?');
     }
   }, [currentLanguage]);
-
-  // const dataSource = searchResults
-  //   ? searchResults.map((item) => {
-  //       return {
-  //         value: item.pk,
-  //         text: item.street_number
-  //           ? `${item.address}, ${item.street_number} (${item.locality}, ${item.county_code})`
-  //           : `${item.address} (${item.locality}, ${item.county_code})`,
-  //       };
-  //     })
-  //   : [];
 
   const onSearchHandler = useCallback(
     (value) => {
@@ -92,18 +89,46 @@ export default ({ onSearch }) => {
           </Trans>
         </Title>
 
+        <Radio.Group onChange={onChangeSearchOption} value={defaultSearchOption}>
+          {Object.values(searchOptions).map(({ value, text }) => (
+            <Radio key={value} value={value}>
+              {text}
+            </Radio>
+          ))}
+        </Radio.Group>
+
         <AutoComplete
           className="search-box"
-          allowClear
+          allowClear={!isLoading}
           value={searchInput}
-          // dataSource={dataSource}
+          dataSource={data}
           onChange={onSearchInputChange}
           onSearch={debouncedSearchHandler}
           placeholder={searchPlaceholderText}
+          onSelect={onSelectResult}
         >
-          <Input minLength={3} suffix={<Suffix input={searchInput} />} />
+          <Input minLength={3} suffix={<Suffix input={searchInput} loading={isLoading} />} />
         </AutoComplete>
       </Col>
     </Row>
   );
 };
+
+SearchFragment.defaultProps = {
+  isLoading: false,
+};
+
+SearchFragment.propTypes = {
+  data: arrayOf(shape()).isRequired,
+  defaultSearchOption: oneOf(['byLocation', 'byAddress']).isRequired,
+  isLoading: bool,
+  onChangeSearchOption: func.isRequired,
+  onSearch: func.isRequired,
+  onSelectResult: func.isRequired,
+  searchOptions: shape({
+    byLocation: shape({ value: string, text: oneOfType([string, element]) }),
+    byAddress: shape({ value: string, text: oneOfType([string, element]) }),
+  }).isRequired,
+};
+
+export default { SearchFragment };

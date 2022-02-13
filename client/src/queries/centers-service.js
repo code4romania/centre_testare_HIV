@@ -22,5 +22,5 @@ export const useSearchCentersQuery = () => {
     ...rest
   } = useGet(`${CENTER_URL}search/`, { enabled: false });
 
-  return { searchResults, searchBuildings: searchTestingCenters, ...rest };
+  return { searchResults, searchTestingCenters, ...rest };
 };
