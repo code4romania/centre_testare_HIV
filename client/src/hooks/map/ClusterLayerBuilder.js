@@ -1,4 +1,4 @@
-import HereMapDomIconFactory from '../../components/HereMapDomIconFactory';
+import { HereMapDomIcons } from '../../utils';
 
 const { H } = window;
 
@@ -20,11 +20,9 @@ export default {
         return clusterMarker;
       },
       getNoisePresentation: (noisePoint) => {
-        // @TODO update to new API schema
-        const riskCategory = noisePoint.getData().risk_category;
-        const icon = HereMapDomIconFactory.makeMarkerIcon(riskCategory);
+        const { centerDomIcon } = HereMapDomIcons;
         const noiseMarker = new H.map.DomMarker(noisePoint.getPosition(), {
-          icon,
+          icon: centerDomIcon,
           min: noisePoint.getMinZoom(),
         });
         noiseMarker.setData(noisePoint);
@@ -42,10 +40,9 @@ export default {
     return new H.map.layer.ObjectLayer(clusteredDataProvider);
   },
   unhighlightMarker: (marker) => {
-    // @TODO update to new API schema
-    marker.setIcon(HereMapDomIconFactory.makeMarkerIcon(marker.getData().getData().risk_category));
+    marker.setIcon(HereMapDomIcons.centerDomIcon);
   },
   highlightMarker: (marker) => {
-    marker.setIcon(HereMapDomIconFactory.makeMarkerIcon());
+    marker.setIcon(HereMapDomIcons.selectedCenterDomIcon);
   },
 };

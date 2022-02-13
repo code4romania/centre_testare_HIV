@@ -33,10 +33,10 @@ const useBasicFetch = (url, { enabled, ...options }) => {
   );
 
   useEffect(() => {
-    if (!enabled) return;
+    if (!enabled || data) return;
 
     fetchData();
-  }, [enabled, fetchData, url]);
+  }, [data, enabled, fetchData, url]);
 
   return { data, isError, isLoading, fetchData };
 };

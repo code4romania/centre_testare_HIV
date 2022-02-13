@@ -9,45 +9,25 @@
   background: grey;
 }
 
-%marker_base {
-  margin: -39px 0 0 -17px;
+%icon-base {
+  height: 38px;
+  margin: -38px 0px 0px -16px;
+  width: 32px;
+}
 
-  & svg {
-    fill: #ee741b;
-  }
+.user-pin-icon {
+  @extend %icon-base;
 
-  & svg:hover {
-    cursor: pointer;
-  }
+  color: #4285f4;
+}
+
+.center-icon {
+  @extend %icon-base;
+
+  color: #cc80ae;
+  cursor: pointer;
 
   &.selected {
-    > svg {
-      fill: $primary-color;
-    }
-  }
-}
-
-.marker-na {
-  @extend %marker_base;
-  & svg {
-    fill: #ff6984;
-  }
-}
-
-.marker {
-  @extend %marker_base;
-}
-
-[class^='marker-rs'] {
-  @extend %marker_base;
-  & svg {
-    fill: $primary-color;
-  }
-}
-
-[class^='marker-u'] {
-  @extend %marker_base;
-  & svg {
-    fill: #ee741b;
+    color: $primary-color;
   }
 }

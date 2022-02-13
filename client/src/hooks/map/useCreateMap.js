@@ -16,6 +16,7 @@ const defaultMapOptins = {
 
 export function useCreateMap(mapRef, options = defaultMapOptins) {
   const [map, setMap] = useState(null);
+  const [mapPlatform, setMapPlatform] = useState(null);
   const [isMapLoading, setIsMapLoading] = useState(true);
   const { center, mapBounds: bounds, enableMapBehaviors, enableMapUi, zoom } = options;
 
@@ -59,6 +60,7 @@ export function useCreateMap(mapRef, options = defaultMapOptins) {
     window.addEventListener('resize', onResizeWindow);
 
     setMap(hMap);
+    setMapPlatform(platform);
 
     return () => {
       mapEngine.removeEventListener('render', onMapRendered);
@@ -67,7 +69,7 @@ export function useCreateMap(mapRef, options = defaultMapOptins) {
     };
   }, [bounds, center, enableMapBehaviors, enableMapUi, mapRef, setMap, zoom]);
 
-  return { map, isMapLoading };
+  return { map, mapPlatform, isMapLoading };
 }
 
 export default useCreateMap;

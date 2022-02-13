@@ -1,21 +1,14 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { Col, Row } from 'antd';
 
 import CenterDetailsFragment from '../CenterDetailsFragment';
 import MapPlaceholder from '../MapPlaceholder';
 
 import useDecoratedClusteredMap from '../../hooks/map/useDecoratedClusteredMap';
-import { useCreateMap } from '../../hooks/map/useCreateMap';
 
-const HereMapInteractive = (props) => {
-  const { points } = props;
-
-  const mapRef = useRef(null);
-
-  const { map: currentMap, isMapLoading } = useCreateMap(mapRef);
-
-  const { buildingDetails: centerDetails, onHideBuilding } = useDecoratedClusteredMap(
-    currentMap,
+const HereMapInteractive = ({ map, points, mapRef, isMapLoading }) => {
+  const { buildingDetails: centerDetails, onHideBuilding: onHideCenter } = useDecoratedClusteredMap(
+    map,
     points,
   );
 
@@ -38,7 +31,7 @@ const HereMapInteractive = (props) => {
           sm={{ span: showRightPanel ? 12 : 0 }}
           lg={{ span: showRightPanel ? 8 : 0 }}
         >
-          <CenterDetailsFragment onClose={onHideBuilding} incompleteDetails={centerDetails} />
+          <CenterDetailsFragment onClose={onHideCenter} incompleteDetails={centerDetails} />
         </Col>
       </Row>
     </div>

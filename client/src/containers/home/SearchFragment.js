@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { Row, Col, Typography, message, AutoComplete, Input, Icon, Spin, Tooltip } from 'antd';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import { Row, Col, Typography, AutoComplete, Input, Icon, Spin, Tooltip } from 'antd';
 import { Trans } from '@lingui/macro';
 import { debounce } from 'lodash';
 import { ReactComponent as InfoIcon } from '../../images/info-circle-solid.svg';
@@ -18,25 +18,12 @@ const Suffix = ({ input, loading }) => {
   return <span />;
 };
 
-export default () => {
-  const {
-    currentLanguage,
-    searchBuildings,
-    searchResults,
-    searchLoading,
-    searchError,
-    onSearchLoading,
-  } = useGlobalContext();
+export default ({ onSearch }) => {
+  const { currentLanguage } = useGlobalContext();
 
   const [searchInput, setSearchInput] = useState('');
 
   const [searchPlaceholderText, setSearchPlaceholderText] = useState('');
-
-  useEffect(() => {
-    if (searchError) {
-      message.warning(searchError);
-    }
-  }, [searchError]);
 
   useEffect(() => {
     switch (currentLanguage) {
@@ -50,24 +37,27 @@ export default () => {
     }
   }, [currentLanguage]);
 
-  const dataSource = searchResults
-    ? searchResults.map((item) => {
-        return {
-          value: item.pk,
-          text: item.street_number
-            ? `${item.address}, ${item.street_number} (${item.locality}, ${item.county_code})`
-            : `${item.address} (${item.locality}, ${item.county_code})`,
-        };
-      })
-    : [];
+  // const dataSource = searchResults
+  //   ? searchResults.map((item) => {
+  //       return {
+  //         value: item.pk,
+  //         text: item.street_number
+  //           ? `${item.address}, ${item.street_number} (${item.locality}, ${item.county_code})`
+  //           : `${item.address} (${item.locality}, ${item.county_code})`,
+  //       };
+  //     })
+  //   : [];
 
-  const debounceSearch = useRef(debounce(searchBuildings, 1000)).current;
-  const onSearch = (value) => {
-    if (value.length > 2) {
-      onSearchLoading(true);
-      debounceSearch(value);
-    }
-  };
+  const onSearchHandler = useCallback(
+    (value) => {
+      if (value.length > 2) {
+        onSearch(value);
+      }
+    },
+    [onSearch],
+  );
+
+  const debouncedSearchHandler = useMemo(() => debounce(onSearchHandler, 500), [onSearchHandler]);
 
   const onSearchInputChange = (newSearchInput) => {
     setSearchInput(newSearchInput);
@@ -104,14 +94,14 @@ export default () => {
 
         <AutoComplete
           className="search-box"
-          allowClear={!searchLoading}
+          allowClear
           value={searchInput}
-          dataSource={dataSource}
+          // dataSource={dataSource}
           onChange={onSearchInputChange}
-          onSearch={onSearch}
+          onSearch={debouncedSearchHandler}
           placeholder={searchPlaceholderText}
         >
-          <Input minLength={3} suffix={<Suffix input={searchInput} loading={searchLoading} />} />
+          <Input minLength={3} suffix={<Suffix input={searchInput} />} />
         </AutoComplete>
       </Col>
     </Row>
