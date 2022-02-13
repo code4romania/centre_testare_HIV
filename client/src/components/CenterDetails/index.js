@@ -3,12 +3,23 @@ import { Button, Card, Col, Icon, Row, Descriptions, Empty } from 'antd';
 import { Trans } from '@lingui/macro';
 import { Link } from 'react-router-dom';
 import { CenterDetailsTitle } from '../CenterDetailsTitle';
+import { useGlobalContext } from '../../context';
 
 export const CenterDetails = ({ onClose, isLoading, details }) => {
+  const { currentLanguage } = useGlobalContext();
+
   const detailsItems = useMemo(() => {
     if (!details) {
       return [];
     }
+
+    const hasTestTypes = details.testTypes.length > 0;
+
+    const testTypes = hasTestTypes
+      ? details.testTypes
+          .map(({ nameRo, nameEn }) => (currentLanguage === 'ro' ? nameRo : nameEn))
+          .join(', ')
+      : null;
 
     return [
       {
@@ -17,7 +28,7 @@ export const CenterDetails = ({ onClose, isLoading, details }) => {
       },
       {
         label: <Trans>Test types</Trans>,
-        value: details.testTypes,
+        value: testTypes,
       },
       {
         label: <Trans>Website</Trans>,
@@ -26,7 +37,7 @@ export const CenterDetails = ({ onClose, isLoading, details }) => {
         ) : null,
       },
     ].filter(({ value }) => value);
-  }, [details]);
+  }, [currentLanguage, details]);
 
   const hasDetailItems = detailsItems.length > 0;
 
