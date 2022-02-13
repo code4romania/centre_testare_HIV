@@ -80,7 +80,6 @@ class TestingCenterListSerializer(serializers.ModelSerializer):
 
 class SearchQuerySerializer(serializers.Serializer):
     query = serializers.CharField(max_length=100)
-    riskCategory = serializers.CharField(required=False, default="")
 
 
 class CenterSearchSerializer(serializers.ModelSerializer):
