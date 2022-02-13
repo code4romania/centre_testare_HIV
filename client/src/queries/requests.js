@@ -3,7 +3,7 @@ import { mapKeysToCamelCase } from '../utils';
 
 const useBasicFetch = (url, { enabled, ...options }) => {
   const [data, setData] = useState();
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
   const fetchData = useCallback(
@@ -33,10 +33,10 @@ const useBasicFetch = (url, { enabled, ...options }) => {
   );
 
   useEffect(() => {
-    if (!enabled) return;
+    if (!enabled || data) return;
 
     fetchData();
-  }, [enabled, fetchData, url]);
+  }, [data, enabled, fetchData, url]);
 
   return { data, isError, isLoading, fetchData };
 };
