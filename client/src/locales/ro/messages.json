@@ -4,7 +4,7 @@
     "origin": [
       [
         "containers/contact/MapFragment.js",
-        18
+        20
       ]
     ],
     "extractedComments": []
@@ -44,7 +44,7 @@
     "origin": [
       [
         "containers/contact/MapFragment.js",
-        22
+        24
       ]
     ],
     "extractedComments": []
@@ -115,16 +115,6 @@
     ],
     "extractedComments": []
   },
-  "Add information": {
-    "translation": "Adaugă informații",
-    "origin": [
-      [
-        "components/BuildingDetails/BuildingDetailsFooter.js",
-        25
-      ]
-    ],
-    "extractedComments": []
-  },
   "Article not found": {
     "translation": "Articolul nu a fost găsit",
     "origin": [
@@ -154,11 +144,41 @@
       ],
       [
         "containers/home/index.js",
-        18
+        16
       ],
       [
         "hooks/useMenuItems.js",
         17
+      ]
+    ],
+    "extractedComments": []
+  },
+  "By location": {
+    "translation": "După locație",
+    "origin": [
+      [
+        "containers/home/SearchMapFragment.js",
+        13
+      ]
+    ],
+    "extractedComments": []
+  },
+  "By testing center address": {
+    "translation": "După adresa centrului de testare",
+    "origin": [
+      [
+        "containers/home/SearchMapFragment.js",
+        17
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Call center": {
+    "translation": "Sună la centru",
+    "origin": [
+      [
+        "components/CenterDetails/index.js",
+        73
       ]
     ],
     "extractedComments": []
@@ -207,16 +227,6 @@
     ],
     "extractedComments": []
   },
-  "Do you have more details about this building?": {
-    "translation": "Ai alte informații despre această clădire?",
-    "origin": [
-      [
-        "components/BuildingDetails/BuildingDetailsFooter.js",
-        12
-      ]
-    ],
-    "extractedComments": []
-  },
   "Donate": {
     "translation": "Donează",
     "origin": [
@@ -232,7 +242,7 @@
     "origin": [
       [
         "containers/home/SearchFragment.js",
-        85
+        72
       ]
     ],
     "extractedComments": []
@@ -271,8 +281,8 @@
     "translation": "Fără informații",
     "origin": [
       [
-        "components/BuildingDetails/index.js",
-        42
+        "components/CenterDetails/index.js",
+        59
       ]
     ],
     "extractedComments": []
@@ -317,6 +327,16 @@
     ],
     "extractedComments": []
   },
+  "Opening hours": {
+    "translation": "Program",
+    "origin": [
+      [
+        "components/CenterDetails/index.js",
+        15
+      ]
+    ],
+    "extractedComments": []
+  },
   "Other articles": {
     "translation": "Alte articole",
     "origin": [
@@ -332,7 +352,7 @@
     "origin": [
       [
         "containers/contact/MapFragment.js",
-        15
+        16
       ]
     ],
     "extractedComments": []
@@ -343,16 +363,6 @@
       [
         "components/Footer/index.js",
         64
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Schedule": {
-    "translation": "Orar",
-    "origin": [
-      [
-        "components/BuildingDetails/index.js",
-        12
       ]
     ],
     "extractedComments": []
@@ -411,8 +421,8 @@
     "translation": "Tipuri teste",
     "origin": [
       [
-        "components/BuildingDetails/index.js",
-        16
+        "components/CenterDetails/index.js",
+        19
       ]
     ],
     "extractedComments": []
@@ -423,6 +433,16 @@
       [
         "containers/home/StatisticFragment.js",
         66
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Website": {
+    "translation": "Pagină web",
+    "origin": [
+      [
+        "components/CenterDetails/index.js",
+        23
       ]
     ],
     "extractedComments": []
@@ -613,12 +633,12 @@
     ],
     "extractedComments": []
   },
-  "see images": {
-    "translation": "vezi imagini",
+  "see how to get there": {
+    "translation": "",
     "origin": [
       [
-        "components/BuildingDetails/BuildingDetailsTitle.js",
-        24
+        "components/CenterDetailsTitle/index.js",
+        38
       ]
     ],
     "extractedComments": []
