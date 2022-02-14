@@ -4,11 +4,6 @@ const ColType = {
   span: number,
 };
 
-const OptionType = {
-  value: string,
-  text: oneOfType([string, element]),
-};
-
 export const FormFieldType = {
   colon: bool,
   label: oneOfType([string, element]),
@@ -42,33 +37,6 @@ export const defaultFormInputTypeProps = {
   ...defaultFormFieldTypeProps,
   disabled: false,
   rulesOptions: null,
-};
-
-export const FormCheckboxType = {
-  ...FormInputType,
-  options: arrayOf(shape(OptionType)).isRequired,
-};
-
-export const defaultFormCheckboxTypeProps = {
-  ...defaultFormInputTypeProps,
-};
-
-export const FormRadioType = {
-  ...FormInputType,
-  options: arrayOf(shape(OptionType)).isRequired,
-};
-
-export const defaultFormRadioTypeProps = {
-  ...defaultFormInputTypeProps,
-};
-
-export const FormSelectType = {
-  ...FormInputType,
-  options: arrayOf(shape(OptionType)).isRequired,
-};
-
-export const defaultFormSelectTypeProps = {
-  ...defaultFormInputTypeProps,
 };
 
 export const FormTextAreaType = {

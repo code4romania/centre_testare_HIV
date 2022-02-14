@@ -9,12 +9,7 @@ afterEach(cleanup);
 describe('App component', () => {
   it('should render correctly', () => {
     const contextValues = {
-      searchResults: [],
-      searchError: null,
       currentLanguage: 'ro',
-      searchBuildings: jest.fn(),
-      onSearchLoading: jest.fn(),
-      languageChange: jest.fn(),
     };
 
     jest.spyOn(AppContext, 'useGlobalContext').mockImplementation(() => contextValues);
