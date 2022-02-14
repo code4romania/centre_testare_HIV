@@ -46,7 +46,11 @@ const FormFragment = ({ form }) => {
             fieldName="email"
             form={form}
             label={<Trans id="form.email" />}
-            rulesOptions={[{ ruleName: 'required' }, { ruleName: 'max', value: 100 }]}
+            rulesOptions={[
+              { ruleName: 'required' },
+              { rulenName: 'email' },
+              { ruleName: 'max', value: 100 },
+            ]}
           />
         </Col>
       </Row>

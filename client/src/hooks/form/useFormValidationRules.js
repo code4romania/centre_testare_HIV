@@ -9,11 +9,6 @@ const useCreateFormValidationRules = () => {
       switch (ruleName) {
         case 'email':
           return { type: ruleName, message: <Trans id="form.validation.email" /> };
-        case 'integer':
-          return {
-            pattern: /^[1-9]\d*$/,
-            message: <Trans id="form.validation.integer" />,
-          };
         case 'required':
           return { required: true, message: <Trans id="form.validation.required" /> };
         case 'max':
