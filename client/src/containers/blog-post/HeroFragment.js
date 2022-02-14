@@ -16,8 +16,8 @@ export default ({ postDetails }) => {
   const authorFullName = `${authorFirstName} ${authorLastName}`;
   return (
     <Hero
-      heroImage={heroImage}
-      title={title}
+      heroImage={heroImage ?? ''}
+      title={title ?? ''}
       titleLevel={3}
       subTitle={
         <Trans>

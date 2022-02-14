@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { I18nProvider } from '@lingui/react';
 import { i18n } from '@lingui/core';
+import { en, ro } from 'make-plural/plurals';
 
 import Home from './containers/home';
 import About from './containers/about';
@@ -17,6 +18,10 @@ import './styles/theme.scss';
 
 import { messages as messagesRo } from './locales/ro/messages';
 
+i18n.loadLocaleData({
+  en: { plurals: en },
+  ro: { plurals: ro },
+});
 i18n.load({
   ro: messagesRo,
 });
