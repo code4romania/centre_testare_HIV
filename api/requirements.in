@@ -10,6 +10,9 @@ django-taggit
 django-taggit-serializer
 django-jquery
 
+# py caching
+pymemcache
+
 # database
 psycopg2<2.10
 dj-database-url
