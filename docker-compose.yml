@@ -31,12 +31,12 @@ services:
     command: dockerize -wait tcp://db:5444 -timeout 90s
     env_file:
       - .env
+    networks:
+      - internal
     volumes:
       - ./api:/code
     ports:
       - "8050:8050"
-    networks:
-      - internal
     depends_on:
       - db
       - cache

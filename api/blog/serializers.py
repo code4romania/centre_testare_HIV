@@ -7,8 +7,8 @@ from blog.models import Post
 
 
 class FixAbsolutePathSerializer(serializers.ReadOnlyField):
-    SEARCH_PATTERN = 'img src="/media/uploads/'
-    REPLACE_WITH = f'img src="{settings.SITE_URL}/media/uploads/'
+    SEARCH_PATTERN = 'src="/media/uploads/'
+    REPLACE_WITH = f'src="{settings.SITE_URL}/media/uploads/'
 
     def to_representation(self, value):
         text = value.replace(self.SEARCH_PATTERN, self.REPLACE_WITH)
