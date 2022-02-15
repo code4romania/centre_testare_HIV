@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Col, Row } from 'antd';
 import { Trans } from '@lingui/macro';
 import ReactHtmlParser from 'react-html-parser';
-
+import { useHtmlParserOptions } from '../../../hooks';
 import config from '../../../config';
 
 const { POST_URL } = config;
@@ -14,6 +14,9 @@ const BlogPostDetailsFragment = ({ handlePostLoaded }) => {
     postDetails: null,
     requestError: false,
   });
+
+  const htmlParserOptions = useHtmlParserOptions();
+
   React.useEffect(() => {
     fetch(`${POST_URL}${slug}/`)
       .then((res) => (res.status === 200 ? res.json() : null))
@@ -51,7 +54,9 @@ const BlogPostDetailsFragment = ({ handlePostLoaded }) => {
       align="top"
       style={{ marginTop: '2rem', marginBottom: '2rem' }}
     >
-      <Col className="blog-post-content">{ReactHtmlParser(state.postDetails.text)}</Col>
+      <Col span={24} className="blog-post-content">
+        {ReactHtmlParser(state.postDetails.text, htmlParserOptions)}
+      </Col>
     </Row>
   );
 };
