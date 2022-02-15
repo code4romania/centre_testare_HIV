@@ -1,17 +1,15 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { Col, Row, Typography } from 'antd';
+import { Col, Row } from 'antd';
 import { Trans } from '@lingui/macro';
-import useWindowSize from '../../../hooks/useWindowSize';
+import ReactHtmlParser from 'react-html-parser';
 
 import config from '../../../config';
 
-const { Paragraph } = Typography;
 const { POST_URL } = config;
 
 const BlogPostDetailsFragment = ({ handlePostLoaded }) => {
   const { slug } = useParams();
-  const windowSize = useWindowSize();
   const [state, setState] = React.useState({
     postDetails: null,
     requestError: false,
@@ -53,19 +51,7 @@ const BlogPostDetailsFragment = ({ handlePostLoaded }) => {
       align="top"
       style={{ marginTop: '2rem', marginBottom: '2rem' }}
     >
-      <Col>
-        <Paragraph style={{ textAlign: 'justify', wordBreak: 'break-all' }}>
-          {/* eslint-disable-next-line react/no-danger */}
-          <div dangerouslySetInnerHTML={{ __html: state.postDetails.text }} />
-        </Paragraph>
-        <Paragraph>
-          <img
-            src={state.postDetails.image}
-            width="100%"
-            style={{ maxHeight: windowSize.height }}
-          />
-        </Paragraph>
-      </Col>
+      <Col className="blog-post-content">{ReactHtmlParser(state.postDetails.text)}</Col>
     </Row>
   );
 };

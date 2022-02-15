@@ -14,8 +14,8 @@ export const Hero = ({ heroImage, title, subTitle, children, titleLevel }) => {
         justify="space-between"
         gutter={[0, { xs: 24, sm: 24, md: 0, lg: 0 }]}
       >
-        <Col sm={24} md={{ span: 12, order: 2 }}>
-          <img src={heroImage} />
+        <Col className="hero-img" sm={24} md={{ span: 12, order: 2 }}>
+          <div style={{ backgroundImage: `url(${heroImage})` }} />
         </Col>
         <Col sm={24} md={11}>
           {subTitle && <Text type="secondary">{subTitle}</Text>}

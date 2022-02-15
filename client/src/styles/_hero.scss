@@ -5,9 +5,17 @@
 .hero-body {
   text-align: left;
   background-color: #fff;
+  padding-bottom: 30px;
+  padding-top: 30px;
 
-  img {
-    width: 100%;
+  .hero-img {
+    height: 329px;
+    & > div {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 100%;
+    }
   }
 
   h3.hero-title {
