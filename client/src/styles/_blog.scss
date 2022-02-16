@@ -76,3 +76,21 @@
     }
   }
 }
+
+.blog-post-content {
+  pre {
+    white-space: pre-wrap;
+  }
+
+  .post-img {
+    display: flex;
+    height: 400px;
+    justify-content: center;
+
+    img {
+      height: auto;
+      max-width: 600px;
+      width: 100%;
+    }
+  }
+}
