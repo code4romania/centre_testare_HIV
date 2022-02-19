@@ -13,7 +13,7 @@ export const CenterDetails = ({ onClose, isLoading, details }) => {
       return [];
     }
 
-    const hasTestTypes = details.testTypes.length > 0;
+    const hasTestTypes = details.testTypes?.length > 0;
 
     const testTypes = hasTestTypes
       ? details.testTypes

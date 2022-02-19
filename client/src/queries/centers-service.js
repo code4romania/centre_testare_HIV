@@ -1,18 +1,28 @@
 import config from '../config';
+import { mapKeysToCamelCase } from '../utils';
 import { useGet } from './requests';
 
 const { CENTER_URL } = config;
 
-export const useTestingCentersQuery = () => {
-  const { data, ...rest } = useGet(CENTER_URL);
+export const getTestingCenters = async () => {
+  const res = await fetch(CENTER_URL);
+  if (!res.ok) {
+    throw new Error(res.statusText);
+  }
 
-  return { testingCenters: data ?? [], ...rest };
+  const data = await res.json();
+  return mapKeysToCamelCase(data);
 };
 
-export const useBuildingByIdQuery = (pk) => {
-  const { data: center, ...rest } = useGet(`${CENTER_URL}${pk}/`);
+export const getTestingCenterById = async (pk) => {
+  const res = await fetch(`${CENTER_URL}${pk}/`);
 
-  return { center, ...rest };
+  if (!res.ok) {
+    throw new Error(res.statusText);
+  }
+
+  const data = await res.json();
+  return mapKeysToCamelCase(data);
 };
 
 export const useSearchCentersQuery = () => {

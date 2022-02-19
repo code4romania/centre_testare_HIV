@@ -1,27 +1,65 @@
-import React from 'react';
-import HereMapInteractive from '../../components/HereMapInteractive';
+import React, { useCallback, useEffect, useRef } from 'react';
+import { Col, Row } from 'antd';
+import { CenterDetails } from '../../components/CenterDetails';
+import { InteractiveMap } from '../../components/InteractiveMap';
+import { useCreateMap } from '../../hooks/map/useCreateMap';
+import { useMap, useSelectedCenterPk } from '../../store';
+import { useTestingCenterByIdQuery } from '../../queries';
+import { useClearSelectedMarkers } from '../../hooks/map/useClearSelectedMarkers';
 
-import config from '../../config';
+export const MapFragment = () => {
+  const mapRef = useRef(null);
 
-const { CENTER_URL } = config;
+  useCreateMap(mapRef);
+  const { map, isMapLoading } = useMap();
 
-export default () => {
-  const [testingCenters, setTestingCenters] = React.useState([]);
+  const { selectedCenterPk, clearSelectedCenterPk } = useSelectedCenterPk();
+  const clearSelectedMarkers = useClearSelectedMarkers();
 
-  React.useEffect(() => {
-    fetch(`${CENTER_URL}`)
-      .then((res) => res.json())
-      .then((locations) => {
-        setTestingCenters(locations);
-      })
-      .catch(() => {
-        setTestingCenters([]);
-      });
-  }, []);
+  const { data: centerDetails, isLoading: isLoadingCenter } = useTestingCenterByIdQuery(
+    selectedCenterPk,
+    {
+      enabled: Boolean(selectedCenterPk),
+    },
+  );
+
+  const showRightPanel = Boolean(selectedCenterPk);
+
+  const onCloseRightPanel = useCallback(() => {
+    clearSelectedCenterPk();
+    clearSelectedMarkers();
+  }, [clearSelectedCenterPk, clearSelectedMarkers]);
+
+  useEffect(() => {
+    if (!map) return;
+
+    map.getViewPort().resize();
+  }, [map, showRightPanel]);
 
   return (
-    <div>
-      <HereMapInteractive points={testingCenters} />
+    <div style={{ height: '422px', position: 'relative' }}>
+      <Row type="flex" gutter={30}>
+        <Col
+          xs={{ span: showRightPanel ? 0 : 24 }}
+          sm={{ span: showRightPanel ? 12 : 24 }}
+          lg={{ span: showRightPanel ? 16 : 24 }}
+        >
+          <InteractiveMap mapRef={mapRef} isMapLoading={isMapLoading} />
+        </Col>
+        <Col
+          xs={{ span: showRightPanel ? 24 : 0 }}
+          sm={{ span: showRightPanel ? 12 : 0 }}
+          lg={{ span: showRightPanel ? 8 : 0 }}
+        >
+          <CenterDetails
+            details={centerDetails}
+            onClose={onCloseRightPanel}
+            isLoading={isLoadingCenter}
+          />
+        </Col>
+      </Row>
     </div>
   );
 };
+
+export default { MapFragment };

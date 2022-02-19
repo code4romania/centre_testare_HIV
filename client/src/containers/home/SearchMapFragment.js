@@ -1,11 +1,14 @@
-import React, { useCallback, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { Trans } from '@lingui/macro';
-import HereMapInteractive from '../../components/HereMapInteractive';
+import { MapFragment } from './MapFragment';
 import { SearchFragment } from './SearchFragment';
-import { useCreateMap } from '../../hooks/map/useCreateMap';
 import { useGeoCodeSearch } from '../../hooks/map/useGeoCodeSearch';
 import { zoomToNearestPointToPosition } from '../../utils';
 import { useSearchCentersQuery, useTestingCentersQuery } from '../../queries';
+import { useMap, useSelectedCenterPk } from '../../store';
+import { useCreateMapClusters } from '../../hooks/map/useCreateMapClusters';
+import { useShowCenterOnMap } from '../../hooks/map/useShowCenterOnMap';
+import { useClearSelectedMarkers } from '../../hooks/map/useClearSelectedMarkers';
 
 const SEARCH_OPTIONS = {
   byLocation: {
@@ -19,13 +22,23 @@ const SEARCH_OPTIONS = {
 };
 
 export const SearchMapFragment = () => {
-  const mapRef = useRef(null);
   const [searchOption, setSearchOption] = useState(SEARCH_OPTIONS.byLocation);
   const [isLoadingLocation, setIsLoadingLocation] = useState(false);
 
-  const { map, mapPlatform, isMapLoading } = useCreateMap(mapRef);
+  const { map, mapPlatform, isMapLoading } = useMap();
 
-  const { testingCenters } = useTestingCentersQuery();
+  const createMapClusters = useCreateMapClusters();
+  const { setSelectedCenterPk, clearSelectedCenterPk } = useSelectedCenterPk();
+  const showCenterOnMap = useShowCenterOnMap();
+  const clearSelectedMarkers = useClearSelectedMarkers();
+
+  const { data: testingCenters } = useTestingCentersQuery({
+    enabled: !isMapLoading,
+    onSuccess: (points) => {
+      createMapClusters(points);
+    },
+  });
+
   const {
     searchResults,
     isLoading: isLoadingTestingCenters,
@@ -61,29 +74,52 @@ export const SearchMapFragment = () => {
   const onSearchHandler = useCallback(
     (searchText) => {
       if (searchOption.value === SEARCH_OPTIONS.byLocation.value) {
+        clearSelectedMarkers();
+        clearSelectedCenterPk();
         setIsLoadingLocation(true);
         geoCodeSearch(searchText);
       } else {
         searchTestingCenters({ query: searchText });
       }
     },
-    [geoCodeSearch, searchOption.value, searchTestingCenters],
+    [
+      clearSelectedCenterPk,
+      clearSelectedMarkers,
+      geoCodeSearch,
+      searchOption.value,
+      searchTestingCenters,
+    ],
   );
 
-  const onSelectResultHandler = useCallback(() => {
-    if (searchOption.value === SEARCH_OPTIONS.byLocation.value) {
-      setIsLoadingLocation(true);
-      navigator.geolocation.getCurrentPosition(({ coords }) => {
-        setIsLoadingLocation(false);
-        zoomToNearestPointToPosition(
-          map,
-          { lat: coords.latitude, lng: coords.longitude },
-          testingCenters,
-        );
-      });
-    }
-    // @TODO add result select handler for byAddress search option
-  }, [map, searchOption.value, testingCenters]);
+  const onSelectResultHandler = useCallback(
+    (event) => {
+      clearSelectedMarkers();
+      if (searchOption.value === SEARCH_OPTIONS.byLocation.value) {
+        clearSelectedCenterPk();
+        setIsLoadingLocation(true);
+        navigator.geolocation.getCurrentPosition(({ coords }) => {
+          setIsLoadingLocation(false);
+          zoomToNearestPointToPosition(
+            map,
+            { lat: coords.latitude, lng: coords.longitude },
+            testingCenters,
+          );
+        });
+      } else {
+        showCenterOnMap(event);
+        setSelectedCenterPk(event);
+      }
+    },
+    [
+      clearSelectedCenterPk,
+      clearSelectedMarkers,
+      map,
+      searchOption.value,
+      setSelectedCenterPk,
+      showCenterOnMap,
+      testingCenters,
+    ],
+  );
 
   const onChangeSearchOptionHandler = useCallback(({ target }) => {
     setSearchOption(SEARCH_OPTIONS[target.value]);
@@ -100,14 +136,7 @@ export const SearchMapFragment = () => {
         onSelectResult={onSelectResultHandler}
         searchOptions={SEARCH_OPTIONS}
       />
-      <div>
-        <HereMapInteractive
-          map={map}
-          mapRef={mapRef}
-          points={testingCenters}
-          isMapLoading={isMapLoading}
-        />
-      </div>
+      <MapFragment />
     </>
   );
 };
