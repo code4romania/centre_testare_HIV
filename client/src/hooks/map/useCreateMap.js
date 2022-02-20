@@ -1,23 +1,14 @@
-import { useLayoutEffect, useState } from 'react';
+import { useLayoutEffect } from 'react';
+import { useMap } from '../../store';
 import config from '../../config';
+import { DEFAULT_MAP_OPTIONS } from '../../constants';
 
 const { H } = window;
 
 const { MAP_API_KEY } = config;
 
-const defaultMapOptins = {
-  center: { lat: 45.9432, lng: 24.9668 },
-  enableMapBehaviors: true,
-  enableMapUi: true,
-  // Romanias most extreme points https://en.wikipedia.org/wiki/List_of_extreme_points_of_Romania
-  mapBounds: new H.geo.Rect(48.15, 20.19, 43.4, 29.4),
-  zoom: 0,
-};
-
-export function useCreateMap(mapRef, options = defaultMapOptins) {
-  const [map, setMap] = useState(null);
-  const [mapPlatform, setMapPlatform] = useState(null);
-  const [isMapLoading, setIsMapLoading] = useState(true);
+export function useCreateMap(mapRef, options = DEFAULT_MAP_OPTIONS) {
+  const { setMapLoaded } = useMap();
   const { center, mapBounds: bounds, enableMapBehaviors, enableMapUi, zoom } = options;
 
   useLayoutEffect(() => {
@@ -52,24 +43,19 @@ export function useCreateMap(mapRef, options = defaultMapOptins) {
 
     const onMapRendered = (event) => {
       if (mapEngine === event.target) {
-        setIsMapLoading(false);
+        setMapLoaded({ map: hMap, mapPlatform: platform });
       }
     };
 
     mapEngine.addEventListener('render', onMapRendered);
     window.addEventListener('resize', onResizeWindow);
 
-    setMap(hMap);
-    setMapPlatform(platform);
-
     return () => {
       mapEngine.removeEventListener('render', onMapRendered);
       window.removeEventListener('resize', onResizeWindow);
       hMap.dispose();
     };
-  }, [bounds, center, enableMapBehaviors, enableMapUi, mapRef, setMap, zoom]);
-
-  return { map, mapPlatform, isMapLoading };
+  }, [bounds, center, enableMapBehaviors, enableMapUi, mapRef, setMapLoaded, zoom]);
 }
 
 export default useCreateMap;
