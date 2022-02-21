@@ -33,7 +33,9 @@ export const CenterDetails = ({ onClose, isLoading, details }) => {
       {
         label: <Trans>Website</Trans>,
         value: details.website ? (
-          <Link to={{ pathname: details.website }}>{details.website}</Link>
+          <Link to={{ pathname: details.website }} target="_blank">
+            {details.website}
+          </Link>
         ) : null,
       },
     ].filter(({ value }) => value);
