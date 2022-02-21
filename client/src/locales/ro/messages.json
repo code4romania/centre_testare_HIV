@@ -178,7 +178,7 @@
     "origin": [
       [
         "components/CenterDetails/index.js",
-        84
+        102
       ]
     ],
     "extractedComments": []
@@ -282,7 +282,7 @@
     "origin": [
       [
         "components/CenterDetails/index.js",
-        70
+        74
       ]
     ],
     "extractedComments": []
@@ -293,6 +293,24 @@
       [
         "components/LoadMoreArticlesLink/index.js",
         8
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Lorem ipsum dolor sit amet.": {
+    "translation": "Lorem ipsum dolor sit amet.",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        12
+      ],
+      [
+        "containers/Terms/TermsFragment.js",
+        36
+      ],
+      [
+        "containers/Terms/TermsFragment.js",
+        60
       ]
     ],
     "extractedComments": []
@@ -357,6 +375,16 @@
     ],
     "extractedComments": []
   },
+  "Phone number missing": {
+    "translation": "Număr telefon lipsă",
+    "origin": [
+      [
+        "components/CenterDetails/index.js",
+        89
+      ]
+    ],
+    "extractedComments": []
+  },
   "Privacy policy": {
     "translation": "Politica de confidențialitate",
     "origin": [
@@ -413,6 +441,10 @@
       [
         "components/Footer/index.js",
         69
+      ],
+      [
+        "containers/Terms/HeroFragment.js",
+        11
       ]
     ],
     "extractedComments": []
@@ -644,7 +676,7 @@
     "origin": [
       [
         "components/CenterDetailsTitle/index.js",
-        38
+        50
       ]
     ],
     "extractedComments": []
