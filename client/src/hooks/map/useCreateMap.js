@@ -8,7 +8,7 @@ const { H } = window;
 const { MAP_API_KEY } = config;
 
 export function useCreateMap(mapRef, options = DEFAULT_MAP_OPTIONS) {
-  const { setMapLoaded } = useMap();
+  const { setMapLoaded, unloadMap } = useMap();
   const { center, mapBounds: bounds, enableMapBehaviors, enableMapUi, zoom } = options;
 
   useLayoutEffect(() => {
@@ -54,8 +54,9 @@ export function useCreateMap(mapRef, options = DEFAULT_MAP_OPTIONS) {
       mapEngine.removeEventListener('render', onMapRendered);
       window.removeEventListener('resize', onResizeWindow);
       hMap.dispose();
+      unloadMap();
     };
-  }, [bounds, center, enableMapBehaviors, enableMapUi, mapRef, setMapLoaded, zoom]);
+  }, [bounds, center, enableMapBehaviors, enableMapUi, mapRef, setMapLoaded, unloadMap, zoom]);
 }
 
 export default useCreateMap;
