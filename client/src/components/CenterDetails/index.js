@@ -1,14 +1,12 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useMemo } from 'react';
 import { Button, Card, Col, Icon, Row, Descriptions, Empty } from 'antd';
 import { Trans } from '@lingui/macro';
 import { Link } from 'react-router-dom';
 import { CenterDetailsTitle } from '../CenterDetailsTitle';
 import { useGlobalContext } from '../../context';
 
-export const CenterDetails = ({ onClose, isLoading, details }) => {
+export const CenterDetails = ({ onClose, isLoading, details, showPhoneNumber, onClick }) => {
   const { currentLanguage } = useGlobalContext();
-
-  const [showPhoneNumber, setShowPhoneNumber] = useState(false);
 
   const detailsItems = useMemo(() => {
     if (!details) {
@@ -45,8 +43,6 @@ export const CenterDetails = ({ onClose, isLoading, details }) => {
 
   const hasDetailItems = detailsItems.length > 0;
 
-  const onCallCenterHandler = useCallback(() => setShowPhoneNumber(true), []);
-
   return (
     <Card className="center-details" loading={isLoading}>
       <Row type="flex" gutter={10} className="center-details-header">
@@ -57,7 +53,8 @@ export const CenterDetails = ({ onClose, isLoading, details }) => {
           countyCode={details?.countyCode}
           lat={details?.lat}
           lng={details?.lng}
-          ratings={details?.ratings}
+          averageRating={details?.averageRating}
+          totalRatings={details?.numberOfRatings}
         />
         <Col span={2}>
           <Icon type="close" onClick={onClose} />
@@ -78,19 +75,34 @@ export const CenterDetails = ({ onClose, isLoading, details }) => {
         </Row>
       )}
 
-      <Button
-        className="call-center-btn"
-        icon="phone"
-        size="large"
-        type="primary"
-        ghost
-        block
-        disabled={!hasDetailItems || !details?.phoneNumber}
-        href={`tel:${details?.phoneNumber}`}
-        onClick={onCallCenterHandler}
-      >
-        <span>{!showPhoneNumber ? <Trans>Call center</Trans> : details?.phoneNumber}</span>
-      </Button>
+      {showPhoneNumber ? (
+        <Button
+          className="call-center-btn"
+          icon="phone"
+          size="large"
+          type="primary"
+          ghost
+          block
+          disabled={!hasDetailItems || !details?.phoneNumber}
+          href={`tel:${details?.phoneNumber}`}
+        >
+          <span>{details?.phoneNumber ?? <Trans>Phone number missing</Trans>}</span>
+        </Button>
+      ) : (
+        <Button
+          className="call-center-btn"
+          size="large"
+          type="primary"
+          ghost
+          block
+          disabled={!hasDetailItems || !details?.phoneNumber}
+          onClick={onClick}
+        >
+          <span>
+            <Trans>Call center</Trans>
+          </span>
+        </Button>
+      )}
     </Card>
   );
 };

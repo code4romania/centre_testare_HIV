@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { Col, Icon, Row, Typography } from 'antd';
 import { Trans } from '@lingui/macro';
 import { Link } from 'react-router-dom';
@@ -14,16 +14,10 @@ export const CenterDetailsTitle = ({
   countyCode,
   lat,
   lng,
-  ratings,
+  averageRating,
+  totalRatings,
 }) => {
   const showSubtext = locality || countyCode;
-
-  const averageRating = useMemo(() => {
-    const total = ratings?.reduce((sum, { rating }) => sum + rating, 0);
-    const ratingsCount = ratings?.length;
-    const average = total / ratingsCount;
-    return Math.round(average * 10) / 10;
-  }, [ratings]);
 
   return (
     <Col span={22} className="center-details-title">
@@ -61,7 +55,7 @@ export const CenterDetailsTitle = ({
 
           {Boolean(averageRating) && (
             <Text className="center-details-rating">
-              <StarIcon /> {averageRating} <span>({ratings?.length})</span>
+              <StarIcon /> {Math.round(averageRating * 10) / 10} <span>({totalRatings})</span>
             </Text>
           )}
         </Col>

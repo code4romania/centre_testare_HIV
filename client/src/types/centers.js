@@ -7,7 +7,8 @@ export const CenterDetailsTitleType = {
   locality: string,
   streetName: string.isRequired,
   streetNumber: string,
-  ratings: arrayOf(shape({})),
+  averageRating: number,
+  totalRatings: number,
 };
 
 export const CenterDetailsType = {
