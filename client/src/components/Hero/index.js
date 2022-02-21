@@ -30,6 +30,7 @@ export const Hero = ({ heroImage, title, subTitle, children, titleLevel }) => {
 };
 
 Hero.defaultProps = {
+  heroImage: null,
   subTitle: null,
   titleLevel: 2,
 };

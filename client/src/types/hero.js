@@ -1,7 +1,7 @@
 import { element, number, oneOfType, string } from 'prop-types';
 
 export const HeroType = {
-  heroImage: string.isRequired,
+  heroImage: string,
   title: oneOfType([string, element]).isRequired,
   subTitle: string,
   titleLevel: number,
