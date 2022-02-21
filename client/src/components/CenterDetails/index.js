@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { Button, Card, Col, Icon, Row, Descriptions, Empty } from 'antd';
 import { Trans } from '@lingui/macro';
 import { Link } from 'react-router-dom';
@@ -7,6 +7,8 @@ import { useGlobalContext } from '../../context';
 
 export const CenterDetails = ({ onClose, isLoading, details }) => {
   const { currentLanguage } = useGlobalContext();
+
+  const [showPhoneNumber, setShowPhoneNumber] = useState(false);
 
   const detailsItems = useMemo(() => {
     if (!details) {
@@ -43,6 +45,8 @@ export const CenterDetails = ({ onClose, isLoading, details }) => {
 
   const hasDetailItems = detailsItems.length > 0;
 
+  const onCallCenterHandler = useCallback(() => setShowPhoneNumber(true), []);
+
   return (
     <Card className="center-details" loading={isLoading}>
       <Row type="flex" gutter={10} className="center-details-header">
@@ -53,8 +57,9 @@ export const CenterDetails = ({ onClose, isLoading, details }) => {
           countyCode={details?.countyCode}
           lat={details?.lat}
           lng={details?.lng}
+          ratings={details?.ratings}
         />
-        <Col style={{ marginLeft: 'auto' }}>
+        <Col span={2}>
           <Icon type="close" onClick={onClose} />
         </Col>
       </Row>
@@ -80,11 +85,11 @@ export const CenterDetails = ({ onClose, isLoading, details }) => {
         type="primary"
         ghost
         block
-        disabled={!hasDetailItems}
+        disabled={!hasDetailItems || !details?.phoneNumber}
+        href={`tel:${details?.phoneNumber}`}
+        onClick={onCallCenterHandler}
       >
-        <span>
-          <Trans>Call center</Trans>
-        </span>
+        <span>{!showPhoneNumber ? <Trans>Call center</Trans> : details?.phoneNumber}</span>
       </Button>
     </Card>
   );
