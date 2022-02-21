@@ -21,6 +21,7 @@ class TestingCenterSerializer(serializers.ModelSerializer):
     test_types = serializers.SerializerMethodField("get_test_types")
     county_code = serializers.SerializerMethodField("get_county_code")
     average_rating = serializers.SerializerMethodField("get_average_rating")
+    number_of_ratings = serializers.SerializerMethodField("get_number_of_ratings")
 
     ratings = CenterRatingSerializer(many=True, read_only=True)
 
@@ -39,6 +40,10 @@ class TestingCenterSerializer(serializers.ModelSerializer):
         average = average or 0
         return round(average, 2)
 
+    @staticmethod
+    def get_number_of_ratings(obj: TestingCenter) -> int:
+        return CenterRating.objects.filter(testing_center_id=obj.pk).count()
+
     class Meta:
         model = TestingCenter
         fields = (
@@ -54,6 +59,7 @@ class TestingCenterSerializer(serializers.ModelSerializer):
             "schedule",
             "test_types",
             "average_rating",
+            "number_of_ratings",
             "ratings",
         )
 
