@@ -103,7 +103,7 @@
     "origin": [
       [
         "containers/contact/FormFragment.js",
-        33
+        65
       ]
     ],
     "extractedComments": []
@@ -112,7 +112,7 @@
     "origin": [
       [
         "containers/blog-post/BlogPostDetailsFragment/BlogPostDetailsFragment.js",
-        42
+        43
       ]
     ],
     "extractedComments": []
@@ -147,7 +147,7 @@
     "origin": [
       [
         "containers/home/SearchMapFragment.js",
-        13
+        16
       ]
     ],
     "extractedComments": []
@@ -156,7 +156,7 @@
     "origin": [
       [
         "containers/home/SearchMapFragment.js",
-        17
+        20
       ]
     ],
     "extractedComments": []
@@ -165,7 +165,7 @@
     "origin": [
       [
         "components/CenterDetails/index.js",
-        73
+        84
       ]
     ],
     "extractedComments": []
@@ -259,7 +259,7 @@
     "origin": [
       [
         "components/CenterDetails/index.js",
-        59
+        70
       ]
     ],
     "extractedComments": []
@@ -305,7 +305,7 @@
     "origin": [
       [
         "components/CenterDetails/index.js",
-        15
+        26
       ]
     ],
     "extractedComments": []
@@ -341,7 +341,7 @@
     "origin": [
       [
         "containers/contact/FormFragment.js",
-        108
+        155
       ]
     ],
     "extractedComments": []
@@ -386,7 +386,7 @@
     "origin": [
       [
         "components/CenterDetails/index.js",
-        19
+        30
       ]
     ],
     "extractedComments": []
@@ -400,11 +400,29 @@
     ],
     "extractedComments": []
   },
+  "The form was submitted successfully.": {
+    "origin": [
+      [
+        "containers/contact/FormFragment.js",
+        34
+      ]
+    ],
+    "extractedComments": []
+  },
+  "There was an error submitting the form. Please try again.": {
+    "origin": [
+      [
+        "containers/contact/FormFragment.js",
+        37
+      ]
+    ],
+    "extractedComments": []
+  },
   "Website": {
     "origin": [
       [
         "components/CenterDetails/index.js",
-        23
+        34
       ]
     ],
     "extractedComments": []
@@ -423,10 +441,6 @@
       [
         "components/BlogItem/index.js",
         21
-      ],
-      [
-        "containers/blog-post/HeroFragment.js",
-        23
       ]
     ],
     "extractedComments": []
@@ -486,7 +500,7 @@
     "origin": [
       [
         "containers/contact/FormFragment.js",
-        48
+        83
       ]
     ],
     "extractedComments": []
@@ -497,7 +511,7 @@
     "origin": [
       [
         "containers/contact/FormFragment.js",
-        77
+        118
       ]
     ],
     "extractedComments": []
@@ -507,7 +521,7 @@
     "origin": [
       [
         "containers/contact/FormFragment.js",
-        67
+        108
       ]
     ],
     "extractedComments": []
@@ -517,7 +531,7 @@
     "origin": [
       [
         "containers/contact/FormFragment.js",
-        40
+        74
       ]
     ],
     "extractedComments": []
@@ -527,7 +541,7 @@
     "origin": [
       [
         "containers/contact/FormFragment.js",
-        58
+        98
       ]
     ],
     "extractedComments": []
@@ -537,7 +551,7 @@
     "origin": [
       [
         "hooks/form/useFormValidationRules.js",
-        29
+        24
       ]
     ],
     "extractedComments": []
@@ -557,17 +571,7 @@
     "origin": [
       [
         "hooks/form/useFormValidationRules.js",
-        31
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.validation.integer": {
-    "translation": "Value must be an integer greater than zero!",
-    "origin": [
-      [
-        "hooks/form/useFormValidationRules.js",
-        15
+        26
       ]
     ],
     "extractedComments": []
@@ -578,7 +582,7 @@
     "origin": [
       [
         "hooks/form/useFormValidationRules.js",
-        23
+        18
       ]
     ],
     "extractedComments": []
@@ -588,7 +592,7 @@
     "origin": [
       [
         "hooks/form/useFormValidationRules.js",
-        18
+        13
       ]
     ],
     "extractedComments": []
