@@ -17,3 +17,10 @@ export const useMap = () => {
 
   return { map, mapPlatform, isMapLoading, setMapLoaded, unloadMap };
 };
+
+export const usePhoneNumber = () => {
+  const showPhoneNumber = useStore((state) => state.showPhoneNumber);
+  const setShowPhoneNumber = useStore((state) => state.setShowPhoneNumber);
+
+  return { showPhoneNumber, setShowPhoneNumber };
+};

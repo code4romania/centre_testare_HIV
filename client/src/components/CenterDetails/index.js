@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { CenterDetailsTitle } from '../CenterDetailsTitle';
 import { useGlobalContext } from '../../context';
 
-export const CenterDetails = ({ onClose, isLoading, details }) => {
+export const CenterDetails = ({ onClose, isLoading, details, showPhoneNumber, onClick }) => {
   const { currentLanguage } = useGlobalContext();
 
   const detailsItems = useMemo(() => {
@@ -33,7 +33,9 @@ export const CenterDetails = ({ onClose, isLoading, details }) => {
       {
         label: <Trans>Website</Trans>,
         value: details.website ? (
-          <Link to={{ pathname: details.website }}>{details.website}</Link>
+          <Link to={{ pathname: details.website }} target="_blank">
+            {details.website}
+          </Link>
         ) : null,
       },
     ].filter(({ value }) => value);
@@ -51,8 +53,10 @@ export const CenterDetails = ({ onClose, isLoading, details }) => {
           countyCode={details?.countyCode}
           lat={details?.lat}
           lng={details?.lng}
+          averageRating={details?.averageRating}
+          totalRatings={details?.numberOfRatings}
         />
-        <Col style={{ marginLeft: 'auto' }}>
+        <Col span={2}>
           <Icon type="close" onClick={onClose} />
         </Col>
       </Row>
@@ -71,19 +75,34 @@ export const CenterDetails = ({ onClose, isLoading, details }) => {
         </Row>
       )}
 
-      <Button
-        className="call-center-btn"
-        icon="phone"
-        size="large"
-        type="primary"
-        ghost
-        block
-        disabled={!hasDetailItems}
-      >
-        <span>
-          <Trans>Call center</Trans>
-        </span>
-      </Button>
+      {showPhoneNumber ? (
+        <Button
+          className="call-center-btn"
+          icon="phone"
+          size="large"
+          type="primary"
+          ghost
+          block
+          disabled={!hasDetailItems || !details?.phoneNumber}
+          href={`tel:${details?.phoneNumber}`}
+        >
+          <span>{details?.phoneNumber ?? <Trans>Phone number missing</Trans>}</span>
+        </Button>
+      ) : (
+        <Button
+          className="call-center-btn"
+          size="large"
+          type="primary"
+          ghost
+          block
+          disabled={!hasDetailItems || !details?.phoneNumber}
+          onClick={onClick}
+        >
+          <span>
+            <Trans>Call center</Trans>
+          </span>
+        </Button>
+      )}
     </Card>
   );
 };

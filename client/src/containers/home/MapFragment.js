@@ -3,7 +3,7 @@ import { Col, Row } from 'antd';
 import { CenterDetails } from '../../components/CenterDetails';
 import { InteractiveMap } from '../../components/InteractiveMap';
 import { useCreateMap } from '../../hooks/map/useCreateMap';
-import { useMap, useSelectedCenterPk } from '../../store';
+import { useMap, useSelectedCenterPk, usePhoneNumber } from '../../store';
 import { useTestingCenterByIdQuery } from '../../queries';
 import { useClearSelectedMarkers } from '../../hooks/map/useClearSelectedMarkers';
 
@@ -15,6 +15,7 @@ export const MapFragment = () => {
 
   const { selectedCenterPk, clearSelectedCenterPk } = useSelectedCenterPk();
   const clearSelectedMarkers = useClearSelectedMarkers();
+  const { showPhoneNumber, setShowPhoneNumber } = usePhoneNumber();
 
   const { data: centerDetails, isLoading: isLoadingCenter } = useTestingCenterByIdQuery(
     selectedCenterPk,
@@ -29,6 +30,10 @@ export const MapFragment = () => {
     clearSelectedCenterPk();
     clearSelectedMarkers();
   }, [clearSelectedCenterPk, clearSelectedMarkers]);
+
+  const onCallCenterHandler = useCallback(() => {
+    setShowPhoneNumber();
+  }, [setShowPhoneNumber]);
 
   useEffect(() => {
     if (!map) return;
@@ -55,6 +60,8 @@ export const MapFragment = () => {
             details={centerDetails}
             onClose={onCloseRightPanel}
             isLoading={isLoadingCenter}
+            showPhoneNumber={showPhoneNumber}
+            onClick={onCallCenterHandler}
           />
         </Col>
       </Row>
