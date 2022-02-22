@@ -13,6 +13,7 @@ export const useMap = () => {
   const mapPlatform = useStore((state) => state.mapPlatform);
   const isMapLoading = useStore((state) => state.isMapLoading);
   const setMapLoaded = useStore((state) => state.setMapLoaded);
+  const unloadMap = useStore((store) => store.unloadMap);
 
-  return { map, mapPlatform, isMapLoading, setMapLoaded };
+  return { map, mapPlatform, isMapLoading, setMapLoaded, unloadMap };
 };
