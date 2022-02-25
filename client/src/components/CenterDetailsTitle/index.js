@@ -4,8 +4,11 @@ import { Trans } from '@lingui/macro';
 import { Link } from 'react-router-dom';
 import { CenterDetailsTitleType } from '../../types/centers';
 import { ReactComponent as StarIcon } from '../../images/star-solid.svg';
+import { getDeviceType } from '../../utils';
 
 const { Paragraph, Text } = Typography;
+
+const { isIos } = getDeviceType();
 
 export const CenterDetailsTitle = ({
   streetName,
@@ -18,6 +21,10 @@ export const CenterDetailsTitle = ({
   totalRatings,
 }) => {
   const showSubtext = locality || countyCode;
+
+  const coordinates = `${parseFloat(lat, 10)},${parseFloat(lng, 10)}`;
+
+  const locationHref = isIos ? `geo:${coordinates}` : `https://maps.google.com?q=${coordinates}`;
 
   return (
     <Col span={22} className="center-details-title">
@@ -38,15 +45,7 @@ export const CenterDetailsTitle = ({
             )}{' '}
             <Text className="center-details-title__link" underline>
               (
-              <Link
-                to={{
-                  pathname: `https://maps.google.com?q=${parseFloat(lat, 10)},${parseFloat(
-                    lng,
-                    10,
-                  )}`,
-                }}
-                target="_blank"
-              >
+              <Link to={{ pathname: locationHref }} target="_blank">
                 <Trans>see how to get there</Trans>
               </Link>
               )
