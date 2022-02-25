@@ -25,7 +25,7 @@ const createObjectKeyMapper = (keyMappingFunction) => {
 export const mapKeysToCamelCase = createObjectKeyMapper(camelCase);
 export const mapKeysToSnakeCase = createObjectKeyMapper(snakeCase);
 
-const getDistanceBetweenTwoPoints = (x, y) => {
+export const getDistanceBetweenTwoPoints = (x, y) => {
   const dx = x.lng - y.lng;
   const dy = x.lat - y.lat;
 

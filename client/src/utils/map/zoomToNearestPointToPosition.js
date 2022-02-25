@@ -1,9 +1,15 @@
-import { getNearestPoint, sortCoordinates } from '../utils';
+import { getDistanceBetweenTwoPoints, getNearestPoint, sortCoordinates } from '../utils';
 import { HereMapDomIcons } from './hereMapDomIcons';
 
 const { H } = window;
 
-const BOUNDS_OFFSET = 0.03;
+const BOUNDS_OFFSET = {
+  topMin: 0.04,
+  topMax: 0.13,
+  bottom: 0.01,
+  left: 0.04,
+  right: 0.04,
+};
 
 const createDomMakerAtPosition = (position) => {
   const { userPinDomIcon } = HereMapDomIcons;
@@ -14,11 +20,14 @@ const createDomMakerAtPosition = (position) => {
 const getBoundsByTwoPoints = (x, y) => {
   const [left, right, bottom, top] = sortCoordinates(x, y);
 
+  const dist = getDistanceBetweenTwoPoints(x, y);
+  const topOffset = dist > 0.7 ? BOUNDS_OFFSET.topMax : BOUNDS_OFFSET.topMin;
+
   return new H.geo.Rect(
-    top + BOUNDS_OFFSET,
-    left - BOUNDS_OFFSET,
-    bottom - BOUNDS_OFFSET,
-    right + BOUNDS_OFFSET,
+    top + topOffset,
+    left - BOUNDS_OFFSET.left,
+    bottom - BOUNDS_OFFSET.bottom,
+    right + BOUNDS_OFFSET.right,
   );
 };
 
