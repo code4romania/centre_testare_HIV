@@ -1,34 +1,35 @@
 # django and related apps
 django>=3.2,<3.3
 django-environ
-django-import-export
-djangorestframework
-django-cors-headers
-django-ckeditor
-django-storages
-django-taggit
-django-taggit-serializer
-django-jquery
+django-import-export==2.8.0
+djangorestframework==3.13.1
+django-cors-headers==3.11.0
+django-ckeditor==6.2.0
+django-storages==1.12.3
+django-taggit==2.1.0
+django-taggit-serializer==0.1.7
+django-jquery==3.1.0
+django-modeltranslation==0.17.5
 
 # py caching
-pymemcache
+pymemcache==3.5.2
 
 # database
 psycopg2<2.10
-dj-database-url
+dj-database-url==0.5.0
 
 # file handling
-boto3
-Pillow
-whitenoise
-brotlipy
+boto3==1.21.33
+pillow==9.1.0
+whitenoise==6.0.0
+brotlipy==0.7.0
 
 # misc libraries
-tablib
+tablib==3.2.0
 
 # wsgi server
-gunicorn
-gevent
+gunicorn==20.1.0
+gevent==21.12.0
 
 # doc-generation
-drf-spectacular
+drf-spectacular==0.22.0
