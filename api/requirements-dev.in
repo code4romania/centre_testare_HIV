@@ -1,24 +1,24 @@
 # django
-django-debug-toolbar
-django-extensions
-werkzeug
+django-debug-toolbar==3.2.4
+django-extensions==3.1.5
+werkzeug==2.1.1
 
 # tests
-pytest
-pytest-flake8
-pytest-cov
-pytest-django
-Faker
-tqdm
+pytest==7.1.1
+pytest-flake8==1.1.1
+pytest-cov==3.0.0
+pytest-django==4.5.2
+faker==13.3.4
+tqdm==4.64.0
 
 # utils
-pdbpp
-ipython
+pdbpp==0.10.3
+ipython==8.2.0
 
 # style checker
-black==22.1.0
+black==22.3.0
 
 # dependency management
-pip-tools
+pip-tools==6.5.1
 
 -r requirements.txt
