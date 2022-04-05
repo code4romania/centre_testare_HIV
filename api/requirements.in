@@ -1,6 +1,6 @@
 # django and related apps
 django>=3.2,<3.3
-django-environ
+django-environ==0.8.1
 django-import-export==2.8.0
 djangorestframework==3.13.1
 django-cors-headers==3.11.0
