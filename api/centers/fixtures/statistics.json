@@ -1,6 +1,6 @@
 [
   {
-    "model": "center.statistic",
+    "model": "centers.statistic",
     "pk": 1,
     "fields": {
       "mobile_caravans": 12,

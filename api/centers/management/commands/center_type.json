@@ -1,0 +1,44 @@
+[
+    {
+        "id":1,
+        "name": "public_clinic",
+        "name_ro": "Clinică/laborator de stat",
+        "name_en": "Public health clinic/laboratory"
+    },
+    {
+        "id": 2,
+        "name": "private_clinic",
+        "name_ro": "Clinică/laborator privat",
+        "name_en": "Private health clinic/laboratory"
+    },
+    {
+        "id": 3,
+        "name": "dsp",
+        "name_ro": "Direcția de Sănătate Publică (DSP)",
+        "name_en": "Public Health Directorate (DSP)"
+    },
+    {
+        "id": 4,
+        "name": "ngo",
+        "name_ro": "ONG",
+        "name_en": "NGO"
+    },
+    {
+        "id": 5,
+        "name": "hospital_infectious",
+        "name_ro": "Spital boli infecțioase",
+        "name_en": "Infectious diseases hospital"
+    },
+    {
+        "id": 6,
+        "name": "hospital_county",
+        "name_ro": "Spital județean – Secția boli infecțioase",
+        "name_en": "County hospital – Infectious diseases section"
+    },
+    {
+        "id": 7,
+        "name": "hospital_private",
+        "name_ro": "Spital privat",
+        "name_en": "Private hospital"
+    }
+]

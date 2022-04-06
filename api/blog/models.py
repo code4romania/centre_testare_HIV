@@ -1,20 +1,25 @@
+from ckeditor_uploader.fields import RichTextUploadingField
+from django.contrib.auth.models import User
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-
 from taggit.managers import TaggableManager
-from ckeditor_uploader.fields import RichTextUploadingField
 
 
 class Post(models.Model):
-    author = models.ForeignKey("auth.User", on_delete=models.PROTECT, verbose_name=_("post"))
-    title = models.CharField(_("title"), max_length=200)
+    author = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name=_("post"))
+
     slug = models.SlugField(_("slug"), unique=True)
-    image = models.ImageField(_("image"), upload_to="blog/")
+
     preview_text = models.CharField(_("preview text"), max_length=300)
-    text = RichTextUploadingField(_("text"))
+    image = models.ImageField(_("image"), upload_to="blog/")
     tags = TaggableManager(_("tags"))
+
+    title = models.CharField(_("title"), max_length=200)
+    text = RichTextUploadingField(_("text"))
+
     is_visible = models.BooleanField(_("is visible"), default=False)
     published = models.DateTimeField(_("published"), blank=True, null=True)
+
     created = models.DateTimeField(_("created"), auto_now_add=True)
     updated = models.DateTimeField(_("updated"), auto_now=True)
 

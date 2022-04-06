@@ -21,4 +21,7 @@ black==22.3.0
 # dependency management
 pip-tools==6.5.1
 
+# scripting tools
+pandas==1.4.2
+
 -r requirements.txt

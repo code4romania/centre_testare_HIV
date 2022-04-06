@@ -16,7 +16,7 @@ install-docker-ubuntu:            ## installs docker and docker-compose on Ubunt
 	sudo curl -L "https://github.com/docker/compose/releases/download/v2.2.3/docker-compose-$(shell uname -s)-$(shell uname -m)" -o /usr/local/bin/docker-compose
 	sudo chmod +x /usr/local/bin/docker-compose
 
-install-docker-macos:               ## installs homebrew (you can skip this at runtime), docker and docker-compose on MacOS
+install-docker-macos:             ## installs homebrew (you can skip this at runtime), docker and docker-compose on MacOS
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	brew update
 	brew cask install docker
@@ -32,6 +32,9 @@ build-dev:                        ## builds the container with the development f
 
 superuser:                        ## creates a superuser for the API
 	docker-compose exec api ./manage.py createsuperuser
+
+exec_api:
+	docker-compose exec api ./manage.py
 
 init-db: superuser                ## sets up the database and fixtures
 	docker-compose exec api ./manage.py loaddata statistics
@@ -70,6 +73,17 @@ pyshell:                          ## start a django shell
 
 black:                            ## run the Black formatter on the Python code
 	black --line-length 120 --target-version py39 --exclude migrations ./api
+
+seed_test_types:                  ## seed the test types
+	docker-compose exec api ./manage.py seed_center_data -t center_test_types
+
+seed_center_types:                ## seed the test types
+	docker-compose exec api ./manage.py seed_center_data -t center_type
+
+seed_necessary_docs:              ## seed the test types
+	docker-compose exec api ./manage.py seed_center_data -t necessary_documents
+
+seed: seed_test_types seed_center_types seed_necessary_docs
 
 ## [TEST]
 test:                             ## run all tests

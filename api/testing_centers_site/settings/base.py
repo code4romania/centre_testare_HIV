@@ -56,6 +56,8 @@ ALLOWED_HOSTS = []
 CORS_ORIGIN_ALLOW_ALL = False
 
 INSTALLED_APPS = [
+    # third-party apps where the order matters
+    "modeltranslation",
     # django apps
     "django.contrib.admin",
     "django.contrib.auth",
@@ -167,6 +169,9 @@ LANGUAGES = [
     ("ro", _("Romanian")),
     ("en", _("English")),
 ]
+SHORT_LANGUAGES = [language[0] for language in LANGUAGES]
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = "ro"
 
 # SMTP
 NO_REPLY_EMAIL = env("NO_REPLY_EMAIL")

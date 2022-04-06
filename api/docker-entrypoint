@@ -24,7 +24,6 @@ fi
 if [[ ${RUN_LOAD_DUMMY_DATA} = "yes" ]] ; then
   echo "Load dummy data in the database"
   ./manage.py loaddata statistics
-  ./manage.py loaddata centers
   ./manage.py loaddata pages
 fi
 

@@ -1,3 +1,5 @@
+from typing import List
+
 from django.conf import settings
 from django.db.models import Avg
 from rest_framework import serializers
@@ -18,16 +20,33 @@ class CenterRatingSerializer(serializers.ModelSerializer):
 
 
 class TestingCenterSerializer(serializers.ModelSerializer):
+    emails = serializers.SerializerMethodField("get_emails")
+    phone_numbers = serializers.SerializerMethodField("get_phone_numbers")
     test_types = serializers.SerializerMethodField("get_test_types")
+    necessary_documents_under_18 = serializers.SerializerMethodField("get_necessary_documents_under_18")
+    necessary_documents_under_16 = serializers.SerializerMethodField("get_necessary_documents_under_16")
     county_code = serializers.SerializerMethodField("get_county_code")
     average_rating = serializers.SerializerMethodField("get_average_rating")
     number_of_ratings = serializers.SerializerMethodField("get_number_of_ratings")
 
     ratings = CenterRatingSerializer(many=True, read_only=True)
 
+    def get_test_types(self, obj: TestingCenter) -> List:
+        return self._get_many_to_many_name_center_field(obj, "test_types")
+
+    def get_necessary_documents_under_18(self, obj: TestingCenter) -> List:
+        return self._get_many_to_many_name_center_field(obj, "necessary_documents_under_18")
+
+    def get_necessary_documents_under_16(self, obj: TestingCenter) -> List:
+        return self._get_many_to_many_name_center_field(obj, "necessary_documents_under_16")
+
     @staticmethod
-    def get_test_types(obj: TestingCenter) -> list:
-        return [{"pk": t.pk, "name_ro": t.name_ro, "name_en": t.name_en} for t in obj.test_types.all()]
+    def get_emails(obj: TestingCenter) -> List:
+        return [t.email for t in obj.emails.all()]
+
+    @staticmethod
+    def get_phone_numbers(obj: TestingCenter) -> List:
+        return [t.phone_number for t in obj.phone_numbers.all()]
 
     @staticmethod
     def get_county_code(obj: TestingCenter) -> str:
@@ -44,6 +63,11 @@ class TestingCenterSerializer(serializers.ModelSerializer):
     def get_number_of_ratings(obj: TestingCenter) -> int:
         return CenterRating.objects.filter(testing_center_id=obj.pk).count()
 
+    @staticmethod
+    def _get_many_to_many_name_center_field(obj: TestingCenter, field: str) -> List:
+        item_data = [item.name for item in getattr(obj, field).all()]
+        return item_data
+
     class Meta:
         model = TestingCenter
         fields = (
@@ -55,9 +79,12 @@ class TestingCenterSerializer(serializers.ModelSerializer):
             "locality",
             "county_code",
             "website",
-            "phone_number",
+            "phone_numbers",
             "schedule",
             "test_types",
+            "emails",
+            "necessary_documents_under_18",
+            "necessary_documents_under_16",
             "average_rating",
             "number_of_ratings",
             "ratings",

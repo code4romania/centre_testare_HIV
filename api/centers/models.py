@@ -1,28 +1,45 @@
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
-from django.utils.translation import get_language, gettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 
-class CenterTestTypes(models.Model):
-    name_en = models.CharField("test type", max_length=200, unique=True, blank=False, default="")
-    name_ro = models.CharField("tip de test", max_length=200, unique=True, blank=False, default="")
+class CenterType(models.Model):
+    name = models.CharField("center type", max_length=200, unique=True, blank=False, null=False)
 
     objects = models.Manager()
 
-    @property
-    def test_type_name(self):
-        current_language = get_language()
-        if "ro" in current_language:
-            return self.name_ro
-        else:
-            return self.name_en
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = _("center type")
+        verbose_name_plural = _("center types")
+
+
+class CenterTestTypes(models.Model):
+    name = models.CharField("test type", max_length=200, unique=True, blank=False, null=False)
+
+    objects = models.Manager()
 
     def __str__(self):
-        return self.test_type_name
+        return self.name
 
     class Meta:
         verbose_name = _("test type")
         verbose_name_plural = _("test types")
+
+
+class NecessaryDocuments(models.Model):
+    name = models.CharField(_("document name"), max_length=300, unique=True, blank=False, null=False)
+
+    objects = models.Manager()
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = _("necessary document")
+        verbose_name_plural = _("necessary documents")
 
 
 class ApprovedTestingCenter(models.Manager):
@@ -30,43 +47,151 @@ class ApprovedTestingCenter(models.Manager):
         return super().get_queryset().filter(status=TestingCenter.ACCEPTED)
 
 
+class CenterEmail(models.Model):
+    email = models.EmailField(_("email"), max_length=320, unique=True, blank=False, null=False)
+
+    create_time = models.DateTimeField(_("time created"), auto_now_add=True)
+    update_time = models.DateTimeField(_("time updated"), auto_now=True)
+
+    objects = models.Manager()
+
+    def __str__(self):
+        return self.email
+
+    class Meta:
+        verbose_name = _("email")
+        verbose_name_plural = _("emails")
+
+
+class CenterPhoneNumber(models.Model):
+    phone_number = models.CharField(_("phone number"), max_length=20, null=True, blank=True)
+
+    create_time = models.DateTimeField(_("time created"), auto_now_add=True)
+    update_time = models.DateTimeField(_("time updated"), auto_now=True)
+
+    objects = models.Manager()
+
+    def __str__(self):
+        return self.phone_number
+
+    class Meta:
+        verbose_name = _("phone number")
+        verbose_name_plural = _("phone numbers")
+
+
 class TestingCenter(models.Model):
     PENDING = 0
     ACCEPTED = 1
     REJECTED = -1
-    CENTER_STATUS_CHOICES = [
+    STATUS_CHOICES = (
         (PENDING, _("Pending")),
         (ACCEPTED, _("Accepted")),
         (REJECTED, _("Rejected")),
-    ]
+    )
 
-    status = models.SmallIntegerField(_("status"), default=PENDING, choices=CENTER_STATUS_CHOICES, db_index=True)
+    CONTACT_NONE = -1
+    CONTACT_EMAIL = 0
+    CONTACT_FORM = 1
+    SCHEDULE_FORM = 2
+    CONTACT_CHOICES = (
+        (CONTACT_NONE, _("None")),
+        (CONTACT_EMAIL, _("Email")),
+        (CONTACT_FORM, _("Contact form")),
+        (SCHEDULE_FORM, _("Schedule form")),
+    )
 
+    DISCLOSURE_OTHER = -1
+    DISCLOSURE_FACE_TO_FACE = 0
+    DISCLOSURE_EMAIL = 1
+    DISCLOSURE_PHONE = 2
+    DISCLOSURE_MAIL = 3
+    DISCLOSURE_PLATFORM = 4
+    TEST_DISCLOSURE_CHOICES = (
+        (DISCLOSURE_OTHER, _("Other")),
+        (DISCLOSURE_FACE_TO_FACE, _("Face to face")),
+        (DISCLOSURE_EMAIL, _("Email")),
+        (DISCLOSURE_PHONE, _("Phone")),
+        (DISCLOSURE_MAIL, _("Mail")),
+        (DISCLOSURE_PLATFORM, _("Platform")),
+    )
+
+    status = models.SmallIntegerField(_("status"), default=PENDING, choices=STATUS_CHOICES, db_index=True)
+
+    name = models.CharField(_("center name"), max_length=200, default="", null=False, blank=False)
     street_number = models.CharField(_("street number"), max_length=100)
     street_name = models.CharField(_("street name"), max_length=250)
+    address_details = models.CharField(_("address details"), max_length=250, blank=True, default="")
     county = models.CharField(_("county"), max_length=60)
     locality = models.CharField(_("locality"), max_length=60)
 
-    full_address = models.CharField(_("full address"), max_length=470)
+    full_address = models.CharField(_("full address"), max_length=720)
 
     lat = models.DecimalField(_("latitude"), max_digits=9, decimal_places=6)
     lng = models.DecimalField(_("longitude"), max_digits=9, decimal_places=6)
 
+    type = models.ForeignKey(CenterType, on_delete=models.DO_NOTHING, related_name=_("centers"), null=True, blank=True)
+    schedule_start = models.CharField(_("schedule start"), max_length=20, null=True, blank=True)
+    schedule_end = models.CharField(_("schedule end"), max_length=20, null=True, blank=True)
+
+    online_contact_type = models.SmallIntegerField(
+        _("online contact type"), choices=CONTACT_CHOICES, default=CONTACT_NONE
+    )
+    emails = models.ManyToManyField(CenterEmail, related_name="centers", verbose_name=_("center email(s)"), blank=True)
     website = models.CharField(_("website"), max_length=200, null=True, blank=True)
-    phone_number = models.CharField(_("phone number"), max_length=13, null=True, blank=True)
-    schedule = models.CharField(_("schedule"), max_length=20, null=True, blank=True)
+    phone_numbers = models.ManyToManyField(
+        CenterPhoneNumber, related_name="centers", verbose_name=_("center phone number(s)"), blank=True
+    )
 
     test_types = models.ManyToManyField(CenterTestTypes, verbose_name=_("test types"), blank=True)
+    testing_price = models.DecimalField(_("testing price"), max_digits=6, decimal_places=2, null=True, blank=True)
+    is_free_testing_available = models.BooleanField(_("is free testing available"), default=False)
+    free_testing_conditions = models.TextField(_("free testing conditions"), null=True, blank=True)
+
+    quick_test_wait_time_minutes = models.IntegerField(_("quick test wait time in minutes"), null=True, blank=True)
+    quick_test_wait_time_days = models.IntegerField(_("quick test wait time in days"), null=True, blank=True)
+
+    negative_result_disclosure = models.SmallIntegerField(
+        _("negative result disclosure"), choices=TEST_DISCLOSURE_CHOICES, default=CONTACT_NONE, null=True, blank=True
+    )
+    positive_result_disclosure = models.SmallIntegerField(
+        _("positive result disclosure"), choices=TEST_DISCLOSURE_CHOICES, default=CONTACT_NONE, null=True, blank=True
+    )
+
+    has_pre_testing_counseling = models.BooleanField(_("has pre-test counseling"), default=False)
+    pre_testing_counseling_conditions = models.TextField(_("pre-test counseling conditions"), null=True, blank=True)
+    has_post_testing_counseling = models.BooleanField(_("has post-test counseling"), default=False)
+    post_testing_counseling_conditions = models.TextField(_("post-test counseling conditions"), null=True, blank=True)
+
+    necessary_documents_under_18 = models.ManyToManyField(NecessaryDocuments, related_name=_("centers_u18"), blank=True)
+    necessary_documents_under_16 = models.ManyToManyField(NecessaryDocuments, related_name=_("centers_u16"), blank=True)
+
+    create_time = models.DateTimeField(_("time created"), auto_now_add=True)
+    update_time = models.DateTimeField(_("time updated"), auto_now=True)
 
     objects = models.Manager()
     approved = ApprovedTestingCenter()
 
     def save(self, **kwargs):
-        self.full_address = f"{self.street_name} {self.street_number} - {self.county}, {self.locality}"
+        self.full_address = (
+            f"{self.name}: "
+            f"{self.street_name} {self.street_number} {self.address_details}"
+            " - "
+            f"{self.county}, {self.locality}"
+        ).replace("  ", " ")
         super(TestingCenter, self).save(**kwargs)
 
     def __str__(self):
         return self.full_address
+
+    @property
+    def schedule(self):
+        if self.schedule_start and self.schedule_end:
+            return "{} - {}".format(self.schedule_start, self.schedule_end)
+        return ""
+
+    class Meta:
+        verbose_name = _("testing center")
+        verbose_name_plural = _("testing centers")
 
 
 class CenterRating(models.Model):
@@ -74,7 +199,7 @@ class CenterRating(models.Model):
     MAX_VALUE = 5
 
     rating = models.SmallIntegerField(
-        _("rating"),
+        _("rating ({}-{})".format(MIN_VALUE, MAX_VALUE)),
         validators=[MinValueValidator(MIN_VALUE), MaxValueValidator(MAX_VALUE)],
         db_index=True,
     )
