@@ -1,9 +1,10 @@
 from django.contrib import admin
+from import_export.admin import ImportExportModelAdmin
 
 from .models import Post
 
 
-class PostAdmin(admin.ModelAdmin):
+class PostAdmin(ImportExportModelAdmin):
     prepopulated_fields = {"slug": ("title",)}
     list_display = ("title", "slug", "created", "published", "is_visible")
     fieldsets = [

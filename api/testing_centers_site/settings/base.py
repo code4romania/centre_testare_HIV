@@ -68,6 +68,7 @@ INSTALLED_APPS = [
     "django.contrib.humanize",
     "django.contrib.postgres",
     # third-party apps
+    "import_export",
     "rest_framework",
     "storages",
     "taggit",

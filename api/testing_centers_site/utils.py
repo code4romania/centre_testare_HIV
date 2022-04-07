@@ -1,8 +1,9 @@
 from django.conf import settings
-from django.contrib import admin, messages
+from django.contrib import messages
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import get_template
 from django.utils.translation import ngettext
+from import_export.admin import ImportExportModelAdmin
 
 
 def send_email(template: str, context: dict, subject: str, to: str):
@@ -18,7 +19,7 @@ def send_email(template: str, context: dict, subject: str, to: str):
     return msg.send(fail_silently=True)
 
 
-class AdminWithStatusChanges(admin.ModelAdmin):
+class AdminWithStatusChanges(ImportExportModelAdmin):
     def _perform_status_change(self, status, request, queryset, item_status_choices, item_singular, item_plural):
         updated = queryset.update(status=status)
 
