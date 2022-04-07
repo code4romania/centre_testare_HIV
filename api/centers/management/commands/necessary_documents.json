@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "tutor_permission",
+        "name_ro": "Acordul părintelui/tutorelui legal",
+        "name_en": "The permission of the parent/legal guardian"
+    },
+    {
+        "id": 2,
+        "name": "minor_id_card",
+        "name_ro": "Actul de identitate al minorului (pentru minorii peste 14 ani)",
+        "name_en": "Minor's identity card (for minors over 14 years old)"
+    },
+    {
+        "id": 3,
+        "name": "adult_id_card",
+        "name_ro": "Actul de identitate al adultului însoțitor",
+        "name_en": "Identity card of the accompanying adult"
+    },
+    {
+        "id": 4,
+        "name": "minor_birth_certificate",
+        "name_ro": "Certificatul de naștere al minorului",
+        "name_en": "Minor's birth certificate"
+    },
+    {
+        "id": 5,
+        "name": "adult_supervision",
+        "name_ro": "Minorul trebuie să fie însoțit de un adult",
+        "name_en": "The minor must be accompanied by an adult"
+    },
+    {
+        "id": 6,
+        "name": "tutor_supervision",
+        "name_ro": "Minorul trebuie să fie însoțit de un părinte/tutore legal",
+        "name_en": "The minor must be accompanied by a parent/legal guardian"
+    },
+    {
+        "id": 7,
+        "name": "no_document",
+        "name_ro": "Niciun document necesar",
+        "name_en": "No document necessary"
+    },
+    {
+        "id": 8,
+        "name": "doctor_referral",
+        "name_ro": "Trimitere de la medicul de familie",
+        "name_en": "Referral from family doctor"
+    },
+    {
+        "id": 9,
+        "name": "none_under_16",
+        "name_ro": "Nu se face testare HIV minorilor sub 16 ani",
+        "name_en": "HIV testing is not performed on minors under 16 years of age"
+    }
+]

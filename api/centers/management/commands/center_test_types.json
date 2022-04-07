@@ -1,0 +1,68 @@
+[
+    {
+        "id": 1,
+        "name": "hip_p24",
+        "name_ro": "HIP P24",
+        "name_en": "HIP P24"
+    },
+    {
+        "id": 2,
+        "name": "screening",
+        "name_ro": "Screening",
+        "name_en": "Screening"
+    },
+    {
+        "id": 3,
+        "name": "blood_test_positiv_negative",
+        "name_ro": "Test de sânge cu rezultat pozitiv sau negativ",
+        "name_en": "Blood test with positive or negative result"
+    },
+    {
+        "id": 4,
+        "name": "blood_test_3_working_days",
+        "name_ro": "Test de sânge cu rezultat în 3 zile lucrătoare",
+        "name_en": "Blood test with result in 3 working days"
+    },
+    {
+        "id": 5,
+        "name": "lab_test_antibody",
+        "name_ro": "Teste de laborator (anticorpi)",
+        "name_en": "Laboratory tests (antibodies)"
+    },
+    {
+        "id": 6,
+        "name": "lab_test_viral_load",
+        "name_ro": "Teste de laborator (viremie)",
+        "name_en": "Laboratory tests (viral load)"
+    },
+    {
+        "id": 7,
+        "name": "blood_test",
+        "name_ro": "Teste de sânge",
+        "name_en": "Blood tests"
+    },
+    {
+        "id": 8,
+        "name": "blood_test_2_days",
+        "name_ro": "Teste de sânge cu rezultat în 2 zile",
+        "name_en": "Blood test with result in 2 days"
+    },
+    {
+        "id": 9,
+        "name": "lab_blood_test",
+        "name_ro": "Teste de sânge laborator",
+        "name_en": "Laboratory blood tests"
+    },
+    {
+        "id": 10,
+        "name": "quick_test_blood",
+        "name_ro": "Teste rapide de sânge",
+        "name_en": "Quick blood tests"
+    },
+    {
+        "id": 11,
+        "name": "quick_test_saliva",
+        "name_ro": "Teste rapide pe baza de salivă",
+        "name_en": "Quick saliva tests"
+    }
+]

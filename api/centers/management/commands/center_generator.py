@@ -96,7 +96,5 @@ class Command(BaseCommand):
         else:
             self.stdout.write(self.style.ERROR("Missing required argument: --create or --delete"))
             self.stdout.write(
-                self.style.SUCCESS(
-                    f"Try: python manage.py centers {int(options['total_testing_centers'])} --create"
-                )
+                self.style.SUCCESS(f"Try: python manage.py centers {int(options['total_testing_centers'])} --create")
             )

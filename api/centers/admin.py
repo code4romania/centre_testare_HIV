@@ -8,9 +8,32 @@ from django.contrib.admin import display
 from django.utils.safestring import mark_safe
 from django.utils.translation import gettext_lazy as _
 from import_export import resources
+from import_export.admin import ImportExportModelAdmin
 
 from centers import models
 from testing_centers_site.utils import AdminWithStatusChanges
+
+
+class CommonNameAdmin(ImportExportModelAdmin):
+    list_display_links = list_display = ("id", "name")
+    search_fields = ("name",)
+
+
+admin.site.register(models.CenterType, CommonNameAdmin)
+admin.site.register(models.CenterTestTypes, CommonNameAdmin)
+admin.site.register(models.NecessaryDocuments, CommonNameAdmin)
+
+
+@admin.register(models.CenterEmail)
+class CenterEmailAdmin(ImportExportModelAdmin):
+    list_display = ("email", "create_time", "update_time")
+    search_fields = ("centers__name", "email")
+
+
+@admin.register(models.CenterPhoneNumber)
+class CenterPhoneNumberAdmin(ImportExportModelAdmin):
+    list_display = ("phone_number", "create_time", "update_time")
+    search_fields = ("centers__name", "email")
 
 
 @admin.register(models.Statistic)
@@ -22,11 +45,6 @@ class StatisticAdmin(admin.ModelAdmin):
             if not has_entry:
                 return True
         return False
-
-
-@admin.register(models.CenterTestTypes)
-class TestTypesAdmin(admin.ModelAdmin):
-    pass
 
 
 @admin.register(models.CenterRating)
@@ -41,7 +59,7 @@ class TestingCenterAdmin(AdminWithStatusChanges):
         extra = 1
 
     list_filter = ("status", "county", "locality", "test_types")
-    list_display = ("get_testing_center_address", "status", "website", "phone_number", "schedule")
+    list_display = ("get_testing_center_address", "status", "website", "schedule_start", "schedule_end")
     list_editable = ("status",)
 
     search_fields = ("full_address",)
@@ -50,23 +68,86 @@ class TestingCenterAdmin(AdminWithStatusChanges):
 
     fieldsets = (
         (_("Operational Data"), {"fields": ("status",)}),
-        (_("Geo Data"), {"fields": ("street_name", "street_number", "county", "locality", "lat", "lng")}),
-        (_("Testing Center Data"), {"fields": ("website", "phone_number", "schedule", "test_types")}),
+        (
+            _("Geo Data"),
+            {
+                "fields": (
+                    "name",
+                    "street_name",
+                    "street_number",
+                    "address_details",
+                    "county",
+                    "locality",
+                    "lat",
+                    "lng",
+                )
+            },
+        ),
+        (
+            _("Center Details"),
+            {
+                "fields": (
+                    "type",
+                    "schedule_start",
+                    "schedule_end",
+                )
+            },
+        ),
+        (
+            _("Contact Information"),
+            {
+                "fields": (
+                    "online_contact_type",
+                    "emails",
+                    "website",
+                    "phone_number",
+                )
+            },
+        ),
+        (
+            _("Testing Costs"),
+            {
+                "fields": (
+                    "test_types",
+                    "testing_price",
+                    "is_free_testing_available",
+                    "free_testing_conditions",
+                )
+            },
+        ),
+        (
+            _("Testing Details"),
+            {
+                "fields": (
+                    "quick_test_wait_time_minutes",
+                    "quick_test_wait_time_days",
+                    "negative_result_disclosure",
+                    "positive_result_disclosure",
+                    "has_pre_testing_counseling",
+                    "pre_testing_counseling_conditions",
+                    "has_post_testing_counseling",
+                    "post_testing_counseling_conditions",
+                    "necessary_documents_under_18",
+                    "necessary_documents_under_16",
+                )
+            },
+        ),
     )
     inlines = (RatingInline,)
 
     @display(ordering="testing_center__full_address", description=_("Address"))
     def get_testing_center_address(self, obj: models.TestingCenter):
-        county_name = obj.county
-        county = settings.COUNTIES_SHORTNAME.get(county_name, county_name)
-        return mark_safe("{} {} ({}, {})".format(obj.street_name, obj.street_number, obj.locality, county))
+        county = settings.COUNTIES_SHORTNAME.get(obj.county, obj.county)
+        return mark_safe(
+            "{} / {} {} ({}, {})".format(obj.name, obj.street_name, obj.street_number, obj.locality, county)
+        )
 
     def make_pending(self, request, queryset):
         self._perform_status_change(
             "0",
             request,
             queryset,
-            models.TestingCenter.CENTER_STATUS_CHOICES,
+            models.TestingCenter.STATUS_CHOICES,
             _("testing center"),
             _("testing centers"),
         )
@@ -78,7 +159,7 @@ class TestingCenterAdmin(AdminWithStatusChanges):
             "1",
             request,
             queryset,
-            models.TestingCenter.CENTER_STATUS_CHOICES,
+            models.TestingCenter.STATUS_CHOICES,
             _("testing center"),
             _("testing centers"),
         )
@@ -90,7 +171,7 @@ class TestingCenterAdmin(AdminWithStatusChanges):
             "-1",
             request,
             queryset,
-            models.TestingCenter.CENTER_STATUS_CHOICES,
+            models.TestingCenter.STATUS_CHOICES,
             _("testing center"),
             _("testing centers"),
         )

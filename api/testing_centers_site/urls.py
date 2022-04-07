@@ -13,10 +13,7 @@ from contact.views import ContactViewSet
 from pages.views import PagesViewSet
 from centers.views import CenterTestTypesViewSet, statistics, TestingCenterViewSet
 
-admin_site_string = _("Testing Centers Admin")
-admin.site.site_title = admin_site_string
-admin.site.site_header = admin_site_string
-admin.site.index_title = admin_site_string
+admin.site.site_title = admin.site.site_header = admin.site.index_title = _("Testing Centers Admin")
 
 router = routers.DefaultRouter()
 router.register(r"center", TestingCenterViewSet, basename="center")
@@ -52,8 +49,18 @@ urlpatterns = (
         ),
         path("admin/", admin.site.urls),
         path("ckeditor/", include("ckeditor_uploader.urls")),
+        path("api/v1/", include(router.urls)),
+        path("api/v1/statistics/", statistics, name="statistics"),
+        path("i18n/", include("django.conf.urls.i18n")),
+        path("api/v1/schema/", SpectacularAPIView.as_view(), name="schema"),
+        path(
+            "api/v1/schema/swagger-ui/",
+            SpectacularSwaggerView.as_view(url_name="swagger-ui"),
+            name="swagger-ui",
+        ),
     )
     + [
+        # TODO: Remove this when we have a proper frontend
         # URL patterns which do not use a language prefix
         path("api/v1/", include(router.urls)),
         path("api/v1/statistics/", statistics, name="statistics"),
@@ -72,5 +79,3 @@ if settings.ENABLE_DEBUG_TOOLBAR:
     import debug_toolbar
 
     urlpatterns = [path("__debug__/", include(debug_toolbar.urls))] + urlpatterns
-
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

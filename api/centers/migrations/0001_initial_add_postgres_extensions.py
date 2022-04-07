@@ -4,9 +4,9 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ("centers", "0001_initial"),
-    ]
+    initial = True
+
+    dependencies = []
 
     operations = [
         TrigramExtension(),
