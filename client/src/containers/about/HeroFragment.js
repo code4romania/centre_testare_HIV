@@ -1,4 +1,3 @@
-// import { Trans } from '@lingui/macro';
 import React from 'react';
 import { Typography } from 'antd';
 import { Trans } from '@lingui/macro';
@@ -8,17 +7,23 @@ import Share from '../../components/Sharing';
 
 import heroImage from '../../images/about_hero.png';
 
-const { Paragraph } = Typography;
+const { Paragraph, Text } = Typography;
 
 export default () => {
   return (
-    <Hero heroImage={heroImage} title={<Trans>About the project</Trans>}>
-      {/* @TODO replace text */}
+    <Hero
+      heroImage={heroImage}
+      title={<Trans>Servicii din Norvegia pentru tinerii din România - PILOT</Trans>}
+    >
       <Paragraph>
-        Many desktop publishing packages and web page editors now use Lorem Ipsum as their default
-        model text, and a search for 'lorem ipsum' will uncover many web sites still in their
-        infancy. Various versions have evolved over the years, sometimes by accident, sometimes on
-        purpose (injected humour and the like).
+        <Trans>
+          Scopul proiectului{' '}
+          <Text strong>Servicii din Norvegia pentru tinerii din România - PILOT</Text> este acela de
+          a spori accesul tinerilor din categoria de vârstă 15-35 ani din zonele defavorizate la
+          educație pentru sănătatea sexuală și a reproducerii după model norvegian, adoptând
+          sloganul Active Citizens Fund România{' '}
+          <Text strong>Lucrăm împreună pentru o Europă incluzivă</Text>.
+        </Trans>
       </Paragraph>
       <Share />
     </Hero>
