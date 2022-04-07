@@ -2,16 +2,15 @@ import React from 'react';
 import { Layout, Typography } from 'antd';
 import { Trans } from '@lingui/macro';
 import { Link } from 'react-router-dom';
-import FooterLogo from './FooterLogo';
 
-// @TODO update logo for project owner
-// import Mkbt from '../../images/MKBT-logo-black.png';
-import CfR from '../../images/footer_CfR.svg';
-import Tfsg from '../../images/footer_tfsg.svg';
+import smLogo from '../../images/semper-musica-logo.png';
+import fasmrLogo from '../../images/fasmr-logo.png';
+import sexOgLogo from '../../images/sex-og-samfunn-logo.png';
+import cfrLogo from '../../images/footer_CfR.svg';
 
 import { useGlobalContext } from '../../context';
 
-const { Text } = Typography;
+const { Paragraph, Text } = Typography;
 const { Footer } = Layout;
 
 const FooterFragment = () => {
@@ -20,26 +19,33 @@ const FooterFragment = () => {
   return (
     <Footer className="footer">
       <div className="container">
-        <div className="footer__logos">
-          <FooterLogo
-            label={<Trans>A project by </Trans>}
-            // @TODO update logo and link for project owner
-            // href={`https://mkbt.ro/?lang=${currentLanguage}`}
-            // src={Mkbt}
-            height="70px"
-          />
-          <FooterLogo
-            label={<Trans>Implemented by </Trans>}
-            href={`https://tfsg.code4.ro/${currentLanguage}`}
-            src={Tfsg}
-            height="50px"
-          />
-          <FooterLogo
-            label={<Trans>Designed by </Trans>}
-            href={`https://code4.ro/${currentLanguage}`}
-            src={CfR}
-            height="50px"
-          />
+        <div className="made-by">
+          <div className="logo-container">
+            <Paragraph>
+              <Trans>Proiect derulat de</Trans>{' '}
+            </Paragraph>
+            <div>
+              <Link to={{ pathname: 'https://sempermusica.org/' }} target="_blank">
+                <img className="footerLogo__image" src={smLogo} />
+              </Link>
+              <Link to={{ pathname: 'https://fasmr.ro/' }} target="_blank">
+                <img className="footerLogo__image" src={fasmrLogo} />
+              </Link>
+              <Link to={{ pathname: 'https://fasmr.ro/' }} target="_blank">
+                <img className="footerLogo__image" src={sexOgLogo} height="60px" />
+              </Link>
+            </div>
+          </div>
+          <div className="logo-container">
+            <Paragraph>
+              <Trans>cu sprijinul</Trans>{' '}
+            </Paragraph>
+            <div>
+              <Link to={{ pathname: `https://code4.ro/${currentLanguage}` }} target="_blank">
+                <img className="footerLogo__image" src={cfrLogo} alt="" height="40px" />
+              </Link>
+            </div>
+          </div>
         </div>
         <div className="footer__links">
           <Link to="/despre">
@@ -47,16 +53,11 @@ const FooterFragment = () => {
               <Trans>About the project</Trans>
             </Text>
           </Link>
-          <a
-            href={`https://code4.ro/${currentLanguage === 'ro' ? 'ro/doneaza' : 'en/donate'}`}
-            target="_blank"
-            rel="noreferrer"
-            className="footer__donate"
-          >
+          <Link to="/doneaza">
             <Text>
-              <Trans>Donate</Trans>
+              <Trans>Support the project</Trans>
             </Text>
-          </a>
+          </Link>
         </div>
         <div className="footer__links">
           <Link to="/politica-de-confidentialitate">
