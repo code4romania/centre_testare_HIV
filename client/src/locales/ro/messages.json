@@ -53,12 +53,18 @@
     "translation": "Proiect realizat de",
     "origin": [
       [
-        "components/Footer/index.js",
-        25
-      ],
-      [
         "containers/about/AuthorsFragment.js",
         16
+      ]
+    ],
+    "extractedComments": []
+  },
+  "A solution developed by <0>Semper Musica</0> and <1>Code for Romania</1>.": {
+    "translation": "O soluție dezvoltată de <0>Semper Musica</0> și <1>Code for Romania</1>.",
+    "origin": [
+      [
+        "components/Footer/index.js",
+        24
       ]
     ],
     "extractedComments": []
@@ -88,7 +94,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        47
+        40
       ],
       [
         "containers/404/HeroFragment.js",
@@ -217,22 +223,8 @@
     "translation": "Proiectat de",
     "origin": [
       [
-        "components/Footer/index.js",
-        38
-      ],
-      [
         "containers/about/AuthorsFragment.js",
         23
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Donate": {
-    "translation": "Donează",
-    "origin": [
-      [
-        "components/Footer/index.js",
-        57
       ]
     ],
     "extractedComments": []
@@ -253,16 +245,6 @@
       [
         "containers/home/StatisticFragment.js",
         82
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Implemented by": {
-    "translation": "Implementat de",
-    "origin": [
-      [
-        "components/Footer/index.js",
-        32
       ]
     ],
     "extractedComments": []
@@ -390,7 +372,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        64
+        52
       ]
     ],
     "extractedComments": []
@@ -428,6 +410,10 @@
   "Support the project": {
     "translation": "Susține proiect",
     "origin": [
+      [
+        "components/Footer/index.js",
+        45
+      ],
       [
         "hooks/useMenuItems.js",
         25

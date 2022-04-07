@@ -50,12 +50,17 @@
   "A project by": {
     "origin": [
       [
-        "components/Footer/index.js",
-        25
-      ],
-      [
         "containers/about/AuthorsFragment.js",
         16
+      ]
+    ],
+    "extractedComments": []
+  },
+  "A solution developed by <0>Semper Musica</0> and <1>Code for Romania</1>.": {
+    "origin": [
+      [
+        "components/Footer/index.js",
+        24
       ]
     ],
     "extractedComments": []
@@ -82,7 +87,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        47
+        40
       ],
       [
         "containers/404/HeroFragment.js",
@@ -200,21 +205,8 @@
   "Designed by": {
     "origin": [
       [
-        "components/Footer/index.js",
-        38
-      ],
-      [
         "containers/about/AuthorsFragment.js",
         23
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Donate": {
-    "origin": [
-      [
-        "components/Footer/index.js",
-        57
       ]
     ],
     "extractedComments": []
@@ -233,15 +225,6 @@
       [
         "containers/home/StatisticFragment.js",
         82
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Implemented by": {
-    "origin": [
-      [
-        "components/Footer/index.js",
-        32
       ]
     ],
     "extractedComments": []
@@ -358,7 +341,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        64
+        52
       ]
     ],
     "extractedComments": []
@@ -392,6 +375,10 @@
   },
   "Support the project": {
     "origin": [
+      [
+        "components/Footer/index.js",
+        45
+      ],
       [
         "hooks/useMenuItems.js",
         25
