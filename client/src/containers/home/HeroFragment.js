@@ -5,18 +5,29 @@ import { Trans } from '@lingui/macro';
 import { Hero } from '../../components/Hero';
 
 import heroImage from '../../images/home_hero.png';
+import acfLogo from '../../images/active-citizens-fund-logo.png';
 
-const { Paragraph } = Typography;
+const { Paragraph, Text, Title } = Typography;
 
 export default () => {
   return (
-    <Hero heroImage={heroImage} title={<Trans>Welcome!</Trans>}>
-      {/* @TODO replace text + translate */}
+    <Hero
+      heroImage={heroImage}
+      title={<Trans>TestHIV</Trans>}
+      logo={<img width="160px" src={acfLogo} />}
+    >
+      <Title level={3} style={{ marginTop: 0 }}>
+        <Trans>Lucrăm împreună pentru o Europă incluzivă</Trans>
+      </Title>
       <Paragraph>
-        Many desktop publishing packages and web page editors now use Lorem Ipsum as their default
-        model text, and a search for 'lorem ipsum' will uncover many web sites still in their
-        infancy. Various versions have evolved over the years, sometimes by accident, sometimes on
-        purpose (injected humour and the like).
+        <Trans>
+          <Text strong>TestHIV</Text> este prima aplicație din România de testare HIV, unde sunt
+          centralizate instituții din 11 județe din România care oferă testare HIV. În cadrul
+          aplicației oferim detalii precum localizarea instituției, programul de lucru, costul unui
+          test cât și detalii necesare pentru testarea infecției cu HIV, modalitățile de testare a
+          persoanelor sub 16 ani și asigurarea consilierii pentru persoanele care au nevoie de mai
+          multe informații.
+        </Trans>
       </Paragraph>
     </Hero>
   );

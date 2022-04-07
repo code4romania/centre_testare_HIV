@@ -4,7 +4,7 @@ import { HeroType } from '../../types';
 
 const { Title, Text } = Typography;
 
-export const Hero = ({ heroImage, title, subTitle, children, titleLevel }) => {
+export const Hero = ({ heroImage, title, subTitle, children, titleLevel, logo }) => {
   return (
     <div className="hero-container">
       <Row
@@ -18,6 +18,7 @@ export const Hero = ({ heroImage, title, subTitle, children, titleLevel }) => {
           <div style={{ backgroundImage: `url(${heroImage})` }} />
         </Col>
         <Col xs={24} md={11}>
+          {logo && <>{logo}</>}
           {subTitle && <Text type="secondary">{subTitle}</Text>}
           <Title level={titleLevel} className="hero-title">
             {title}
