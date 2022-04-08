@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "none",
+        "name_ro": "Niciuna",
+        "name_en": "None"
+    },
+    {
+        "id": 2,
+        "name": "doctor_referral",
+        "name_ro": "Bilet de trimitere",
+        "name_en": "Doctor referral ticket"
+    },
+    {
+        "id": 3,
+        "name": "pregnant_women_only",
+        "name_ro": "Doar pentru femei însărcinate",
+        "name_en": "Pregnant women only"
+    },
+    {
+        "id": 4,
+        "name": "appointment",
+        "name_ro": "Programare",
+        "name_en": "Appointment"
+    },
+    {
+        "id": 5,
+        "name": "limited_by_funds",
+        "name_ro": "În limita fondurilor",
+        "name_en": "In funds limit"
+    },
+    {
+        "id": 6,
+        "name": "medical_insurance",
+        "name_ro": "Asigurare medicală",
+        "name_en": "Medical insurance"
+    },
+    {
+        "id": 7,
+        "name": "vulnerable_group",
+        "name_ro": "Parte dintr-un grup vulnerabil",
+        "name_en": "Part of a vulnerable group"
+    },
+    {
+        "id": 8,
+        "name": "adult",
+        "name_ro": "Trebuie sa fie major",
+        "name_en": "Must be an adult"
+    },
+    {
+        "id": 9,
+        "name": "identity_card",
+        "name_ro": "Trebuie sa aibă o carte de identitate",
+        "name_en": "Must have an ID"
+    }
+]

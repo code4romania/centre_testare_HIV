@@ -3,7 +3,7 @@ import os
 
 from django.core.management.base import BaseCommand, CommandParser
 
-from centers.models import CenterEmail, CenterTestTypes, CenterType, NecessaryDocuments
+from centers.models import CenterEmail, CenterTestTypes, CenterType, NecessaryDocuments, FreeTestingConditions
 
 
 class Command(BaseCommand):
@@ -12,14 +12,16 @@ class Command(BaseCommand):
         "center_test_types": CenterTestTypes,
         "necessary_documents": NecessaryDocuments,
         "center_email": CenterEmail,
+        "free_testing_conditions": FreeTestingConditions,
     }
 
     def add_arguments(self, parser: CommandParser):
+        type_choices = tuple(self.type_mapping.keys())
         parser.add_argument(
             "-t",
             "--type",
             type=str,
-            choices=("center_type", "center_test_types", "necessary_documents", "center_email"),
+            choices=type_choices,
             help="The type of data to import",
         )
 

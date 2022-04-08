@@ -42,6 +42,19 @@ class NecessaryDocuments(models.Model):
         verbose_name_plural = _("necessary documents")
 
 
+class FreeTestingConditions(models.Model):
+    name = models.CharField(_("type of condition"), max_length=300, unique=True, blank=False, null=False)
+
+    objects = models.Manager()
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = _("free testing condition")
+        verbose_name_plural = _("free testing conditions")
+
+
 class ApprovedTestingCenter(models.Manager):
     def get_queryset(self):
         return super().get_queryset().filter(status=TestingCenter.ACCEPTED)
@@ -145,7 +158,7 @@ class TestingCenter(models.Model):
     test_types = models.ManyToManyField(CenterTestTypes, verbose_name=_("test types"), blank=True)
     testing_price = models.DecimalField(_("testing price"), max_digits=6, decimal_places=2, null=True, blank=True)
     is_free_testing_available = models.BooleanField(_("is free testing available"), default=False)
-    free_testing_conditions = models.TextField(_("free testing conditions"), null=True, blank=True)
+    free_testing_conditions = models.ManyToManyField(FreeTestingConditions, related_name=_("centers"), blank=True)
 
     quick_test_wait_time_minutes = models.IntegerField(_("quick test wait time in minutes"), null=True, blank=True)
     quick_test_wait_time_days = models.IntegerField(_("quick test wait time in days"), null=True, blank=True)
@@ -158,9 +171,21 @@ class TestingCenter(models.Model):
     )
 
     has_pre_testing_counseling = models.BooleanField(_("has pre-test counseling"), default=False)
-    pre_testing_counseling_conditions = models.TextField(_("pre-test counseling conditions"), null=True, blank=True)
+    pre_testing_counseling_conditions = models.SmallIntegerField(
+        _("pre-test counseling conditions"),
+        choices=TEST_DISCLOSURE_CHOICES,
+        default=CONTACT_NONE,
+        null=True,
+        blank=True,
+    )
     has_post_testing_counseling = models.BooleanField(_("has post-test counseling"), default=False)
-    post_testing_counseling_conditions = models.TextField(_("post-test counseling conditions"), null=True, blank=True)
+    post_testing_counseling_conditions = models.SmallIntegerField(
+        _("post-test counseling conditions"),
+        choices=TEST_DISCLOSURE_CHOICES,
+        default=CONTACT_NONE,
+        null=True,
+        blank=True,
+    )
 
     necessary_documents_under_18 = models.ManyToManyField(NecessaryDocuments, related_name=_("centers_u18"), blank=True)
     necessary_documents_under_16 = models.ManyToManyField(NecessaryDocuments, related_name=_("centers_u16"), blank=True)

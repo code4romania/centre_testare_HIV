@@ -33,9 +33,6 @@ build-dev:                        ## builds the container with the development f
 superuser:                        ## creates a superuser for the API
 	docker-compose exec api ./manage.py createsuperuser
 
-exec_api:
-	docker-compose exec api ./manage.py
-
 init-db: superuser                ## sets up the database and fixtures
 	docker-compose exec api ./manage.py loaddata statistics
 	docker-compose exec api ./manage.py loaddata pages
@@ -77,13 +74,16 @@ black:                            ## run the Black formatter on the Python code
 seed_test_types:                  ## seed the test types
 	docker-compose exec api ./manage.py seed_center_data -t center_test_types
 
-seed_center_types:                ## seed the test types
+seed_center_types:                ## seed the center types
 	docker-compose exec api ./manage.py seed_center_data -t center_type
 
-seed_necessary_docs:              ## seed the test types
+seed_necessary_docs:              ## seed the necessary documents
 	docker-compose exec api ./manage.py seed_center_data -t necessary_documents
 
-seed: seed_test_types seed_center_types seed_necessary_docs
+seed_free_testing:              ## seed the free testing conditions data
+	docker-compose exec api ./manage.py seed_center_data -t free_testing_conditions
+
+seed: seed_test_types seed_center_types seed_necessary_docs seed_free_testing
 
 ## [TEST]
 test:                             ## run all tests
