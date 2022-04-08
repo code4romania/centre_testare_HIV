@@ -53,8 +53,7 @@ class Command(BaseCommand):
 
         self._write_centers(df, fields_dict, mapped_values, options)
 
-    @staticmethod
-    def _write_centers(df, fields_dict, mapped_values, options):
+    def _write_centers(self, df, fields_dict, mapped_values, options):
         overwrite = options.get("overwrite", False)
         dry_run = options.get("dry_run", False)
 
@@ -70,86 +69,7 @@ class Command(BaseCommand):
             "Da": True,
             "Nu": False,
         }
-        dynamic_data_mapping = {
-            "Clinică/laborator de stat": 1,
-            "Clinică/laborator privat": 2,
-            "Direcția de Sănătate Publică (DSP)": 3,
-            "ONG": 4,
-            "Spital boli infecțioase": 5,
-            "Spital județean – Secția boli infecțioase": 6,
-            "Spital privat": 7,
-            "Actul de identitate al minorului (pentru minorii peste 14 ani)": 2,
-            "Minorul trebuie să fie însoțit de un părinte/tutore legal": 6,
-            "Acordul părintelui/tutorelui legal": 1,
-            "Certificatul de naștere al minorului": 4,
-            "Minorul trebuie să fie însoțit de un adult": 5,
-            "Actul de identitate al părintelui/tutorelui legal": 3,
-            "Trimitere de la medicul de familie": 8,
-            "Copilul trebuie să fie însoțit de un părinte/tutore legal": 6,
-            "Niciun document necesar": 7,
-            (
-                "Nu testeaza persoane cu varsta sub 16 ani. "
-                "In caz ca testul este pozitiv persoana este trimisa la Institutul Matei Bals. "
-                "Nu ofera document din care reiese ca esti pozitiv, se transmite rezultatul verbal."
-            ): 9,
-            "Nici un document necesar": 7,
-            "Nu se face testare hiv minorilor sub 16 ani": 9,
-            "Teste de laborator (viremie)": 6,
-            "Teste de laborator (anticorpi)": 5,
-            "Teste rapide de sânge": 10,
-            "Teste rapide pe baza de saliva)": 11,
-            "Teste rapide pe baza de saliva": 11,
-            "Teste de sânge": 7,
-            "Screening": 2,
-            "Test de sânge cu rezultat pozitiv sau negativ": 3,
-            "Teste de sânge cu rezultat în 2 zile": 8,
-            "Teste de sânge laborator": 9,
-            "Test de sânge cu rezultat în 3 zile lucrătoare": 4,
-            "HIP P24": 1,
-            "NICI UNA": 1,
-            "Nici o condiție. Testările sunt gratuite pentru toată lumea, în limita locurilor disponibile": 1,
-            "BILET DE TRIMITERE ROZ DECONTAT DE CAS": 2,
-            "Bilet de trimitere roz": 2,
-            "Bilet de trimitere": 2,
-            "Persoana trebuie să aibă trimitere de la medicul de familie": 2,
-            "DOAR FEMEI INSARCINATE": 3,
-            "DOAR PENTRU FEMEI INSARCINATE": 3,
-            "FEMEI GRAVIDE DA PE LISTA DE ASTEPTARE CAND AU FONDURI": 3,
-            "FEMEI GRAVIDE SAU CONTACT DIRECT CU O PERSOANA CU HIV": 3,
-            "FEMEI INSARCINATE": 3,
-            "FEMEI INSARCINATE (CU PROGRAMARE)": 3,
-            "FEMEI INSARCINATE CÂND AU FONDURI": 3,
-            "FEMEI INSARCINATE, CÂND AU FONDURI": 3,
-            "Gratuit doar pentru femeile însărcinate": 3,
-            "Gratuit doar pentru femeile însărcinate cu bilet de internare de o zi": 3,
-            "Gratuit doar pentru femeile însărcinate cu programare": 3,
-            "PENTRU FEMEI INSARCINATE": 3,
-            "CAND AU FONDURI": 5,
-            "CÂND AU FONDURI": 5,
-            "CÂND SUNT FONDURI PENTRU ANALIZE": 5,
-            "Când au fonduri": 5,
-            "DACA AU FONDURI": 5,
-            "DACĂ AU FONDURI": 5,
-            "DACA SE SUPLIMENTEAZA FONDURILE DA": 5,
-            "IN LIMITA FONDURI": 5,
-            "DACĂ AU FONDURI DISPONIBILE": 5,
-            "IN LIMITA FONDURI DISPONIBILE": 5,
-            "Nu au fonduri momentan": 5,
-            "DOAR CÂND AU FONDURI, CU PROGRMARE": 5,
-            "SĂ AIBĂ FONDURI PENTRU ANALIZE": 5,
-            "Te programezi pentru luna următoare când au fonduri": 5,
-            "Persoana trebuie să aibă asigurare medicală": 6,
-            (
-                "Persoana trebuie să facă parte dintr-un grup vulnerabil "
-                "(persoană implicată în sexul comercial/bărbat "
-                "care face sex cu bărbați/consumator de droguri injectabile)"
-            ): 7,
-            "Persoana trebuie să fie majoră": 8,
-            "CARTE DE IDENTITATE SI PROGRAMARE": 9,
-            "DOAR PENTRU LUNA MAI": 4,
-            "SE FACE SUNAND LA 0236455709 VINEREA PENTRU URMATOAREA LUNA": 4,
-            "appointment": 4,
-        }
+        dynamic_data_mapping = self._get_dynamic_data_mapping()
         for r_index, row in df.iterrows():
             new_center = {}
             emails = []
@@ -206,7 +126,9 @@ class Command(BaseCommand):
                                 for item in row_value:
                                     item = item.strip()
                                     if item:
-                                        free_testing_conditions.append(item_model.objects.get(id=dynamic_data_mapping[item]))
+                                        free_testing_conditions.append(
+                                            item_model.objects.get(id=dynamic_data_mapping[item])
+                                        )
                                         if "progr" in item.lower():  # noqa
                                             appointment_id = dynamic_data_mapping["appointment"]
                                             free_testing_conditions.append(item_model.objects.get(id=appointment_id))
@@ -278,6 +200,13 @@ class Command(BaseCommand):
             center.save()
 
             print(center)
+
+    @staticmethod
+    def _get_dynamic_data_mapping():
+        base_path = os.path.abspath(os.path.dirname(__file__))
+        output_file = os.path.join(base_path, "__helper_dynamic_data_mapping.json")
+        with open(output_file, "r") as f:
+            return json.load(f)
 
     def _get_fields_columns_mapping(self, input_columns: List[Dict], output_fields: List[Dict]) -> Dict:
         base_path = os.path.abspath(os.path.dirname(__file__))
