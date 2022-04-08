@@ -5,6 +5,7 @@ import tablib
 from django.conf import settings
 from django.contrib import admin, messages
 from django.contrib.admin import display
+from django.urls import reverse
 from django.utils.safestring import mark_safe
 from django.utils.translation import gettext_lazy as _
 from import_export import resources
@@ -24,15 +25,29 @@ admin.site.register(models.CenterTestTypes, CommonNameAdmin)
 admin.site.register(models.NecessaryDocuments, CommonNameAdmin)
 
 
+class CommonCenterContactAdmin(ImportExportModelAdmin):
+    @staticmethod
+    def testing_centers(obj):
+        centers_listing = obj.centers.values_list("pk", "name")
+        data = []
+        for center_id, center_name in centers_listing:
+            center_url = reverse('admin:centers_testingcenter_change', args=[center_id])
+            data.append(f"<a href='{center_url}'>{center_name}</a>")
+        formatted_data = ", ".join(data)
+        return mark_safe(formatted_data)
+
+    testing_centers.short_description = _("testing center")
+
+
 @admin.register(models.CenterEmail)
-class CenterEmailAdmin(ImportExportModelAdmin):
-    list_display = ("email", "create_time", "update_time")
+class CenterEmailAdmin(CommonCenterContactAdmin):
+    list_display = ("email", "testing_centers")
     search_fields = ("centers__name", "email")
 
 
 @admin.register(models.CenterPhoneNumber)
-class CenterPhoneNumberAdmin(ImportExportModelAdmin):
-    list_display = ("phone_number", "create_time", "update_time")
+class CenterPhoneNumberAdmin(CommonCenterContactAdmin):
+    list_display = ("phone_number", "testing_centers")
     search_fields = ("centers__name", "email")
 
 
