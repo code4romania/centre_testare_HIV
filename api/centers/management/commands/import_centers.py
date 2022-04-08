@@ -155,7 +155,7 @@ class Command(BaseCommand):
             emails = []
             phone_numbers = []
             test_types = []
-            free_test_types = []
+            free_testing_conditions = []
             docs_18 = []
             docs_16 = []
 
@@ -206,10 +206,10 @@ class Command(BaseCommand):
                                 for item in row_value:
                                     item = item.strip()
                                     if item:
-                                        free_test_types.append(item_model.objects.get(id=dynamic_data_mapping[item]))
+                                        free_testing_conditions.append(item_model.objects.get(id=dynamic_data_mapping[item]))
                                         if "progr" in item.lower():  # noqa
                                             appointment_id = dynamic_data_mapping["appointment"]
-                                            free_test_types.append(item_model.objects.get(id=appointment_id))
+                                            free_testing_conditions.append(item_model.objects.get(id=appointment_id))
                             elif item_model == models.NecessaryDocuments:
                                 if not row_value[0]:
                                     continue
@@ -268,6 +268,8 @@ class Command(BaseCommand):
                 center.phone_numbers.add(field)
             for field in test_types:
                 center.test_types.add(field)
+            for field in free_testing_conditions:
+                center.free_testing_conditions.add(field)
             for field in docs_18:
                 center.necessary_documents_under_18.add(field)
             for field in docs_16:
