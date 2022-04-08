@@ -231,8 +231,8 @@ class Command(BaseCommand):
                             row_value
                             if k
                             not in (
-                                "pre_testing_counseling_conditions_selectable",
-                                "post_testing_counseling_conditions_selectable",
+                                "pre_testing_counseling_conditions",
+                                "post_testing_counseling_conditions",
                             )
                             else None
                         )

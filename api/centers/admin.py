@@ -136,7 +136,6 @@ class TestingCenterAdmin(AdminWithStatusChanges):
                     "testing_price",
                     "is_free_testing_available",
                     "free_testing_conditions",
-                    "free_testing_conditions_multi",
                 )
             },
         ),
