@@ -372,15 +372,6 @@ JAZZMIN_SETTINGS: Dict[str, Any] = {
     "hide_models": [],
     # List of apps (and/or models) to base side menu ordering off of (does not need to contain all apps/models)
     "order_with_respect_to": [
-        "auth",
-        "auth.group",
-        "auth.user",
-        "blog",
-        "blog.post",
-        "taggit",
-        "taggit.tag",
-        "contact",
-        "contact.contactmessage",
         "centers",
         "centers.testingcenter",
         "centers.centertype",
@@ -391,24 +382,23 @@ JAZZMIN_SETTINGS: Dict[str, Any] = {
         "centers.centertesttypes",
         "centers.statistic",
         "centers.datafile",
+        "contact",
+        "contact.contactmessage",
+        "blog",
+        "blog.post",
+        "taggit",
+        "taggit.tag",
         "pages",
         "pages.category",
         "pages.page",
         "sites",
         "sites.site",
+        "auth",
+        "auth.group",
+        "auth.user",
     ],
-    # Custom links to append to app groups, keyed on app name
-    # "custom_links": {
-    #     "books": [
-    #         {
-    #             "name": "Make Messages",
-    #             "url": "make_messages",
-    #             "icon": "fas fa-comments",
-    #             "permissions": ["books.view_book"],
-    #         }
-    #     ]
-    # },
-    # Custom icons for side menu apps/models See https://fontawesome.com/icons?d=gallery&m=free
+    # Custom icons for side menu apps/models
+    # See https://fontawesome.com/v5/search?m=free
     # for a list of icon classes
     "icons": {
         "auth.user": "fas fa-user",
