@@ -100,7 +100,7 @@ class TestingCenterAdmin(AdminWithStatusChanges):
                     "online_contact_type",
                     "emails",
                     "website",
-                    "phone_number",
+                    "phone_numbers",
                 )
             },
         ),
