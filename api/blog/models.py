@@ -1,6 +1,7 @@
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.contrib.auth.models import User
 from django.db import models
+from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from taggit.managers import TaggableManager
 
@@ -24,8 +25,6 @@ class Post(models.Model):
     updated = models.DateTimeField(_("updated"), auto_now=True)
 
     def get_absolute_url(self):
-        from django.urls import reverse
-
         return reverse("post_detail", args=[self.slug])
 
     def __str__(self):
