@@ -12,6 +12,7 @@ django-jquery==3.1.0
 django-ckeditor==6.3.0
 django-modeltranslation==0.17.5
 django-import-export==2.8.0
+django-jazzmin==2.5.0
 
 # py caching
 pymemcache==3.5.2

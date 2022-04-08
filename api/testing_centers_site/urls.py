@@ -4,7 +4,6 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import include, path
-from django.utils.translation import gettext_lazy as _
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 from rest_framework import routers
 
@@ -13,7 +12,7 @@ from contact.views import ContactViewSet
 from pages.views import PagesViewSet
 from centers.views import CenterTestTypesViewSet, statistics, TestingCenterViewSet
 
-admin.site.site_title = admin.site.site_header = admin.site.index_title = _("Testing Centers Admin")
+admin.site.site_title = admin.site.site_header = admin.site.index_title = settings.ADMIN_TITLE
 
 router = routers.DefaultRouter()
 router.register(r"center", TestingCenterViewSet, basename="center")
