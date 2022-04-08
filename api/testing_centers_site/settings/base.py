@@ -332,9 +332,9 @@ JAZZMIN_SETTINGS: Dict[str, Any] = {
     # Title on the brand, and the login screen (19 chars max)
     "site_header": ADMIN_TITLE,
     # square logo to use for your site, must be present in static files, used for favicon and brand on top left
-    "site_logo": "jazzmin/img/centre-testare-hiv-logo.png",
-    "site_logo_short": "jazzmin/img/centre-testare-hiv-logo.png",
-    "site_icon": "jazzmin/img/centre-testare-hiv-logo.png",
+    "site_logo": "jazzmin/img/centre-testare-hiv-logomark.svg",
+    "site_logo_short": "jazzmin/img/centre-testare-hiv-logomark.svg",
+    "site_icon": "jazzmin/img/centre-testare-hiv-logomark.svg",
     "site_logo_classes": "site-logo",
     # Welcome text on the login screen
     "welcome_sign": "",
