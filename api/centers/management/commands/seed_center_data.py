@@ -3,7 +3,14 @@ import os
 
 from django.core.management.base import BaseCommand, CommandParser
 
-from centers.models import CenterEmail, CenterTestTypes, CenterType, NecessaryDocuments, FreeTestingConditions
+from centers.models import (
+    CenterEmail,
+    CenterTestTypes,
+    CenterType,
+    NecessaryDocuments,
+    FreeTestingConditions,
+    CenterPhoneNumber,
+)
 
 
 class Command(BaseCommand):
@@ -11,8 +18,9 @@ class Command(BaseCommand):
         "center_type": CenterType,
         "center_test_types": CenterTestTypes,
         "necessary_documents": NecessaryDocuments,
-        "center_email": CenterEmail,
         "free_testing_conditions": FreeTestingConditions,
+        "center_email": CenterEmail,
+        "center_phone": CenterPhoneNumber,
     }
 
     def add_arguments(self, parser: CommandParser):

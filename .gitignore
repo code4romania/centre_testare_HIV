@@ -1,4 +1,7 @@
+# data import files which should probably not be public
 __helper*.json
+center_email.json
+api/centers/management/commands/center_phone.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
