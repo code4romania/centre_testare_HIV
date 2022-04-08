@@ -106,7 +106,3 @@ class Attachment(models.Model):
 
     def __str__(self):
         return "{}{}".format(self.uploaded_file.url, self.name)
-
-
-# class InlineResource(models.Model):
-#     pass

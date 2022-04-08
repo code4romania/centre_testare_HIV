@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-07 23:39+0300\n"
+"POT-Creation-Date: 2022-04-08 19:14+0300\n"
 "PO-Revision-Date: 2022-02-03 20:22+0200\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -18,137 +18,137 @@ msgstr ""
 msgid "Blog"
 msgstr ""
 
-#: blog/models.py:9 blog/models.py:35
+#: blog/models.py:10 blog/models.py:34
 msgid "post"
 msgstr ""
 
-#: blog/models.py:11 pages/models.py:30
+#: blog/models.py:12 pages/models.py:30
 msgid "slug"
 msgstr ""
 
-#: blog/models.py:13
+#: blog/models.py:14
 msgid "preview text"
 msgstr ""
 
-#: blog/models.py:14
+#: blog/models.py:15
 msgid "image"
 msgstr ""
 
-#: blog/models.py:15
+#: blog/models.py:16
 msgid "tags"
 msgstr ""
 
-#: blog/models.py:17 pages/models.py:28
+#: blog/models.py:18 pages/models.py:28
 msgid "title"
 msgstr ""
 
-#: blog/models.py:18
+#: blog/models.py:19
 msgid "text"
 msgstr ""
 
-#: blog/models.py:20
+#: blog/models.py:21
 msgid "is visible"
 msgstr ""
 
-#: blog/models.py:21
+#: blog/models.py:22
 msgid "published"
 msgstr ""
 
-#: blog/models.py:23
+#: blog/models.py:24
 msgid "created"
 msgstr ""
 
-#: blog/models.py:24
+#: blog/models.py:25
 msgid "updated"
 msgstr ""
 
-#: blog/models.py:36
+#: blog/models.py:35
 msgid "posts"
 msgstr ""
 
-#: centers/admin.py:70
-msgid "Operational Data"
-msgstr ""
-
-#: centers/admin.py:72
-msgid "Geo Data"
-msgstr ""
-
-#: centers/admin.py:87
-msgid "Center Details"
-msgstr ""
-
-#: centers/admin.py:97
-msgid "Contact Information"
-msgstr ""
-
-#: centers/admin.py:108
-msgid "Testing Costs"
-msgstr ""
-
-#: centers/admin.py:119
-msgid "Testing Details"
-msgstr ""
-
-#: centers/admin.py:138
-msgid "Address"
-msgstr ""
-
-#: centers/admin.py:151 centers/admin.py:163 centers/admin.py:175
-#: centers/models.py:193
+#: centers/admin.py:40 centers/admin.py:176 centers/admin.py:188
+#: centers/admin.py:200 centers/models.py:218
 msgid "testing center"
 msgstr ""
 
-#: centers/admin.py:152 centers/admin.py:164 centers/admin.py:176
-#: centers/models.py:194
+#: centers/admin.py:94
+msgid "Operational Data"
+msgstr ""
+
+#: centers/admin.py:96
+msgid "Geo Data"
+msgstr ""
+
+#: centers/admin.py:111
+msgid "Center Details"
+msgstr ""
+
+#: centers/admin.py:121
+msgid "Contact Information"
+msgstr ""
+
+#: centers/admin.py:132
+msgid "Testing Costs"
+msgstr ""
+
+#: centers/admin.py:144
+msgid "Testing Details"
+msgstr ""
+
+#: centers/admin.py:163
+msgid "Address"
+msgstr ""
+
+#: centers/admin.py:177 centers/admin.py:189 centers/admin.py:201
+#: centers/models.py:219
 msgid "testing centers"
 msgstr ""
 
-#: centers/admin.py:155
+#: centers/admin.py:180
 msgid "Mark selected testing centers as pending"
 msgstr ""
 
-#: centers/admin.py:167
+#: centers/admin.py:192
 msgid "Mark selected testing centers as accepted"
 msgstr ""
 
-#: centers/admin.py:179
+#: centers/admin.py:204
 msgid "Mark selected testing centers as rejected"
 msgstr ""
 
-#: centers/admin.py:237
+#: centers/admin.py:262
 msgid "testing center resource"
 msgstr ""
 
-#: centers/admin.py:238
+#: centers/admin.py:263
 msgid "testing center resources"
 msgstr ""
 
-#: centers/admin.py:263
+#: centers/admin.py:288
 #, python-brace-format
 msgid "File with name '{file_name}' wasn't imported. Errors: {row_errors}"
 msgstr ""
 
-#: centers/admin.py:270
+#: centers/admin.py:295
 #, python-brace-format
 msgid "File with name '{file_name}' was imported."
 msgstr ""
 
-#: centers/admin.py:277
+#: centers/admin.py:302
 #, python-brace-format
 msgid ""
 "File with name '{file_name}' wasn't a proper data file. Accepted formats "
 "are: CSV, XLSX."
 msgstr ""
 
-#: centers/admin.py:286
+#: centers/admin.py:311
 #, python-brace-format
 msgid ""
 "File with name '{file_name}' couldn't be imported. The error received was: "
 "`{error_args}`"
 msgstr ""
 
-#: centers/apps.py:7
+#: centers/apps.py:7 testing_centers_site/settings/base.py:45
 msgid "Testing Centers"
 msgstr ""
 
@@ -164,7 +164,7 @@ msgstr ""
 msgid "test type"
 msgstr ""
 
-#: centers/models.py:29 centers/models.py:145
+#: centers/models.py:29 centers/models.py:158
 msgid "test types"
 msgstr ""
 
@@ -180,264 +180,272 @@ msgstr ""
 msgid "necessary documents"
 msgstr ""
 
-#: centers/models.py:51 centers/models.py:62
-msgid "email"
+#: centers/models.py:46
+msgid "type of condition"
 msgstr ""
 
-#: centers/models.py:53 centers/models.py:69 centers/models.py:168
-msgid "time created"
+#: centers/models.py:54
+msgid "free testing condition"
 msgstr ""
 
-#: centers/models.py:54 centers/models.py:70 centers/models.py:169
-msgid "time updated"
-msgstr ""
-
-#: centers/models.py:63
-msgid "emails"
-msgstr ""
-
-#: centers/models.py:67 centers/models.py:78 contact/models.py:15
-msgid "phone number"
-msgstr ""
-
-#: centers/models.py:79
-msgid "phone numbers"
-msgstr ""
-
-#: centers/models.py:87
-msgid "Pending"
-msgstr ""
-
-#: centers/models.py:88
-msgid "Accepted"
-msgstr ""
-
-#: centers/models.py:89
-msgid "Rejected"
-msgstr ""
-
-#: centers/models.py:97
-msgid "None"
-msgstr ""
-
-#: centers/models.py:98 centers/models.py:112
-msgid "Email"
-msgstr ""
-
-#: centers/models.py:99
-msgid "Contact form"
-msgstr ""
-
-#: centers/models.py:100
-msgid "Schedule form"
-msgstr ""
-
-#: centers/models.py:110
-msgid "Other"
-msgstr ""
-
-#: centers/models.py:111
-msgid "Face to face"
-msgstr ""
-
-#: centers/models.py:113
-msgid "Phone"
-msgstr ""
-
-#: centers/models.py:114
-msgid "Mail"
-msgstr ""
-
-#: centers/models.py:115
-msgid "Platform"
-msgstr ""
-
-#: centers/models.py:118 centers/models.py:248
-msgid "status"
-msgstr ""
-
-#: centers/models.py:120
-msgid "center name"
-msgstr ""
-
-#: centers/models.py:121
-msgid "street number"
-msgstr ""
-
-#: centers/models.py:122
-msgid "street name"
-msgstr ""
-
-#: centers/models.py:123
-msgid "address details"
-msgstr ""
-
-#: centers/models.py:124
-msgid "county"
-msgstr ""
-
-#: centers/models.py:125
-msgid "locality"
-msgstr ""
-
-#: centers/models.py:127
-msgid "full address"
-msgstr ""
-
-#: centers/models.py:129
-msgid "latitude"
-msgstr ""
-
-#: centers/models.py:130
-msgid "longitude"
-msgstr ""
-
-#: centers/models.py:132
-msgid "centers"
-msgstr ""
-
-#: centers/models.py:133
-msgid "schedule start"
-msgstr ""
-
-#: centers/models.py:134
-msgid "schedule end"
-msgstr ""
-
-#: centers/models.py:137
-msgid "online contact type"
-msgstr ""
-
-#: centers/models.py:139
-msgid "center email(s)"
-msgstr ""
-
-#: centers/models.py:140
-msgid "website"
-msgstr ""
-
-#: centers/models.py:142
-msgid "center phone number(s)"
-msgstr ""
-
-#: centers/models.py:146
-msgid "testing price"
-msgstr ""
-
-#: centers/models.py:147
-msgid "is free testing available"
-msgstr ""
-
-#: centers/models.py:148
+#: centers/models.py:55
 msgid "free testing conditions"
 msgstr ""
 
+#: centers/models.py:64 centers/models.py:75
+msgid "email"
+msgstr ""
+
+#: centers/models.py:66 centers/models.py:82 centers/models.py:193
+msgid "time created"
+msgstr ""
+
+#: centers/models.py:67 centers/models.py:83 centers/models.py:194
+msgid "time updated"
+msgstr ""
+
+#: centers/models.py:76
+msgid "emails"
+msgstr ""
+
+#: centers/models.py:80 centers/models.py:91 contact/models.py:15
+msgid "phone number"
+msgstr ""
+
+#: centers/models.py:92
+msgid "phone numbers"
+msgstr ""
+
+#: centers/models.py:100
+msgid "Pending"
+msgstr ""
+
+#: centers/models.py:101
+msgid "Accepted"
+msgstr ""
+
+#: centers/models.py:102
+msgid "Rejected"
+msgstr ""
+
+#: centers/models.py:110
+msgid "None"
+msgstr ""
+
+#: centers/models.py:111 centers/models.py:125
+msgid "Email"
+msgstr ""
+
+#: centers/models.py:112
+msgid "Contact form"
+msgstr ""
+
+#: centers/models.py:113
+msgid "Schedule form"
+msgstr ""
+
+#: centers/models.py:123
+msgid "Other"
+msgstr ""
+
+#: centers/models.py:124
+msgid "Face to face"
+msgstr ""
+
+#: centers/models.py:126
+msgid "Phone"
+msgstr ""
+
+#: centers/models.py:127
+msgid "Mail"
+msgstr ""
+
+#: centers/models.py:128
+msgid "Platform"
+msgstr ""
+
+#: centers/models.py:131 centers/models.py:273
+msgid "status"
+msgstr ""
+
+#: centers/models.py:133
+msgid "center name"
+msgstr ""
+
+#: centers/models.py:134
+msgid "street number"
+msgstr ""
+
+#: centers/models.py:135
+msgid "street name"
+msgstr ""
+
+#: centers/models.py:136
+msgid "address details"
+msgstr ""
+
+#: centers/models.py:137
+msgid "county"
+msgstr ""
+
+#: centers/models.py:138
+msgid "locality"
+msgstr ""
+
+#: centers/models.py:140
+msgid "full address"
+msgstr ""
+
+#: centers/models.py:142
+msgid "latitude"
+msgstr ""
+
+#: centers/models.py:143
+msgid "longitude"
+msgstr ""
+
+#: centers/models.py:145 centers/models.py:161
+msgid "centers"
+msgstr ""
+
+#: centers/models.py:146
+msgid "schedule start"
+msgstr ""
+
+#: centers/models.py:147
+msgid "schedule end"
+msgstr ""
+
 #: centers/models.py:150
-msgid "quick test wait time in minutes"
+msgid "online contact type"
 msgstr ""
 
-#: centers/models.py:151
-msgid "quick test wait time in days"
+#: centers/models.py:152
+msgid "center email(s)"
 msgstr ""
 
-#: centers/models.py:154
-msgid "negative result disclosure"
+#: centers/models.py:153
+msgid "website"
 msgstr ""
 
-#: centers/models.py:157
-msgid "positive result disclosure"
+#: centers/models.py:155
+msgid "center phone number(s)"
+msgstr ""
+
+#: centers/models.py:159
+msgid "testing price"
 msgstr ""
 
 #: centers/models.py:160
-msgid "has pre-test counseling"
-msgstr ""
-
-#: centers/models.py:161
-msgid "pre-test counseling conditions"
-msgstr ""
-
-#: centers/models.py:162
-msgid "has post-test counseling"
+msgid "is free testing available"
 msgstr ""
 
 #: centers/models.py:163
+msgid "quick test wait time in minutes"
+msgstr ""
+
+#: centers/models.py:164
+msgid "quick test wait time in days"
+msgstr ""
+
+#: centers/models.py:167
+msgid "negative result disclosure"
+msgstr ""
+
+#: centers/models.py:170
+msgid "positive result disclosure"
+msgstr ""
+
+#: centers/models.py:173
+msgid "has pre-test counseling"
+msgstr ""
+
+#: centers/models.py:175
+msgid "pre-test counseling conditions"
+msgstr ""
+
+#: centers/models.py:181
+msgid "has post-test counseling"
+msgstr ""
+
+#: centers/models.py:183
 msgid "post-test counseling conditions"
 msgstr ""
 
-#: centers/models.py:165
+#: centers/models.py:190
 msgid "centers_u18"
 msgstr ""
 
-#: centers/models.py:166
+#: centers/models.py:191
 msgid "centers_u16"
 msgstr ""
 
-#: centers/models.py:202
+#: centers/models.py:227
 msgid "rating ({}-{})"
 msgstr ""
 
-#: centers/models.py:206
+#: centers/models.py:231
 msgid "comment"
 msgstr ""
 
-#: centers/models.py:207 contact/models.py:22
+#: centers/models.py:232 contact/models.py:22
 msgid "creation date"
 msgstr ""
 
-#: centers/models.py:209
+#: centers/models.py:234
 msgid "ratings"
 msgstr ""
 
-#: centers/models.py:217
+#: centers/models.py:242
 msgid "center rating"
 msgstr ""
 
-#: centers/models.py:218
+#: centers/models.py:243
 msgid "center ratings"
 msgstr ""
 
-#: centers/models.py:222
+#: centers/models.py:247
 msgid "mobile caravans"
 msgstr ""
 
-#: centers/models.py:223
+#: centers/models.py:248
 msgid "hotline"
 msgstr ""
 
-#: centers/models.py:228
+#: centers/models.py:253
 msgid "statistic"
 msgstr ""
 
-#: centers/models.py:229
+#: centers/models.py:254
 msgid "statistics"
 msgstr ""
 
-#: centers/models.py:241
+#: centers/models.py:266
 msgid "Not tried"
 msgstr ""
 
-#: centers/models.py:242
+#: centers/models.py:267
 msgid "Imported successfully"
 msgstr ""
 
-#: centers/models.py:243
+#: centers/models.py:268
 msgid "Import failed"
 msgstr ""
 
-#: centers/models.py:246 contact/models.py:13 pages/models.py:9
+#: centers/models.py:271 contact/models.py:13 pages/models.py:9
 #: pages/models.py:95
 msgid "name"
 msgstr ""
 
-#: centers/models.py:247
+#: centers/models.py:272
 msgid "file"
 msgstr ""
 
-#: centers/models.py:253
+#: centers/models.py:278
 msgid "Data file"
 msgstr ""
 
-#: centers/models.py:254
+#: centers/models.py:279
 msgid "Data files"
 msgstr ""
 
@@ -585,16 +593,12 @@ msgstr ""
 msgid "attachments"
 msgstr ""
 
-#: testing_centers_site/settings/base.py:169
+#: testing_centers_site/settings/base.py:175
 msgid "Romanian"
 msgstr ""
 
-#: testing_centers_site/settings/base.py:170
+#: testing_centers_site/settings/base.py:176
 msgid "English"
-msgstr ""
-
-#: testing_centers_site/urls.py:16
-msgid "Testing Centers Admin"
 msgstr ""
 
 #: testing_centers_site/utils.py:28

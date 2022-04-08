@@ -2,6 +2,7 @@ import itertools
 import json
 import os
 import re
+from datetime import time
 from os.path import exists
 from typing import Dict, List
 
@@ -32,6 +33,15 @@ class Command(BaseCommand):
             default="csv",
             help="The type of file to import",
         )
+        parser.add_argument(
+            "-o",
+            "--overwrite",
+            action="store_true",
+        )
+        parser.add_argument(
+            "--dry-run",
+            action="store_true",
+        )
 
     def handle(self, *args, **options):
         file_path, file_type = self._check_and_extract_variables(options)
@@ -40,6 +50,15 @@ class Command(BaseCommand):
         fields_list: List[Dict] = self._get_model_fields()
         fields_dict: Dict = {field["field_name"]: field for field in fields_list}
         mapped_values: Dict = self._get_fields_columns_mapping(columns_list, fields_list)
+
+        self._write_centers(df, fields_dict, mapped_values, options)
+
+    @staticmethod
+    def _write_centers(df, fields_dict, mapped_values, options):
+        overwrite = options.get("overwrite", False)
+        dry_run = options.get("dry_run", False)
+
+        base_types = (int, float, bool, str)
 
         basic_fields_mapping = {
             "Față în față": models.TestingCenter.DISCLOSURE_FACE_TO_FACE,
@@ -87,21 +106,66 @@ class Command(BaseCommand):
             "Teste de sânge laborator": 9,
             "Test de sânge cu rezultat în 3 zile lucrătoare": 4,
             "HIP P24": 1,
+            "NICI UNA": 1,
+            "Nici o condiție. Testările sunt gratuite pentru toată lumea, în limita locurilor disponibile": 1,
+            "BILET DE TRIMITERE ROZ DECONTAT DE CAS": 2,
+            "Bilet de trimitere roz": 2,
+            "Bilet de trimitere": 2,
+            "Persoana trebuie să aibă trimitere de la medicul de familie": 2,
+            "DOAR FEMEI INSARCINATE": 3,
+            "DOAR PENTRU FEMEI INSARCINATE": 3,
+            "FEMEI GRAVIDE DA PE LISTA DE ASTEPTARE CAND AU FONDURI": 3,
+            "FEMEI GRAVIDE SAU CONTACT DIRECT CU O PERSOANA CU HIV": 3,
+            "FEMEI INSARCINATE": 3,
+            "FEMEI INSARCINATE (CU PROGRAMARE)": 3,
+            "FEMEI INSARCINATE CÂND AU FONDURI": 3,
+            "FEMEI INSARCINATE, CÂND AU FONDURI": 3,
+            "Gratuit doar pentru femeile însărcinate": 3,
+            "Gratuit doar pentru femeile însărcinate cu bilet de internare de o zi": 3,
+            "Gratuit doar pentru femeile însărcinate cu programare": 3,
+            "PENTRU FEMEI INSARCINATE": 3,
+            "CAND AU FONDURI": 5,
+            "CÂND AU FONDURI": 5,
+            "CÂND SUNT FONDURI PENTRU ANALIZE": 5,
+            "Când au fonduri": 5,
+            "DACA AU FONDURI": 5,
+            "DACĂ AU FONDURI": 5,
+            "DACA SE SUPLIMENTEAZA FONDURILE DA": 5,
+            "IN LIMITA FONDURI": 5,
+            "DACĂ AU FONDURI DISPONIBILE": 5,
+            "IN LIMITA FONDURI DISPONIBILE": 5,
+            "Nu au fonduri momentan": 5,
+            "DOAR CÂND AU FONDURI, CU PROGRMARE": 5,
+            "SĂ AIBĂ FONDURI PENTRU ANALIZE": 5,
+            "Te programezi pentru luna următoare când au fonduri": 5,
+            "Persoana trebuie să aibă asigurare medicală": 6,
+            (
+                "Persoana trebuie să facă parte dintr-un grup vulnerabil "
+                "(persoană implicată în sexul comercial/bărbat "
+                "care face sex cu bărbați/consumator de droguri injectabile)"
+            ): 7,
+            "Persoana trebuie să fie majoră": 8,
+            "CARTE DE IDENTITATE SI PROGRAMARE": 9,
+            "DOAR PENTRU LUNA MAI": 4,
+            "SE FACE SUNAND LA 0236455709 VINEREA PENTRU URMATOAREA LUNA": 4,
+            "appointment": 4,
         }
-
         for r_index, row in df.iterrows():
             new_center = {}
             emails = []
             phone_numbers = []
             test_types = []
+            free_test_types = []
             docs_18 = []
             docs_16 = []
+
+            if overwrite:
+                new_center["id"] = row.get("id", r_index + 1)
 
             for k, v in mapped_values.items():
                 if v["type"] == "value":
                     new_center[k] = v["value"]
                 else:
-                    base_types = (int, float, bool, str)
                     row_value = row[v["value"]]
                     field_type_details = fields_dict[k]["field_type"]
                     if isinstance(field_type_details, dict):
@@ -138,6 +202,14 @@ class Command(BaseCommand):
                                 for item in row_value:
                                     if item:
                                         test_types.append(item_model.objects.get(id=dynamic_data_mapping[item]))
+                            elif item_model == models.FreeTestingConditions:
+                                for item in row_value:
+                                    item = item.strip()
+                                    if item:
+                                        free_test_types.append(item_model.objects.get(id=dynamic_data_mapping[item]))
+                                        if "progr" in item.lower():  # noqa
+                                            appointment_id = dynamic_data_mapping["appointment"]
+                                            free_test_types.append(item_model.objects.get(id=appointment_id))
                             elif item_model == models.NecessaryDocuments:
                                 if not row_value[0]:
                                     continue
@@ -155,12 +227,37 @@ class Command(BaseCommand):
                             item_model = field_type_details.get("model")
                             new_center[k] = item_model.objects.get(id=dynamic_data_mapping[row[v["value"]]])
                     elif field_type_details in base_types:
-                        new_center[k] = basic_fields_mapping.get(row_value, row_value)
-                        if new_center[k] == "" and field_type_details in (int, float):
-                            new_center[k] = 0
+                        default_row_value = (
+                            row_value
+                            if k
+                            not in (
+                                "pre_testing_counseling_conditions_selectable",
+                                "post_testing_counseling_conditions_selectable",
+                            )
+                            else None
+                        )
+                        value = basic_fields_mapping.get(row_value, default_row_value)
+
+                        if isinstance(value, time):
+                            value = value.strftime("%H:%M")
+                            if value.split(":")[-1] == "59":
+                                value = f"{int(value.split(':')[0])+1:02d}:00"
+                            elif value.split(":")[-1] == "29":
+                                value = f"{int(value.split(':')[0]):02d}:30"
+                        elif value == "" and field_type_details in (int, float):
+                            value = 0
+
+                        new_center[k] = value
+
+            if dry_run:
+                print(new_center)
+                continue
 
             try:
-                center = models.TestingCenter.objects.create(**new_center)
+                if overwrite:
+                    center, _ = models.TestingCenter.objects.update_or_create(defaults=new_center, id=new_center["id"])
+                else:
+                    center = models.TestingCenter.objects.create(**new_center)
             except ValidationError:
                 print(row.to_json())
                 continue

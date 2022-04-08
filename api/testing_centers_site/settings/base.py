@@ -379,6 +379,7 @@ JAZZMIN_SETTINGS: Dict[str, Any] = {
         "centers.centeremail",
         "centers.centerphonenumber",
         "centers.necessarydocuments",
+        "centers.freetestingconditions",
         "centers.centertesttypes",
         "centers.statistic",
         "centers.datafile",
@@ -412,6 +413,7 @@ JAZZMIN_SETTINGS: Dict[str, Any] = {
         "centers.centeremail": "fas fa-at",
         "centers.centerphonenumber": "fas fa-phone",
         "centers.necessarydocuments": "fas fa-folder-open",
+        "centers.freetestingconditions": "fas fa-id-card-alt",
         "centers.centertesttypes": "fas fa-microscope",
         "centers.statistic": "fas fa-chart-bar",
         "centers.datafile": "fas fa-file",
@@ -500,6 +502,6 @@ JAZZMIN_UI_TWEAKS = {
         "info": "btn-outline-info",
         "warning": "btn-warning",
         "danger": "btn-danger",
-        "success": "btn-outline-success"
-    }
+        "success": "btn-outline-success",
+    },
 }

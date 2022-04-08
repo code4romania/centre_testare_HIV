@@ -23,6 +23,7 @@ class CommonNameAdmin(ImportExportModelAdmin):
 admin.site.register(models.CenterType, CommonNameAdmin)
 admin.site.register(models.CenterTestTypes, CommonNameAdmin)
 admin.site.register(models.NecessaryDocuments, CommonNameAdmin)
+admin.site.register(models.FreeTestingConditions, CommonNameAdmin)
 
 
 class CommonCenterContactAdmin(ImportExportModelAdmin):
@@ -31,7 +32,7 @@ class CommonCenterContactAdmin(ImportExportModelAdmin):
         centers_listing = obj.centers.values_list("pk", "name")
         data = []
         for center_id, center_name in centers_listing:
-            center_url = reverse('admin:centers_testingcenter_change', args=[center_id])
+            center_url = reverse("admin:centers_testingcenter_change", args=[center_id])
             data.append(f"<a href='{center_url}'>{center_name}</a>")
         formatted_data = ", ".join(data)
         return mark_safe(formatted_data)
@@ -73,7 +74,15 @@ class TestingCenterAdmin(AdminWithStatusChanges):
         model = models.CenterRating
         extra = 1
 
-    list_filter = ("status", "county", "locality", "test_types")
+    list_filter = (
+        "status",
+        "county",
+        "locality",
+        "test_types",
+        "is_free_testing_available",
+        "has_pre_testing_counseling",
+        "has_post_testing_counseling",
+    )
     list_display = ("get_testing_center_address", "status", "website", "schedule_start", "schedule_end")
     list_editable = ("status",)
 
@@ -127,6 +136,7 @@ class TestingCenterAdmin(AdminWithStatusChanges):
                     "testing_price",
                     "is_free_testing_available",
                     "free_testing_conditions",
+                    "free_testing_conditions_multi",
                 )
             },
         ),
