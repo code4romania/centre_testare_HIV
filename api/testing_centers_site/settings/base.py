@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
+from typing import Any, Dict
 
 import environ
 from django.utils.translation import gettext_lazy as _
@@ -41,8 +42,11 @@ env = environ.Env(
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../..")
 
+ADMIN_TITLE = _("Testing Centers")
+
 DEBUG = bool(env("ENVIRONMENT") != "production")
 
+ENVIRONMENT = env("ENVIRONMENT")
 ENABLE_DEBUG_TOOLBAR = bool(DEBUG and env("ENABLE_DEBUG_TOOLBAR"))
 
 DJANGO_SITE_URL = env("REACT_APP_DJANGO_SITE_URL")
@@ -56,6 +60,7 @@ ALLOWED_HOSTS = []
 CORS_ORIGIN_ALLOW_ALL = False
 
 INSTALLED_APPS = [
+    "jazzmin",
     # third-party apps where the order matters
     "modeltranslation",
     # django apps
@@ -79,6 +84,7 @@ INSTALLED_APPS = [
     "ckeditor",
     "ckeditor_uploader",
     # project apps
+    "static_custom",
     "centers",
     "contact",
     "pages",
@@ -314,4 +320,196 @@ COUNTIES_SHORTNAME = {
     "Vaslui": "VS",
     "Vrancea": "VN",
     "Vâlcea": "VL",
+}
+
+# django-jazzmin
+# -------------------------------------------------------------------------------
+# django-jazzmin - https://django-jazzmin.readthedocs.io/configuration/
+
+JAZZMIN_SETTINGS: Dict[str, Any] = {
+    # title of the window
+    "site_title": ADMIN_TITLE,
+    # Title on the brand, and the login screen (19 chars max)
+    "site_header": ADMIN_TITLE,
+    # square logo to use for your site, must be present in static files, used for favicon and brand on top left
+    "site_logo": "jazzmin/img/centre-testare-hiv-logo.png",
+    "site_logo_short": "jazzmin/img/centre-testare-hiv-logo.png",
+    "site_icon": "jazzmin/img/centre-testare-hiv-logo.png",
+    "site_logo_classes": "site-logo",
+    # Welcome text on the login screen
+    "welcome_sign": "",
+    # Copyright on the footer
+    "copyright": "Code4Romania",
+    # The model admin to search from the search bar, search bar omitted if excluded
+    # "search_model": "donors.Donor",
+    # The field name on user model that contains avatar image
+    "user_avatar": None,
+    ############
+    # Top Menu #
+    ############
+    # Links to put along the top menu
+    "topmenu_links": [
+        # Url that gets reversed (Permissions can be added)
+        {"name": "Home", "url": "admin:index", "permissions": ["auth.view_user"]},
+    ],
+    #############
+    # User Menu #
+    #############
+    # Additional links to include in the user menu on the top right ("app" url type is not allowed)
+    "usermenu_links": [
+        {"model": "auth.user", "new_window": False},
+    ],
+    #############
+    # Side Menu #
+    #############
+    # Whether to display the side menu
+    "show_sidebar": True,
+    # Whether to auto expand the menu
+    "navigation_expanded": True,
+    # Hide these apps when generating side menu e.g (auth)
+    "hide_apps": ["pages", "sites"],
+    # Hide these models when generating side menu (e.g auth.user)
+    "hide_models": [],
+    # List of apps (and/or models) to base side menu ordering off of (does not need to contain all apps/models)
+    "order_with_respect_to": [
+        "auth",
+        "auth.group",
+        "auth.user",
+        "blog",
+        "blog.post",
+        "taggit",
+        "taggit.tag",
+        "contact",
+        "contact.contactmessage",
+        "centers",
+        "centers.testingcenter",
+        "centers.centertype",
+        "centers.centerrating",
+        "centers.centeremail",
+        "centers.centerphonenumber",
+        "centers.necessarydocuments",
+        "centers.centertesttypes",
+        "centers.statistic",
+        "centers.datafile",
+        "pages",
+        "pages.category",
+        "pages.page",
+        "sites",
+        "sites.site",
+    ],
+    # Custom links to append to app groups, keyed on app name
+    # "custom_links": {
+    #     "books": [
+    #         {
+    #             "name": "Make Messages",
+    #             "url": "make_messages",
+    #             "icon": "fas fa-comments",
+    #             "permissions": ["books.view_book"],
+    #         }
+    #     ]
+    # },
+    # Custom icons for side menu apps/models See https://fontawesome.com/icons?d=gallery&m=free
+    # for a list of icon classes
+    "icons": {
+        "auth.user": "fas fa-user",
+        "auth.group": "fas fa-users",
+        "blog.post": "fas fa-blog",
+        "taggit.tag": "fas fa-tag",
+        "contact.contactmessage": "fas fa-envelope-open-text",
+        "centers.testingcenter": "fas fa-hospital",
+        "centers.centerrating": "fas fa-star",
+        "centers.centertype": "fas fa-cubes",
+        "centers.centeremail": "fas fa-at",
+        "centers.centerphonenumber": "fas fa-phone",
+        "centers.necessarydocuments": "fas fa-folder-open",
+        "centers.centertesttypes": "fas fa-microscope",
+        "centers.statistic": "fas fa-chart-bar",
+        "centers.datafile": "fas fa-file",
+        "pages.category": "fas fa-box",
+        "pages.page": "fas fa-columns",
+        "sites.site": "fas fa-sitemap",
+    },
+    # Icons that are used when one is not manually specified
+    "default_icon_parents": "fas fa-chevron-circle-right",
+    "default_icon_children": "fas fa-circle",
+    #################
+    # Related Modal #
+    #################
+    # Use modals instead of popups
+    "related_modal_active": False,
+    #############
+    # UI Tweaks #
+    #############
+    # Relative paths to custom CSS/JS scripts (must be present in static files)
+    "custom_css": "jazzmin/css/admin.css",
+    "custom_js": "",
+    # Whether to show the UI customizer on the sidebar
+    "show_ui_builder": bool(ENVIRONMENT != "production"),
+    ###############
+    # Change view #
+    ###############
+    # Render out the change view as a single form, or in tabs, current options are
+    # - single
+    # - horizontal_tabs (default)
+    # - vertical_tabs
+    # - collapsible
+    # - carousel
+    "changeform_format": "single",
+    # override change forms on a per modeladmin basis
+    "changeform_format_overrides": {
+        "auth.user": "collapsible",
+        "auth.group": "vertical_tabs",
+    },
+    # Add a language dropdown into the admin
+    "language_chooser": True,
+}
+
+if ENVIRONMENT != "production":
+    JAZZMIN_SETTINGS["usermenu_links"].extend(
+        [
+            {
+                "name": "Configuration",
+                "url": "https://django-jazzmin.readthedocs.io/configuration/",
+                "new_window": True,
+                "icon": "fas fa-wrench",
+            },
+            {
+                "name": "Support",
+                "url": "https://github.com/farridav/django-jazzmin/issues",
+                "new_window": True,
+                "icon": "fas fa-question",
+            },
+        ]
+    )
+
+JAZZMIN_UI_TWEAKS = {
+    "navbar_small_text": False,
+    "footer_small_text": False,
+    "body_small_text": True,
+    "brand_small_text": False,
+    "brand_colour": "navbar-gray",
+    "accent": "accent-success",
+    "navbar": "navbar-success navbar-dark",
+    "no_navbar_border": True,
+    "navbar_fixed": False,
+    "layout_boxed": False,
+    "footer_fixed": False,
+    "sidebar_fixed": True,
+    "sidebar": "sidebar-dark-olive",
+    "sidebar_nav_small_text": False,
+    "sidebar_disable_expand": False,
+    "sidebar_nav_child_indent": True,
+    "sidebar_nav_compact_style": True,
+    "sidebar_nav_legacy_style": False,
+    "sidebar_nav_flat_style": True,
+    "theme": "default",
+    "dark_mode_theme": "darkly",
+    "button_classes": {
+        "primary": "btn-primary",
+        "secondary": "btn-outline-secondary",
+        "info": "btn-outline-info",
+        "warning": "btn-warning",
+        "danger": "btn-danger",
+        "success": "btn-outline-success"
+    }
 }
