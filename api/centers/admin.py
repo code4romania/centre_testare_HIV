@@ -194,7 +194,7 @@ class TestingCenterAdmin(AdminWithStatusChanges):
             "js/admin/here_map.js",
         )
 
-        css = {"all": ("css/admin/location_picker.css", library_css)}
+        css = {"all": ("css/admin/multiselect.css", "css/admin/location_picker.css", library_css)}
         js = library_js
 
     def add_view(self, request, form_url="", extra_context=None):
