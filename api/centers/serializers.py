@@ -33,6 +33,9 @@ class TestingCenterSerializer(serializers.ModelSerializer):
     positive_disclosure = serializers.SerializerMethodField("get_positive_disclosure")
     pre_counseling = serializers.SerializerMethodField("get_pre_conditions_value")
     post_counseling = serializers.SerializerMethodField("get_post_conditions_value")
+    online_contact_type = serializers.SerializerMethodField("get_online_contact_type")
+
+    type = serializers.StringRelatedField(read_only=True)
 
     ratings = CenterRatingSerializer(many=True, read_only=True)
 
@@ -46,16 +49,19 @@ class TestingCenterSerializer(serializers.ModelSerializer):
         return self._get_many_to_many_name_center_field(obj, "necessary_documents_under_16")
 
     def get_negative_disclosure(self, obj: TestingCenter) -> str:
-        return self._get_disclosure_field(obj, "negative_result_disclosure")
+        return self._get_disclosure_field(obj, obj.TEST_DISCLOSURE_CHOICES, "negative_result_disclosure")
 
     def get_positive_disclosure(self, obj: TestingCenter) -> str:
-        return self._get_disclosure_field(obj, "positive_result_disclosure")
+        return self._get_disclosure_field(obj, obj.TEST_DISCLOSURE_CHOICES, "positive_result_disclosure")
 
     def get_pre_conditions_value(self, obj: TestingCenter) -> str:
-        return self._get_disclosure_field(obj, "pre_testing_counseling_conditions")
+        return self._get_disclosure_field(obj, obj.TEST_DISCLOSURE_CHOICES, "pre_testing_counseling_conditions")
 
     def get_post_conditions_value(self, obj: TestingCenter) -> str:
-        return self._get_disclosure_field(obj, "post_testing_counseling_conditions")
+        return self._get_disclosure_field(obj, obj.TEST_DISCLOSURE_CHOICES, "post_testing_counseling_conditions")
+
+    def get_online_contact_type(self, obj: TestingCenter) -> str:
+        return self._get_disclosure_field(obj, obj.CONTACT_CHOICES, "post_testing_counseling_conditions")
 
     @staticmethod
     def get_emails(obj: TestingCenter) -> List:
@@ -81,9 +87,9 @@ class TestingCenterSerializer(serializers.ModelSerializer):
         return CenterRating.objects.filter(testing_center_id=obj.pk).count()
 
     @staticmethod
-    def _get_disclosure_field(obj: TestingCenter, field: str) -> str:
+    def _get_disclosure_field(obj: TestingCenter, choices: tuple, field: str) -> str:
         disclosure_key = getattr(obj, field)
-        for disclosure in obj.TEST_DISCLOSURE_CHOICES:
+        for disclosure in choices:
             if disclosure_key == disclosure[0]:
                 return str(disclosure[1])
 
@@ -98,16 +104,17 @@ class TestingCenterSerializer(serializers.ModelSerializer):
             "pk",
             "lat",
             "lng",
+            "type",
             "name",
             "street_name",
             "street_number",
             "address_details",
             "locality",
             "county_code",
+            "online_contact_type",
             "website",
             "phone_numbers",
             "emails",
-            "online_contact_type",
             "schedule_start",
             "schedule_end",
             "test_types",
