@@ -156,7 +156,7 @@ class TestingCenter(models.Model):
     )
 
     test_types = models.ManyToManyField(CenterTestTypes, verbose_name=_("test types"), blank=True)
-    testing_price = models.DecimalField(_("testing price"), max_digits=6, decimal_places=2, null=True, blank=True)
+    testing_price = models.FloatField(_("testing price"), null=True, blank=True)
     is_free_testing_available = models.BooleanField(_("is free testing available"), default=False)
     free_testing_conditions = models.ManyToManyField(FreeTestingConditions, related_name=_("centers"), blank=True)
 
