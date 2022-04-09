@@ -23,11 +23,16 @@ class TestingCenterSerializer(serializers.ModelSerializer):
     emails = serializers.SerializerMethodField("get_emails")
     phone_numbers = serializers.SerializerMethodField("get_phone_numbers")
     test_types = serializers.SerializerMethodField("get_test_types")
-    necessary_documents_under_18 = serializers.SerializerMethodField("get_necessary_documents_under_18")
-    necessary_documents_under_16 = serializers.SerializerMethodField("get_necessary_documents_under_16")
+    docs_u18 = serializers.SerializerMethodField("get_necessary_documents_under_18")
+    docs_u16 = serializers.SerializerMethodField("get_necessary_documents_under_16")
     county_code = serializers.SerializerMethodField("get_county_code")
     average_rating = serializers.SerializerMethodField("get_average_rating")
     number_of_ratings = serializers.SerializerMethodField("get_number_of_ratings")
+
+    negative_disclosure = serializers.SerializerMethodField("get_negative_disclosure")
+    positive_disclosure = serializers.SerializerMethodField("get_positive_disclosure")
+    pre_counseling = serializers.SerializerMethodField("get_pre_conditions_value")
+    post_counseling = serializers.SerializerMethodField("get_post_conditions_value")
 
     ratings = CenterRatingSerializer(many=True, read_only=True)
 
@@ -39,6 +44,18 @@ class TestingCenterSerializer(serializers.ModelSerializer):
 
     def get_necessary_documents_under_16(self, obj: TestingCenter) -> List:
         return self._get_many_to_many_name_center_field(obj, "necessary_documents_under_16")
+
+    def get_negative_disclosure(self, obj: TestingCenter) -> str:
+        return self._get_disclosure_field(obj, "negative_result_disclosure")
+
+    def get_positive_disclosure(self, obj: TestingCenter) -> str:
+        return self._get_disclosure_field(obj, "positive_result_disclosure")
+
+    def get_pre_conditions_value(self, obj: TestingCenter) -> str:
+        return self._get_disclosure_field(obj, "pre_testing_counseling_conditions")
+
+    def get_post_conditions_value(self, obj: TestingCenter) -> str:
+        return self._get_disclosure_field(obj, "post_testing_counseling_conditions")
 
     @staticmethod
     def get_emails(obj: TestingCenter) -> List:
@@ -64,6 +81,13 @@ class TestingCenterSerializer(serializers.ModelSerializer):
         return CenterRating.objects.filter(testing_center_id=obj.pk).count()
 
     @staticmethod
+    def _get_disclosure_field(obj: TestingCenter, field: str) -> str:
+        disclosure_key = getattr(obj, field)
+        for disclosure in obj.TEST_DISCLOSURE_CHOICES:
+            if disclosure_key == disclosure[0]:
+                return str(disclosure[1])
+
+    @staticmethod
     def _get_many_to_many_name_center_field(obj: TestingCenter, field: str) -> List:
         item_data = [item.name for item in getattr(obj, field).all()]
         return item_data
@@ -74,19 +98,34 @@ class TestingCenterSerializer(serializers.ModelSerializer):
             "pk",
             "lat",
             "lng",
+            "name",
             "street_name",
             "street_number",
+            "address_details",
             "locality",
             "county_code",
             "website",
             "phone_numbers",
-            "schedule",
-            "test_types",
             "emails",
-            "necessary_documents_under_18",
-            "necessary_documents_under_16",
-            "average_rating",
+            "online_contact_type",
+            "schedule_start",
+            "schedule_end",
+            "test_types",
+            "testing_price",
+            "is_free_testing_available",
+            "free_testing_conditions",
+            "quick_test_wait_time_minutes",
+            "quick_test_wait_time_days",
+            "negative_disclosure",
+            "positive_disclosure",
+            "has_pre_testing_counseling",
+            "pre_counseling",
+            "has_post_testing_counseling",
+            "post_counseling",
+            "docs_u18",
+            "docs_u16",
             "number_of_ratings",
+            "average_rating",
             "ratings",
         )
 
@@ -111,7 +150,7 @@ class TestingCenterListSerializer(serializers.ModelSerializer):
         fields = ("pk", "lat", "lng")
 
 
-class SearchQuerySerializer(serializers.Serializer):
+class SearchQuerySerializer(serializers.Serializer):  # noqa
     query = serializers.CharField(max_length=100)
 
 
