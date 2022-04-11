@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Dropdown, Layout, Menu } from 'antd';
 import { DownOutlined, GlobalOutlined, MenuOutlined } from '@ant-design/icons';
-import logo from '../../logo.svg';
+import logo from '../../images/active-citizens-fund-logo.png';
 
 import { useGlobalContext } from '../../context';
 import { HeaderMenu } from '../HeaderMenu';
@@ -13,7 +13,6 @@ const { Header: AntHeader } = Layout;
 const LANGUAGES = {
   en: 'English',
   ro: 'Română',
-  // hu: 'Magyar',
 };
 
 const languageMenu = (langText, handleMenuClick) => {
@@ -72,8 +71,7 @@ export const Header = () => {
         <div className="container">
           <div className="App-logo">
             <Link to="/">
-              {/* @TODO update logo */}
-              <img src={logo} alt="Bulina Roșie logo" />
+              <img src={logo} alt="Active citizens fund logo" />
             </Link>
           </div>
 

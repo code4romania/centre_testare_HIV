@@ -1,4 +1,4 @@
-import { HereMapDomIcons } from '../../utils';
+import { HereMapDomIconFactory } from '../../utils';
 
 const { H } = window;
 
@@ -20,7 +20,7 @@ export default {
         return clusterMarker;
       },
       getNoisePresentation: (noisePoint) => {
-        const { centerDomIcon } = HereMapDomIcons;
+        const centerDomIcon = HereMapDomIconFactory.makeMarkerIcon();
         const noiseMarker = new H.map.DomMarker(noisePoint.getPosition(), {
           icon: centerDomIcon,
           min: noisePoint.getMinZoom(),
@@ -40,9 +40,9 @@ export default {
     return new H.map.layer.ObjectLayer(clusteredDataProvider);
   },
   unhighlightMarker: (marker) => {
-    marker.setIcon(HereMapDomIcons.centerDomIcon);
+    marker.setIcon(HereMapDomIconFactory.makeMarkerIcon());
   },
   highlightMarker: (marker) => {
-    marker.setIcon(HereMapDomIcons.selectedCenterDomIcon);
+    marker.setIcon(HereMapDomIconFactory.makeMarkerIcon('selected'));
   },
 };

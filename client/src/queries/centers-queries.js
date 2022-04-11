@@ -11,8 +11,8 @@ export const useTestingCentersQuery = (options = defaultOptions) => {
   return useQuery('testing-centers', getTestingCenters, { ...defaultOptions, ...options });
 };
 
-export const useTestingCenterByIdQuery = (pk, options = defaultOptions) => {
-  return useQuery(['testing-center', pk], () => getTestingCenterById(pk), {
+export const useTestingCenterByIdQuery = ({ pk, language }, options = defaultOptions) => {
+  return useQuery(['testing-center', pk], () => getTestingCenterById(pk, language), {
     ...defaultOptions,
     ...options,
   });

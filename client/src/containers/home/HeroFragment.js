@@ -5,7 +5,7 @@ import { Trans } from '@lingui/macro';
 import { Hero } from '../../components/Hero';
 
 import heroImage from '../../images/home_hero.png';
-import acfLogo from '../../images/active-citizens-fund-logo.png';
+import logo from '../../logo.svg';
 
 const { Paragraph, Text, Title } = Typography;
 
@@ -14,7 +14,7 @@ export default () => {
     <Hero
       heroImage={heroImage}
       title={<Trans>TestHIV</Trans>}
-      logo={<img width="160px" src={acfLogo} />}
+      logo={<img width="160px" src={logo} />}
     >
       <Title level={3} style={{ marginTop: 0 }}>
         <Trans>Lucrăm împreună pentru o Europă incluzivă</Trans>

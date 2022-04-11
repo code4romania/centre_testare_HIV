@@ -1,13 +1,12 @@
 import React, { useMemo } from 'react';
-import { Button, Card, Col, Icon, Row, Descriptions, Empty } from 'antd';
+import { Button, Card, Col, Icon, Row, Descriptions, Empty, Tag } from 'antd';
 import { Trans } from '@lingui/macro';
 import { Link } from 'react-router-dom';
 import { CenterDetailsTitle } from '../CenterDetailsTitle';
-import { useGlobalContext } from '../../context';
+
+const numberOfTypesToShow = 2;
 
 export const CenterDetails = ({ onClose, isLoading, details, showPhoneNumber, onClick }) => {
-  const { currentLanguage } = useGlobalContext();
-
   const detailsItems = useMemo(() => {
     if (!details) {
       return [];
@@ -15,11 +14,18 @@ export const CenterDetails = ({ onClose, isLoading, details, showPhoneNumber, on
 
     const hasTestTypes = details.testTypes?.length > 0;
 
-    const testTypes = hasTestTypes
-      ? details.testTypes
-          .map(({ nameRo, nameEn }) => (currentLanguage === 'ro' ? nameRo : nameEn))
-          .join(', ')
-      : null;
+    const testTypes = hasTestTypes ? (
+      <>
+        {details.testTypes.slice(0, numberOfTypesToShow).map((type) => (
+          <Tag key={type} color="#be3386">
+            {type}
+          </Tag>
+        ))}
+        {details.testTypes.length > numberOfTypesToShow && (
+          <Tag>+{details.testTypes.length - numberOfTypesToShow}</Tag>
+        )}
+      </>
+    ) : null;
 
     return [
       {
@@ -39,7 +45,7 @@ export const CenterDetails = ({ onClose, isLoading, details, showPhoneNumber, on
         ) : null,
       },
     ].filter(({ value }) => value);
-  }, [currentLanguage, details]);
+  }, [details]);
 
   const hasDetailItems = detailsItems.length > 0;
 
@@ -62,9 +68,9 @@ export const CenterDetails = ({ onClose, isLoading, details, showPhoneNumber, on
       </Row>
 
       {hasDetailItems ? (
-        <Descriptions column={1}>
+        <Descriptions layout="vertical" size="small">
           {detailsItems.map(({ label, value }) => (
-            <Descriptions.Item key={label} label={label}>
+            <Descriptions.Item key={label} label={label} span={3}>
               {value}
             </Descriptions.Item>
           ))}

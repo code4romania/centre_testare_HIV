@@ -3,7 +3,7 @@ const API_PORT = process.env.REACT_APP_DJANGO_PORT ? `:${process.env.REACT_APP_D
 const API = process.env.REACT_APP_DJANGO_API_ENDPOINT;
 
 export default {
-  CENTER_URL: `${HOST_URL}${API_PORT}/${API}/center/`,
+  CENTER_URL: (language) => `${HOST_URL}${API_PORT}/${language}/${API}/center/`,
   CONTACT_URL: `${HOST_URL}${API_PORT}/${API}/contact/`,
   PAGE_URL: `${HOST_URL}${API_PORT}/${API}/page/`,
   POST_URL: `${HOST_URL}${API_PORT}/${API}/post/`,
