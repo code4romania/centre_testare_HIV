@@ -20,9 +20,11 @@ export const Hero = ({ heroImage, title, subTitle, children, titleLevel, logo })
         <Col xs={24} md={11}>
           {logo && <>{logo}</>}
           {subTitle && <Text type="secondary">{subTitle}</Text>}
-          <Title level={titleLevel} className="hero-title">
-            {title}
-          </Title>
+          {title && (
+            <Title level={titleLevel} className="hero-title">
+              {title}
+            </Title>
+          )}
           {children}
         </Col>
       </Row>

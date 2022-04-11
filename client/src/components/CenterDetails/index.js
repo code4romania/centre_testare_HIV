@@ -6,7 +6,7 @@ import { CenterDetailsTitle } from '../CenterDetailsTitle';
 
 const numberOfTypesToShow = 2;
 
-export const CenterDetails = ({ onClose, isLoading, details, showPhoneNumber, onClick }) => {
+export const CenterDetails = ({ onClose, isLoading, details }) => {
   const detailsItems = useMemo(() => {
     if (!details) {
       return [];
@@ -30,7 +30,12 @@ export const CenterDetails = ({ onClose, isLoading, details, showPhoneNumber, on
     return [
       {
         label: <Trans>Opening hours</Trans>,
-        value: details.schedule,
+        value:
+          details.scheduleStart && details.scheduleEnd ? (
+            <span>
+              {details.scheduleStart} - {details.scheduleEnd}
+            </span>
+          ) : null,
       },
       {
         label: <Trans>Test types</Trans>,
@@ -81,7 +86,13 @@ export const CenterDetails = ({ onClose, isLoading, details, showPhoneNumber, on
         </Row>
       )}
 
-      {showPhoneNumber ? (
+      <Button className="call-center-btn" size="large" type="primary" ghost block>
+        <span>
+          <Trans>Detalii centru</Trans>
+        </span>
+      </Button>
+
+      {/* {showPhoneNumber ? (
         <Button
           className="call-center-btn"
           icon="phone"
@@ -108,7 +119,7 @@ export const CenterDetails = ({ onClose, isLoading, details, showPhoneNumber, on
             <Trans>Call center</Trans>
           </span>
         </Button>
-      )}
+      )} */}
     </Card>
   );
 };
