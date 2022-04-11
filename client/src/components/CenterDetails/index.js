@@ -1,12 +1,19 @@
-import React, { useMemo } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { Button, Card, Col, Icon, Row, Descriptions, Empty, Tag } from 'antd';
 import { Trans } from '@lingui/macro';
 import { Link } from 'react-router-dom';
 import { CenterDetailsTitle } from '../CenterDetailsTitle';
+import { useCenterDetailsDialog } from '../../store';
 
 const numberOfTypesToShow = 2;
 
 export const CenterDetails = ({ onClose, isLoading, details }) => {
+  const { openDialog } = useCenterDetailsDialog();
+
+  const onOpenDialogHandler = useCallback(() => {
+    openDialog(details);
+  }, [details, openDialog]);
+
   const detailsItems = useMemo(() => {
     if (!details) {
       return [];
@@ -86,7 +93,14 @@ export const CenterDetails = ({ onClose, isLoading, details }) => {
         </Row>
       )}
 
-      <Button className="call-center-btn" size="large" type="primary" ghost block>
+      <Button
+        className="call-center-btn"
+        size="large"
+        type="primary"
+        ghost
+        block
+        onClick={onOpenDialogHandler}
+      >
         <span>
           <Trans>Detalii centru</Trans>
         </span>

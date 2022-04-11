@@ -24,3 +24,12 @@ export const usePhoneNumber = () => {
 
   return { showPhoneNumber, setShowPhoneNumber };
 };
+
+export const useCenterDetailsDialog = () => {
+  const isOpen = useStore((state) => state.isOpen);
+  const details = useStore((state) => state.details);
+  const openDialog = useStore((state) => state.open);
+  const closeDialog = useStore((state) => state.close);
+
+  return { isOpen, details, openDialog, closeDialog };
+};
