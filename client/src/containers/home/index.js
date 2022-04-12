@@ -7,6 +7,7 @@ import { SearchMapFragment } from './SearchMapFragment';
 import HeroFragment from './HeroFragment';
 import { BlogPreviewContainer } from '../../components/BlogPreviewContainer';
 import StatisticFragment from './StatisticFragment';
+import { CenterDetailsDialog } from '../../components/CenterDetailsDialog';
 
 export default () => (
   <Layout hero={<HeroFragment />}>
@@ -14,5 +15,7 @@ export default () => (
     <StatisticFragment />
     <ParagraphFragment />
     <BlogPreviewContainer title={<Trans>Blog</Trans>} />
+
+    <CenterDetailsDialog />
   </Layout>
 );

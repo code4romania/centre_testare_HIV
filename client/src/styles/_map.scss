@@ -17,17 +17,28 @@
 
 .user-pin-icon {
   @extend %icon-base;
-
+  
   color: #4285f4;
 }
 
-.center-icon {
-  @extend %icon-base;
+%marker_base {
+  margin: -39px 0 0 -17px;
 
-  color: #cc80ae;
-  cursor: pointer;
+  & svg {
+    fill: #ee741b;
+  }
+
+  & svg:hover {
+    cursor: pointer;
+  }
 
   &.selected {
-    color: $primary-color;
+    >svg {
+      fill: #000000;
+    }
   }
+}
+
+.marker {
+  @extend %marker_base;
 }

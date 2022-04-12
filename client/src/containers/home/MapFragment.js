@@ -6,9 +6,11 @@ import { useCreateMap } from '../../hooks/map/useCreateMap';
 import { useMap, useSelectedCenterPk, usePhoneNumber } from '../../store';
 import { useTestingCenterByIdQuery } from '../../queries';
 import { useClearSelectedMarkers } from '../../hooks/map/useClearSelectedMarkers';
+import { useGlobalContext } from '../../context';
 
 export const MapFragment = () => {
   const mapRef = useRef(null);
+  const { currentLanguage } = useGlobalContext();
 
   useCreateMap(mapRef);
   const { map, isMapLoading } = useMap();
@@ -18,7 +20,7 @@ export const MapFragment = () => {
   const { showPhoneNumber, setShowPhoneNumber } = usePhoneNumber();
 
   const { data: centerDetails, isLoading: isLoadingCenter } = useTestingCenterByIdQuery(
-    selectedCenterPk,
+    { pk: selectedCenterPk, language: currentLanguage },
     {
       enabled: Boolean(selectedCenterPk),
     },

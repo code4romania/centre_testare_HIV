@@ -1,12 +1,18 @@
-import React, { useMemo } from 'react';
-import { Button, Card, Col, Icon, Row, Descriptions, Empty } from 'antd';
+import React, { useCallback, useMemo } from 'react';
+import { Button, Card, Col, Icon, Row, Descriptions, Empty, Tag } from 'antd';
 import { Trans } from '@lingui/macro';
 import { Link } from 'react-router-dom';
 import { CenterDetailsTitle } from '../CenterDetailsTitle';
-import { useGlobalContext } from '../../context';
+import { useCenterDetailsDialog } from '../../store';
 
-export const CenterDetails = ({ onClose, isLoading, details, showPhoneNumber, onClick }) => {
-  const { currentLanguage } = useGlobalContext();
+const numberOfTypesToShow = 2;
+
+export const CenterDetails = ({ onClose, isLoading, details }) => {
+  const { openDialog } = useCenterDetailsDialog();
+
+  const onOpenDialogHandler = useCallback(() => {
+    openDialog(details);
+  }, [details, openDialog]);
 
   const detailsItems = useMemo(() => {
     if (!details) {
@@ -15,16 +21,28 @@ export const CenterDetails = ({ onClose, isLoading, details, showPhoneNumber, on
 
     const hasTestTypes = details.testTypes?.length > 0;
 
-    const testTypes = hasTestTypes
-      ? details.testTypes
-          .map(({ nameRo, nameEn }) => (currentLanguage === 'ro' ? nameRo : nameEn))
-          .join(', ')
-      : null;
+    const testTypes = hasTestTypes ? (
+      <>
+        {details.testTypes.slice(0, numberOfTypesToShow).map((type) => (
+          <Tag key={type} color="#be3386">
+            {type}
+          </Tag>
+        ))}
+        {details.testTypes.length > numberOfTypesToShow && (
+          <Tag>+{details.testTypes.length - numberOfTypesToShow}</Tag>
+        )}
+      </>
+    ) : null;
 
     return [
       {
         label: <Trans>Opening hours</Trans>,
-        value: details.schedule,
+        value:
+          details.scheduleStart && details.scheduleEnd ? (
+            <span>
+              {details.scheduleStart} - {details.scheduleEnd}
+            </span>
+          ) : null,
       },
       {
         label: <Trans>Test types</Trans>,
@@ -39,7 +57,7 @@ export const CenterDetails = ({ onClose, isLoading, details, showPhoneNumber, on
         ) : null,
       },
     ].filter(({ value }) => value);
-  }, [currentLanguage, details]);
+  }, [details]);
 
   const hasDetailItems = detailsItems.length > 0;
 
@@ -62,9 +80,9 @@ export const CenterDetails = ({ onClose, isLoading, details, showPhoneNumber, on
       </Row>
 
       {hasDetailItems ? (
-        <Descriptions column={1}>
+        <Descriptions layout="vertical" size="small">
           {detailsItems.map(({ label, value }) => (
-            <Descriptions.Item key={label} label={label}>
+            <Descriptions.Item key={label} label={label} span={3}>
               {value}
             </Descriptions.Item>
           ))}
@@ -75,7 +93,20 @@ export const CenterDetails = ({ onClose, isLoading, details, showPhoneNumber, on
         </Row>
       )}
 
-      {showPhoneNumber ? (
+      <Button
+        className="call-center-btn"
+        size="large"
+        type="primary"
+        ghost
+        block
+        onClick={onOpenDialogHandler}
+      >
+        <span>
+          <Trans>Detalii centru</Trans>
+        </span>
+      </Button>
+
+      {/* {showPhoneNumber ? (
         <Button
           className="call-center-btn"
           icon="phone"
@@ -102,7 +133,7 @@ export const CenterDetails = ({ onClose, isLoading, details, showPhoneNumber, on
             <Trans>Call center</Trans>
           </span>
         </Button>
-      )}
+      )} */}
     </Card>
   );
 };

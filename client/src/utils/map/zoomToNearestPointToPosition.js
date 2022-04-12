@@ -1,5 +1,5 @@
 import { getDistanceBetweenTwoPoints, getNearestPoint, sortCoordinates } from '../utils';
-import { HereMapDomIcons } from './hereMapDomIcons';
+import { HereMapDomIconFactory } from './hereMapDomIcons';
 
 const { H } = window;
 
@@ -12,7 +12,7 @@ const BOUNDS_OFFSET = {
 };
 
 const createDomMakerAtPosition = (position) => {
-  const { userPinDomIcon } = HereMapDomIcons;
+  const userPinDomIcon = HereMapDomIconFactory.makeUserPinIcon();
 
   return new H.map.DomMarker(position, { icon: userPinDomIcon });
 };

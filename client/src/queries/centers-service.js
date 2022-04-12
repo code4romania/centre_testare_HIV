@@ -4,8 +4,8 @@ import { useGet } from './requests';
 
 const { CENTER_URL } = config;
 
-export const getTestingCenters = async () => {
-  const res = await fetch(CENTER_URL);
+export const getTestingCenters = async (language = 'ro') => {
+  const res = await fetch(CENTER_URL(language));
   if (!res.ok) {
     throw new Error(res.statusText);
   }
@@ -14,8 +14,8 @@ export const getTestingCenters = async () => {
   return mapKeysToCamelCase(data);
 };
 
-export const getTestingCenterById = async (pk) => {
-  const res = await fetch(`${CENTER_URL}${pk}/`);
+export const getTestingCenterById = async (pk, language = 'ro') => {
+  const res = await fetch(`${CENTER_URL(language)}${pk}/`);
 
   if (!res.ok) {
     throw new Error(res.statusText);
