@@ -96,3 +96,13 @@ center-details-title__text {
 .ant-modal-title {
   display: flex;
 }
+
+.center-details-dialog-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > .call-center-btn {
+    width: max-content;
+  }
+}
