@@ -20,32 +20,24 @@ const FooterFragment = () => {
     <Footer className="footer">
       <div className="container">
         <div className="made-by">
-          <div className="logo-container">
-            <Paragraph>
-              <Trans>Proiect derulat de</Trans>{' '}
-            </Paragraph>
-            <div>
-              <Link to={{ pathname: 'https://sempermusica.org/' }} target="_blank">
-                <img className="footerLogo__image" src={smLogo} />
-              </Link>
-              <Link to={{ pathname: 'https://fasmr.ro/' }} target="_blank">
-                <img className="footerLogo__image" src={fasmrLogo} />
-              </Link>
-              <Link to={{ pathname: 'https://fasmr.ro/' }} target="_blank">
-                <img className="footerLogo__image" src={sexOgLogo} height="60px" />
-              </Link>
-            </div>
-          </div>
-          <div className="logo-container">
-            <Paragraph>
-              <Trans>cu sprijinul</Trans>{' '}
-            </Paragraph>
-            <div>
-              <Link to={{ pathname: `https://code4.ro/${currentLanguage}` }} target="_blank">
-                <img className="footerLogo__image" src={cfrLogo} alt="" height="40px" />
-              </Link>
-            </div>
-          </div>
+          <Paragraph>
+            <Trans>Proiect derulat de</Trans>{' '}
+          </Paragraph>
+          <Link to={{ pathname: 'https://sempermusica.org/' }} target="_blank">
+            <img className="footerLogo__image" src={smLogo} />
+          </Link>
+          <Link to={{ pathname: 'https://fasmr.ro/' }} target="_blank">
+            <img className="footerLogo__image" src={fasmrLogo} />
+          </Link>
+          <Link to={{ pathname: 'https://fasmr.ro/' }} target="_blank">
+            <img className="footerLogo__image" src={sexOgLogo} height="60px" />
+          </Link>
+          <Paragraph>
+            <Trans>cu sprijinul</Trans>{' '}
+          </Paragraph>
+          <Link to={{ pathname: `https://code4.ro/${currentLanguage}` }} target="_blank">
+            <img className="footerLogo__image" src={cfrLogo} alt="" height="40px" />
+          </Link>
         </div>
         <div className="footer__links">
           <Link to="/despre">
@@ -58,8 +50,6 @@ const FooterFragment = () => {
               <Trans>Support the project</Trans>
             </Text>
           </Link>
-        </div>
-        <div className="footer__links">
           <Link to="/politica-de-confidentialitate">
             <Text>
               <Trans>Privacy policy</Trans>
@@ -71,6 +61,7 @@ const FooterFragment = () => {
             </Text>
           </Link>
         </div>
+        <div>&copy; {new Date().getFullYear()} Semper Musica.</div>
       </div>
     </Footer>
   );

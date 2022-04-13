@@ -11,7 +11,10 @@ const { Paragraph, Text, Title } = Typography;
 
 export default () => {
   return (
-    <Hero heroImage={heroImage} logo={<img width="160px" src={logo} />}>
+    <Hero
+      heroImage={heroImage}
+      logo={<img width="160px" src={logo} style={{ marginBottom: '24px' }} />}
+    >
       <Title level={3} style={{ marginTop: 0 }}>
         <Trans>Lucrăm împreună pentru o Europă incluzivă</Trans>
       </Title>
