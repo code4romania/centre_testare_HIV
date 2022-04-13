@@ -2,28 +2,45 @@ from django.conf import settings
 from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector, TrigramSimilarity
 from django.core.cache import caches
 from django.db.models import Q
-from drf_spectacular.utils import extend_schema, OpenApiParameter
+from django_filters.rest_framework import DjangoFilterBackend
+from drf_spectacular.utils import OpenApiParameter, extend_schema
 from rest_framework import permissions, status, viewsets
 from rest_framework.decorators import action, api_view, permission_classes
+from rest_framework.mixins import ListModelMixin
+from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.response import Response
 from rest_framework.throttling import AnonRateThrottle
+from rest_framework.viewsets import GenericViewSet
 
 from centers.models import CenterRating, CenterTestTypes, Statistic, TestingCenter
-from centers.serializers import (
-    CenterRatingSerializer,
-    CenterSearchSerializer,
-    SearchQuerySerializer,
-    StatisticSerializer,
-    TestingCenterAddRatingSerializer,
-    TestingCenterListSerializer,
-    TestingCenterSerializer,
-    TestTypesSerializer,
-)
+from centers.serializers import (CenterRatingSerializer, CenterSearchSerializer, SearchQuerySerializer,
+                                 StatisticSerializer, TestTypesSerializer, TestingCenterAddRatingSerializer,
+                                 TestingCenterListSerializer, TestingCenterSerializer)
 
 
 class AddRatingQueryBurstAnonRateThrottle(AnonRateThrottle):
     cache = caches["throttling"]
     rate = "5/min"
+
+
+class PaginatedTestingCenters(LimitOffsetPagination):
+    page_size = 10
+    page_size_query_param = "page_size"
+    max_page_size = 100
+
+
+class TestingCentersViewSet(ListModelMixin, GenericViewSet):
+    pagination_class = PaginatedTestingCenters
+    serializer_class = TestingCenterSerializer
+    filter_backends = [DjangoFilterBackend]
+
+    def get_queryset(self):
+        queryset = TestingCenter.approved.all()
+        online_contact_type = self.request.query_params.get('online_contact_type')
+        if online_contact_type:
+            queryset = queryset.filter(online_contact_type=online_contact_type)
+
+        return queryset
 
 
 class TestingCenterViewSet(viewsets.ReadOnlyModelViewSet):
