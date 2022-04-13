@@ -28,6 +28,7 @@ django==3.2.12
     # via
     #   -r requirements.in
     #   django-cors-headers
+    #   django-filter
     #   django-import-export
     #   django-jazzmin
     #   django-jquery
@@ -41,6 +42,8 @@ django-ckeditor==6.3.0
 django-cors-headers==3.11.0
     # via -r requirements.in
 django-environ==0.8.1
+    # via -r requirements.in
+django-filter==21.1
     # via -r requirements.in
 django-import-export==2.8.0
     # via -r requirements.in

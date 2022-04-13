@@ -1,11 +1,15 @@
 # django and related apps
 django>=3.2,<3.3
 django-environ==0.8.1
-djangorestframework==3.13.1
 django-cors-headers==3.11.0
 django-storages==1.12.3
 django-taggit==2.1.0
 django-taggit-serializer==0.1.7
+
+# REST framework
+djangorestframework==3.13.1
+drf-spectacular==0.22.0
+django-filter==21.1
 
 # django admin
 django-jquery==3.1.0
@@ -33,6 +37,3 @@ tablib==3.2.0
 # wsgi server
 gunicorn==20.1.0
 gevent==21.12.0
-
-# doc-generation
-drf-spectacular==0.22.0
