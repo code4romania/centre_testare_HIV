@@ -53,6 +53,15 @@
   }
 }
 
+a.footer__donate {
+  font-weight: 700;
+  text-decoration-color: $green-color;
+
+  span {
+    color: $green-color;
+  }
+}
+
 @media (max-width: $breakpoint-tablet) {
   .made-by,
   .footer__links {

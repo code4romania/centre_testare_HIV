@@ -20,24 +20,28 @@ const FooterFragment = () => {
     <Footer className="footer">
       <div className="container">
         <div className="made-by">
-          <Paragraph>
-            <Trans>Proiect derulat de</Trans>{' '}
-          </Paragraph>
-          <Link to={{ pathname: 'https://sempermusica.org/' }} target="_blank">
-            <img className="footerLogo__image" src={smLogo} />
-          </Link>
-          <Link to={{ pathname: 'https://fasmr.ro/' }} target="_blank">
-            <img className="footerLogo__image" src={fasmrLogo} />
-          </Link>
-          <Link to={{ pathname: 'https://fasmr.ro/' }} target="_blank">
-            <img className="footerLogo__image" src={sexOgLogo} height="60px" />
-          </Link>
-          <Paragraph>
-            <Trans>cu sprijinul</Trans>{' '}
-          </Paragraph>
-          <Link to={{ pathname: `https://code4.ro/${currentLanguage}` }} target="_blank">
-            <img className="footerLogo__image" src={cfrLogo} alt="" height="40px" />
-          </Link>
+          <div>
+            <Paragraph>
+              <Trans>Proiect derulat de:</Trans>{' '}
+            </Paragraph>
+            <Link to={{ pathname: 'https://sempermusica.org/' }} target="_blank">
+              <img className="footerLogo__image" src={smLogo} />
+            </Link>
+            <Link to={{ pathname: 'https://fasmr.ro/' }} target="_blank">
+              <img className="footerLogo__image" src={fasmrLogo} />
+            </Link>
+            <Link to={{ pathname: 'https://fasmr.ro/' }} target="_blank">
+              <img className="footerLogo__image" src={sexOgLogo} height="60px" />
+            </Link>
+          </div>
+          <div>
+            <Paragraph>
+              <Trans>Cu sprijinul:</Trans>{' '}
+            </Paragraph>
+            <Link to={{ pathname: `https://code4.ro/${currentLanguage}` }} target="_blank">
+              <img className="footerLogo__image" src={cfrLogo} alt="" height="40px" />
+            </Link>
+          </div>
         </div>
         <div className="footer__links">
           <Link to="/despre">
@@ -45,7 +49,7 @@ const FooterFragment = () => {
               <Trans>About the project</Trans>
             </Text>
           </Link>
-          <Link to="/doneaza">
+          <Link className="footer__donate" to="/doneaza">
             <Text>
               <Trans>Support the project</Trans>
             </Text>

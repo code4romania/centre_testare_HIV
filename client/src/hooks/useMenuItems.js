@@ -23,6 +23,7 @@ export const useMenuItems = () => {
       {
         to: '/doneaza',
         label: <Trans>Support the project</Trans>,
+        className: 'header-donate',
       },
     ],
     [],
