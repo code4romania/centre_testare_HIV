@@ -52,7 +52,7 @@ class CenterPhoneNumberAdmin(CommonCenterContactAdmin):
     search_fields = ("centers__name", "email")
 
 
-@admin.register(models.CenterRatingQuestions)
+@admin.register(models.CenterRatingQuestion)
 class CenterRatingQuestionAdmin(admin.ModelAdmin):
     list_display = ("question", "answer_type")
 

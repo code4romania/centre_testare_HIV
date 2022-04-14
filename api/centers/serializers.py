@@ -4,7 +4,7 @@ from django.conf import settings
 from django.db.models import Avg
 from rest_framework import serializers
 
-from centers.models import CenterRating, CenterRatingQuestions, CenterTestTypes, Statistic, TestingCenter
+from centers.models import CenterRating, CenterRatingQuestion, CenterTestTypes, Statistic, TestingCenter
 
 
 class TestTypesSerializer(serializers.ModelSerializer):
@@ -14,8 +14,17 @@ class TestTypesSerializer(serializers.ModelSerializer):
 
 
 class CenterRatingQuestionsSerializer(serializers.ModelSerializer):
+    answer_type = serializers.SerializerMethodField("get_answer_type")
+
+    @staticmethod
+    def get_answer_type(obj: CenterRatingQuestion) -> str:
+        answer_id = obj.answer_type
+        for answer in obj.ANSWER_TYPE_CHOICES:
+            if answer_id == answer[0]:
+                return str(answer[1])
+
     class Meta:
-        model = CenterRatingQuestions
+        model = CenterRatingQuestion
         fields = ("question", "answer_type")
 
 
