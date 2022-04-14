@@ -7,6 +7,7 @@ import { en, ro } from 'make-plural/plurals';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import Home from './containers/home';
 import About from './containers/about';
+import Centers from './containers/centers';
 import Blog from './containers/blog';
 import BlogPost from './containers/blog-post';
 import Contact from './containers/contact';
@@ -41,6 +42,9 @@ const App = () => {
             </Route>
             <Route path="/despre">
               <About />
+            </Route>
+            <Route path="/centre">
+              <Centers />
             </Route>
             <Route exact path="/blog">
               <Blog />
