@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-08 19:14+0300\n"
+"POT-Creation-Date: 2022-04-14 23:14+0300\n"
 "PO-Revision-Date: 2022-02-03 20:22+0200\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -66,82 +66,82 @@ msgstr ""
 msgid "posts"
 msgstr ""
 
-#: centers/admin.py:40 centers/admin.py:176 centers/admin.py:188
-#: centers/admin.py:200 centers/models.py:218
+#: centers/admin.py:40 centers/admin.py:180 centers/admin.py:192
+#: centers/admin.py:204 centers/models.py:218
 msgid "testing center"
 msgstr ""
 
-#: centers/admin.py:94
+#: centers/admin.py:99
 msgid "Operational Data"
 msgstr ""
 
-#: centers/admin.py:96
+#: centers/admin.py:101
 msgid "Geo Data"
 msgstr ""
 
-#: centers/admin.py:111
+#: centers/admin.py:116
 msgid "Center Details"
 msgstr ""
 
-#: centers/admin.py:121
+#: centers/admin.py:126
 msgid "Contact Information"
 msgstr ""
 
-#: centers/admin.py:132
+#: centers/admin.py:137
 msgid "Testing Costs"
 msgstr ""
 
-#: centers/admin.py:144
+#: centers/admin.py:148
 msgid "Testing Details"
 msgstr ""
 
-#: centers/admin.py:163
+#: centers/admin.py:167
 msgid "Address"
 msgstr ""
 
-#: centers/admin.py:177 centers/admin.py:189 centers/admin.py:201
+#: centers/admin.py:181 centers/admin.py:193 centers/admin.py:205
 #: centers/models.py:219
 msgid "testing centers"
 msgstr ""
 
-#: centers/admin.py:180
+#: centers/admin.py:184
 msgid "Mark selected testing centers as pending"
 msgstr ""
 
-#: centers/admin.py:192
+#: centers/admin.py:196
 msgid "Mark selected testing centers as accepted"
 msgstr ""
 
-#: centers/admin.py:204
+#: centers/admin.py:208
 msgid "Mark selected testing centers as rejected"
 msgstr ""
 
-#: centers/admin.py:262
+#: centers/admin.py:266
 msgid "testing center resource"
 msgstr ""
 
-#: centers/admin.py:263
+#: centers/admin.py:267
 msgid "testing center resources"
 msgstr ""
 
-#: centers/admin.py:288
+#: centers/admin.py:292
 #, python-brace-format
 msgid "File with name '{file_name}' wasn't imported. Errors: {row_errors}"
 msgstr ""
 
-#: centers/admin.py:295
+#: centers/admin.py:299
 #, python-brace-format
 msgid "File with name '{file_name}' was imported."
 msgstr ""
 
-#: centers/admin.py:302
+#: centers/admin.py:306
 #, python-brace-format
 msgid ""
 "File with name '{file_name}' wasn't a proper data file. Accepted formats "
 "are: CSV, XLSX."
 msgstr ""
 
-#: centers/admin.py:311
+#: centers/admin.py:315
 #, python-brace-format
 msgid ""
 "File with name '{file_name}' couldn't be imported. The error received was: "
@@ -264,7 +264,7 @@ msgstr ""
 msgid "Platform"
 msgstr ""
 
-#: centers/models.py:131 centers/models.py:273
+#: centers/models.py:131 centers/models.py:289
 msgid "status"
 msgstr ""
 
@@ -380,72 +380,100 @@ msgstr ""
 msgid "centers_u16"
 msgstr ""
 
+#: centers/models.py:226
+msgid "Yes/No"
+msgstr ""
+
 #: centers/models.py:227
-msgid "rating ({}-{})"
+msgid "Text"
 msgstr ""
 
-#: centers/models.py:231
-msgid "comment"
+#: centers/models.py:229
+msgid "question"
 msgstr ""
 
-#: centers/models.py:232 contact/models.py:22
-msgid "creation date"
+#: centers/models.py:230
+msgid "answer type"
+msgstr ""
+
+#: centers/models.py:233
+msgid "center rating question"
 msgstr ""
 
 #: centers/models.py:234
-msgid "ratings"
+msgid "center rating questions"
 msgstr ""
 
 #: centers/models.py:242
-msgid "center rating"
+msgid "rating ({}-{})"
 msgstr ""
 
-#: centers/models.py:243
-msgid "center ratings"
+#: centers/models.py:246
+msgid "answers"
 msgstr ""
 
 #: centers/models.py:247
+msgid "comment"
+msgstr ""
+
+#: centers/models.py:248 contact/models.py:22
+msgid "creation date"
+msgstr ""
+
+#: centers/models.py:250
+msgid "ratings"
+msgstr ""
+
+#: centers/models.py:258
+msgid "center rating"
+msgstr ""
+
+#: centers/models.py:259
+msgid "center ratings"
+msgstr ""
+
+#: centers/models.py:263
 msgid "mobile caravans"
 msgstr ""
 
-#: centers/models.py:248
+#: centers/models.py:264
 msgid "hotline"
 msgstr ""
 
-#: centers/models.py:253
+#: centers/models.py:269
 msgid "statistic"
 msgstr ""
 
-#: centers/models.py:254
+#: centers/models.py:270
 msgid "statistics"
 msgstr ""
 
-#: centers/models.py:266
+#: centers/models.py:282
 msgid "Not tried"
 msgstr ""
 
-#: centers/models.py:267
+#: centers/models.py:283
 msgid "Imported successfully"
 msgstr ""
 
-#: centers/models.py:268
+#: centers/models.py:284
 msgid "Import failed"
 msgstr ""
 
-#: centers/models.py:271 contact/models.py:13 pages/models.py:9
+#: centers/models.py:287 contact/models.py:13 pages/models.py:9
 #: pages/models.py:95
 msgid "name"
 msgstr ""
 
-#: centers/models.py:272
+#: centers/models.py:288
 msgid "file"
 msgstr ""
 
-#: centers/models.py:278
+#: centers/models.py:294
 msgid "Data file"
 msgstr ""
 
-#: centers/models.py:279
+#: centers/models.py:295
 msgid "Data files"
 msgstr ""
 
@@ -593,11 +621,11 @@ msgstr ""
 msgid "attachments"
 msgstr ""
 
-#: testing_centers_site/settings/base.py:175
+#: testing_centers_site/settings/base.py:176
 msgid "Romanian"
 msgstr ""
 
-#: testing_centers_site/settings/base.py:176
+#: testing_centers_site/settings/base.py:177
 msgid "English"
 msgstr ""
 

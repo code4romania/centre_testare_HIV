@@ -8,15 +8,22 @@ from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 from rest_framework import routers
 
 from blog.views import PostViewSet, TagViewSet
+from centers.views import (
+    CenterRatingQuestionsViewSet,
+    CenterTestTypesViewSet,
+    TestingCenterViewSet,
+    TestingCentersViewSet,
+    statistics,
+)
 from contact.views import ContactViewSet
 from pages.views import PagesViewSet
-from centers.views import CenterTestTypesViewSet, TestingCentersViewSet, statistics, TestingCenterViewSet
 
 admin.site.site_title = admin.site.site_header = admin.site.index_title = settings.ADMIN_TITLE
 
 router = routers.DefaultRouter()
 router.register(r"center", TestingCenterViewSet, basename="center")
-router.register(r"centers", TestingCentersViewSet, basename="center")
+router.register(r"centers", TestingCentersViewSet, basename="centers")
+router.register(r"center_questions", CenterRatingQuestionsViewSet, basename="center_questions")
 router.register(r"contact", ContactViewSet, basename="contact"),
 router.register(r"page", PagesViewSet, basename="page")
 router.register(r"post", PostViewSet, basename="post")

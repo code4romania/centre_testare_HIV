@@ -12,8 +12,9 @@ from rest_framework.response import Response
 from rest_framework.throttling import AnonRateThrottle
 from rest_framework.viewsets import GenericViewSet
 
-from centers.models import CenterRating, CenterTestTypes, Statistic, TestingCenter
+from centers.models import CenterRating, CenterRatingQuestions, CenterTestTypes, Statistic, TestingCenter
 from centers.serializers import (
+    CenterRatingQuestionsSerializer,
     CenterRatingSerializer,
     CenterSearchSerializer,
     SearchQuerySerializer,
@@ -151,6 +152,11 @@ class TestingCenterViewSet(viewsets.ReadOnlyModelViewSet):
 class CenterTestTypesViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = CenterTestTypes.objects.all()
     serializer_class = TestTypesSerializer
+
+
+class CenterRatingQuestionsViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = CenterRatingQuestions.objects.all()
+    serializer_class = CenterRatingQuestionsSerializer
 
 
 @api_view(["GET"])

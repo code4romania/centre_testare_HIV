@@ -219,6 +219,21 @@ class TestingCenter(models.Model):
         verbose_name_plural = _("testing centers")
 
 
+class CenterRatingQuestions(models.Model):
+    BOOLEAN = 1
+    TEXT = 2
+    ANSWER_TYPE_CHOICES = (
+        (BOOLEAN, _("Yes/No")),
+        (TEXT, _("Text")),
+    )
+    question = models.TextField(_("question"))
+    answer_type = models.SmallIntegerField(_("answer type"), choices=ANSWER_TYPE_CHOICES)
+
+    class Meta:
+        verbose_name = _("center rating question")
+        verbose_name_plural = _("center rating questions")
+
+
 class CenterRating(models.Model):
     MIN_VALUE = 1
     MAX_VALUE = 5
@@ -228,6 +243,7 @@ class CenterRating(models.Model):
         validators=[MinValueValidator(MIN_VALUE), MaxValueValidator(MAX_VALUE)],
         db_index=True,
     )
+    answers = models.JSONField(_("answers"), default=dict)
     comment = models.CharField(_("comment"), max_length=1000, blank=True)
     created_at = models.DateTimeField(_("creation date"), auto_now_add=True)
 

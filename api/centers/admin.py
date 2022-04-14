@@ -52,6 +52,11 @@ class CenterPhoneNumberAdmin(CommonCenterContactAdmin):
     search_fields = ("centers__name", "email")
 
 
+@admin.register(models.CenterRatingQuestions)
+class CenterRatingQuestionAdmin(admin.ModelAdmin):
+    list_display = ("question", "answer_type")
+
+
 @admin.register(models.Statistic)
 class StatisticAdmin(admin.ModelAdmin):
     def has_add_permission(self, request):
