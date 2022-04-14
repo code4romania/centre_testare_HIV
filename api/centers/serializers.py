@@ -157,6 +157,12 @@ class TestingCenterListSerializer(serializers.ModelSerializer):
         fields = ("pk", "lat", "lng")
 
 
+class TestingCenterPaginatedListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TestingCenter
+        fields = ("pk", "lat", "lng", "name", "street_number", "street_name", "address_details", "county", "locality")
+
+
 class SearchQuerySerializer(serializers.Serializer):  # noqa
     query = serializers.CharField(max_length=100)
 
