@@ -8,9 +8,14 @@ export const HeaderMenu = ({ menuItems, showMenu, endAction }) => {
 
   return (
     <ul className={menuClasses}>
-      {menuItems.map(({ to, label }) => (
+      {menuItems.map(({ to, label, className }) => (
         <li key={to}>
-          <NavLink className="menu-item" to={to} exact activeClassName="active">
+          <NavLink
+            className={classNames('menu-item', { [className]: className })}
+            to={to}
+            exact
+            activeClassName="active"
+          >
             {label}
           </NavLink>
         </li>

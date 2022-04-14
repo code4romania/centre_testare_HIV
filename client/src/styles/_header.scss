@@ -71,6 +71,22 @@
     }
   }
 
+  .menu-item.header-donate {
+    height: 32px;
+    font-weight: 700;
+    background-color: $green-color;
+    color: white !important;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 20%), 0 2px 4px -1px rgb(0 0 0 / 6%);
+    border-radius: 6px;
+
+    &:hover {
+      color:white !important;
+    }
+  }
+
   a.add-building {
     font-weight: 600;
   }

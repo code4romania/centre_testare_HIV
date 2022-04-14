@@ -13,6 +13,7 @@ module.exports = override(
       modifyVars: {
         '@primary-color': '#BE3386',
         '@font-family': '"Source Sans Pro", sans-serif',
+        '@font-size-base': '16px',
       },
     },
   }),

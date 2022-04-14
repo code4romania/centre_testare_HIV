@@ -4,9 +4,7 @@ import { Col, Row } from 'antd';
 
 import copyToClipboardIcon from '../../images/copy-to-clipboard.svg';
 import facebookLogo from '../../images/facebook.svg';
-import twitterLogo from '../../images/twitter.svg';
 import whatsappLogo from '../../images/whatsapp.svg';
-import telegramLogo from '../../images/telegram.svg';
 
 function Sharing() {
   const URL = window.location.href;
@@ -33,15 +31,6 @@ function Sharing() {
           <img src={facebookLogo} alt="" />
         </a>
         <a
-          target="_blank"
-          rel="noreferrer"
-          className="sharing-icon"
-          href={`https://twitter.com/share?url=h${URL}`}
-          data-size="large"
-        >
-          <img src={twitterLogo} alt="" />
-        </a>
-        <a
           className="sharing-icon"
           target="_blank"
           rel="noreferrer"
@@ -49,15 +38,6 @@ function Sharing() {
           data-size="large"
         >
           <img src={whatsappLogo} alt="" />
-        </a>
-        <a
-          className="sharing-icon"
-          target="_blank"
-          rel="noreferrer"
-          href={`https://telegram.me/share/url?url=h${URL}`}
-          data-size="large"
-        >
-          <img src={telegramLogo} alt="" />
         </a>
       </Col>
     </Row>

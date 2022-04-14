@@ -2,14 +2,13 @@ import React from 'react';
 import { Row, Col, Typography } from 'antd';
 import { Trans } from '@lingui/macro';
 import { Link } from 'react-router-dom';
-import acfLogo from '../../images/active-citizens-fund-logo.png';
 
 const { Paragraph } = Typography;
 
 export default () => {
   return (
-    <Row type="flex" justify="space-around" className="aboutTextBox" gutter={[20, 0]}>
-      <Col sm={24} md={20} className="aboutTextBoxCol">
+    <Row className="aboutTextBox" gutter={[20, 0]}>
+      <Col sm={24} md={20}>
         <Paragraph>
           <Trans>
             Proiectul este derulat de Asociația Semper Musica în parteneriat cu Federația
@@ -21,12 +20,13 @@ export default () => {
             <Link to={{ pathname: 'https://eeagrants.org/' }} target="_blank">
               www.eeagrants.org
             </Link>
+            . Informații despre Active Citizens Fund România sunt disponibile la{' '}
+            <Link to={{ pathname: 'htpps://activecitizensfund.ro' }} target="_blank">
+              www.activecitizensfund.ro
+            </Link>
             .
           </Trans>
         </Paragraph>
-      </Col>
-      <Col sm={24} md={4} style={{ textAlign: 'center' }}>
-        <img className="aboutLogo" src={acfLogo} alt="Tech For Social Good" />
       </Col>
     </Row>
   );
