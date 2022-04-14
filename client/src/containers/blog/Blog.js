@@ -78,7 +78,11 @@ const Blog = () => {
         const { slug } = post;
         return <BlogItem key={slug} postDetails={post} />;
       })}
-      {state.showMore && <LoadMore onClick={loadPosts} />}
+      {state.showMore && (
+        <LoadMore onClick={loadPosts}>
+          <Trans>Load more articles</Trans>
+        </LoadMore>
+      )}
     </div>
   );
 };

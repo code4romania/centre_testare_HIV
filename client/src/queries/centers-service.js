@@ -41,7 +41,7 @@ export const useSearchCentersQuery = () => {
     data: searchResults,
     fetchData: searchTestingCenters,
     ...rest
-  } = useGet(`${CENTER_URL}search/`, { enabled: false });
+  } = useGet(`${CENTER_URL('ro')}search/`, { enabled: false });
 
   return { searchResults, searchTestingCenters, ...rest };
 };

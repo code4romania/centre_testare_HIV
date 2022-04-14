@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Card } from 'antd';
 
-export const CenterDetailsCard = ({ title, children, onActionClick }) => {
+export const CenterDetailsCard = ({ title, children, onActionClick, loading }) => {
   return (
     <Card
       hoverable
@@ -9,7 +9,7 @@ export const CenterDetailsCard = ({ title, children, onActionClick }) => {
       title={title}
       headStyle={{ backgroundColor: '#be3386', color: '#fff', fontWeight: 'bold' }}
       actions={[
-        <Button onClick={onActionClick} className="call-center-btn">
+        <Button onClick={onActionClick} className="call-center-btn" loading={loading}>
           Detalii centru
         </Button>,
       ]}
