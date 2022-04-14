@@ -13,9 +13,16 @@ from rest_framework.throttling import AnonRateThrottle
 from rest_framework.viewsets import GenericViewSet
 
 from centers.models import CenterRating, CenterTestTypes, Statistic, TestingCenter
-from centers.serializers import (CenterRatingSerializer, CenterSearchSerializer, SearchQuerySerializer,
-                                 StatisticSerializer, TestTypesSerializer, TestingCenterAddRatingSerializer,
-                                 TestingCenterListSerializer, TestingCenterSerializer)
+from centers.serializers import (
+    CenterRatingSerializer,
+    CenterSearchSerializer,
+    SearchQuerySerializer,
+    StatisticSerializer,
+    TestTypesSerializer,
+    TestingCenterAddRatingSerializer,
+    TestingCenterListSerializer,
+    TestingCenterSerializer,
+)
 
 
 class AddRatingQueryBurstAnonRateThrottle(AnonRateThrottle):
@@ -26,7 +33,7 @@ class AddRatingQueryBurstAnonRateThrottle(AnonRateThrottle):
 class PaginatedTestingCenters(LimitOffsetPagination):
     page_size = 10
     page_size_query_param = "page_size"
-    max_page_size = 100
+    max_page_size = 40
 
 
 class TestingCentersViewSet(ListModelMixin, GenericViewSet):
@@ -35,11 +42,11 @@ class TestingCentersViewSet(ListModelMixin, GenericViewSet):
     filter_backends = [DjangoFilterBackend]
 
     def get_queryset(self):
-        queryset = TestingCenter.approved.all()
-        online_contact_type = self.request.query_params.get('online_contact_type')
-        if online_contact_type:
-            queryset = queryset.filter(online_contact_type=online_contact_type)
+        sort_by = self.request.query_params.get("sort_by", "county")
+        sort_type = self.request.query_params.get("sort_type", "asc")
+        sort_type = "-" if sort_type == "desc" else ""
 
+        queryset = TestingCenter.approved.all().order_by(f"{sort_type}{sort_by}")
         return queryset
 
 
