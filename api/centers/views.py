@@ -21,6 +21,7 @@ from centers.serializers import (
     TestTypesSerializer,
     TestingCenterAddRatingSerializer,
     TestingCenterListSerializer,
+    TestingCenterPaginatedListSerializer,
     TestingCenterSerializer,
 )
 
@@ -38,7 +39,7 @@ class PaginatedTestingCenters(LimitOffsetPagination):
 
 class TestingCentersViewSet(ListModelMixin, GenericViewSet):
     pagination_class = PaginatedTestingCenters
-    serializer_class = TestingCenterSerializer
+    serializer_class = TestingCenterPaginatedListSerializer
     filter_backends = [DjangoFilterBackend]
 
     def get_queryset(self):
