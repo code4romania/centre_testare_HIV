@@ -1,6 +1,6 @@
 from modeltranslation.translator import TranslationOptions, translator
 
-from .models import CenterRatingQuestions, CenterTestTypes, CenterType, FreeTestingConditions, NecessaryDocuments
+from .models import CenterRatingQuestion, CenterTestTypes, CenterType, FreeTestingConditions, NecessaryDocuments
 
 
 class CommonCenterModelTranslationOptions(TranslationOptions):
@@ -15,4 +15,4 @@ translator.register(CenterType, CommonCenterModelTranslationOptions)
 translator.register(CenterTestTypes, CommonCenterModelTranslationOptions)
 translator.register(NecessaryDocuments, CommonCenterModelTranslationOptions)
 translator.register(FreeTestingConditions, CommonCenterModelTranslationOptions)
-translator.register(CenterRatingQuestions, CenterRatingQuestionsTranslationOptions)
+translator.register(CenterRatingQuestion, CenterRatingQuestionsTranslationOptions)

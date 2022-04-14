@@ -219,12 +219,12 @@ class TestingCenter(models.Model):
         verbose_name_plural = _("testing centers")
 
 
-class CenterRatingQuestions(models.Model):
+class CenterRatingQuestion(models.Model):
     BOOLEAN = 1
     TEXT = 2
     ANSWER_TYPE_CHOICES = (
-        (BOOLEAN, _("Yes/No")),
-        (TEXT, _("Text")),
+        (BOOLEAN, "Yes/No"),
+        (TEXT, "Text"),
     )
     question = models.TextField(_("question"))
     answer_type = models.SmallIntegerField(_("answer type"), choices=ANSWER_TYPE_CHOICES)

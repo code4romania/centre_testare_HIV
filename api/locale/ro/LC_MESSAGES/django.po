@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-14 23:14+0300\n"
+"POT-Creation-Date: 2022-04-14 23:24+0300\n"
 "PO-Revision-Date: 2022-02-03 20:22+0200\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -386,14 +386,6 @@ msgstr "centre_u18"
 msgid "centers_u16"
 msgstr "centre_u16"
 
-#: centers/models.py:226
-msgid "Yes/No"
-msgstr "Da/Nu"
-
-#: centers/models.py:227
-msgid "Text"
-msgstr "Text"
-
 #: centers/models.py:229
 msgid "question"
 msgstr "întrebare"
@@ -642,6 +634,12 @@ msgid_plural "{updated} {item_pl} were successfully marked as {status}."
 msgstr[0] "{updated} {item_sg} a fost marcat ca {status}"
 msgstr[1] "{updated} {item_pl} au fost marcate ca {status}"
 msgstr[2] "{updated} de {item_pl} au fost marcate ca {status}"
+
+#~ msgid "Yes/No"
+#~ msgstr "Da/Nu"
+
+#~ msgid "Text"
+#~ msgstr "Text"
 
 #~ msgid "Testing Centers Admin"
 #~ msgstr "Administrare Centre de Testare HIV"

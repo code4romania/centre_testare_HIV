@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-14 23:14+0300\n"
+"POT-Creation-Date: 2022-04-14 23:24+0300\n"
 "PO-Revision-Date: 2022-02-03 20:22+0200\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -378,14 +378,6 @@ msgstr ""
 
 #: centers/models.py:191
 msgid "centers_u16"
-msgstr ""
-
-#: centers/models.py:226
-msgid "Yes/No"
-msgstr ""
-
-#: centers/models.py:227
-msgid "Text"
 msgstr ""
 
 #: centers/models.py:229
