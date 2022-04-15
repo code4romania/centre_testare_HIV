@@ -1,5 +1,9 @@
-import { useQuery } from 'react-query';
-import { getTestingCenters, getTestingCenterById } from './centers-service';
+import { useInfiniteQuery, useQuery } from 'react-query';
+import {
+  getTestingCenters,
+  getTestingCenterById,
+  getDetailedTestingCenters,
+} from './centers-service';
 
 const defaultOptions = {
   refetchOnWindowFocus: false,
@@ -9,6 +13,29 @@ const defaultOptions = {
 
 export const useTestingCentersQuery = (options = defaultOptions) => {
   return useQuery('testing-centers', () => getTestingCenters(), { ...defaultOptions, ...options });
+};
+
+const LIMIT = 20;
+
+export const useDetailedTestingCentersQuery = (options = defaultOptions) => {
+  return useInfiniteQuery(
+    'detailed-testing-centers',
+    ({ pageParam = { limit: LIMIT, offset: 0 } }) => {
+      return getDetailedTestingCenters(pageParam);
+    },
+    {
+      ...defaultOptions,
+      ...options,
+      getNextPageParam: (lastPage) => {
+        if (lastPage.next) {
+          const searchParams = new URLSearchParams(lastPage.next);
+          return { limit: LIMIT, offset: searchParams.get('offset') };
+        }
+
+        return null;
+      },
+    },
+  );
 };
 
 export const useTestingCenterByIdQuery = ({ pk, language }, options = defaultOptions) => {
