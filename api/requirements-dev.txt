@@ -4,8 +4,10 @@
 #
 #    pip-compile --output-file=requirements-dev.txt requirements-dev.in
 #
-appnope==0.1.3
-    # via ipython
+arrow==1.2.2
+    # via
+    #   -r requirements.txt
+    #   django-q
 asgiref==3.5.0
     # via
     #   -r requirements.txt
@@ -21,6 +23,10 @@ backcall==0.2.0
     # via ipython
 black==22.3.0
     # via -r requirements-dev.in
+blessed==1.19.1
+    # via
+    #   -r requirements.txt
+    #   django-q
 boto3==1.21.35
     # via -r requirements.txt
 botocore==1.24.35
@@ -63,6 +69,8 @@ django==3.2.12
     #   django-jazzmin
     #   django-jquery
     #   django-modeltranslation
+    #   django-picklefield
+    #   django-q
     #   django-storages
     #   django-taggit
     #   djangorestframework
@@ -90,6 +98,16 @@ django-js-asset==1.2.2
     #   -r requirements.txt
     #   django-ckeditor
 django-modeltranslation==0.17.5
+    # via -r requirements.txt
+django-picklefield==3.0.1
+    # via
+    #   -r requirements.txt
+    #   django-q
+django-q==1.3.9
+    # via
+    #   -r requirements.txt
+    #   django-q-email
+django-q-email==5.0.1
     # via -r requirements.txt
 django-storages==1.12.3
     # via -r requirements.txt
@@ -235,6 +253,7 @@ pytest-flake8==1.1.1
 python-dateutil==2.8.2
     # via
     #   -r requirements.txt
+    #   arrow
     #   botocore
     #   faker
     #   pandas
@@ -249,6 +268,10 @@ pyyaml==6.0
     #   -r requirements.txt
     #   drf-spectacular
     #   tablib
+redis==3.5.3
+    # via
+    #   -r requirements.txt
+    #   django-q
 s3transfer==0.5.1
     # via
     #   -r requirements.txt
@@ -256,6 +279,7 @@ s3transfer==0.5.1
 six==1.16.0
     # via
     #   -r requirements.txt
+    #   blessed
     #   django-modeltranslation
     #   django-taggit-serializer
     #   pymemcache
@@ -267,6 +291,8 @@ sqlparse==0.4.2
     #   django-debug-toolbar
 stack-data==0.1.4
     # via ipython
+supervisor==4.2.4
+    # via -r requirements.txt
 tablib[html,ods,xls,xlsx,yaml]==3.2.0
     # via
     #   -r requirements.txt
@@ -295,7 +321,10 @@ urllib3==1.26.8
     #   -r requirements.txt
     #   botocore
 wcwidth==0.2.5
-    # via prompt-toolkit
+    # via
+    #   -r requirements.txt
+    #   blessed
+    #   prompt-toolkit
 werkzeug==2.0.1
     # via -r requirements-dev.in
 wheel==0.37.1

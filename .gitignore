@@ -139,3 +139,10 @@ backup-data/
 db/docker-entrypoint-initdb.d/b*.sql
 
 client/storybook-static/
+
+### Redis template
+# Ignore redis binary dump (dump.rdb) files
+
+*.rdb
+redis.conf
+redis.*.bak

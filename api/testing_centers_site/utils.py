@@ -6,9 +6,9 @@ from django.utils.translation import ngettext
 from import_export.admin import ImportExportModelAdmin
 
 
-def send_email(template: str, context: dict, subject: str, to: str):
+def send_email(template: str, template_context: dict, subject: str, to: str):
     html = get_template(template)
-    html_content = html.render(context)
+    html_content = html.render(template_context)
 
     from_email = settings.NO_REPLY_EMAIL if hasattr(settings, "NO_REPLY_EMAIL") else settings.DEFAULT_FROM_EMAIL
     headers = {"X-SES-CONFIGURATION-SET": "centre-testare-hiv"}
