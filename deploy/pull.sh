@@ -4,5 +4,4 @@ cd /root/centre_testare_HIV
 git reset --hard HEAD
 git pull
 
-docker-compose build --build-arg ENVIRONMENT=development db cache api
-docker-compose up -d db cache api
+ENVIRONMENT=development docker-compose up -d --build --force-recreate --remove-orphans db cache redis api
