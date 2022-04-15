@@ -21,7 +21,7 @@ if [[ ${RUN_COMPILEMESSAGES} = "yes" ]] ; then
   ./manage.py compilemessages
 fi
 
-if [[ ${RUN_LOAD_DUMMY_DATA} = "yes" ]] ; then
+if [[ ${ENVIRONMENT} != "production" && ${RUN_LOAD_DUMMY_DATA} = "yes" ]] ; then
   echo "Load dummy data in the database"
   ./manage.py loaddata statistics
   ./manage.py loaddata pages
@@ -32,9 +32,9 @@ if [[ ${RUN_COLLECT_STATIC} = "yes" ]] ; then
   ./manage.py collectstatic --no-input
 fi
 
-if [[ ${RUN_DEV_SERVER} = "yes" ]] ; then
+if [[ ${ENVIRONMENT} != "production" && ${RUN_DEV_SERVER} = "yes" ]] ; then
   echo "Start web server on ${API_PORT}"
   ./manage.py runserver_plus "0.0.0.0:${API_PORT}"
 else
-   gunicorn seismic_site.wsgi --bind "0.0.0.0:${GUNICORN_PORT}" --log-level info -k gevent -w "${GUNICORN_WORKERS}" --timeout 300
+   gunicorn testing_centers_site.wsgi --bind "0.0.0.0:${GUNICORN_PORT}" --log-level info -k gevent -w "${GUNICORN_WORKERS}" --timeout 300
 fi

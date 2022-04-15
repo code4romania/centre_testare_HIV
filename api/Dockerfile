@@ -32,8 +32,8 @@ RUN if [ "${ENVIRONMENT}" = "production" ]; \
 
 WORKDIR /code/
 
-COPY ./docker-entrypoint /
+COPY docker-entrypoint.sh /
 COPY ./ /code/
 
-ENTRYPOINT ["/docker-entrypoint"]
+ENTRYPOINT ["/docker-entrypoint.sh"]
 EXPOSE 8050
