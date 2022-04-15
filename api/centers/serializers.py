@@ -190,12 +190,18 @@ class CenterSearchSerializer(serializers.ModelSerializer):
 
 class StatisticSerializer(serializers.ModelSerializer):
     public_centers = serializers.SerializerMethodField("get_public_centers")
+    counties_count = serializers.SerializerMethodField("get_number_of_covered_counties")
 
     @staticmethod
     def get_public_centers(_):
         public_centers = TestingCenter.approved.count()
         return int(public_centers)
 
+    @staticmethod
+    def get_number_of_covered_counties(_):
+        counties_count = TestingCenter.approved.values_list("county", flat=True).distinct().count()
+        return counties_count
+
     class Meta:
         model = Statistic
-        fields = ("mobile_caravans", "public_centers", "hotline")
+        fields = ("counties_count", "public_centers", "hotline")
