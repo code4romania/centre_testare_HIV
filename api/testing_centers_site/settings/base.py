@@ -227,7 +227,7 @@ CKEDITOR_UPLOAD_PATH = "uploads/"
 
 MEMCACHED_HOST = env("MEMCACHED_HOST")
 CACHES = {
-    "throttling": {
+    "default": {
         "BACKEND": "django.core.cache.backends.memcached.PyMemcacheCache",
         "LOCATION": MEMCACHED_HOST,
     },

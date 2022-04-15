@@ -19,10 +19,10 @@ RUN if [ "${ENVIRONMENT}" = "production" ]; \
     else npm install; \
     fi
 
-COPY ./docker-entrypoint /
+COPY docker-entrypoint.sh /
 COPY ./ /code/
 
-ENTRYPOINT ["/docker-entrypoint"]
+ENTRYPOINT ["/docker-entrypoint.sh"]
 
 # start app
 CMD ["npm", "start"]

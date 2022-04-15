@@ -28,7 +28,7 @@ from centers.serializers import (
 
 
 class AddRatingQueryBurstAnonRateThrottle(AnonRateThrottle):
-    cache = caches["throttling"]
+    cache = caches["default"]
     rate = "5/min"
 
 

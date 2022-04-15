@@ -23,12 +23,10 @@ install-docker-macos:             ## installs homebrew (you can skip this at run
 	brew install docker-compose gettext
 
 build:                            ## builds the container
-	docker-compose build --pull
-	docker-compose up -d
+	ENVIRONMENT=production docker-compose up -d --build --force-recreate --remove-orphans
 
 build-dev:                        ## builds the container with the development flag
-	docker-compose build --build-arg ENVIRONMENT=development --pull
-	docker-compose up -d
+	ENVIRONMENT=development docker-compose up -d --build --force-recreate --remove-orphans
 
 superuser:                        ## creates a superuser for the API
 	docker-compose exec api ./manage.py createsuperuser

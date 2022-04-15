@@ -1,5 +1,5 @@
 {
-  "name": "seismic-app",
+  "name": "centre-hiv",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -88,9 +88,9 @@
     "less": "^3.12.2",
     "less-loader": "^7.2.1",
     "lint-staged": "^12.1.4",
-    "sass": "^1.45.0",
     "prettier": "^2.5.1",
-    "react-app-rewired": "^2.1.11"
+    "react-app-rewired": "^2.1.11",
+    "sass": "^1.45.0"
   },
   "eslintConfig": {
     "overrides": [

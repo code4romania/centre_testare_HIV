@@ -8,12 +8,12 @@ from contact.serializers import ContactSerializer
 
 
 class SendContactQueryBurstAnonRateThrottle(AnonRateThrottle):
-    cache = caches["throttling"]
+    cache = caches["default"]
     rate = "1/min"
 
 
 class SendContactQuerySustainedAnonRateThrottle(AnonRateThrottle):
-    cache = caches["throttling"]
+    cache = caches["default"]
     rate = "100/day"
 
 

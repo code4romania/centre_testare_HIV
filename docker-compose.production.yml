@@ -7,8 +7,6 @@ services:
       context: ./db
     env_file:
       - .env
-    ports:
-      - "5445:5432"
     networks:
       - internal
     volumes:
@@ -21,8 +19,6 @@ services:
   cache:
     container_name: testing-centers-cache
     image: memcached:1.6.14-alpine
-    ports:
-      - "11215:11211"
     networks:
       - internal
 
@@ -31,7 +27,7 @@ services:
     build:
       context: ./api
       args:
-        - ENVIRONMENT=${ENVIRONMENT}
+        - ENVIRONMENT=production
     command: dockerize -wait tcp://db:5444 -timeout 90s
     env_file:
       - .env
@@ -50,7 +46,7 @@ services:
     build:
       context: ./client
       args:
-        - ENVIRONMENT=${ENVIRONMENT}
+        - ENVIRONMENT=production
     env_file:
       - .env
     volumes:
