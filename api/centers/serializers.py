@@ -182,6 +182,10 @@ class SearchQuerySerializer(serializers.Serializer):  # noqa
     query = serializers.CharField(max_length=100)
 
 
+class ScheduleRatingReminderSerializer(serializers.Serializer):  # noqa
+    user_email = serializers.EmailField()
+
+
 class CenterSearchSerializer(serializers.ModelSerializer):
     class Meta:
         model = TestingCenter

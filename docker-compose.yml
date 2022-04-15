@@ -26,6 +26,14 @@ services:
     networks:
       - internal
 
+  redis:
+    container_name: testing-centers-redis
+    image: redis:6.2.6-alpine
+    ports:
+      - "6375:6379"
+    networks:
+      - internal
+
   api:
     container_name: testing-centers-api
     build:

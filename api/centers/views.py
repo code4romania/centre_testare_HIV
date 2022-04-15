@@ -1,8 +1,13 @@
+from datetime import timedelta
+
 from django.conf import settings
 from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector, TrigramSimilarity
 from django.core.cache import caches
 from django.db.models import Q
+from django.utils import timezone
+from django.utils.translation import gettext_lazy as _
 from django_filters.rest_framework import DjangoFilterBackend
+from django_q.models import Schedule
 from drf_spectacular.utils import OpenApiParameter, extend_schema
 from rest_framework import permissions, status, viewsets
 from rest_framework.decorators import action, api_view, permission_classes
@@ -10,13 +15,13 @@ from rest_framework.mixins import ListModelMixin
 from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.response import Response
 from rest_framework.throttling import AnonRateThrottle
-from rest_framework.viewsets import GenericViewSet
 
 from centers.models import CenterRating, CenterRatingQuestion, CenterTestTypes, Statistic, TestingCenter
 from centers.serializers import (
     CenterRatingQuestionsSerializer,
     CenterRatingSerializer,
     CenterSearchSerializer,
+    ScheduleRatingReminderSerializer,
     SearchQuerySerializer,
     StatisticSerializer,
     TestTypesSerializer,
@@ -38,7 +43,11 @@ class PaginatedTestingCenters(LimitOffsetPagination):
     max_page_size = 40
 
 
-class TestingCentersViewSet(ListModelMixin, GenericViewSet):
+class TestingCentersViewSet(ListModelMixin, viewsets.GenericViewSet):
+    """
+    Paginated list of all approved testing centers.
+    """
+
     pagination_class = PaginatedTestingCenters
     serializer_class = TestingCenterPaginatedListSerializer
     filter_backends = [DjangoFilterBackend]
@@ -154,9 +163,51 @@ class CenterTestTypesViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = TestTypesSerializer
 
 
-class CenterRatingQuestionsViewSet(viewsets.ReadOnlyModelViewSet):
+class CenterRatingQuestionsViewSet(ListModelMixin, viewsets.GenericViewSet):
     queryset = CenterRatingQuestion.objects.all()
     serializer_class = CenterRatingQuestionsSerializer
+
+
+class ScheduleRatingReminder(viewsets.GenericViewSet):
+    serializer_class = ScheduleRatingReminderSerializer
+
+    permission_classes = [permissions.AllowAny]
+
+    @extend_schema(
+        parameters=[
+            OpenApiParameter(
+                name="center_id",
+                type=ScheduleRatingReminderSerializer,
+                location=OpenApiParameter.QUERY,
+                description="The id of the testing center",
+            )
+        ],
+        responses=ScheduleRatingReminderSerializer,
+    )
+    def create(self, request):
+        serializer = ScheduleRatingReminderSerializer(data=request.data)
+        if serializer.is_valid():
+            user_email = serializer.data["user_email"]
+
+            mail_args = (
+                f"--email {user_email}"
+                f"--subject {_('Reminder to rate your testing center')}"
+                "--template email/center_rating_reminder.html"
+                f'--context {{"site_url": "{settings.SITE_URL}"}}'
+            )
+
+            next_run = timezone.localtime() + timedelta(seconds=100)
+            Schedule.objects.create(
+                func="django.core.management.call_command",
+                hook="email_user",
+                args=mail_args,
+                next_run=next_run,
+                schedule_type=Schedule.ONCE,
+                repeats=1,
+            )
+
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(["GET"])

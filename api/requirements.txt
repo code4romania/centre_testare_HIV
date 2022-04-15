@@ -4,10 +4,14 @@
 #
 #    pip-compile --output-file=requirements.txt requirements.in
 #
+arrow==1.2.2
+    # via django-q
 asgiref==3.5.0
     # via django
 attrs==21.4.0
     # via jsonschema
+blessed==1.19.1
+    # via django-q
 boto3==1.21.35
     # via -r requirements.in
 botocore==1.24.35
@@ -33,6 +37,8 @@ django==3.2.12
     #   django-jazzmin
     #   django-jquery
     #   django-modeltranslation
+    #   django-picklefield
+    #   django-q
     #   django-storages
     #   django-taggit
     #   djangorestframework
@@ -54,6 +60,14 @@ django-jquery==3.1.0
 django-js-asset==1.2.2
     # via django-ckeditor
 django-modeltranslation==0.17.5
+    # via -r requirements.in
+django-picklefield==3.0.1
+    # via django-q
+django-q==1.3.9
+    # via
+    #   -r requirements.in
+    #   django-q-email
+django-q-email==5.0.1
     # via -r requirements.in
 django-storages==1.12.3
     # via -r requirements.in
@@ -102,7 +116,9 @@ pymemcache==3.5.2
 pyrsistent==0.18.1
     # via jsonschema
 python-dateutil==2.8.2
-    # via botocore
+    # via
+    #   arrow
+    #   botocore
 pytz==2021.3
     # via
     #   django
@@ -111,16 +127,21 @@ pyyaml==6.0
     # via
     #   drf-spectacular
     #   tablib
+redis==3.5.3
+    # via django-q
 s3transfer==0.5.1
     # via boto3
 six==1.16.0
     # via
+    #   blessed
     #   django-modeltranslation
     #   django-taggit-serializer
     #   pymemcache
     #   python-dateutil
 sqlparse==0.4.2
     # via django
+supervisor==4.2.4
+    # via -r requirements.in
 tablib[html,ods,xls,xlsx,yaml]==3.2.0
     # via
     #   -r requirements.in
@@ -129,6 +150,8 @@ uritemplate==4.1.1
     # via drf-spectacular
 urllib3==1.26.8
     # via botocore
+wcwidth==0.2.5
+    # via blessed
 whitenoise==6.0.0
     # via -r requirements.in
 xlrd==2.0.1

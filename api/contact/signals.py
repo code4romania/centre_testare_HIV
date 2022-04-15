@@ -32,8 +32,8 @@ def send_email_on_new_contact_message(sender: ContactMessage, instance: ContactM
 
     for user_mail in user_mails:
         send_email(
-            template="mail/new_contact_message.html",
-            context={
+            template="email/new_contact_message.html",
+            template_context={
                 "sender_address": mark_safe(instance.name),
                 "site_url": settings.SITE_URL,
                 "home_site_url": settings.HOME_SITE_URL,

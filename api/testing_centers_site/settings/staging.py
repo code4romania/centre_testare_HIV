@@ -5,7 +5,7 @@ ALLOWED_HOSTS = ["*"]
 CORS_ORIGIN_ALLOW_ALL = True
 SECRET_KEY = env.str("SECRET_KEY")
 
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_BACKEND = "django_q_email.backends.DjangoQBackend"
 
 if ENABLE_DEBUG_TOOLBAR:
     INSTALLED_APPS += ["debug_toolbar", "django_extensions"]

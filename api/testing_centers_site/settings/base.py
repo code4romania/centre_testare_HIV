@@ -16,27 +16,30 @@ from django.utils.translation import gettext_lazy as _
 
 env = environ.Env(
     # set casting, default value
-    ENVIRONMENT=(str, "production"),
-    ENABLE_DEBUG_TOOLBAR=(bool, True),
-    LANGUAGE_CODE=(str, "en"),
-    NO_REPLY_EMAIL=(str, "noreply@code4.ro"),
-    DEFAULT_FROM_EMAIL=(str, "noreply@code4.ro"),
-    HOME_SITE_URL=(str, ""),
-    REACT_APP_DJANGO_SITE_URL=(str, ""),
-    REACT_APP_DJANGO_PORT=(str, ""),
-    MEMCACHED_HOST=(str, "cache:11211"),
-    EMAIL_HOST=(str, "localhost"),
-    EMAIL_PORT=(str, "25"),
-    EMAIL_HOST_USER=(str, "user"),
-    EMAIL_HOST_PASSWORD=(str, "password"),
-    EMAIL_USE_TLS=(str, "yes"),
-    EMAIL_USE_SSL=(str, "no"),
-    HERE_MAPS_API_KEY=(str, ""),
-    USE_S3=(bool, False),
     AWS_ACCESS_KEY_ID=(str, ""),
+    AWS_S3_REGION_NAME=(str, ""),
     AWS_SECRET_ACCESS_KEY=(str, ""),
     AWS_STORAGE_BUCKET_NAME=(str, ""),
-    AWS_S3_REGION_NAME=(str, ""),
+    DEFAULT_FROM_EMAIL=(str, "noreply@code4.ro"),
+    DJANGO_LOG_LEVEL=(str, "INFO"),
+    EMAIL_HOST=(str, "localhost"),
+    EMAIL_HOST_PASSWORD=(str, "password"),
+    EMAIL_HOST_USER=(str, "user"),
+    EMAIL_PORT=(str, "25"),
+    EMAIL_USE_SSL=(str, "no"),
+    EMAIL_USE_TLS=(str, "yes"),
+    ENABLE_DEBUG_TOOLBAR=(bool, True),
+    ENVIRONMENT=(str, "production"),
+    HERE_MAPS_API_KEY=(str, ""),
+    HOME_SITE_URL=(str, ""),
+    LANGUAGE_CODE=(str, "en"),
+    MEMCACHED_HOST=(str, "cache:11211"),
+    NO_REPLY_EMAIL=(str, "noreply@code4.ro"),
+    REACT_APP_DJANGO_PORT=(str, ""),
+    REACT_APP_DJANGO_SITE_URL=(str, ""),
+    REDIS_HOST=(str, "redis"),
+    REDIS_PORT=(int, 6379),
+    USE_S3=(bool, False),
 )
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -58,6 +61,39 @@ HOME_SITE_URL = env("HOME_SITE_URL") or SITE_URL
 
 ALLOWED_HOSTS = []
 CORS_ORIGIN_ALLOW_ALL = False
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "verbose": {
+            "format": "[%(asctime)s] %(levelname)s %(pathname)s:%(lineno)d %(funcName)s %(message)s",
+            "datefmt": "%d/%m/%Y %H:%M:%S",
+        },
+        "simple": {
+            "format": "[%(asctime)s] %(levelname)s %(message)s",
+            "datefmt": "%d/%m/%Y %H:%M:%S",
+        },
+    },
+    "handlers": {
+        "console": {
+            "level": "INFO",
+            "class": "logging.StreamHandler",
+            "formatter": "simple" if ENVIRONMENT == "production" else "verbose",
+        },
+    },
+    "root": {
+        "handlers": ["console"],
+        "level": "WARNING",
+    },
+    "loggers": {
+        "django": {
+            "handlers": ["console"],
+            "level": env("DJANGO_LOG_LEVEL"),
+            "propagate": False,
+        },
+    },
+}
 
 INSTALLED_APPS = [
     "jazzmin",
@@ -84,6 +120,7 @@ INSTALLED_APPS = [
     "corsheaders",
     "ckeditor",
     "ckeditor_uploader",
+    "django_q",
     # project apps
     "static_custom",
     "centers",
@@ -324,6 +361,24 @@ COUNTIES_SHORTNAME = {
     "Vâlcea": "VL",
 }
 
+# django-q https://django-q.readthedocs.io/en/latest/configure.html
+
+Q_CLUSTER = {
+    "name": "centre-hiv",
+    "recycle": 500,
+    "timeout": 60,
+    "compress": True,
+    "save_limit": 250,
+    "queue_limit": 500,
+    "cpu_affinity": 1,
+    "label": "Django Q",
+    "redis": {
+        "host": env("REDIS_HOST"),
+        "port": env("REDIS_PORT"),
+        "db": 0,
+    },
+}
+
 # django-jazzmin
 # -------------------------------------------------------------------------------
 # django-jazzmin - https://django-jazzmin.readthedocs.io/configuration/
@@ -378,6 +433,7 @@ JAZZMIN_SETTINGS: Dict[str, Any] = {
         "centers.testingcenter",
         "centers.centertype",
         "centers.centerrating",
+        "centers.centerratingquestion",
         "centers.centeremail",
         "centers.centerphonenumber",
         "centers.necessarydocuments",
@@ -399,6 +455,10 @@ JAZZMIN_SETTINGS: Dict[str, Any] = {
         "auth",
         "auth.group",
         "auth.user",
+        "django_q",
+        "django_q.schedule",
+        "django_q.success",
+        "django_q.failure",
     ],
     # Custom icons for side menu apps/models
     # See https://fontawesome.com/v5/search?m=free
@@ -422,6 +482,9 @@ JAZZMIN_SETTINGS: Dict[str, Any] = {
         "pages.category": "fas fa-box",
         "pages.page": "fas fa-columns",
         "sites.site": "fas fa-sitemap",
+        "django_q.schedule": "fas fa-layer-group",
+        "django_q.success": "fas fa-check",
+        "django_q.failure": "fas fa-exclamation",
     },
     # Icons that are used when one is not manually specified
     "default_icon_parents": "fas fa-chevron-circle-right",

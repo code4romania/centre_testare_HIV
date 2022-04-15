@@ -11,6 +11,7 @@ from blog.views import PostViewSet, TagViewSet
 from centers.views import (
     CenterRatingQuestionsViewSet,
     CenterTestTypesViewSet,
+    ScheduleRatingReminder,
     TestingCenterViewSet,
     TestingCentersViewSet,
     statistics,
@@ -24,6 +25,7 @@ router = routers.DefaultRouter()
 router.register(r"center", TestingCenterViewSet, basename="center")
 router.register(r"centers", TestingCentersViewSet, basename="centers")
 router.register(r"center_questions", CenterRatingQuestionsViewSet, basename="center_questions")
+router.register(r"schedule_email", ScheduleRatingReminder, basename="center_rating_reminder")
 router.register(r"contact", ContactViewSet, basename="contact"),
 router.register(r"page", PagesViewSet, basename="page")
 router.register(r"post", PostViewSet, basename="post")
