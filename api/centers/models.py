@@ -260,8 +260,7 @@ class CenterRating(models.Model):
 
 
 class Statistic(models.Model):
-    mobile_caravans = models.IntegerField(_("mobile caravans"), null=True)
-    hotline = models.SmallIntegerField(_("hotline"), null=True)
+    hotline = models.SmallIntegerField(_("hotline"))
 
     objects = models.Manager()
 

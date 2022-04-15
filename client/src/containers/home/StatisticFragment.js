@@ -34,7 +34,7 @@ const StatisticCard = ({ title, value, icon, type = '' }) => (
 export default () => {
   const [state, setState] = React.useState({
     statistics: {
-      mobile_caravans: '',
+      counties_count: '',
       public_centers: '',
       hotline: '',
     },
@@ -72,7 +72,7 @@ export default () => {
       <Col xs={24} md={8}>
         <StatisticCard
           title={<Trans>Județe acoperite</Trans>}
-          value={state.statistics.mobile_caravans}
+          value={state.statistics.counties_count}
           icon={<MobileCaravansIcon />}
           type="mobile-caravans"
         />
