@@ -1,11 +1,11 @@
 export const createCenterDetailsDialogSlice = (set) => ({
-  isOpen: false,
+  isCenterDetailsDialogOpen: false,
   details: null,
-  open: (details) => {
-    set({ isOpen: true, details });
+  openCenterDetailsDialog: (details) => {
+    set({ isCenterDetailsDialogOpen: true, details });
   },
-  close: () => {
-    set({ isOpen: false, details: null });
+  closeCenterDetailsDialog: () => {
+    set({ isCenterDetailsDialogOpen: false, details: null });
   },
 });
 

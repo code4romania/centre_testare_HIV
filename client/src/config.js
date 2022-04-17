@@ -12,4 +12,5 @@ export default {
   TEST_TYPE: `${HOST_URL}${API_PORT}/${API}/test_type/`,
   MAP_API_KEY: process.env.REACT_APP_HERE_MAPS_API_KEY,
   CAPTCHA_API_KEY: process.env.REACT_APP_CAPTCHA_API_KEY,
+  SCHEDULE_EMAIL_URL: `${HOST_URL}${API_PORT}/${API}/schedule_email/`,
 };
