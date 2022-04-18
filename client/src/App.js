@@ -12,7 +12,7 @@ import Blog from './containers/blog';
 import BlogPost from './containers/blog-post';
 import Contact from './containers/contact';
 import Terms from './containers/Terms';
-import Policy from './containers/Policy';
+import Policy from './containers/policy';
 import NotFound from './containers/404/404';
 import ScrollToTop from './components/ScrollToTop';
 import './styles/theme.scss';
