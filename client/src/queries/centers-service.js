@@ -2,7 +2,7 @@ import config from '../config';
 import { mapKeysToCamelCase } from '../utils';
 import { useGet } from './requests';
 
-const { CENTER_URL, CENTERS_URL } = config;
+const { CENTER_URL, CENTERS_URL, CENTER_QUESTIONS_URL } = config;
 
 export const getTestingCenters = async (language = 'ro') => {
   const res = await fetch(CENTER_URL(language));
@@ -15,8 +15,15 @@ export const getTestingCenters = async (language = 'ro') => {
 };
 
 export const getDetailedTestingCenters = async (params, language = 'ro') => {
-  const queryParams = new URLSearchParams(params);
-  const res = await fetch(`${CENTERS_URL(language)}?${queryParams}`);
+  let url;
+  if (params) {
+    const queryParams = new URLSearchParams(params);
+    url = `${CENTERS_URL(language)}?${queryParams}`;
+  } else {
+    url = CENTERS_URL(language);
+  }
+
+  const res = await fetch(url);
   if (!res.ok) {
     throw new Error(res.statusText);
   }
@@ -44,4 +51,15 @@ export const useSearchCentersQuery = () => {
   } = useGet(`${CENTER_URL('ro')}search/`, { enabled: false });
 
   return { searchResults, searchTestingCenters, ...rest };
+};
+
+export const getCenterReviewQuestions = async (language = 'ro') => {
+  const res = await fetch(CENTER_QUESTIONS_URL(language));
+
+  if (!res.ok) {
+    throw new Error(res.statusText);
+  }
+
+  const data = await res.json();
+  return mapKeysToCamelCase(data);
 };

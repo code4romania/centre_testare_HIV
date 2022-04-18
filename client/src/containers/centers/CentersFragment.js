@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Trans } from '@lingui/macro';
 import { flatten } from 'lodash';
 import { CenterDetailsCard } from '../../components/CenterDetailsCard';
-import { useDetailedTestingCentersQuery, useTestingCenterByIdQuery } from '../../queries';
+import { useDetailedTestingCentersInfiniteQuery, useTestingCenterByIdQuery } from '../../queries';
 import { useCenterDetailsDialog } from '../../store';
 import LoadMore from '../../components/LoadMoreArticlesLink';
 import { useGlobalContext } from '../../context';
@@ -14,11 +14,12 @@ export const CentersFragment = () => {
   const [testingCenters, setTestingCenters] = useState([]);
   const [selectedCenterPk, setSelectedCenterPk] = useState();
 
-  const { isLoading, isFetching, fetchNextPage, hasNextPage } = useDetailedTestingCentersQuery({
-    onSuccess: ({ pages }) => {
-      setTestingCenters(flatten(pages.map(({ results }) => results)));
-    },
-  });
+  const { isLoading, isFetching, fetchNextPage, hasNextPage } =
+    useDetailedTestingCentersInfiniteQuery({
+      onSuccess: ({ pages }) => {
+        setTestingCenters(flatten(pages.map(({ results }) => results)));
+      },
+    });
   const { openDialog } = useCenterDetailsDialog();
 
   const { isLoading: isLoadingDetails, isFetchingDetails } = useTestingCenterByIdQuery(

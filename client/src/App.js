@@ -9,6 +9,7 @@ import About from './containers/about';
 import Centers from './containers/centers';
 import Blog from './containers/blog';
 import BlogPost from './containers/blog-post';
+import CenterReview from './containers/center-review';
 import Contact from './containers/contact';
 import Terms from './containers/Terms';
 import Policy from './containers/policy';
@@ -60,6 +61,9 @@ const App = () => {
             </Route>
             <Route path="/politica-de-confidentialitate">
               <Policy />
+            </Route>
+            <Route path="/chestionar">
+              <CenterReview />
             </Route>
             <Route component={NotFound} />
           </Switch>
