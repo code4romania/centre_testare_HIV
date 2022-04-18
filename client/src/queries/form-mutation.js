@@ -1,8 +1,12 @@
 import { useMutation } from 'react-query';
-import { postContactForm } from './form-service';
+import { postContactForm, postHelpUsForm } from './form-service';
 
 export const useContactFormMutation = (mutationOptions) => {
   return useMutation(postContactForm, { ...mutationOptions });
 };
 
-export default { useContactFormMutation };
+export const useHelpUsFormMutation = (mutationOptions) => {
+  return useMutation(postHelpUsForm, { ...mutationOptions });
+};
+
+export default { useContactFormMutation, useHelpUsFormMutation };

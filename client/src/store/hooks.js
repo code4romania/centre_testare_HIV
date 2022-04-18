@@ -26,10 +26,18 @@ export const usePhoneNumber = () => {
 };
 
 export const useCenterDetailsDialog = () => {
-  const isOpen = useStore((state) => state.isOpen);
+  const isOpen = useStore((state) => state.isCenterDetailsDialogOpen);
   const details = useStore((state) => state.details);
-  const openDialog = useStore((state) => state.open);
-  const closeDialog = useStore((state) => state.close);
+  const openDialog = useStore((state) => state.openCenterDetailsDialog);
+  const closeDialog = useStore((state) => state.closeCenterDetailsDialog);
 
   return { isOpen, details, openDialog, closeDialog };
+};
+
+export const useHelpUsDialog = () => {
+  const isOpen = useStore((state) => state.isHelpUsDialogOpen);
+  const openDialog = useStore((state) => state.openHelpUsDialog);
+  const closeDialog = useStore((state) => state.closeHelpUsDialog);
+
+  return { isOpen, openDialog, closeDialog };
 };

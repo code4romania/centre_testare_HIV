@@ -2,7 +2,7 @@ import React, { useCallback, useMemo, useState } from 'react';
 import { Button, Descriptions, Modal, Tag, Typography } from 'antd';
 import { Trans } from '@lingui/macro';
 import { Link } from 'react-router-dom';
-import { useCenterDetailsDialog } from '../../store';
+import { useCenterDetailsDialog, useHelpUsDialog } from '../../store';
 import { getDeviceType } from '../../utils';
 
 const { Paragraph } = Typography;
@@ -11,6 +11,7 @@ const { isIos } = getDeviceType();
 
 export const CenterDetailsDialog = () => {
   const { isOpen, details, closeDialog } = useCenterDetailsDialog();
+  const { openDialog: openHelpUsDialog } = useHelpUsDialog();
 
   const [showPhoneNumbers, setShowPhoneNumbers] = useState(false);
 
@@ -30,8 +31,9 @@ export const CenterDetailsDialog = () => {
   const onCallCenterClick = useCallback(() => {
     if (isMissingPhoneNumbers) return;
 
+    openHelpUsDialog();
     setShowPhoneNumbers(true);
-  }, [isMissingPhoneNumbers]);
+  }, [isMissingPhoneNumbers, openHelpUsDialog]);
 
   return (
     <Modal
