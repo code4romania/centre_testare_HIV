@@ -1,20 +1,29 @@
 import React from 'react';
 import { Typography } from 'antd';
 import { Trans } from '@lingui/macro';
-
+import { Link } from 'react-router-dom';
 import { Hero } from '../../components/Hero';
 
-const { Paragraph } = Typography;
+const { Paragraph, Text } = Typography;
 
 export default () => {
   return (
-    <Hero title={<Trans>Terms &amp; conditions</Trans>}>
-      {/* @TODO replace text + translate */}
+    <Hero title={<Trans>Termeni și condiții de utilizare</Trans>}>
       <Paragraph>
-        Many desktop publishing packages and web page editors now use Lorem Ipsum as their default
-        model text, and a search for 'lorem ipsum' will uncover many web sites still in their
-        infancy. Various versions have evolved over the years, sometimes by accident, sometimes on
-        purpose (injected humour and the like).
+        <Trans>
+          Termenii și Condițiile generale de utilizare stabilesc termenii și condițiile generale de
+          utilizare a site-ului <Link to="/">centrehiv.edreptultau.ro</Link> de către potențialii
+          vizitatori sau beneficiari.
+        </Trans>
+      </Paragraph>
+      <Paragraph>
+        <Trans>
+          <Link to="/">centrehiv.edreptultau.ro</Link> (în continuare denumit „Site”, „Platformă”,
+          ”centrehiv.edreptultau.ro”) are ca scop a spori accesul tinerilor din categoria de vârstă
+          15-35 ani din zonele defavorizate la educație pentru sănătatea sexuală și a reproducerii
+          după model norvegian, adoptând sloganul Active Citizens Fund România{' '}
+          <Text strong>Lucrăm împreună pentru o Europă incluzivă</Text>.
+        </Trans>
       </Paragraph>
     </Hero>
   );

@@ -1,7 +1,7 @@
 import config from '../config';
 import { mapKeysToSnakeCase } from '../utils';
 
-const { CONTACT_URL, CENTER_URL } = config;
+const { CONTACT_URL, CENTER_URL, SCHEDULE_EMAIL_URL } = config;
 
 export const postContactForm = async (contact) => {
   const body = JSON.stringify(contact);
@@ -29,4 +29,17 @@ export const postCenterReviewForm = async ({ pk, review }) => {
   }
 };
 
-export default { postContactForm, postCenterReviewForm };
+export const postHelpUsForm = async (email) => {
+  const body = JSON.stringify(mapKeysToSnakeCase(email));
+  const res = await fetch(SCHEDULE_EMAIL_URL, {
+    method: 'POST',
+    headers: { 'Content-type': 'application/json' },
+    body,
+  });
+
+  if (!res.ok) {
+    throw new Error(res.statusText);
+  }
+};
+
+export default { postContactForm, postCenterReviewForm, postHelpUsForm };
