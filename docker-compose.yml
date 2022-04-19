@@ -18,14 +18,6 @@ services:
       - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
       - POSTGRES_DB=${DATABASE_NAME}
 
-  cache:
-    container_name: testing-centers-cache
-    image: memcached:1.6.14-alpine
-    ports:
-      - "11215:11211"
-    networks:
-      - internal
-
   redis:
     container_name: testing-centers-redis
     image: redis:6.2.6-alpine
@@ -51,7 +43,7 @@ services:
       - "8050:8050"
     depends_on:
       - db
-      - cache
+      - redis
 
   client:
     container_name: testing-centers-client

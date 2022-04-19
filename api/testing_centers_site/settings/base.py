@@ -20,7 +20,9 @@ env = environ.Env(
     AWS_S3_REGION_NAME=(str, ""),
     AWS_SECRET_ACCESS_KEY=(str, ""),
     AWS_STORAGE_BUCKET_NAME=(str, ""),
+    DEBUG=(str, "no"),
     DEFAULT_FROM_EMAIL=(str, "noreply@code4.ro"),
+    DEV_ENABLE_EMAIL_SMTP=(str, "no"),
     DJANGO_LOG_LEVEL=(str, "INFO"),
     EMAIL_HOST=(str, "localhost"),
     EMAIL_HOST_PASSWORD=(str, "password"),
@@ -28,12 +30,11 @@ env = environ.Env(
     EMAIL_PORT=(str, "25"),
     EMAIL_USE_SSL=(str, "no"),
     EMAIL_USE_TLS=(str, "yes"),
-    ENABLE_DEBUG_TOOLBAR=(bool, True),
+    ENABLE_DEBUG_TOOLBAR=(str, "no"),
     ENVIRONMENT=(str, "production"),
     HERE_MAPS_API_KEY=(str, ""),
     HOME_SITE_URL=(str, ""),
     LANGUAGE_CODE=(str, "en"),
-    MEMCACHED_HOST=(str, "cache:11211"),
     NO_REPLY_EMAIL=(str, "noreply@code4.ro"),
     REACT_APP_DJANGO_PORT=(str, ""),
     REACT_APP_DJANGO_SITE_URL=(str, ""),
@@ -47,10 +48,9 @@ BASE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../..")
 
 ADMIN_TITLE = _("Testing Centers")
 
-DEBUG = bool(env("ENVIRONMENT") != "production")
-
+DEBUG = env("DEBUG") == "yes"
 ENVIRONMENT = env("ENVIRONMENT")
-ENABLE_DEBUG_TOOLBAR = bool(DEBUG and env("ENABLE_DEBUG_TOOLBAR"))
+ENABLE_DEBUG_TOOLBAR = bool(DEBUG and env("ENABLE_DEBUG_TOOLBAR") == "yes")
 
 DJANGO_SITE_URL = env("REACT_APP_DJANGO_SITE_URL")
 DJANGO_PORT = env("REACT_APP_DJANGO_PORT")
@@ -58,6 +58,9 @@ DJANGO_PORT = f":{DJANGO_PORT}" if DJANGO_PORT else ""
 
 SITE_URL = f"{DJANGO_SITE_URL}{DJANGO_PORT}"
 HOME_SITE_URL = env("HOME_SITE_URL") or SITE_URL
+
+REDIS_HOST = env("REDIS_HOST")
+REDIS_PORT = env("REDIS_PORT")
 
 ALLOWED_HOSTS = []
 CORS_ORIGIN_ALLOW_ALL = False
@@ -173,7 +176,7 @@ if env("ENVIRONMENT") == "test":
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
-            "NAME": "/tmp/test.db",
+            "NAME": "/tmp/test.db",  # noqa
         }
     }
 else:
@@ -262,13 +265,38 @@ LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
-MEMCACHED_HOST = env("MEMCACHED_HOST")
 CACHES = {
     "default": {
-        "BACKEND": "django.core.cache.backends.memcached.PyMemcacheCache",
-        "LOCATION": MEMCACHED_HOST,
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": f"redis://{REDIS_HOST}:{REDIS_PORT}/?db=2",
+        "KEY_PREFIX": "default",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            "IGNORE_EXCEPTIONS": False,
+        },
+    },
+    "throttling": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": f"redis://{REDIS_HOST}:{REDIS_PORT}/?db=1",
+        "KEY_PREFIX": "throttling",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            "IGNORE_EXCEPTIONS": False,
+        },
+    },
+    "scheduling": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": f"redis://{REDIS_HOST}:{REDIS_PORT}/?db=0",
+        "KEY_PREFIX": "scheduling",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            "IGNORE_EXCEPTIONS": False,
+        },
     },
 }
+
+DJANGO_REDIS_IGNORE_EXCEPTIONS = False
+DJANGO_REDIS_LOGGER = "django"
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
@@ -362,21 +390,18 @@ COUNTIES_SHORTNAME = {
 }
 
 # django-q https://django-q.readthedocs.io/en/latest/configure.html
-
 Q_CLUSTER = {
     "name": "centre-hiv",
     "recycle": 500,
     "timeout": 60,
     "compress": True,
+    "workers": 1,
     "save_limit": 250,
     "queue_limit": 500,
     "cpu_affinity": 1,
     "label": "Django Q",
-    "redis": {
-        "host": env("REDIS_HOST"),
-        "port": env("REDIS_PORT"),
-        "db": 0,
-    },
+    "scheduler": True,
+    "django_redis": "scheduling",
 }
 
 # django-jazzmin
@@ -471,6 +496,7 @@ JAZZMIN_SETTINGS: Dict[str, Any] = {
         "contact.contactmessage": "fas fa-envelope-open-text",
         "centers.testingcenter": "fas fa-hospital",
         "centers.centerrating": "fas fa-star",
+        "centers.centerratingquestion": "fas fa-question",
         "centers.centertype": "fas fa-cubes",
         "centers.centeremail": "fas fa-at",
         "centers.centerphonenumber": "fas fa-phone",

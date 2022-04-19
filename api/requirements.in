@@ -1,5 +1,5 @@
 # django and related apps
-django>=3.2,<3.3
+django==3.2.13
 django-environ==0.8.1
 django-cors-headers==3.11.0
 django-storages==1.12.3
@@ -24,7 +24,8 @@ django-q-email==5.0.1
 supervisor==4.2.4
 
 # py caching
-pymemcache==3.5.2
+redis==3.5.3
+django-redis==5.2.0
 
 # database
 psycopg2<2.10

@@ -6,12 +6,19 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 CORS_ORIGIN_ALLOW_ALL = True
 SECRET_KEY = "secret"
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+if env("DEV_ENABLE_EMAIL_SMTP") == "yes":
+    EMAIL_BACKEND = "django_q_email.backends.DjangoQBackend"
+else:
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 INSTALLED_APPS = ["whitenoise.runserver_nostatic"] + INSTALLED_APPS
 
+if env("RUN_DEV_SERVER") == "yes":
+    INSTALLED_APPS.append("django_extensions")
+
 if ENABLE_DEBUG_TOOLBAR:
-    INSTALLED_APPS += ["debug_toolbar", "django_extensions"]
+    INSTALLED_APPS.append("debug_toolbar")
     MIDDLEWARE.insert(1, "debug_toolbar.middleware.DebugToolbarMiddleware")
 
     def show_toolbar(_):
@@ -21,11 +28,5 @@ if ENABLE_DEBUG_TOOLBAR:
         "SHOW_TOOLBAR_CALLBACK": show_toolbar,
     }
 
-DEVELOPMENT_CACHES = {
-    "default": {"BACKEND": "django.core.cache.backends.dummy.DummyCache"},
-}
-CACHES.update(DEVELOPMENT_CACHES)
-
 if not DEBUG:
-    STATIC_ROOT = os.path.join(BASE_DIR, "static")
     STATICFILES_DIRS = []
