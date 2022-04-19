@@ -28,6 +28,9 @@ build:                            ## builds the container
 build-dev:                        ## builds the container with the development flag
 	ENVIRONMENT=development docker-compose up -d --build --force-recreate --remove-orphans
 
+build-stage:                        ## builds the container with the staging flag
+	ENVIRONMENT=staging docker-compose up -d --build --force-recreate --remove-orphans
+
 superuser:                        ## creates a superuser for the API
 	docker-compose exec api ./manage.py createsuperuser
 

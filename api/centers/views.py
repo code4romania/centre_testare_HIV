@@ -8,6 +8,7 @@ from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from django_filters.rest_framework import DjangoFilterBackend
 from django_q.models import Schedule
+from django_q.tasks import schedule
 from drf_spectacular.utils import OpenApiParameter, extend_schema
 from rest_framework import permissions, status, viewsets
 from rest_framework.decorators import action, api_view, permission_classes
@@ -33,7 +34,7 @@ from centers.serializers import (
 
 
 class AddRatingQueryBurstAnonRateThrottle(AnonRateThrottle):
-    cache = caches["default"]
+    cache = caches["throttling"]
     rate = "5/min"
 
 
@@ -188,22 +189,22 @@ class ScheduleRatingReminder(viewsets.GenericViewSet):
         serializer = ScheduleRatingReminderSerializer(data=request.data)
         if serializer.is_valid():
             user_email = serializer.data["user_email"]
+            next_run = timezone.localtime() + timedelta(seconds=60)
 
             mail_args = (
-                f"--email {user_email}"
-                f"--subject {_('Reminder to rate your testing center')}"
-                "--template email/center_rating_reminder.html"
-                f'--context {{"site_url": "{settings.SITE_URL}"}}'
+                "'email_user'",
+                f"'--email \"{user_email}\"'",
+                f'\'--subject "{_("Reminder to rate your testing center")}"\'',
+                "'--template \"center_rating_reminder\"'",
+                f'\'--context "{{\\"site_url\\": \\"{settings.SITE_URL}\\"}}"\'',
             )
 
-            next_run = timezone.localtime() + timedelta(seconds=100)
-            Schedule.objects.create(
+            schedule(
                 func="django.core.management.call_command",
-                hook="email_user",
-                args=mail_args,
-                next_run=next_run,
+                args=", ".join(mail_args),
+                name=f"Center rating remind {user_email} on {next_run.strftime('%Y-%m-%d %H:%M:%S')}",
                 schedule_type=Schedule.ONCE,
-                repeats=1,
+                next_run=next_run,
             )
 
             return Response(serializer.data, status=status.HTTP_201_CREATED)

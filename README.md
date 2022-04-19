@@ -63,7 +63,7 @@ Guide users through getting your code up and running on their own system. In thi
 
 The `.env` files contain variables required to start the services and initialize them.
 
-- `ENVIRONMENT` - [`test`|`development`|`production`] sets the type of deployment (default `production`)
+- `ENVIRONMENT` - [`test`|`development`|`staging`|`production`] sets the type of deployment (default `production`)
 - `RUN_MIGRATION` - [`yes`|`no`] run django migrations when you start the app (default `yes`)
 - `RUN_COMPILEMESSAGES` - [`yes`|`no`] compile i18n messages when you first start the app (default `yes`)
 - `RUN_LOAD_DUMMY_DATA` - [`yes`|`no`] load the data from the `fixtures/` folders (default `no`)

@@ -28,7 +28,7 @@ diff-match-patch==20200713
     # via django-import-export
 dj-database-url==0.5.0
     # via -r requirements.in
-django==3.2.12
+django==3.2.13
     # via
     #   -r requirements.in
     #   django-cors-headers
@@ -39,6 +39,7 @@ django==3.2.12
     #   django-modeltranslation
     #   django-picklefield
     #   django-q
+    #   django-redis
     #   django-storages
     #   django-taggit
     #   djangorestframework
@@ -68,6 +69,8 @@ django-q==1.3.9
     #   -r requirements.in
     #   django-q-email
 django-q-email==5.0.1
+    # via -r requirements.in
+django-redis==5.2.0
     # via -r requirements.in
 django-storages==1.12.3
     # via -r requirements.in
@@ -111,8 +114,6 @@ psycopg2==2.9.3
     # via -r requirements.in
 pycparser==2.21
     # via cffi
-pymemcache==3.5.2
-    # via -r requirements.in
 pyrsistent==0.18.1
     # via jsonschema
 python-dateutil==2.8.2
@@ -128,7 +129,10 @@ pyyaml==6.0
     #   drf-spectacular
     #   tablib
 redis==3.5.3
-    # via django-q
+    # via
+    #   -r requirements.in
+    #   django-q
+    #   django-redis
 s3transfer==0.5.1
     # via boto3
 six==1.16.0
@@ -136,7 +140,6 @@ six==1.16.0
     #   blessed
     #   django-modeltranslation
     #   django-taggit-serializer
-    #   pymemcache
     #   python-dateutil
 sqlparse==0.4.2
     # via django
