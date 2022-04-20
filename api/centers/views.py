@@ -8,7 +8,6 @@ from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from django_filters.rest_framework import DjangoFilterBackend
 from django_q.models import Schedule
-from django_q.tasks import schedule
 from drf_spectacular.utils import OpenApiParameter, extend_schema
 from rest_framework import permissions, status, viewsets
 from rest_framework.decorators import action, api_view, permission_classes
@@ -191,17 +190,27 @@ class ScheduleRatingReminder(viewsets.GenericViewSet):
             user_email = serializer.data["user_email"]
             next_run = timezone.localtime() + timedelta(seconds=60)
 
-            mail_args = (
-                "'email_user'",
-                f"'--email \"{user_email}\"'",
-                f'\'--subject "{_("Reminder to rate your testing center")}"\'',
-                "'--template \"center_rating_reminder\"'",
-                f'\'--context "{{\\"site_url\\": \\"{settings.SITE_URL}\\"}}"\'',
-            )
+            email_arg = f"{user_email}"
+            subject_arg = f"{_('Reminder to rate your testing center')}"
+            template_arg = "center_rating_reminder"
+            context_arg = f'{{"site_url": "{settings.SITE_URL}"}}'
 
-            schedule(
+            mail_args = (
+                "email_user",
+                "--email",
+                email_arg,
+                "--subject",
+                subject_arg,
+                "--template",
+                template_arg,
+                "--context",
+                context_arg,
+            )
+            formatted_mail_args = ", ".join((f"'{arg}'" for arg in mail_args))
+
+            Schedule.objects.create(
                 func="django.core.management.call_command",
-                args=", ".join(mail_args),
+                args=formatted_mail_args,
                 name=f"Center rating remind {user_email} on {next_run.strftime('%Y-%m-%d %H:%M:%S')}",
                 schedule_type=Schedule.ONCE,
                 next_run=next_run,
