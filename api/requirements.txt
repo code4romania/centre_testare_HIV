@@ -130,7 +130,6 @@ pyyaml==6.0
     #   tablib
 redis==3.5.3
     # via
-    #   -r requirements.in
     #   django-q
     #   django-redis
 s3transfer==0.5.1
