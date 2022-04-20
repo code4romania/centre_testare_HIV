@@ -1,9 +1,5 @@
 set -e
 
-whoami
-docker info
-docker-compose --version
-
 cd /root/centre_testare_HIV
 
 git status
