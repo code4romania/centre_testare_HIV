@@ -3,8 +3,6 @@ import ClusterLayerBuilder from './ClusterLayerBuilder';
 
 const { H } = window;
 
-// @TODO is this still necessary ?
-// @TODO update variable names
 export default function useDecoratedClusteredMap(currentMap, points) {
   const [buildingDetails, setBuildingDetails] = useState(undefined);
   const [detailsOpen, setDetailsOpen] = useState(false);
@@ -50,7 +48,6 @@ export default function useDecoratedClusteredMap(currentMap, points) {
     return undefined;
   };
 
-  // @TODO update to new API schema
   const onSelectBuilding = (buildingDetail) => {
     const markers = currentMap
       .getLayers()

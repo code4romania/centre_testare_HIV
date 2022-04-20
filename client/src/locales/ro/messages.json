@@ -13,7 +13,7 @@
     "translation": "1. Obiectivul Platformei",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         12
       ]
     ],
@@ -23,7 +23,7 @@
     "translation": "10. Contactează-ne",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         189
       ]
     ],
@@ -33,7 +33,7 @@
     "translation": "2. Datele personale prelucrate",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         24
       ]
     ],
@@ -43,7 +43,7 @@
     "translation": "3. Scop și temei",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         38
       ]
     ],
@@ -53,7 +53,7 @@
     "translation": "4. Durata stocării",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         48
       ]
     ],
@@ -93,7 +93,7 @@
     "translation": "5. Transmiterea datelor către terți",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         57
       ]
     ],
@@ -103,7 +103,7 @@
     "translation": "6. Drepturile tale",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         67
       ]
     ],
@@ -113,7 +113,7 @@
     "translation": "7. Securitate și confidențialitate",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         113
       ]
     ],
@@ -123,7 +123,7 @@
     "translation": "8. Modificări Termeni și Condiții generale de utilizare Site",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         155
       ]
     ],
@@ -133,7 +133,7 @@
     "translation": "9. Despre Semper Musica",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         177
       ]
     ],
@@ -153,7 +153,7 @@
     "translation": "<0>centrehiv.edreptultau.ro</0> (în continuare denumit „Site”, „Platformă”, ”centrehiv.edreptultau.ro”) are ca scop a spori accesul tinerilor din categoria de vârstă 15-35 ani din zonele defavorizate la educație pentru sănătatea sexuală și a reproducerii după model norvegian, adoptând sloganul Active Citizens Fund România <1>Lucrăm împreună pentru o Europă incluzivă</1>.",
     "origin": [
       [
-        "containers/Terms/HeroFragment.js",
+        "containers/terms/HeroFragment.js",
         20
       ]
     ],
@@ -224,7 +224,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        49
+        51
       ],
       [
         "containers/404/HeroFragment.js",
@@ -295,7 +295,7 @@
     "translation": "Toate datele de pe site sunt stocate și procesate pe servere situate în Uniunea Europeană, ce cad sub incidența legislației europene de protecție a datelor personale. Nicio informație oferită pe acest site nu părăsește teritoriul Uniunii Europene.",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         126
       ]
     ],
@@ -325,7 +325,7 @@
     "translation": "În calitate de utilizator al platformei <0>centrehiv.edreptultau.ro</0>, potrivit Legii nr. 679/2016, precum și, începând cu 25 mai 2018, potrivit Regulamentului General privind protecția datelor, ai următoarele drepturi:",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         70
       ]
     ],
@@ -335,7 +335,7 @@
     "translation": "Începând cu 25 mai 2018, potrivit Regulamentului general privind protecția datelor, dreptul la restricționarea prelucrării.",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         106
       ]
     ],
@@ -387,7 +387,7 @@
     "translation": "Completând formularele puse la dispoziție în paginile platformei putem colecta următoarele date:",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         27
       ]
     ],
@@ -649,6 +649,16 @@
     ],
     "extractedComments": []
   },
+  "Donate by bank transfer": {
+    "translation": "Donează prin transfer bancar",
+    "origin": [
+      [
+        "containers/donate/HeroFragment.js",
+        15
+      ]
+    ],
+    "extractedComments": []
+  },
   "Due to their flexibility and the fact that most of the most visited and largest sites use cookies, they are almost inevitable.": {
     "translation": "Datorită flexibilitatii lor și a faptului ca majoritatea dintre cele mai vizitate site-uri și cele mai mari folosesc cookieuri, acestea sunt aproape inevitabile.",
     "origin": [
@@ -673,7 +683,7 @@
     "translation": "Adresa de e-mail",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         34
       ]
     ],
@@ -685,6 +695,16 @@
       [
         "components/HelpUsDialog/index.js",
         16
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Every year, the numbers get worse. The alarming number of minors who become mothers and drop out of school is one of the few consequences in the lack of access to sexual health education in Romania. Information is power. Together we have the power to flatten the statistics of infections, unwanted pregnancies and we can ensure a healthier future for young people.": {
+    "translation": "An de an, cifrele se înrăutățesc. Numărul alarmant de minore care devin mame și renunță la școală este una din puținele consecințe în lipsa accesului la educație pentru sănătatea sexuală în România. Informația este putere. Împreună avem puterea de a aplana statistica infecțiilor, a sarcinilor nedorite și putem asigura tinerilor un viitor mai sănătos.",
+    "origin": [
+      [
+        "containers/donate/SupportFragment.js",
+        11
       ]
     ],
     "extractedComments": []
@@ -703,7 +723,7 @@
     "translation": "Pentru orice întrebări sau preocupări, precum și pentru exercitarea drepturilor tale legate de prelucrarea datelor de către Semper Musica, ne poți contacta la:",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         192
       ]
     ],
@@ -823,7 +843,7 @@
     "translation": "Dacă descoperim un incident cu privire la securitatea datelor care prezintă un risc pentru drepturile și libertățile utilizatorilor noștri, vom notifica Autoritatea Națională de Supraveghere privind Prelucrarea Datelor cu Caracter Personale în termen de 72 de ore. Dacă incidentul de securitate este de natură să prezinte un risc ridicat pentru drepturile și libertățile tale, vei fi, de asemenea, notificat.",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         133
       ]
     ],
@@ -833,7 +853,7 @@
     "translation": "Dacă aveți întrebări cu privire la informațiile cuprinse în această pagină vă rugăm să ne scrieți la adresa <0>office@sempermusica.org</0>.",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         171
       ]
     ],
@@ -893,7 +913,7 @@
     "translation": "Este strict interzisă folosirea acestui Site în scopul distrugerii sau alterării lui, a conținutului său, a securității acestuia ori pentru discreditarea sau hărțuirea <0>centrehiv.edreptultau.ro</0> sau a Asociația Semper Musica.",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         141
       ]
     ],
@@ -1124,7 +1144,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        39
+        25
       ]
     ],
     "extractedComments": []
@@ -1144,7 +1164,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        59
+        61
       ],
       [
         "containers/policy/HeroFragment.js",
@@ -1158,7 +1178,17 @@
     "origin": [
       [
         "components/Footer/index.js",
-        25
+        33
+      ]
+    ],
+    "extractedComments": []
+  },
+  "RON Account:": {
+    "translation": "Cont RON:",
+    "origin": [
+      [
+        "containers/donate/HeroFragment.js",
+        18
       ]
     ],
     "extractedComments": []
@@ -1221,7 +1251,7 @@
     "translation": "Dreptul de intervenție, rectificarea, ștergerea sau portabilitatea datelor, la cerere și în mod gratuit;",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         87
       ]
     ],
@@ -1231,7 +1261,7 @@
     "translation": "Dreptul la informare cu privire la prelucrarea datelor;",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         78
       ]
     ],
@@ -1251,7 +1281,7 @@
     "translation": "Asociația Semper Musica prelucrează datele entităților persoane juridice, publice sau private, doar în scopul de a le oferi informații privind distribuția în teren a centrelor HIV, a informațiilor relevante pentru testare și alte date utile persoanelor cu HIV.",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         41
       ]
     ],
@@ -1261,7 +1291,7 @@
     "translation": "Asociația Semper Musica va aplica toate măsurile de securitate tehnică și organizatorică pentru protejarea datelor asupra cărora deține controlul împotriva oricărei situații de manipulare accidentală sau intenționată, pierdere, distrugere sau împotriva accesului unei persoane neautorizate.",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         148
       ]
     ],
@@ -1271,7 +1301,7 @@
     "translation": "Semper Musica își rezervă dreptul de a revizui și aduce la zi \"Termenii și Condițiile generale de utilizare\" în orice moment, fără o anunțare sau o acceptare prealabilă a utilizatorilor.",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         165
       ]
     ],
@@ -1350,7 +1380,11 @@
     "origin": [
       [
         "components/Footer/index.js",
-        54
+        56
+      ],
+      [
+        "containers/donate/HeroFragment.js",
+        13
       ],
       [
         "hooks/useMenuItems.js",
@@ -1364,7 +1398,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        64
+        66
       ]
     ],
     "extractedComments": []
@@ -1373,7 +1407,7 @@
     "translation": "Termeni și condiții de utilizare",
     "origin": [
       [
-        "containers/Terms/HeroFragment.js",
+        "containers/terms/HeroFragment.js",
         11
       ]
     ],
@@ -1408,7 +1442,7 @@
     "origin": [
       [
         "containers/blog/HeroFragment.js",
-        15
+        11
       ]
     ],
     "extractedComments": []
@@ -1461,7 +1495,7 @@
     "translation": "\"Termenii și Condițiile generale de utilizare\" constituie, în întregime, un acord încheiat între dumneavoastră și Asociația Semper Musica în privința utilizării<0>centrehiv.edreptultau.ro</0>.",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         158
       ]
     ],
@@ -1471,7 +1505,7 @@
     "translation": "Termenii și Condițiile generale de utilizare stabilesc termenii și condițiile generale de utilizare a site-ului <0>centrehiv.edreptultau.ro</0> de către potențialii vizitatori sau beneficiari.",
     "origin": [
       [
-        "containers/Terms/HeroFragment.js",
+        "containers/terms/HeroFragment.js",
         13
       ]
     ],
@@ -1481,7 +1515,7 @@
     "translation": "Asociația Semper Musica a apărut din nevoia de a fi martori la proiecte cu rezultate reale și palpabile, proiecte la care să contribuim pentru o schimbare în mai bine! Ne dorim schimbări rapide și de efect prin implicare comunitară. Când spunem implicare comunitară, ne referim atât la noi, cât și la tine. Nu avem cum să producem schimbări în mai bine fără ca toți să contribuim așa că, sperăm să te avem alături de noi pe drumul către schimbările pe care ni le dorim!",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         180
       ]
     ],
@@ -1505,7 +1539,7 @@
         19
       ],
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         15
       ]
     ],
@@ -1515,7 +1549,7 @@
     "translation": "Datele pot fi transmise către alte instituții sau autorități publice, precum și alte organe abilitate ale statului, în baza și în limitele prevederilor legale, ca urmare a unor cereri expres formulate de acestea.",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         60
       ]
     ],
@@ -1525,7 +1559,7 @@
     "translation": "Datele furnizate sunt stocate temporar pe durata funcționării platformei <0>centrehiv.edreptultau.ro</0>.",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         51
       ]
     ],
@@ -1537,6 +1571,16 @@
       [
         "containers/contact/FormFragment.js",
         34
+      ]
+    ],
+    "extractedComments": []
+  },
+  "The project Services for youth from Norway in Romania - PILOT comes precisely from this need for education. The project is aimed at young people in disadvantaged areas, young people who need this type of service.": {
+    "translation": "Proiectul Servicii din Norvegia pentru tinerii din România - PILOT vine tocmai din această nevoie de educație. Proiectul este direcționat către tinerii din zonele defavorizate, tineri care au nevoie din plin de acest tip de servicii.",
+    "origin": [
+      [
+        "containers/donate/SupportFragment.js",
+        20
       ]
     ],
     "extractedComments": []
@@ -1555,6 +1599,16 @@
     ],
     "extractedComments": []
   },
+  "The project will provide access to free condoms for a later elected county, but this is just the beginning. Contraception and free methods of protection must be accessible to young people from disadvantaged areas throughout Romania. Our site provides information on local rapid testing centers for HIV and other sexually transmitted infections in 11 counties. We want to expand the area of work and information with as much data as possible in the service of young people in Romania.": {
+    "translation": "Proiectul va asigura accesul la prezervative gratuite pentru un județ ales ulterior, dar acest lucru este doar un punct de început. Contracepția și metodele de protecție gratuite trebuie să fie accesibile pentru tinerii din zone defavorizate din toată România. Site-ul nostru oferă informații despre centrele locale de testare rapidă pentru HIV și alte infecții cu transmitere sexuală din 11 județe. Dorim să extindem aria de lucru și de informare cu cât mai multe date în slujba tinerilor din România.",
+    "origin": [
+      [
+        "containers/donate/SupportFragment.js",
+        27
+      ]
+    ],
+    "extractedComments": []
+  },
   "The projects we have carried out have brought a change for young people in Romania, and their involvement and quality have propelled us to various galas and competitions, totaling from the establishment until today no less than 10 awards. Since its inception, we have been educating young people from disadvantaged backgrounds on HIV prevention and sexual and reproductive health.": {
     "translation": "Proiectele realizate de noi au adus o schimbare pentru tinerii din România, iar implicarea și calitatea lor ne-au propulsat către diverse gale și concursuri, însumând de la înființare și până astăzi nu mai puțin de 10 premii. Încă de la înființare ne ocupăm cu educarea tinerilor din medii defavorizate cu privire la prevenirea infecției cu HIV și despre sănătatea sexuală și a reproducerii.",
     "origin": [
@@ -1569,7 +1623,7 @@
     "translation": "Protecția informațiilor în cursul prelucrării datelor colectate este o preocupare majoră a Asociației Semper Musica, de aceea toate datele colectate în cursul vizitelor pe <0>centrehiv.edreptultau.ro</0> sunt prelucrate conform prevederilor legale în vigoare în România. Asociatia Semper Musica folosește tehnologii de ultimă generație și ia toate măsurile tehnice rezonabile pentru transmiterea și păstrarea datelor în condiții de deplină securitate și confidențialitate.",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         116
       ]
     ],
@@ -1579,7 +1633,7 @@
     "translation": "Dreptul de acces la datele furnizate, la cerere și în mod gratuit pentru o solicitare pe an;",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         81
       ]
     ],
@@ -1589,7 +1643,7 @@
     "translation": "Dreptul de a te adresa Autorității Naționale de Supraveghere privind Prelucrarea Datelor cu Caracter Personal (cu sediul în Bucureşti, sector 1, B-dul G-ral. Gheorghe Magheru, <0>www.dataprotection.ro</0>) sau justiției, pentru apărarea oricăror drepturi garantate de lege;",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         93
       ]
     ],
@@ -1599,7 +1653,7 @@
     "translation": "Dreptul la opoziţie şi procesul decizional individual automatizat;",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         103
       ]
     ],
@@ -1685,11 +1739,31 @@
     ],
     "extractedComments": []
   },
+  "We can only do this with the help of people who believe in the cause for which the project is fighting and who want to contribute to achieving the ultimate goal - a Romania with informed young people, who know their sexual and reproductive rights and who protect their health.": {
+    "translation": "Nu putem face acest lucru decât cu ajutorul oamenilor care cred în cauză pentru care luptă proiectul și care își doresc să contribuie la atingerea scopului final- o Românie cu tineri informați, care își cunosc drepturile sexuale și reproductive și care își protejează sănătatea.",
+    "origin": [
+      [
+        "containers/donate/SupportFragment.js",
+        37
+      ]
+    ],
+    "extractedComments": []
+  },
   "We collect information from young people aged 15-35 on their access to sexual and reproductive health education. We want to know what they know about contraceptive methods and HIV infection as well as testing methods.": {
     "translation": "Colectăm informații de la tinerii între 15-35 de ani cu privire la accesul lor la educație pentru sănătatea sexuală și a reproducerii. Vrem să aflăm ce știu despre metodele contraceptive și infecția cu virusul HIV precum și despre metodele de testare.",
     "origin": [
       [
         "containers/about/FirstParagraphsFragment.js",
+        15
+      ]
+    ],
+    "extractedComments": []
+  },
+  "We don't like being alone. We believe in success with other NGOs with common values and good people. We want to know opinions and give rise to discussions and impressions that will make a difference, but also to offer in our turn. Every problem has a solution, and the solution lies in the community. For any question, suggestion, recommendation, or even reproach, do not hesitate to contact us. Networking is just a click away!": {
+    "translation": "Nu ne place să fim singuri. Credem într-un succes obținut alături de alte ONG-uri cu valori comune și de oameni de bine. Vrem să cunoaștem opinii și să dăm naștere discuțiilor și impresiilor care vor face diferența, dar și să oferim la rândul nostru. Orice problemă are o rezolvare, iar rezolvarea stă în comunitate. Pentru orice întrebare, sugestie, recomandare, sau chiar reproș, nu ezita să ne contactezi. Networking-ul este la un click distanță!",
+    "origin": [
+      [
+        "containers/contact/HeroFragment.js",
         15
       ]
     ],

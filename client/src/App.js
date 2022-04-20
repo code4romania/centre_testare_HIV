@@ -11,7 +11,8 @@ import Blog from './containers/blog';
 import BlogPost from './containers/blog-post';
 import CenterReview from './containers/center-review';
 import Contact from './containers/contact';
-import Terms from './containers/Terms';
+import Terms from './containers/terms';
+import Donate from './containers/donate';
 import Policy from './containers/policy';
 import NotFound from './containers/404/404';
 import ScrollToTop from './components/ScrollToTop';
@@ -64,6 +65,9 @@ const App = () => {
             </Route>
             <Route path="/chestionar">
               <CenterReview />
+            </Route>
+            <Route path="/doneaza">
+              <Donate />
             </Route>
             <Route component={NotFound} />
           </Switch>

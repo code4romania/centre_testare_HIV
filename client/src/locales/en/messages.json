@@ -13,7 +13,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         12
       ]
     ],
@@ -23,7 +23,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         189
       ]
     ],
@@ -33,7 +33,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         24
       ]
     ],
@@ -43,7 +43,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         38
       ]
     ],
@@ -53,7 +53,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         48
       ]
     ],
@@ -93,7 +93,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         57
       ]
     ],
@@ -103,7 +103,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         67
       ]
     ],
@@ -113,7 +113,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         113
       ]
     ],
@@ -123,7 +123,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         155
       ]
     ],
@@ -133,7 +133,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         177
       ]
     ],
@@ -153,7 +153,7 @@
     "translation": "<0>centrehiv.edreptultau.ro</0> (hereinafter referred to as “Site”, “Platform”, “centrehiv.edreptultau.ro”) aims to increase the access of young people in the age group 15-35 years from disadvantaged areas to education for sexual health and reproduction according to the Norwegian model, adopting the slogan Active Citizens Fund Romania <1>Working together for an inclusive Europe</1>.",
     "origin": [
       [
-        "containers/Terms/HeroFragment.js",
+        "containers/terms/HeroFragment.js",
         20
       ]
     ],
@@ -223,7 +223,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        49
+        51
       ],
       [
         "containers/404/HeroFragment.js",
@@ -293,7 +293,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         126
       ]
     ],
@@ -322,7 +322,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         70
       ]
     ],
@@ -332,7 +332,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         106
       ]
     ],
@@ -382,7 +382,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         27
       ]
     ],
@@ -638,6 +638,16 @@
     ],
     "extractedComments": []
   },
+  "Donate by bank transfer": {
+    "translation": "",
+    "origin": [
+      [
+        "containers/donate/HeroFragment.js",
+        15
+      ]
+    ],
+    "extractedComments": []
+  },
   "Due to their flexibility and the fact that most of the most visited and largest sites use cookies, they are almost inevitable.": {
     "translation": "",
     "origin": [
@@ -662,7 +672,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         34
       ]
     ],
@@ -674,6 +684,16 @@
       [
         "components/HelpUsDialog/index.js",
         16
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Every year, the numbers get worse. The alarming number of minors who become mothers and drop out of school is one of the few consequences in the lack of access to sexual health education in Romania. Information is power. Together we have the power to flatten the statistics of infections, unwanted pregnancies and we can ensure a healthier future for young people.": {
+    "translation": "",
+    "origin": [
+      [
+        "containers/donate/SupportFragment.js",
+        11
       ]
     ],
     "extractedComments": []
@@ -691,7 +711,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         192
       ]
     ],
@@ -810,7 +830,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         133
       ]
     ],
@@ -820,7 +840,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         171
       ]
     ],
@@ -878,7 +898,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         141
       ]
     ],
@@ -1103,7 +1123,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        39
+        25
       ]
     ],
     "extractedComments": []
@@ -1123,7 +1143,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        59
+        61
       ],
       [
         "containers/policy/HeroFragment.js",
@@ -1137,7 +1157,17 @@
     "origin": [
       [
         "components/Footer/index.js",
-        25
+        33
+      ]
+    ],
+    "extractedComments": []
+  },
+  "RON Account:": {
+    "translation": "",
+    "origin": [
+      [
+        "containers/donate/HeroFragment.js",
+        18
       ]
     ],
     "extractedComments": []
@@ -1200,7 +1230,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         87
       ]
     ],
@@ -1210,7 +1240,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         78
       ]
     ],
@@ -1230,7 +1260,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         41
       ]
     ],
@@ -1240,7 +1270,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         148
       ]
     ],
@@ -1250,7 +1280,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         165
       ]
     ],
@@ -1325,7 +1355,11 @@
     "origin": [
       [
         "components/Footer/index.js",
-        54
+        56
+      ],
+      [
+        "containers/donate/HeroFragment.js",
+        13
       ],
       [
         "hooks/useMenuItems.js",
@@ -1338,7 +1372,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        64
+        66
       ]
     ],
     "extractedComments": []
@@ -1347,7 +1381,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/HeroFragment.js",
+        "containers/terms/HeroFragment.js",
         11
       ]
     ],
@@ -1381,7 +1415,7 @@
     "origin": [
       [
         "containers/blog/HeroFragment.js",
-        15
+        11
       ]
     ],
     "extractedComments": []
@@ -1433,7 +1467,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         158
       ]
     ],
@@ -1443,7 +1477,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/HeroFragment.js",
+        "containers/terms/HeroFragment.js",
         13
       ]
     ],
@@ -1453,7 +1487,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         180
       ]
     ],
@@ -1477,7 +1511,7 @@
         19
       ],
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         15
       ]
     ],
@@ -1487,7 +1521,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         60
       ]
     ],
@@ -1497,7 +1531,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         51
       ]
     ],
@@ -1508,6 +1542,16 @@
       [
         "containers/contact/FormFragment.js",
         34
+      ]
+    ],
+    "extractedComments": []
+  },
+  "The project Services for youth from Norway in Romania - PILOT comes precisely from this need for education. The project is aimed at young people in disadvantaged areas, young people who need this type of service.": {
+    "translation": "",
+    "origin": [
+      [
+        "containers/donate/SupportFragment.js",
+        20
       ]
     ],
     "extractedComments": []
@@ -1526,6 +1570,16 @@
     ],
     "extractedComments": []
   },
+  "The project will provide access to free condoms for a later elected county, but this is just the beginning. Contraception and free methods of protection must be accessible to young people from disadvantaged areas throughout Romania. Our site provides information on local rapid testing centers for HIV and other sexually transmitted infections in 11 counties. We want to expand the area of work and information with as much data as possible in the service of young people in Romania.": {
+    "translation": "",
+    "origin": [
+      [
+        "containers/donate/SupportFragment.js",
+        27
+      ]
+    ],
+    "extractedComments": []
+  },
   "The projects we have carried out have brought a change for young people in Romania, and their involvement and quality have propelled us to various galas and competitions, totaling from the establishment until today no less than 10 awards. Since its inception, we have been educating young people from disadvantaged backgrounds on HIV prevention and sexual and reproductive health.": {
     "translation": "",
     "origin": [
@@ -1540,7 +1594,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         116
       ]
     ],
@@ -1550,7 +1604,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         81
       ]
     ],
@@ -1560,7 +1614,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         93
       ]
     ],
@@ -1570,7 +1624,7 @@
     "translation": "",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
+        "containers/terms/TermsFragment.js",
         103
       ]
     ],
@@ -1655,11 +1709,31 @@
     ],
     "extractedComments": []
   },
+  "We can only do this with the help of people who believe in the cause for which the project is fighting and who want to contribute to achieving the ultimate goal - a Romania with informed young people, who know their sexual and reproductive rights and who protect their health.": {
+    "translation": "",
+    "origin": [
+      [
+        "containers/donate/SupportFragment.js",
+        37
+      ]
+    ],
+    "extractedComments": []
+  },
   "We collect information from young people aged 15-35 on their access to sexual and reproductive health education. We want to know what they know about contraceptive methods and HIV infection as well as testing methods.": {
     "translation": "",
     "origin": [
       [
         "containers/about/FirstParagraphsFragment.js",
+        15
+      ]
+    ],
+    "extractedComments": []
+  },
+  "We don't like being alone. We believe in success with other NGOs with common values and good people. We want to know opinions and give rise to discussions and impressions that will make a difference, but also to offer in our turn. Every problem has a solution, and the solution lies in the community. For any question, suggestion, recommendation, or even reproach, do not hesitate to contact us. Networking is just a click away!": {
+    "translation": "",
+    "origin": [
+      [
+        "containers/contact/HeroFragment.js",
         15
       ]
     ],

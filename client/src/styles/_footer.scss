@@ -9,26 +9,15 @@
 }
 
 .made-by {
-  align-items: center;
+  align-items: stretch;
   display: flex;
   gap: 12px;
-  // row-gap: 32px;
-  // justify-content: center;
 
-  // .logo-container {
-  //   display: flex;
-  //   flex-direction: column;
-
-  //   & div {
-  //     display: inline-flex;
-  //     align-items: center;
-  //     justify-content: center;
-
-  //     @media (max-width: $breakpoint-mobile) {
-  //       flex-direction: column;
-  //     }
-  //   }
-  // }
+  & > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
   & > .ant-typography {
     margin: 0;
@@ -62,10 +51,25 @@ a.footer__donate {
   }
 }
 
+.main-logos {
+  margin: 0 auto;
+  order: 2;
+  flex-wrap: wrap;
+
+  & div {
+    display: flex;
+    gap: 8px;
+  }
+}
+
 @media (max-width: $breakpoint-tablet) {
   .made-by,
   .footer__links {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .made-by{
+    flex-direction: column-reverse;
   }
 }
