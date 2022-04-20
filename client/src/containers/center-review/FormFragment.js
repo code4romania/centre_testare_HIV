@@ -67,10 +67,10 @@ const FormFragment = ({ form }) => {
     <Row>
       <Col xs={24} md={12}>
         <Title level={3} className="form-title">
-          <Trans>Chestionar experiență centru testare</Trans>
+          <Trans>Testing center experience feedback</Trans>
         </Title>
         <Form onSubmit={onSubmitHandler}>
-          <Form.Item label={<FormLabelWithNote label={<Trans>Centru de testare</Trans>} />}>
+          <Form.Item label={<FormLabelWithNote label={<Trans>Testing center</Trans>} />}>
             {getFieldDecorator('pk', {
               rules: createFormValidationRules([{ ruleName: 'required' }]),
             })(
@@ -93,7 +93,7 @@ const FormFragment = ({ form }) => {
             )}
           </Form.Item>
 
-          <Form.Item label={<Trans>Notă experiență</Trans>}>
+          <Form.Item label={<Trans>Review</Trans>}>
             {getFieldDecorator('rating', {
               rules: createFormValidationRules([{ ruleName: 'required' }]),
             })(<Rate />)}
@@ -106,8 +106,8 @@ const FormFragment = ({ form }) => {
               form={form}
               label={question}
               options={[
-                { value: 'yes', text: <Trans>Da</Trans> },
-                { value: 'no', text: <Trans>Nu</Trans> },
+                { value: 'yes', text: <Trans>Yes</Trans> },
+                { value: 'no', text: <Trans>No</Trans> },
               ]}
               rulesOptions={[{ ruleName: 'required' }]}
             />

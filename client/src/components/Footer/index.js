@@ -22,7 +22,7 @@ const FooterFragment = () => {
         <div className="made-by">
           <div>
             <Paragraph>
-              <Trans>Proiect derulat de:</Trans>{' '}
+              <Trans>Project by:</Trans>{' '}
             </Paragraph>
             <Link to={{ pathname: 'https://sempermusica.org/' }} target="_blank">
               <img className="footerLogo__image" src={smLogo} />
@@ -36,7 +36,7 @@ const FooterFragment = () => {
           </div>
           <div>
             <Paragraph>
-              <Trans>Cu sprijinul:</Trans>{' '}
+              <Trans>Powered by:</Trans>{' '}
             </Paragraph>
             <Link to={{ pathname: `https://code4.ro/${currentLanguage}` }} target="_blank">
               <img className="footerLogo__image" src={cfrLogo} alt="" height="40px" />
@@ -46,7 +46,7 @@ const FooterFragment = () => {
         <div className="footer__links">
           <Link to="/despre">
             <Text>
-              <Trans>About the project</Trans>
+              <Trans>About project</Trans>
             </Text>
           </Link>
           <Link className="footer__donate" to="/doneaza">

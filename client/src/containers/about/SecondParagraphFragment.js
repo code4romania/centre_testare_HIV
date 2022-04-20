@@ -9,50 +9,51 @@ export default () => {
     <Row type="flex" justify="space-around" style={{ textAlign: 'left' }}>
       <Col span={24}>
         <Title level={2}>
-          <Trans>Despre Semper Muzica</Trans>
+          <Trans>About Semper Musica</Trans>
         </Title>
         <Paragraph>
           <Trans>
-            Asociația Semper Musica a luat naștere din dorința de a face o schimbare în mai bine.
-            Acționăm preponderent în domeniul educației pentru prevenirea infecției cu HIV în rândul
-            liceenilor și tinerilor de la nivel național. Ne ghidăm activitățile după viziunea și
-            misiunea noastră.
+            The Semper Musica Association was born from the desire to make a change for the better.
+            We act mainly in the field of education for the prevention of HIV infection among high
+            school students and young people nationwide. We guide our activities according to our
+            vision and mission.
           </Trans>
         </Paragraph>
         <Paragraph>
           <Trans>
-            Viziunea:{' '}
+            Vision:{' '}
             <Text strong>
-              O societate fără cazuri noi de HIV în rândul tinerilor, în care discriminarea
-              persoanelor seropozitive nu există
+              A society without new HIV cases among young people, in which discrimination against
+              HIV-positive people does not exist
             </Text>
             .
           </Trans>
         </Paragraph>
         <Paragraph>
           <Trans>
-            Misiunea:{' '}
+            Mission:{' '}
             <Text strong>
-              Luptăm pentru acces liber al tinerilor la educație și protecție pentru prevenirea HIV
-              și împotriva discriminării persoanelor seropozitive
+              We fight for the free access of young people to education and protection for HIV
+              prevention and against discrimination of people living with HIV
             </Text>
             .
           </Trans>
         </Paragraph>
         <Paragraph>
           <Trans>
-            Avem câteva valori puternice și nu ne distanțăm de ele: <Text strong>inovare</Text>,
-            <Text strong>diversitate</Text>, <Text strong>responsabilitate și calitate</Text>,{' '}
-            <Text strong>implicare și acțiune</Text>.
+            We have some strong values and we do not distance ourselves from them:{' '}
+            <Text strong>innovation</Text>, <Text strong>diversity</Text>,{' '}
+            <Text strong>responsibility and quality</Text>,{' '}
+            <Text strong>involvement and action</Text>.
           </Trans>
         </Paragraph>
         <Paragraph>
           <Trans>
-            Proiectele realizate de noi au adus o schimbare pentru tinerii din România, iar
-            implicarea și calitatea lor ne-au propulsat către diverse gale și concursuri, însumând
-            de la înființare și până astăzi nu mai puțin de 10 premii. Încă de la înființare ne
-            ocupăm cu educarea tinerilor din medii defavorizate cu privire la prevenirea infecției
-            cu HIV și despre sănătatea sexuală și a reproducerii.
+            The projects we have carried out have brought a change for young people in Romania, and
+            their involvement and quality have propelled us to various galas and competitions,
+            totaling from the establishment until today no less than 10 awards. Since its inception,
+            we have been educating young people from disadvantaged backgrounds on HIV prevention and
+            sexual and reproductive health.
           </Trans>
         </Paragraph>
       </Col>

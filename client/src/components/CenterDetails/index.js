@@ -102,7 +102,7 @@ export const CenterDetails = ({ onClose, isLoading, details }) => {
         onClick={onOpenDialogHandler}
       >
         <span>
-          <Trans>Detalii centru</Trans>
+          <Trans>Center details</Trans>
         </span>
       </Button>
 

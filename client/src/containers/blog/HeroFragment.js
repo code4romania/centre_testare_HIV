@@ -12,7 +12,7 @@ const { Paragraph } = Typography;
 export default () => {
   return (
     // @TODO update hero title
-    <Hero heroImage={heroImage} title={<Trans>About Vulnerable Romania</Trans>}>
+    <Hero heroImage={heroImage} title={<Trans>TestHIV Blog</Trans>}>
       {/* @TODO update text + translation */}
       <Paragraph>
         Many desktop publishing packages and web page editors now use Lorem Ipsum as their default

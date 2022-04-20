@@ -16,8 +16,7 @@ export const MapFragment = () => {
         <Trans>Our address</Trans>
       </Title>
       <Title level={4} className="form-subtitle">
-        {/* @TODO replace with actual NGO address */}
-        <Trans>23 Grigore Pamfil, Sector 1, Bucharest</Trans>
+        23 Grigore Pamfil, Sector 1, Bucharest
       </Title>
       <Paragraph>
         (

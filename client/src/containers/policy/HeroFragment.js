@@ -7,23 +7,22 @@ const { Paragraph } = Typography;
 
 export default () => {
   return (
-    <Hero title={<Trans>Politica de confidențialitate</Trans>}>
+    <Hero title={<Trans>Privacy policy</Trans>}>
       <Paragraph>
         <Trans>
-          Acest website folosește cookie-uri pentru a furniza vizitatorilor o experiență mult mai
-          bună de navigare și servicii adaptate nevoilor și interesului fiecăruia.
+          This website uses cookies to provide visitors with a much better browsing experience and
+          services tailored to the needs and interests of everyone.
         </Trans>
       </Paragraph>
       <Paragraph>
         <Trans>
-          “Cookie“-urile au rolul de a facilita accesul și livrarea serviciilor folosite de
-          utilizator de internet, cum ar fi personalizarea anumitor setări (limba, țara, prețuri
-          afișate în moneda națională. “Cookie“-urile, pe baza informațiilor pe care le adună despre
-          utilizatori, îi ajută pe deținătorii de site-uri să își eficientizeze produsul astfel
-          încât acesta să fie cât mai ușor accesat de către utilizatori, de asemenea cresc gradul de
-          eficiență a publicității online și nu în ultimul rând pot permite aplicațiilor multimedia
-          sau de alt tip de pe alte site-uri să fie incluse într-un anumit site pentru a face
-          navigarea mai utilă.
+          "Cookies" are intended to facilitate the access and delivery of services used by the
+          Internet user, such as personalization of certain settings (language, country, prices
+          displayed in the national currency. "Cookies", based on the information they collect about
+          users, it helps site owners to make their product more efficient so that it is more easily
+          accessible to users, they also increase the efficiency of online advertising and last but
+          not least they can enable multimedia or other applications from other sites to be included
+          in a particular site to make browsing more useful.
         </Trans>
       </Paragraph>
     </Hero>

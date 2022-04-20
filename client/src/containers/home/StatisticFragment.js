@@ -71,7 +71,7 @@ export default () => {
       </Col>
       <Col xs={24} md={8}>
         <StatisticCard
-          title={<Trans>Județe acoperite</Trans>}
+          title={<Trans>Covered counties</Trans>}
           value={state.statistics.counties_count}
           icon={<MobileCaravansIcon />}
           type="mobile-caravans"

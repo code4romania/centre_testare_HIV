@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Card } from 'antd';
+import { Trans } from '@lingui/macro';
 
 export const CenterDetailsCard = ({ title, children, onActionClick, loading }) => {
   return (
@@ -10,7 +11,7 @@ export const CenterDetailsCard = ({ title, children, onActionClick, loading }) =
       headStyle={{ backgroundColor: '#be3386', color: '#fff', fontWeight: 'bold' }}
       actions={[
         <Button onClick={onActionClick} className="call-center-btn" loading={loading}>
-          Detalii centru
+          <Trans>Center details</Trans>
         </Button>,
       ]}
     >
