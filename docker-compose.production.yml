@@ -36,7 +36,7 @@ services:
     volumes:
       - ./api:/code
     ports:
-      - "8050:8050"
+      - "${API_PORT:-8050}:8050"
     depends_on:
       - db
       - redis
@@ -52,7 +52,7 @@ services:
     volumes:
       - ./client:/code
     ports:
-      - "3050:3000"
+      - "${CLIENT_PORT:-3050}:3000"
     depends_on:
       - api
 
