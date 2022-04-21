@@ -8,21 +8,21 @@ const { Paragraph, Text } = Typography;
 
 export default () => {
   return (
-    <Hero title={<Trans>Termeni și condiții de utilizare</Trans>}>
+    <Hero title={<Trans>Terms and conditions of use</Trans>}>
       <Paragraph>
         <Trans>
-          Termenii și Condițiile generale de utilizare stabilesc termenii și condițiile generale de
-          utilizare a site-ului <Link to="/">centrehiv.edreptultau.ro</Link> de către potențialii
-          vizitatori sau beneficiari.
+          The General Terms and Conditions of Use establish the general terms and conditions of use
+          of the site <Link to="/">centrehiv.edreptultau.ro</Link> by potential visitors or
+          beneficiaries.
         </Trans>
       </Paragraph>
       <Paragraph>
         <Trans>
-          <Link to="/">centrehiv.edreptultau.ro</Link> (în continuare denumit „Site”, „Platformă”,
-          ”centrehiv.edreptultau.ro”) are ca scop a spori accesul tinerilor din categoria de vârstă
-          15-35 ani din zonele defavorizate la educație pentru sănătatea sexuală și a reproducerii
-          după model norvegian, adoptând sloganul Active Citizens Fund România{' '}
-          <Text strong>Lucrăm împreună pentru o Europă incluzivă</Text>.
+          <Link to="/">centrehiv.edreptultau.ro</Link> (hereinafter referred to as “Site”,
+          “Platform”, “centrehiv.edreptultau.ro”) aims to increase the access of young people in the
+          age group 15-35 years from disadvantaged areas to education for sexual health and
+          reproduction according to the Norwegian model, adopting the slogan Active Citizens Fund
+          Romania <Text strong>Working together for an inclusive Europe</Text>.
         </Trans>
       </Paragraph>
     </Hero>

@@ -41,7 +41,7 @@ export const CentersFragment = () => {
             onActionClick={() => setSelectedCenterPk(details.pk)}
             loading={selectedCenterPk === details.pk && (isLoadingDetails || isFetchingDetails)}
           >
-            <Trans>Adresa: </Trans>
+            <Trans>Address: </Trans>
             {details.streetName} {details.streetNumber}, {details.locality}, {details.county}
           </CenterDetailsCard>
         </Col>
@@ -54,7 +54,7 @@ export const CentersFragment = () => {
 
       {hasNextPage && (
         <LoadMore onClick={fetchNextPage}>
-          <Trans>Încarcă mai multe centre</Trans>
+          <Trans>Load more centers</Trans>
         </LoadMore>
       )}
     </Row>

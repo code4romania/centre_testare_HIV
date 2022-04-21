@@ -6,17 +6,25 @@ import { Hero } from '../../components/Hero';
 
 import heroImage from '../../images/home_hero.png';
 
-const { Paragraph } = Typography;
+const { Paragraph, Text } = Typography;
 
 export default () => {
   return (
     <Hero heroImage={heroImage} title={<Trans>Contact us</Trans>}>
-      {/* @TODO replace text + translate */}
       <Paragraph>
-        Many desktop publishing packages and web page editors now use Lorem Ipsum as their default
-        model text, and a search for 'lorem ipsum' will uncover many web sites still in their
-        infancy. Various versions have evolved over the years, sometimes by accident, sometimes on
-        purpose (injected humour and the like).
+        <Trans>
+          We don't like being alone. We believe in success with other NGOs with common values and
+          good people. We want to know opinions and give rise to discussions and impressions that
+          will make a difference, but also to offer in our turn. Every problem has a solution, and
+          the solution lies in the community. For any question, suggestion, recommendation, or even
+          reproach, do not hesitate to contact us. Networking is just a click away!
+        </Trans>
+      </Paragraph>
+      <Paragraph>
+        Tel:{' '}
+        <Text strong>
+          <a href="tel:0770437537">0770437537</a>
+        </Text>
       </Paragraph>
     </Hero>
   );

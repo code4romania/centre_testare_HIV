@@ -41,7 +41,7 @@ export const CenterDetailsDialog = () => {
         details?.name ? (
           <span className="center-details-title">{details.name}</span>
         ) : (
-          <Trans>Centru testare</Trans>
+          <Trans>Testing center</Trans>
         )
       }
       visible={isOpen}
@@ -85,18 +85,18 @@ export const CenterDetailsDialog = () => {
       bodyStyle={{ height: '60vh', overflow: 'auto' }}
     >
       <Paragraph strong style={{ fontSize: '16px', marginBottom: '8px', marginTop: '8px' }}>
-        <Trans>Detalii despre centru</Trans>
+        <Trans>Details about the center</Trans>
       </Paragraph>
       <Descriptions column={1} layout="horizontal" size="small">
         {details?.type && (
-          <Descriptions.Item label={<Trans>Tip centru</Trans>}>{details?.type}</Descriptions.Item>
+          <Descriptions.Item label={<Trans>Center type</Trans>}>{details?.type}</Descriptions.Item>
         )}
         {details?.scheduleStart && details.scheduleEnd && (
-          <Descriptions.Item label={<Trans>Program</Trans>}>
+          <Descriptions.Item label={<Trans>Opening hours</Trans>}>
             {details?.scheduleStart} - {details?.scheduleEnd}
           </Descriptions.Item>
         )}
-        <Descriptions.Item label={<Trans>Adresa</Trans>}>
+        <Descriptions.Item label={<Trans>Address</Trans>}>
           {details?.streetName} {details?.streetNumber},{' '}
           {details?.locality && details?.countyCode
             ? `${details.locality}, ${details.countyCode}`
@@ -108,18 +108,18 @@ export const CenterDetailsDialog = () => {
           )
         </Descriptions.Item>
         {details?.addressDetails && (
-          <Descriptions.Item label={<Trans>Detalii adresă</Trans>}>
+          <Descriptions.Item label={<Trans>Address details</Trans>}>
             {details?.addressDetails}
           </Descriptions.Item>
         )}
       </Descriptions>
 
       <Paragraph strong style={{ fontSize: '16px', marginBottom: '8px', marginTop: '8px' }}>
-        <Trans>Detalii despre testare</Trans>
+        <Trans>Details about the testing</Trans>
       </Paragraph>
       <Descriptions column={1}>
         {details?.testTypes && details?.testTypes.length > 0 && (
-          <Descriptions.Item label={<Trans>Tipuri de teste</Trans>}>
+          <Descriptions.Item label={<Trans>Test types</Trans>}>
             <span style={{ display: 'inline-flex', flexWrap: 'wrap', rowGap: '4px' }}>
               {details?.testTypes.map((type) => (
                 <Tag key={type} color="#be3386">
@@ -130,17 +130,17 @@ export const CenterDetailsDialog = () => {
           </Descriptions.Item>
         )}
         {details?.testingPrice && (
-          <Descriptions.Item label={<Trans>Preț testare</Trans>}>
+          <Descriptions.Item label={<Trans>Testing price</Trans>}>
             {details?.testingPrice} RON
           </Descriptions.Item>
         )}
         {details?.isFreeTestingAvailable && (
           <>
-            <Descriptions.Item label={<Trans>Testare gratuită</Trans>}>
-              {details?.isFreeTestingAvailable ? <Trans>Da</Trans> : <Trans>Nu</Trans>}
+            <Descriptions.Item label={<Trans>Free testing</Trans>}>
+              {details?.isFreeTestingAvailable ? <Trans>Yes</Trans> : <Trans>No</Trans>}
             </Descriptions.Item>
             {details?.freeTestingConditions && details?.freeTestingConditions.length > 0 && (
-              <Descriptions.Item label={<Trans>Condiții testare gratuită</Trans>}>
+              <Descriptions.Item label={<Trans>Free test conditions</Trans>}>
                 {details?.freeTestingConditions.map((condition) => (
                   <div key={condition}>{condition}</div>
                 ))}
@@ -149,30 +149,30 @@ export const CenterDetailsDialog = () => {
           </>
         )}
         {(details?.quickTestWaitTimeMinutes || details?.quickTestWaitTimeDays) && (
-          <Descriptions.Item label={<Trans>Timpul de așteptare</Trans>}>
+          <Descriptions.Item label={<Trans>Waiting time</Trans>}>
             {details?.quickTestWaitTimeMinutes
               ? details?.quickTestWaitTimeMinutes
               : details?.quickTestWaitTimeDays}{' '}
-            {details?.quickTestWaitTimeMinutes ? <Trans>min.</Trans> : <Trans>zi/zile</Trans>}
+            {details?.quickTestWaitTimeMinutes ? <Trans>min.</Trans> : <Trans>day(s)</Trans>}
           </Descriptions.Item>
         )}
         {details?.negativeDisclosure && (
-          <Descriptions.Item label={<Trans>Modul de transmitere al rezultatului negativ</Trans>}>
+          <Descriptions.Item label={<Trans>How the negative result is transmitted</Trans>}>
             {details?.negativeDisclosure}
           </Descriptions.Item>
         )}
         {details?.positiveDisclosure && (
-          <Descriptions.Item label={<Trans>Modul de transmitere al rezultatului pozitiv</Trans>}>
+          <Descriptions.Item label={<Trans>How the positive result is transmitted</Trans>}>
             {details?.positiveDisclosure}
           </Descriptions.Item>
         )}
         {details?.hasPreTestingCounseling && (
           <>
-            <Descriptions.Item label={<Trans>Se oferă consiliere pre-testare HIV</Trans>}>
-              {details?.hasPreTestingCounseling ? <Trans>Da</Trans> : <Trans>Nu</Trans>}
+            <Descriptions.Item label={<Trans>HIV pre-test counseling is provided</Trans>}>
+              {details?.hasPreTestingCounseling ? <Trans>Yes</Trans> : <Trans>No</Trans>}
             </Descriptions.Item>
             {details?.preCounseling && (
-              <Descriptions.Item label={<Trans>Detalii consiliere pre-testare HIV</Trans>}>
+              <Descriptions.Item label={<Trans>Pre HIV test counseling details</Trans>}>
                 {details?.preCounseling}
               </Descriptions.Item>
             )}
@@ -180,25 +180,25 @@ export const CenterDetailsDialog = () => {
         )}
         {details?.hasPostTestingCounseling && (
           <>
-            <Descriptions.Item label={<Trans>Se oferă consiliere post-testare HIV</Trans>}>
-              {details?.hasPostTestingCounseling ? <Trans>Da</Trans> : <Trans>Nu</Trans>}
+            <Descriptions.Item label={<Trans>HIV post-test counseling is provided</Trans>}>
+              {details?.hasPostTestingCounseling ? <Trans>Yes</Trans> : <Trans>No</Trans>}
             </Descriptions.Item>
             {details?.postCounseling && (
-              <Descriptions.Item label={<Trans>Detalii consiliere post-testare HIV</Trans>}>
+              <Descriptions.Item label={<Trans>Post HIV test counseling details</Trans>}>
                 {details?.postCounseling}
               </Descriptions.Item>
             )}
           </>
         )}
         {details?.docsU18 && details?.docsU18.length > 0 && (
-          <Descriptions.Item label={<Trans>Documente necesare (sub 18 ani)</Trans>}>
+          <Descriptions.Item label={<Trans>Required documents (under 18)</Trans>}>
             {details?.docsU18.map((document) => (
               <div key={document}>&bull; {document}</div>
             ))}
           </Descriptions.Item>
         )}
         {details?.docsU16 && details?.docsU16.length > 0 && (
-          <Descriptions.Item label={<Trans>Documente necesare (sub 16 ani)</Trans>}>
+          <Descriptions.Item label={<Trans>Required documents (under 16)</Trans>}>
             {details?.docsU16.map((document) => (
               <div key={document}>&bull; {document}</div>
             ))}
@@ -207,10 +207,10 @@ export const CenterDetailsDialog = () => {
       </Descriptions>
 
       <Paragraph strong style={{ fontSize: '16px', marginBottom: '8px', marginTop: '8px' }}>
-        <Trans>Informații de contact</Trans>
+        <Trans>Contact information</Trans>
       </Paragraph>
       <Descriptions column={1}>
-        <Descriptions.Item label={<Trans>Număr/Numere de telefon</Trans>}>
+        <Descriptions.Item label={<Trans>Phone number(s)</Trans>}>
           {showPhoneNumbers ? (
             details?.phoneNumbers.map((number) => (
               <Tag key={number}>
@@ -228,7 +228,7 @@ export const CenterDetailsDialog = () => {
           )}
         </Descriptions.Item>
         {details?.emails && details?.emails.length > 0 && (
-          <Descriptions.Item label={<Trans>Adresă/adrese de email ale centrului</Trans>}>
+          <Descriptions.Item label={<Trans>Center email address (s)</Trans>}>
             {details?.emails.map((email) => (
               <a key={email} href={`mailto:${email}`}>
                 {email}
@@ -237,14 +237,14 @@ export const CenterDetailsDialog = () => {
           </Descriptions.Item>
         )}
         {details?.website && (
-          <Descriptions.Item label={<Trans>Pagină web</Trans>}>
+          <Descriptions.Item label={<Trans>Website</Trans>}>
             <a href={details?.website} target="_blank" rel="noreferrer">
               {details?.website}
             </a>
           </Descriptions.Item>
         )}
         {details?.onlineContactType && (
-          <Descriptions.Item label={<Trans>Formular de contact online</Trans>}>
+          <Descriptions.Item label={<Trans>Online contact form</Trans>}>
             {details?.onlineContactType}
           </Descriptions.Item>
         )}

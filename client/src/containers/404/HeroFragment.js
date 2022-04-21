@@ -22,7 +22,7 @@ export default () => {
         <Trans>Back to home page</Trans>
       </Button>
       <Button type="default" href="/despre">
-        <Trans>About the project</Trans>
+        <Trans>About project</Trans>
       </Button>
     </Hero>
   );

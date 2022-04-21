@@ -13,16 +13,15 @@ export default () => {
   return (
     <Hero
       heroImage={heroImage}
-      title={<Trans>Servicii din Norvegia pentru tinerii din România - PILOT</Trans>}
+      title={<Trans>Services for youth from Norway in Romania – PILOT</Trans>}
     >
       <Paragraph>
         <Trans>
-          Scopul proiectului{' '}
-          <Text strong>Servicii din Norvegia pentru tinerii din România - PILOT</Text> este acela de
-          a spori accesul tinerilor din categoria de vârstă 15-35 ani din zonele defavorizate la
-          educație pentru sănătatea sexuală și a reproducerii după model norvegian, adoptând
-          sloganul Active Citizens Fund România{' '}
-          <Text strong>Lucrăm împreună pentru o Europă incluzivă</Text>.
+          The aim of the project{' '}
+          <Text strong>Services for youth from Norway in Romania – PILOT</Text> is to increase the
+          access of young people aged 15-35 from disadvantaged areas to education for sexual health
+          and reproduction according to the Norwegian model, adopting the Active Citizens Fund
+          Romania slogan <Text strong>Working together for an inclusive Europe</Text>.
         </Trans>
       </Paragraph>
       <Share />

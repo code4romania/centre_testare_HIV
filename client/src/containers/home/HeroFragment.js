@@ -16,16 +16,15 @@ export default () => {
       logo={<img width="160px" src={logo} style={{ marginBottom: '24px' }} />}
     >
       <Title level={3} style={{ marginTop: 0 }}>
-        <Trans>Lucrăm împreună pentru o Europă incluzivă</Trans>
+        <Trans>Working together for an inclusive Europe</Trans>
       </Title>
       <Paragraph>
         <Trans>
-          <Text strong>TestHIV</Text> este prima aplicație din România de testare HIV, unde sunt
-          centralizate instituții din 11 județe din România care oferă testare HIV. În cadrul
-          aplicației oferim detalii precum localizarea instituției, programul de lucru, costul unui
-          test cât și detalii necesare pentru testarea infecției cu HIV, modalitățile de testare a
-          persoanelor sub 16 ani și asigurarea consilierii pentru persoanele care au nevoie de mai
-          multe informații.
+          <Text strong>TestHIV</Text> is the first application in Romania for HIV testing, where
+          institutions from 11 counties in Romania that offer HIV testing are centralized. In the
+          application we provide details such as the location of the institution, the work schedule,
+          the cost of a test and details needed to test for HIV infection, how to test people under
+          16 and provide counseling for people who need more information.
         </Trans>
       </Paragraph>
     </Hero>

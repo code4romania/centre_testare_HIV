@@ -11,23 +11,23 @@ export default () => {
       <Row>
         <Title level={2}>
           <Icon type="environment" />
-          <Trans>About the project</Trans>
+          <Trans>About project</Trans>
         </Title>
       </Row>
       <Row gutter={[0, 32]} type="flex" justify="space-between">
         <Col>
           <Paragraph>
             <Trans>
-              Proiectul este derulat de Asociația Semper Musica în parteneriat cu Federația
-              Asociațiilor Studenților în Medicină din România și cu Sex and society și beneficiază
-              de o finanțare în valoare de 𝟮𝟲𝟯.𝟲𝟰𝟬,𝟱𝟬 €, prin programul Active Citizens Fund
-              România, finanțat de Islanda, Liechtenstein și Norvegia prin Granturile SEE 2014-2021.
-              Conținutul acestui website nu reprezintă în mod necesar poziția oficială a Granturilor
-              SEE și Norvegiene 2014-2021; pentru mai multe informații accesați{' '}
+              The project is implemented by the Semper Musica Association in partnership with the
+              Federation of Medical Student Associations from Romania and with Sex and society and
+              benefits from a 𝟮𝟲𝟯.𝟲𝟰𝟬, 𝟱𝟬 € grant from Active Citizens Fund Romania, programme
+              funded by Iceland, Liechtenstein and Norway through the EEA Grants 2014-2021. The
+              content of this website does not necessarily reflect the official position of the EEA
+              and Norway Grants 2014-2021; for more information visit{' '}
               <Link to={{ pathname: 'https://eeagrants.org' }} target="_blank">
                 www.eeagrants.org
               </Link>
-              . Informații despre Active Citizens Fund România sunt disponibile la{' '}
+              . More details about Active Citizens Fund Romania are available at{' '}
               <Link to={{ pathname: 'htpps://activecitizensfund.ro' }} target="_blank">
                 www.activecitizensfund.ro
               </Link>

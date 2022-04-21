@@ -1,10 +1,60 @@
 {
-  "23 Grigore Pamfil, Sector 1, Bucharest": {
-    "translation": "Strada Grigore Pamfil, Sector 1, București",
+  "\"Cookies\" are intended to facilitate the access and delivery of services used by the Internet user, such as personalization of certain settings (language, country, prices displayed in the national currency. \"Cookies\", based on the information they collect about users, it helps site owners to make their product more efficient so that it is more easily accessible to users, they also increase the efficiency of online advertising and last but not least they can enable multimedia or other applications from other sites to be included in a particular site to make browsing more useful.": {
+    "translation": "“Cookie“-urile au rolul de a facilita accesul și livrarea serviciilor folosite de utilizator de internet, cum ar fi personalizarea anumitor setări (limba, țara, prețuri afișate în moneda națională. “Cookie“-urile, pe baza informațiilor pe care le adună despre utilizatori, îi ajută pe deținătorii de site-uri să își eficientizeze produsul astfel încât acesta să fie cât mai ușor accesat de către utilizatori, de asemenea cresc gradul de eficiență a publicității online și nu în ultimul rând pot permite aplicațiilor multimedia sau de alt tip de pe alte site-uri să fie incluse într-un anumit site pentru a face navigarea mai utilă.",
     "origin": [
       [
-        "containers/contact/MapFragment.js",
-        20
+        "containers/policy/HeroFragment.js",
+        18
+      ]
+    ],
+    "extractedComments": []
+  },
+  "1. Platform Objective": {
+    "translation": "1. Obiectivul Platformei",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        12
+      ]
+    ],
+    "extractedComments": []
+  },
+  "10. Contact Us": {
+    "translation": "10. Contactează-ne",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        189
+      ]
+    ],
+    "extractedComments": []
+  },
+  "2. Processed personal data": {
+    "translation": "2. Datele personale prelucrate",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        24
+      ]
+    ],
+    "extractedComments": []
+  },
+  "3. Purpose and basis": {
+    "translation": "3. Scop și temei",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        38
+      ]
+    ],
+    "extractedComments": []
+  },
+  "4. Duration of storage": {
+    "translation": "4. Durata stocării",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        48
       ]
     ],
     "extractedComments": []
@@ -39,42 +89,132 @@
     ],
     "extractedComments": []
   },
+  "5. Data transfer to third parties": {
+    "translation": "5. Transmiterea datelor către terți",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        57
+      ]
+    ],
+    "extractedComments": []
+  },
+  "6. Your rights": {
+    "translation": "6. Drepturile tale",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        67
+      ]
+    ],
+    "extractedComments": []
+  },
+  "7. Security and privacy": {
+    "translation": "7. Securitate și confidențialitate",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        113
+      ]
+    ],
+    "extractedComments": []
+  },
+  "8. Changes to the General Terms and Conditions of use of the Site": {
+    "translation": "8. Modificări Termeni și Condiții generale de utilizare Site",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        155
+      ]
+    ],
+    "extractedComments": []
+  },
+  "9. About Semper Musica": {
+    "translation": "9. Despre Semper Musica",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        177
+      ]
+    ],
+    "extractedComments": []
+  },
+  "<0>TestHIV</0> is the first application in Romania for HIV testing, where institutions from 11 counties in Romania that offer HIV testing are centralized. In the application we provide details such as the location of the institution, the work schedule, the cost of a test and details needed to test for HIV infection, how to test people under 16 and provide counseling for people who need more information.": {
+    "translation": "<0>TestHIV</0> este prima aplicație din România de testare HIV, unde sunt centralizate instituții din 11 județe din România care oferă testare HIV. În cadrul aplicației oferim detalii precum localizarea instituției, programul de lucru, costul unui test cât și detalii necesare pentru testarea infecției cu HIV, modalitățile de testare a persoanelor sub 16 ani și asigurarea consilierii pentru persoanele care au nevoie de mai multe informații.",
+    "origin": [
+      [
+        "containers/home/HeroFragment.js",
+        22
+      ]
+    ],
+    "extractedComments": []
+  },
+  "<0>centrehiv.edreptultau.ro</0> (hereinafter referred to as “Site”, “Platform”, “centrehiv.edreptultau.ro”) aims to increase the access of young people in the age group 15-35 years from disadvantaged areas to education for sexual health and reproduction according to the Norwegian model, adopting the slogan Active Citizens Fund Romania <1>Working together for an inclusive Europe</1>.": {
+    "translation": "<0>centrehiv.edreptultau.ro</0> (în continuare denumit „Site”, „Platformă”, ”centrehiv.edreptultau.ro”) are ca scop a spori accesul tinerilor din categoria de vârstă 15-35 ani din zonele defavorizate la educație pentru sănătatea sexuală și a reproducerii după model norvegian, adoptând sloganul Active Citizens Fund România <1>Lucrăm împreună pentru o Europă incluzivă</1>.",
+    "origin": [
+      [
+        "containers/Terms/HeroFragment.js",
+        20
+      ]
+    ],
+    "extractedComments": []
+  },
   "<0>open in Google Maps</0>": {
     "translation": "<0>deschide în Google Maps</0>",
     "origin": [
       [
         "containers/contact/MapFragment.js",
+        23
+      ]
+    ],
+    "extractedComments": []
+  },
+  "A cookie consists of a name and content, the duration of its existence being determined, and can be accessed again by the webserver when a user returns to the website associated with that webserver.": {
+    "translation": "Un cookie este format din nume și conținut, durata de existență a acestuia fiind determinată, putând fi accesat din nou de webserver în momentul în care un utilizator se întoarce pe website-ul asociat webserverului respectiv.",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
         24
       ]
     ],
     "extractedComments": []
   },
-  "A project by": {
-    "translation": "Proiect realizat de",
+  "A cookie contains information that links users to a particular website. If a browser accesses that web server again, it can read the already stored information and react accordingly.": {
+    "translation": "Un cookie conține informații care fac legătura între utilizatori și un anume website. Dacă un browser accesează acel web-server din nou, acesta poate citi informația deja stocată și reacționa în consecință.",
     "origin": [
       [
-        "containers/about/AuthorsFragment.js",
-        16
+        "containers/policy/PolicyFragment.js",
+        54
       ]
     ],
     "extractedComments": []
   },
-  "A solution developed by <0>Semper Musica</0> and <1>Code for Romania</1>.": {
-    "translation": "O soluție dezvoltată de <0>Semper Musica</0> și <1>Code for Romania</1>.",
+  "A visit to this site may place cookies for the purposes of:": {
+    "translation": "O vizită pe acest site poate plasa cookie-uri în scopuri de:",
     "origin": [
       [
-        "components/Footer/index.js",
-        24
+        "containers/policy/PolicyFragment.js",
+        86
       ]
     ],
     "extractedComments": []
   },
-  "About Vulnerable Romania": {
-    "translation": "Despre Romania Vulnerabilă",
+  "About Semper Musica": {
+    "translation": "Despre Semper Musica",
     "origin": [
       [
-        "containers/blog/HeroFragment.js",
-        15
+        "containers/about/SecondParagraphFragment.js",
+        12
+      ]
+    ],
+    "extractedComments": []
+  },
+  "About TestHIV": {
+    "translation": "Despre TestHIV",
+    "origin": [
+      [
+        "containers/about/ThirdParagraphFragment.js",
+        12
       ]
     ],
     "extractedComments": []
@@ -83,30 +223,30 @@
     "translation": "Despre proiect",
     "origin": [
       [
-        "hooks/useMenuItems.js",
-        9
-      ]
-    ],
-    "extractedComments": []
-  },
-  "About the project": {
-    "translation": "Despre proiect",
-    "origin": [
-      [
         "components/Footer/index.js",
-        40
+        51
       ],
       [
         "containers/404/HeroFragment.js",
         25
       ],
       [
-        "containers/about/HeroFragment.js",
-        15
+        "containers/home/ParagraphFragment.js",
+        14
       ],
       [
-        "containers/home/ParagraphFragment.js",
-        13
+        "hooks/useMenuItems.js",
+        9
+      ]
+    ],
+    "extractedComments": []
+  },
+  "About the project stages": {
+    "translation": "Despre fazele proiectului",
+    "origin": [
+      [
+        "containers/about/FirstParagraphsFragment.js",
+        12
       ]
     ],
     "extractedComments": []
@@ -121,12 +261,82 @@
     ],
     "extractedComments": []
   },
+  "Address": {
+    "translation": "Adresa",
+    "origin": [
+      [
+        "components/CenterDetailsDialog/index.js",
+        99
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Address details": {
+    "translation": "Detalii adresă",
+    "origin": [
+      [
+        "components/CenterDetailsDialog/index.js",
+        111
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Address:": {
+    "translation": "Adresa:",
+    "origin": [
+      [
+        "containers/centers/CentersFragment.js",
+        44
+      ]
+    ],
+    "extractedComments": []
+  },
+  "All data on the site is stored and processed on servers located in the European Union, which fall under the European legislation on personal data protection. No information provided on this site leaves the territory of the European Union.": {
+    "translation": "Toate datele de pe site sunt stocate și procesate pe servere situate în Uniunea Europeană, ce cad sub incidența legislației europene de protecție a datelor personale. Nicio informație oferită pe acest site nu părăsește teritoriul Uniunii Europene.",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        126
+      ]
+    ],
+    "extractedComments": []
+  },
+  "All modern browsers offer the ability to change cookie settings. These settings are usually found in the \"options\" or \"preferences\" menu of your browser.": {
+    "translation": "Toate browserele moderne oferă posibilitatea de a schimba setarile cookie-urilor. Aceste setari se găsesc de regula în “opțiuni“ sau în meniul de “preferințe“ al browserului tău.",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        281
+      ]
+    ],
+    "extractedComments": []
+  },
   "Article not found": {
     "translation": "Articolul nu a fost găsit",
     "origin": [
       [
         "containers/blog-post/BlogPostDetailsFragment/BlogPostDetailsFragment.js",
         43
+      ]
+    ],
+    "extractedComments": []
+  },
+  "As a user of the platform <0>centrehiv.edreptultau.ro</0>, according to Law no. 679/2016, as well as, starting with May 25, 2018, according to the General Regulation on data protection, you have the following rights:": {
+    "translation": "În calitate de utilizator al platformei <0>centrehiv.edreptultau.ro</0>, potrivit Legii nr. 679/2016, precum și, începând cu 25 mai 2018, potrivit Regulamentului General privind protecția datelor, ai următoarele drepturi:",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        70
+      ]
+    ],
+    "extractedComments": []
+  },
+  "As of May 25, 2018, according to the General Data Protection Regulation, the right to restrict processing.": {
+    "translation": "Începând cu 25 mai 2018, potrivit Regulamentului general privind protecția datelor, dreptul la restricționarea prelucrării.",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        106
       ]
     ],
     "extractedComments": []
@@ -141,6 +351,16 @@
     ],
     "extractedComments": []
   },
+  "Because the protection of identity is very valuable and represents the right of every internet user, it is advisable to know what possible problems cookies can create. Because through them information is constantly transmitted in both directions between the browser and the website, if an attacker or unauthorized person intervenes during the transmission of data, the information contained in the cookie may be intercepted. Although very rare, this can happen if the browser connects to the server using an unencrypted network (eg an unsecured WiFi network).": {
+    "translation": "Deoarece protecția identității este foarte valoroasă și reprezintă dreptul fiecărui utilizator de internet, este indicat să se știe ce eventuale probleme pot crea cookieurile. Pentru că prin intermediul lor se transmit în mod constant în ambele sensuri informații între browser și website, dacă un atacator sau persoana neautorizată intervine în parcursul de transmitere a datelor, informațiile conținute de cookie pot fi interceptate. Deși foarte rar, acest lucru se poate întâmpla dacă browserul se conectează la server folosind o rețea necriptată (ex: o rețea WiFi nesecurizată).",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        193
+      ]
+    ],
+    "extractedComments": []
+  },
   "Blog": {
     "translation": "Blog",
     "origin": [
@@ -149,12 +369,26 @@
         10
       ],
       [
-        "containers/home/index.js",
+        "containers/centers/index.js",
         16
+      ],
+      [
+        "containers/home/index.js",
+        17
       ],
       [
         "hooks/useMenuItems.js",
         17
+      ]
+    ],
+    "extractedComments": []
+  },
+  "By filling in the forms provided in the pages of the platform we can collect the following data:": {
+    "translation": "Completând formularele puse la dispoziție în paginile platformei putem colecta următoarele date:",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        27
       ]
     ],
     "extractedComments": []
@@ -183,8 +417,46 @@
     "translation": "Sună la centru",
     "origin": [
       [
+        "components/CenterDetailsDialog/index.js",
+        75
+      ],
+      [
+        "components/CenterDetailsDialog/index.js",
+        223
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Center details": {
+    "translation": "Detalii centru",
+    "origin": [
+      [
         "components/CenterDetails/index.js",
-        102
+        105
+      ],
+      [
+        "components/CenterDetailsCard/index.js",
+        14
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Center email address (s)": {
+    "translation": "Adresă/adrese de email ale centrului",
+    "origin": [
+      [
+        "components/CenterDetailsDialog/index.js",
+        231
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Center type": {
+    "translation": "Tip centru",
+    "origin": [
+      [
+        "components/CenterDetailsDialog/index.js",
+        92
       ]
     ],
     "extractedComments": []
@@ -192,6 +464,10 @@
   "Centers list": {
     "translation": "Listă centre",
     "origin": [
+      [
+        "containers/centers/HeroFragment.js",
+        9
+      ],
       [
         "hooks/useMenuItems.js",
         13
@@ -209,6 +485,16 @@
     ],
     "extractedComments": []
   },
+  "Contact information": {
+    "translation": "Informații de contact",
+    "origin": [
+      [
+        "components/CenterDetailsDialog/index.js",
+        210
+      ]
+    ],
+    "extractedComments": []
+  },
   "Contact us": {
     "translation": "Ia legătura cu noi",
     "origin": [
@@ -219,12 +505,206 @@
     ],
     "extractedComments": []
   },
-  "Designed by": {
-    "translation": "Proiectat de",
+  "Continue": {
+    "translation": "Continuă",
     "origin": [
       [
-        "containers/about/AuthorsFragment.js",
-        23
+        "components/HelpUsDialog/index.js",
+        53
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Cookie (\"browser cookie\" or \"HTTP cookie\") is a small file, consisting of letters and numbers, which is stored on any terminal with internet access (computer, mobile phone, tablet, etc.) and is installed by request issued by a web server to a browser (eg Internet Explorer, Chrome). Please note: \"Cookies\" do not contain software, viruses or spyware and cannot access the information on the user's hard drive.": {
+    "translation": "Cookie (“browser cookie“ sau “HTTP cookie“) este un fișier de mici dimensiuni, format din litere și numere, care este stocat pe orice terminal cu acces la internet (computer, telefon mobil, tabletă etc.) și este instalat prin solicitare emisă de către un web-server unui browser (ex: Internet Explorer, Chrome). De reținut: “Cookie“-urile nu conțin programe software, viruși sau spyware și nu pot accesa informațiile de pe hard drive-ul utilizatorului.",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        15
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Cookies are NOT viruses! They use plain text formats. They are not made up of pieces of code so they cannot be executed or run. As a result, they cannot be duplicated or replicated on other networks to run or replicate. Because they cannot perform these functions, they cannot be considered viruses.": {
+    "translation": "Cookie-urile NU sunt viruși! Ele folosesc formate tip plain text. Nu sunt alcătuite din bucăți de cod așa că nu pot fi executate nici nu pot auto-rula. În consecință, nu se pot duplica sau replica pe alte rețele pentru a se rula sau replica din nou. Deoarece nu pot îndeplini aceste funcții, nu pot fi considerate viruși.",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        166
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Cookies are everywhere and cannot be avoided if you want to enjoy access to the best and largest sites on the Internet - local or international. With a clear understanding of how they operate and the benefits they bring, you can take the necessary security measures so that you can surf the Internet with confidence.": {
+    "translation": "Cookie-urile sunt pretutindeni și nu pot fi evitate dacă doriți să vă bucurați de acces pe cele mai bune și cele mai mari site-uri de pe Internet - locale sau internaționale. Cu o înțelegere clară a modului lor de operare și a beneficiilor pe care le aduc, puteți lua măsurile necesare de securitate astel încât să puteți naviga cu încredere pe internet.",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        255
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Cookies are the focal point of the efficient operation of the Internet, helping to generate a friendly browsing experience tailored to the preferences and interests of each user. Declining or disabling cookies may make some sites impossible to use.": {
+    "translation": "Cookie-urile reprezintă punctul central al funcționării eficiente a Internetului, ajutând la generarea unei experiențe de navigare prietenoase și adaptată preferințelor și intereselor fiecărui utilizator. Refuzarea sau dezactivarea cookieurilor poate face unele site-uri imposibil de folosit.",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        149
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Cookies do not require personal information and do not personally identify internet users.": {
+    "translation": "Cookie-urile nu solicită informații cu caracter personal și nu identifică personal utilizatorii de internet.",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        31
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Cookies for the analysis of visitors": {
+    "translation": "Cookie-uri pentru analiza vizitatorilor",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        90
+      ],
+      [
+        "containers/policy/PolicyFragment.js",
+        100
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Cookies store information in a small text file that allows a website to recognize a browser. The web server will recognize the browser until the cookie expires or is deleted. The cookie stores important information that enhances your browsing experience (eg a serial number for your donation).": {
+    "translation": "Cookie-urile păstrează informații într-un fișier text de mici dimensiuni care permit unui website să recunoască un browser. Webserver-ul va recunoaște browserul până când cookie-ul expiră sau este șters. Cookie-ul stochează informații importante care îmbunătățesc experiența de navigare pe Internet (ex: un număr de ordine pentru donația ta).",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        138
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Covered counties": {
+    "translation": "Județe acoperite",
+    "origin": [
+      [
+        "containers/home/StatisticFragment.js",
+        74
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Customize your browser settings for cookies to reflect a comfortable level of cookie security for you. If cookies do not bother you and you are the only person using the computer, you can set long expiration dates for storing your browsing history and personal access data. If you share access to your computer, you can consider setting your browser to clear individual browsing data each time you close your browser. This is a way to access the sites that place cookies and to delete any visit information at the end of the browsing session.": {
+    "translation": "Particularizați-vă setările browserului în ceea ce privește cookie-urile pentru a reflecta un nivel confortabil pentru voi al securității utilizării cookie-urilor. Dacă nu vă deranjează cookie-urile și sunteți singura persoană care utilizează computerul, puteți seta termene lungi de expirare pentru stocarea istoricului de navigare și al datelor personale de acces. Dacă împărțiți accesul la calculator, puteți lua în considerare setarea browserului pentru a șterge datele individuale de navigare de fiecare dată când închideți browserul. Aceasta este o variantă de a accesa site-urile care plasează cookie-uri și de a șterge orice informație de vizitare la închiderea sesiunii navigare.",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        231
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Details about the center": {
+    "translation": "Detalii despre centru",
+    "origin": [
+      [
+        "components/CenterDetailsDialog/index.js",
+        88
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Details about the testing": {
+    "translation": "Detalii despre testare",
+    "origin": [
+      [
+        "components/CenterDetailsDialog/index.js",
+        118
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Disabling and refusing to receive cookies may make certain sites impractical or difficult to visit and use. Also, refusing to accept cookies does not mean that you will no longer receive/view online advertising.": {
+    "translation": "Dezactivarea și refuzul de a primi cookie-uri pot face anumite site-uri impracticabile sau dificil de vizitat și folosit. De asemenea, refuzul de a accepta cookie-uri nu înseamnă că nu veți mai primi/vedea publicitate online.",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        266
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Disabling cookies will not allow the user to access the most common and used sites including Youtube, Gmail, Yahoo and others. Here are some tips that can help you navigate without worries but with the help of cookies:": {
+    "translation": "Dezactivarea cookie-urilor nu va permite accesul utilizatorului pe site-urile cele mai răspândite și utilizate printre care Youtube, Gmail, Yahoo și altele. Iată câteva sfaturi care vă pot asigura că navigați fără griji însă cu ajutorul cookie-urilor:",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        223
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Donate by bank transfer": {
+    "translation": "Donează prin transfer bancar",
+    "origin": [
+      [
+        "containers/donate/HeroFragment.js",
+        15
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Due to their flexibility and the fact that most of the most visited and largest sites use cookies, they are almost inevitable.": {
+    "translation": "Datorită flexibilitatii lor și a faptului ca majoritatea dintre cele mai vizitate site-uri și cele mai mari folosesc cookieuri, acestea sunt aproape inevitabile.",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        217
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Each time a user visits this site, the analytics software provided by a third party generates a user analysis cookie. This cookie tells us if you've visited this site before. The browser will tell us if you have this cookie, and if not, we will generate one. It allows monitoring of unique users who visit us and how often they do so. This cookie cannot be used to identify individuals, they are only used for statistical purposes.": {
+    "translation": "De fiecare dată când un utilizator vizitează acest site softul de analytics furnizat de o terță parte generează un cookie de analiză a utilizatorului. Acest cookie ne spune dacă ați mai vizitat acest site până acum. Browser-ul ne va spune dacă aveți acest cookie, iar dacă nu, vom genera unul. Acesta permite monitorizarea utilizatorilor unici care ne vizitează și cât de des o fac. Acest cookie nu poate fi folosit pentru a identifica persoanele fizice, ele sunt folosite doar în scop statistic.",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        103
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Email address": {
+    "translation": "Adresa de e-mail",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        34
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Email address sent successfully. We thank you!": {
+    "translation": "Adresa de email a fost trimisă cu succes. Iți mulțumim!",
+    "origin": [
+      [
+        "components/HelpUsDialog/index.js",
+        16
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Every year, the numbers get worse. The alarming number of minors who become mothers and drop out of school is one of the few consequences in the lack of access to sexual health education in Romania. Information is power. Together we have the power to flatten the statistics of infections, unwanted pregnancies and we can ensure a healthier future for young people.": {
+    "translation": "An de an, cifrele se înrăutățesc. Numărul alarmant de minore care devin mame și renunță la școală este una din puținele consecințe în lipsa accesului la educație pentru sănătatea sexuală în România. Informația este putere. Împreună avem puterea de a aplana statistica infecțiilor, a sarcinilor nedorite și putem asigura tinerilor un viitor mai sănătos.",
+    "origin": [
+      [
+        "containers/donate/SupportFragment.js",
+        11
       ]
     ],
     "extractedComments": []
@@ -239,12 +719,152 @@
     ],
     "extractedComments": []
   },
+  "For any questions or concerns, as well as for the exercise of your rights related to the processing of data by Semper Musica, you can contact us at:": {
+    "translation": "Pentru orice întrebări sau preocupări, precum și pentru exercitarea drepturilor tale legate de prelucrarea datelor de către Semper Musica, ne poți contacta la:",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        192
+      ]
+    ],
+    "extractedComments": []
+  },
+  "For the settings of cookies generated by third parties, and for more information on the privacy related to online advertising, IAB Romania provides the following site: <0>http://www.youronlinechoices.com/ro/</0>": {
+    "translation": "Pentru setarile cookie-urilor generate de terți, și pentru mai multe informații privind confidențialitatea legată de publicitatea online, IAB Romania pune la dispoziție următorul site: <0>http://www.youronlinechoices.com/ro/</0>",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        287
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Free test conditions": {
+    "translation": "Condiții testare gratuită",
+    "origin": [
+      [
+        "components/CenterDetailsDialog/index.js",
+        143
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Free testing": {
+    "translation": "Testare gratuită",
+    "origin": [
+      [
+        "components/CenterDetailsDialog/index.js",
+        139
+      ]
+    ],
+    "extractedComments": []
+  },
+  "HIV post-test counseling is provided": {
+    "translation": "Se oferă consiliere post-testare HIV",
+    "origin": [
+      [
+        "components/CenterDetailsDialog/index.js",
+        183
+      ]
+    ],
+    "extractedComments": []
+  },
+  "HIV pre-test counseling is provided": {
+    "translation": "Se oferă consiliere pre-testare HIV",
+    "origin": [
+      [
+        "components/CenterDetailsDialog/index.js",
+        171
+      ]
+    ],
+    "extractedComments": []
+  },
   "Hotline": {
     "translation": "Linia de asistență directă",
     "origin": [
       [
         "containers/home/StatisticFragment.js",
         82
+      ]
+    ],
+    "extractedComments": []
+  },
+  "How are cookies used by this site?": {
+    "translation": "Cum sunt folosite cookie-urile de către acest site?",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        83
+      ]
+    ],
+    "extractedComments": []
+  },
+  "How can I turn off cookies?": {
+    "translation": "Cum pot opri cookie-urile?",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        263
+      ]
+    ],
+    "extractedComments": []
+  },
+  "How the negative result is transmitted": {
+    "translation": "Modul de transmitere al rezultatului negativ",
+    "origin": [
+      [
+        "components/CenterDetailsDialog/index.js",
+        160
+      ]
+    ],
+    "extractedComments": []
+  },
+  "How the positive result is transmitted": {
+    "translation": "Modul de transmitere al rezultatului pozitiv",
+    "origin": [
+      [
+        "components/CenterDetailsDialog/index.js",
+        165
+      ]
+    ],
+    "extractedComments": []
+  },
+  "However, cookies may be used for negative purposes. Because it stores information about users' preferences and browsing history, both on one site and on several other sites, cookies can be used as a form of Spyware. Many anti-spyware products are aware of this and constantly mark cookies to be deleted during anti-virus/anti-spyware deletion/scanning procedures.": {
+    "translation": "Cookie-urile pot fi totuși folosite pentru scopuri negative. Deoarece stochează informații despre preferințele și istoricul de navigare al utilizatorilor, atât pe un anume site cât și pe mai multe alte siteuri, cookieurile pot fi folosite ca o formă de Spyware. Multe produse anti-spyware sunt conștiente de acest fapt și în mod constant marchează cookie-urile pentru a fi șterse în cadrul procedurilor de ștergere/scanare anti-virus/anti-spyware.",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        174
+      ]
+    ],
+    "extractedComments": []
+  },
+  "If we discover an incident regarding the security of data that poses a risk to the rights and freedoms of our users, we will notify the National Supervisory Authority For Personal Data Processing within 72 hours. If the security incident is likely to pose a high risk to your rights and freedoms, you will also be notified.": {
+    "translation": "Dacă descoperim un incident cu privire la securitatea datelor care prezintă un risc pentru drepturile și libertățile utilizatorilor noștri, vom notifica Autoritatea Națională de Supraveghere privind Prelucrarea Datelor cu Caracter Personale în termen de 72 de ore. Dacă incidentul de securitate este de natură să prezinte un risc ridicat pentru drepturile și libertățile tale, vei fi, de asemenea, notificat.",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        133
+      ]
+    ],
+    "extractedComments": []
+  },
+  "If you have any questions about the information on this page, please email us at <0>office@sempermusica.org</0>.": {
+    "translation": "Dacă aveți întrebări cu privire la informațiile cuprinse în această pagină vă rugăm să ne scrieți la adresa <0>office@sempermusica.org</0>.",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        171
+      ]
+    ],
+    "extractedComments": []
+  },
+  "In general, browsers have integrated privacy settings that provide different levels of acceptance of cookies, validity period and automatic deletion after the user has visited a particular site.": {
+    "translation": "În general browserele au integrate setari de confidențialitate care furnizează diferite nivele de acceptare a cookieurilor, perioada de valabilitate și ștergere automată dupa ce utilizatorul a vizitat un anumit site.",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        183
       ]
     ],
     "extractedComments": []
@@ -264,7 +884,47 @@
     "origin": [
       [
         "components/CenterDetails/index.js",
-        74
+        92
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Install and constantly update your antispyware applications.": {
+    "translation": "Instalați-vă și updatați-vă constant aplicații antispyware.",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        242
+      ]
+    ],
+    "extractedComments": []
+  },
+  "It is possible to set in the browser so that these cookies are no longer accepted or you can set the browser to accept cookies from a specific site. But, for example, if you do not want to use cookies, you cannot follow the next steps after registering to fill in the form.": {
+    "translation": "Este posibilă setarea din browser pentru ca aceste cookie-uri să nu mai fie acceptate sau poți seta browserul să accepte cookie-uri de la un site anume. Dar, de exemplu, dacă nu dorești să folosești cookie-urile nu poți să urmezi și pașii următori după înregistrarea completarea formularului.",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        273
+      ]
+    ],
+    "extractedComments": []
+  },
+  "It is strictly forbidden to use this Site in order to destroy or alter it, its content, its security or to discredit or harass <0>centrehiv.edreptultau.ro</0> or the Semper Musica Association.": {
+    "translation": "Este strict interzisă folosirea acestui Site în scopul distrugerii sau alterării lui, a conținutului său, a securității acestuia ori pentru discreditarea sau hărțuirea <0>centrehiv.edreptultau.ro</0> sau a Asociația Semper Musica.",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        141
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Keep in touch": {
+    "translation": "Ținem legătura",
+    "origin": [
+      [
+        "components/HelpUsDialog/index.js",
+        56
       ]
     ],
     "extractedComments": []
@@ -273,26 +933,28 @@
     "translation": "Încarcă mai multe articole",
     "origin": [
       [
-        "components/LoadMoreArticlesLink/index.js",
-        8
+        "containers/blog/Blog.js",
+        83
       ]
     ],
     "extractedComments": []
   },
-  "Lorem ipsum dolor sit amet.": {
-    "translation": "Lorem ipsum dolor sit amet.",
+  "Load more centers": {
+    "translation": "Încarcă mai multe centre",
     "origin": [
       [
-        "containers/Terms/TermsFragment.js",
-        12
-      ],
+        "containers/centers/CentersFragment.js",
+        57
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Many of the spyware detection and prevention applications include site attack detection. This prevents the browser from accessing websites that could exploit browser vulnerabilities or download malicious software. Make sure your browser is always up to date. Many cookie-based attacks are exploited by exploiting the weaknesses of older versions of browsers.": {
+    "translation": "Multe dintre aplicațiile de detectare și prevenire a spyware-ului includ detectarea atacurilor pe site-uri. Astfel, impiedică browserul de la a accesa website-uri care ar putea să exploateze vulnerabilitățile browserului sau să descarce software periculos. Asigurați-vă că aveți browserul mereu updatat. Multe dintre atacurile bazate pe cookies se realizează exploatând punctele slabe ale versiunilor vechi ale browserelor.",
+    "origin": [
       [
-        "containers/Terms/TermsFragment.js",
-        36
-      ],
-      [
-        "containers/Terms/TermsFragment.js",
-        60
+        "containers/policy/PolicyFragment.js",
+        245
       ]
     ],
     "extractedComments": []
@@ -307,12 +969,34 @@
     ],
     "extractedComments": []
   },
-  "Mobile caravans": {
-    "translation": "Caravane mobile",
+  "Mission: <0>We fight for the free access of young people to education and protection for HIV prevention and against discrimination of people living with HIV</0>.": {
+    "translation": "Misiunea: <0>Luptăm pentru acces liber al tinerilor la educație și protecție pentru prevenirea HIV și împotriva discriminării persoanelor seropozitive</0>.",
     "origin": [
       [
-        "containers/home/StatisticFragment.js",
-        74
+        "containers/about/SecondParagraphFragment.js",
+        33
+      ]
+    ],
+    "extractedComments": []
+  },
+  "No": {
+    "translation": "Nu",
+    "origin": [
+      [
+        "components/CenterDetailsDialog/index.js",
+        140
+      ],
+      [
+        "components/CenterDetailsDialog/index.js",
+        172
+      ],
+      [
+        "components/CenterDetailsDialog/index.js",
+        184
+      ],
+      [
+        "containers/center-review/FormFragment.js",
+        110
       ]
     ],
     "extractedComments": []
@@ -327,12 +1011,36 @@
     ],
     "extractedComments": []
   },
+  "On some pages, third parties may set their own anonymous cookies in order to track the success of an application, or to customize an application. Due to our usage, this site cannot access these cookies, just as third parties cannot access the cookies held by this site. For example, when you share a page using the social media button on this site, that social network will record your activity.": {
+    "translation": "Pe unele pagini, terții pot seta propriile cookie-uri anonime, în scopul de a urmări succesul unei aplicații, sau pentru a customiza o aplicație. Datorită modului de utilizare, acest site nu poate accesa aceste cookie-uri, la fel cum terțele părți nu pot accesa cookie-urile deținute de acest site. De exemplu, când distribuiți o pagină folosind butonul pentru rețelele sociale aflat pe acest site, acea rețea socială va înregistra activitatea dvs.",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        126
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Online contact form": {
+    "translation": "Formular de contact online",
+    "origin": [
+      [
+        "components/CenterDetailsDialog/index.js",
+        247
+      ]
+    ],
+    "extractedComments": []
+  },
   "Opening hours": {
     "translation": "Program",
     "origin": [
       [
         "components/CenterDetails/index.js",
-        26
+        39
+      ],
+      [
+        "components/CenterDetailsDialog/index.js",
+        95
       ]
     ],
     "extractedComments": []
@@ -347,6 +1055,26 @@
     ],
     "extractedComments": []
   },
+  "Other cookie-based attacks involve incorrect cookie settings on servers. If a website does not require the browser to use only encrypted channels, attackers can use this vulnerability to trick browsers into sending information through unsecured channels. Attackers then use the information to gain unauthorized access to certain sites. It is very important that you choose the most appropriate method of protecting your personal information.": {
+    "translation": "Alte atacuri bazate pe cookie implică setări greșite ale cookieurilor pe servere. Dacă un website nu solicită browserului să folosească doar canale criptate, atacatorii pot folosi această vulnerabilitate pentru a păcăli browserele în a trimite informații prin intermediul canalelor nesecurizate. Atacatorii utilizează apoi informațiile în scopuri de a accesa neautorizat anumite site-uri. Este foarte important să fiți atenți în alegerea metodei celei mai potrivite de protecție a informațiilor personale.",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        204
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Other security issues related to cookies": {
+    "translation": "Alte aspecte de securitate legate de cookie-uri",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        190
+      ]
+    ],
+    "extractedComments": []
+  },
   "Our address": {
     "translation": "Adresa noastră",
     "origin": [
@@ -357,12 +1085,76 @@
     ],
     "extractedComments": []
   },
+  "Parts of content or services may be placed on the website accessed by third parties through banners, boxes or links - and all such tools may contain cookies. They are called \"third party cookies\" because they are not placed by the owner of the respective website, and the third party providers are subject to the laws in force and the privacy policies of the site owner.": {
+    "translation": "Părți de conținut sau servicii pot fi plasate pe website-ul accesat, de către terțe părți prin intermediul bannerelor, boxurilor sau linkurilor - iar toate aceste instrumente pot conține cookie-uri. Ele se numesc “third party cookies“ pentru că nu sunt plasate de proprietarul website-ului respectiv, iar furnizorii terți se supun legilor îin vigoare și politicilor de confidențialitate ale deținătorului site-ului.",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        74
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Persistent Cookies - These are stored, depending on the default time, on the hard drive of a computer or device. Persistent cookies also include those placed by a website other than the one the user is currently visiting - known as \"third party cookies\" - which can be used anonymously to store a user's interests, so that the most relevant advertising for the users is delivered.": {
+    "translation": "Cookieuri Persistente - Acestea sunt stocate, în funcție de durata prestabilită, pe hard-drive-ul unui computer sau echipament. Cookie-urile persistente le includ și pe cele plasate de un alt website decât cel pe care îl vizitează utilizatorul la momentul respectiv - cunoscute sub numele de “third party cookies“ - care pot fi folosite în mod anonim pentru a memora interesele unui utilizator, astfel încât să fie livrată publicitate cât mai relevantă pentru utilizatori.",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        42
+      ]
+    ],
+    "extractedComments": []
+  },
   "Phone number missing": {
     "translation": "Număr telefon lipsă",
     "origin": [
       [
-        "components/CenterDetails/index.js",
-        89
+        "components/CenterDetailsDialog/index.js",
+        77
+      ],
+      [
+        "components/CenterDetailsDialog/index.js",
+        225
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Phone number(s)": {
+    "translation": "Număr/Numere de telefon",
+    "origin": [
+      [
+        "components/CenterDetailsDialog/index.js",
+        213
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Post HIV test counseling details": {
+    "translation": "Detalii consiliere post-testare HIV",
+    "origin": [
+      [
+        "components/CenterDetailsDialog/index.js",
+        187
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Powered by:": {
+    "translation": "Cu sprijinul:",
+    "origin": [
+      [
+        "components/Footer/index.js",
+        25
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Pre HIV test counseling details": {
+    "translation": "Detalii consiliere pre-testare HIV",
+    "origin": [
+      [
+        "components/CenterDetailsDialog/index.js",
+        175
       ]
     ],
     "extractedComments": []
@@ -372,7 +1164,145 @@
     "origin": [
       [
         "components/Footer/index.js",
-        52
+        61
+      ],
+      [
+        "containers/policy/HeroFragment.js",
+        10
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Project by:": {
+    "translation": "Proiect derulat de:",
+    "origin": [
+      [
+        "components/Footer/index.js",
+        33
+      ]
+    ],
+    "extractedComments": []
+  },
+  "RON Account:": {
+    "translation": "Cont RON:",
+    "origin": [
+      [
+        "containers/donate/HeroFragment.js",
+        18
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Refusing or disabling cookies does not mean that you will no longer receive online advertising - only that it will no longer be able to take into account your preferences and interests, as evidenced by your browsing behavior.": {
+    "translation": "Refuzarea sau dezactivarea cookie-urilor nu înseamnă că nu veți mai primi publicitate online - ci doar că aceasta nu va mai putea ține cont de preferințele și interesele dvs, evidențiate prin comportamentul de navigare.",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        156
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Registration cookies": {
+    "translation": "Cookie-uri de înregistrare",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        93
+      ],
+      [
+        "containers/policy/PolicyFragment.js",
+        112
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Required documents (under 16)": {
+    "translation": "Documente necesare (sub 16 ani)",
+    "origin": [
+      [
+        "components/CenterDetailsDialog/index.js",
+        201
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Required documents (under 18)": {
+    "translation": "Documente necesare (sub 18 ani)",
+    "origin": [
+      [
+        "components/CenterDetailsDialog/index.js",
+        194
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Review": {
+    "translation": "Notă experiență",
+    "origin": [
+      [
+        "containers/center-review/FormFragment.js",
+        96
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Right of intervention, rectification, deletion or portability of data, upon request and free of charge;": {
+    "translation": "Dreptul de intervenție, rectificarea, ștergerea sau portabilitatea datelor, la cerere și în mod gratuit;",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        87
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Right to information regarding data processing;": {
+    "translation": "Dreptul la informare cu privire la prelucrarea datelor;",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        78
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Security and privacy issues": {
+    "translation": "Securitate și probleme legate de confidențialitate",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        163
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Semper Musica Association processes the data of legal entities, public or private, only in order to provide them with information on the field distribution of HIV centers, relevant information for testing and other data useful to people with HIV.": {
+    "translation": "Asociația Semper Musica prelucrează datele entităților persoane juridice, publice sau private, doar în scopul de a le oferi informații privind distribuția în teren a centrelor HIV, a informațiilor relevante pentru testare și alte date utile persoanelor cu HIV.",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        41
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Semper Musica Association will apply all technical and organizational security measures to protect the data over which it has control against any situation of accidental or intentional manipulation, loss, destruction or access by an unauthorized person.": {
+    "translation": "Asociația Semper Musica va aplica toate măsurile de securitate tehnică și organizatorică pentru protejarea datelor asupra cărora deține controlul împotriva oricărei situații de manipulare accidentală sau intenționată, pierdere, distrugere sau împotriva accesului unei persoane neautorizate.",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        148
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Semper Musica reserves the right to revise and update the \"General Terms and Conditions of Use\" at any time, without prior notice or acceptance by users.": {
+    "translation": "Semper Musica își rezervă dreptul de a revizui și aduce la zi \"Termenii și Condițiile generale de utilizare\" în orice moment, fără o anunțare sau o acceptare prealabilă a utilizatorilor.",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        165
       ]
     ],
     "extractedComments": []
@@ -380,6 +1310,10 @@
   "Send": {
     "translation": "Trimite",
     "origin": [
+      [
+        "containers/center-review/FormFragment.js",
+        136
+      ],
       [
         "containers/contact/FormFragment.js",
         155
@@ -397,12 +1331,46 @@
     ],
     "extractedComments": []
   },
+  "Services for youth from Norway in Romania – PILOT": {
+    "translation": "Servicii din Norvegia pentru tinerii din România - PILOT",
+    "origin": [
+      [
+        "containers/about/HeroFragment.js",
+        16
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Session cookies - these are temporarily stored in the browser history that stores them until the user logs out of that website or closes the browser window.": {
+    "translation": "Cookie-uri de sesiune - acestea sunt stocate temporar în istoricul browser-ului care le memorează până când utilizatorul iese de pe web-siteul respectiv sau închide fereastra browserului.",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        36
+      ]
+    ],
+    "extractedComments": []
+  },
   "Share:": {
     "translation": "Distribuie pe:",
     "origin": [
       [
         "components/Sharing/index.js",
-        21
+        19
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Some cookies may come from third parties": {
+    "translation": "Unele cookie-uri pot proveni de la terți",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        96
+      ],
+      [
+        "containers/policy/PolicyFragment.js",
+        123
       ]
     ],
     "extractedComments": []
@@ -412,7 +1380,11 @@
     "origin": [
       [
         "components/Footer/index.js",
-        45
+        56
+      ],
+      [
+        "containers/donate/HeroFragment.js",
+        13
       ],
       [
         "hooks/useMenuItems.js",
@@ -426,8 +1398,14 @@
     "origin": [
       [
         "components/Footer/index.js",
-        69
-      ],
+        66
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Terms and conditions of use": {
+    "translation": "Termeni și condiții de utilizare",
+    "origin": [
       [
         "containers/Terms/HeroFragment.js",
         11
@@ -436,11 +1414,59 @@
     "extractedComments": []
   },
   "Test types": {
-    "translation": "Tipuri teste",
+    "translation": "Tipuri de teste",
     "origin": [
       [
         "components/CenterDetails/index.js",
-        30
+        48
+      ],
+      [
+        "components/CenterDetailsDialog/index.js",
+        122
+      ]
+    ],
+    "extractedComments": []
+  },
+  "TestHIV - is the first application in Romania for HIV testing, where there are centralized institutions from 11 counties in Romania that offer HIV testing. In the application we provide details such as the location of the institution, the work schedule, the cost of a test and details needed to test for HIV infection, how to test people under 16 and provide counseling for people who need more information.": {
+    "translation": "TestHIV - este prima aplicație din România de testare HIV, unde sunt centralizate instituții din 11 județe din România care oferă testare HIV. În cadrul aplicației oferim detalii precum localizarea instituției, programul de lucru, costul unui test cât și detalii necesare pentru testarea infecției cu HIV, modalitățile de testare a persoanelor sub 16 ani și asigurarea consilierii pentru persoanele care au nevoie de mai multe informații.",
+    "origin": [
+      [
+        "containers/about/ThirdParagraphFragment.js",
+        15
+      ]
+    ],
+    "extractedComments": []
+  },
+  "TestHIV Blog": {
+    "translation": "Blog TestHIV",
+    "origin": [
+      [
+        "containers/blog/HeroFragment.js",
+        11
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Testing center": {
+    "translation": "Centru de testare",
+    "origin": [
+      [
+        "components/CenterDetailsDialog/index.js",
+        44
+      ],
+      [
+        "containers/center-review/FormFragment.js",
+        73
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Testing center experience feedback": {
+    "translation": "Chestionar experiență centru testare",
+    "origin": [
+      [
+        "containers/center-review/FormFragment.js",
+        70
       ]
     ],
     "extractedComments": []
@@ -455,12 +1481,190 @@
     ],
     "extractedComments": []
   },
+  "Testing price": {
+    "translation": "Preț testare",
+    "origin": [
+      [
+        "components/CenterDetailsDialog/index.js",
+        133
+      ]
+    ],
+    "extractedComments": []
+  },
+  "The \"General Terms and Conditions of Use\" constitutes, in its entirety, an agreement between you and the Semper Musica Association regarding the use of <0>centrehiv.edreptultau.ro</0>.": {
+    "translation": "\"Termenii și Condițiile generale de utilizare\" constituie, în întregime, un acord încheiat între dumneavoastră și Asociația Semper Musica în privința utilizării<0>centrehiv.edreptultau.ro</0>.",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        158
+      ]
+    ],
+    "extractedComments": []
+  },
+  "The General Terms and Conditions of Use establish the general terms and conditions of use of the site <0>centrehiv.edreptultau.ro</0> by potential visitors or beneficiaries.": {
+    "translation": "Termenii și Condițiile generale de utilizare stabilesc termenii și condițiile generale de utilizare a site-ului <0>centrehiv.edreptultau.ro</0> de către potențialii vizitatori sau beneficiari.",
+    "origin": [
+      [
+        "containers/Terms/HeroFragment.js",
+        13
+      ]
+    ],
+    "extractedComments": []
+  },
+  "The Semper Musica Association arose from the need to witness projects with real and tangible results, projects to which we can contribute for a change for the better! We want rapid and effective change through community involvement. When we say community involvement, we mean both us and you. We can't make a difference for the better without everyone contributing, so we hope to have you with us on the road to the change we want!": {
+    "translation": "Asociația Semper Musica a apărut din nevoia de a fi martori la proiecte cu rezultate reale și palpabile, proiecte la care să contribuim pentru o schimbare în mai bine! Ne dorim schimbări rapide și de efect prin implicare comunitară. Când spunem implicare comunitară, ne referim atât la noi, cât și la tine. Nu avem cum să producem schimbări în mai bine fără ca toți să contribuim așa că, sperăm să te avem alături de noi pe drumul către schimbările pe care ni le dorim!",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        180
+      ]
+    ],
+    "extractedComments": []
+  },
+  "The Semper Musica Association was born from the desire to make a change for the better. We act mainly in the field of education for the prevention of HIV infection among high school students and young people nationwide. We guide our activities according to our vision and mission.": {
+    "translation": "Asociația Semper Musica a luat naștere din dorința de a face o schimbare în mai bine. Acționăm preponderent în domeniul educației pentru prevenirea infecției cu HIV în rândul liceenilor și tinerilor de la nivel național. Ne ghidăm activitățile după viziunea și misiunea noastră.",
+    "origin": [
+      [
+        "containers/about/SecondParagraphFragment.js",
+        15
+      ]
+    ],
+    "extractedComments": []
+  },
+  "The aim of the project <0>Services for youth from Norway in Romania – PILOT</0> is to increase the access of young people aged 15-35 from disadvantaged areas to education for sexual health and reproduction according to the Norwegian model, adopting the Active Citizens Fund Romania slogan <1>Working together for an inclusive Europe</1>.": {
+    "translation": "Scopul proiectului <0>Servicii din Norvegia pentru tinerii din România - PILOT</0> este acela de a spori accesul tinerilor din categoria de vârstă 15-35 ani din zonele defavorizate la educație pentru sănătatea sexuală și a reproducerii după model norvegian, adoptând sloganul Active Citizens Fund România <1>Lucrăm împreună pentru o Europă incluzivă</1>.",
+    "origin": [
+      [
+        "containers/about/HeroFragment.js",
+        19
+      ],
+      [
+        "containers/Terms/TermsFragment.js",
+        15
+      ]
+    ],
+    "extractedComments": []
+  },
+  "The data may be transmitted to other institutions or public authorities, as well as other competent state bodies, based on and within the limits of legal provisions, as a result of requests expressly made by them.": {
+    "translation": "Datele pot fi transmise către alte instituții sau autorități publice, precum și alte organe abilitate ale statului, în baza și în limitele prevederilor legale, ca urmare a unor cereri expres formulate de acestea.",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        60
+      ]
+    ],
+    "extractedComments": []
+  },
+  "The data provided is temporarily stored during the operation of the platform <0>centrehiv.edreptultau.ro</0>.": {
+    "translation": "Datele furnizate sunt stocate temporar pe durata funcționării platformei <0>centrehiv.edreptultau.ro</0>.",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        51
+      ]
+    ],
+    "extractedComments": []
+  },
   "The form was submitted successfully.": {
     "translation": "Formularul a fost trimis cu succes.",
     "origin": [
       [
         "containers/contact/FormFragment.js",
         34
+      ]
+    ],
+    "extractedComments": []
+  },
+  "The project Services for youth from Norway in Romania - PILOT comes precisely from this need for education. The project is aimed at young people in disadvantaged areas, young people who need this type of service.": {
+    "translation": "Proiectul Servicii din Norvegia pentru tinerii din România - PILOT vine tocmai din această nevoie de educație. Proiectul este direcționat către tinerii din zonele defavorizate, tineri care au nevoie din plin de acest tip de servicii.",
+    "origin": [
+      [
+        "containers/donate/SupportFragment.js",
+        20
+      ]
+    ],
+    "extractedComments": []
+  },
+  "The project is implemented by the Semper Musica Association in partnership with the Federation of Medical Student Associations from Romania and with Sex and society and benefits from a 𝟮𝟲𝟯.𝟲𝟰𝟬, 𝟱𝟬 € grant from Active Citizens Fund Romania, programme funded by Iceland, Liechtenstein and Norway through the EEA Grants 2014-2021. The content of this website does not necessarily reflect the official position of the EEA and Norway Grants 2014-2021; for more information visit <0>www.eeagrants.org</0>. More details about Active Citizens Fund Romania are available at <1>www.activecitizensfund.ro</1>.": {
+    "translation": "Proiectul este derulat de Asociația Semper Musica în parteneriat cu Federația Asociațiilor Studenților în Medicină din România și cu Sex and society și beneficiază de o finanțare în valoare de 𝟮𝟲𝟯.𝟲𝟰𝟬,𝟱𝟬 €, prin programul Active Citizens Fund România, finanțat de Islanda, Liechtenstein și Norvegia prin Granturile SEE 2014-2021. Conținutul acestui website nu reprezintă în mod necesar poziția oficială a Granturilor SEE și Norvegiene 2014-2021; pentru mai multe informații accesați <0>www.eeagrants.org</0>. Informații despre Active Citizens Fund România sunt disponibile la <1>www.activecitizensfund.ro</1>.",
+    "origin": [
+      [
+        "containers/about/TextBoxFragment.js",
+        13
+      ],
+      [
+        "containers/home/ParagraphFragment.js",
+        20
+      ]
+    ],
+    "extractedComments": []
+  },
+  "The project will provide access to free condoms for a later elected county, but this is just the beginning. Contraception and free methods of protection must be accessible to young people from disadvantaged areas throughout Romania. Our site provides information on local rapid testing centers for HIV and other sexually transmitted infections in 11 counties. We want to expand the area of work and information with as much data as possible in the service of young people in Romania.": {
+    "translation": "Proiectul va asigura accesul la prezervative gratuite pentru un județ ales ulterior, dar acest lucru este doar un punct de început. Contracepția și metodele de protecție gratuite trebuie să fie accesibile pentru tinerii din zone defavorizate din toată România. Site-ul nostru oferă informații despre centrele locale de testare rapidă pentru HIV și alte infecții cu transmitere sexuală din 11 județe. Dorim să extindem aria de lucru și de informare cu cât mai multe date în slujba tinerilor din România.",
+    "origin": [
+      [
+        "containers/donate/SupportFragment.js",
+        27
+      ]
+    ],
+    "extractedComments": []
+  },
+  "The projects we have carried out have brought a change for young people in Romania, and their involvement and quality have propelled us to various galas and competitions, totaling from the establishment until today no less than 10 awards. Since its inception, we have been educating young people from disadvantaged backgrounds on HIV prevention and sexual and reproductive health.": {
+    "translation": "Proiectele realizate de noi au adus o schimbare pentru tinerii din România, iar implicarea și calitatea lor ne-au propulsat către diverse gale și concursuri, însumând de la înființare și până astăzi nu mai puțin de 10 premii. Încă de la înființare ne ocupăm cu educarea tinerilor din medii defavorizate cu privire la prevenirea infecției cu HIV și despre sănătatea sexuală și a reproducerii.",
+    "origin": [
+      [
+        "containers/about/SecondParagraphFragment.js",
+        51
+      ]
+    ],
+    "extractedComments": []
+  },
+  "The protection of the information during the processing of the collected data is a major concern of the Semper Musica Association, therefore all the data collected during the visits on <0>centrehiv.edreptultau.ro</0> are processed according to the legal provisions in force in Romania. Semper Musica Association uses state-of-the-art technologies and takes all reasonable technical measures to transmit and store data in complete security and confidentiality.": {
+    "translation": "Protecția informațiilor în cursul prelucrării datelor colectate este o preocupare majoră a Asociației Semper Musica, de aceea toate datele colectate în cursul vizitelor pe <0>centrehiv.edreptultau.ro</0> sunt prelucrate conform prevederilor legale în vigoare în România. Asociatia Semper Musica folosește tehnologii de ultimă generație și ia toate măsurile tehnice rezonabile pentru transmiterea și păstrarea datelor în condiții de deplină securitate și confidențialitate.",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        116
+      ]
+    ],
+    "extractedComments": []
+  },
+  "The right to access the data provided, upon request and free of charge for one request per year;": {
+    "translation": "Dreptul de acces la datele furnizate, la cerere și în mod gratuit pentru o solicitare pe an;",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        81
+      ]
+    ],
+    "extractedComments": []
+  },
+  "The right to apply to the National Supervisory Authority For Personal Data Processing (based in Bucharest, sector 1, B-dul G-ral. Gheorghe Magheru, <0>www.dataprotection.ro</0>) or to justice, for the protection of any rights guaranteed by law;": {
+    "translation": "Dreptul de a te adresa Autorității Naționale de Supraveghere privind Prelucrarea Datelor cu Caracter Personal (cu sediul în Bucureşti, sector 1, B-dul G-ral. Gheorghe Magheru, <0>www.dataprotection.ro</0>) sau justiției, pentru apărarea oricăror drepturi garantate de lege;",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        93
+      ]
+    ],
+    "extractedComments": []
+  },
+  "The right to opposition and automated individual decision-making;": {
+    "translation": "Dreptul la opoziţie şi procesul decizional individual automatizat;",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        103
+      ]
+    ],
+    "extractedComments": []
+  },
+  "There are cookies used exclusively for a single session - they are no longer retained after the user leaves the website. Permanent cookies - are retained and reused each time the user returns to that website, but can be deleted at any time by the user.": {
+    "translation": "Exista cookie-uri folosite exclusiv pentru o singură sesiune - acestea nu mai sunt reținute după ce utilizatorul iese de pe website. Cookie-uri permanente - sunt reținute și refolosite de fiecare dată când utilizatorul revine pe acel website, însă pot fi șterse oricând de utilizator.",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        64
       ]
     ],
     "extractedComments": []
@@ -475,82 +1679,258 @@
     ],
     "extractedComments": []
   },
+  "This website uses cookies to provide visitors with a much better browsing experience and services tailored to the needs and interests of everyone.": {
+    "translation": "Acest website folosește cookie-uri pentru a furniza vizitatorilor o experiență mult mai bună de navigare și servicii adaptate nevoilor și interesului fiecăruia.",
+    "origin": [
+      [
+        "containers/policy/HeroFragment.js",
+        12
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Tips for safe and responsible browsing based on cookies": {
+    "translation": "Sfaturi pentru o navigare sigură și responsabilă, bazată pe cookies",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        214
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Vision: <0>A society without new HIV cases among young people, in which discrimination against HIV-positive people does not exist</0>.": {
+    "translation": "Viziunea: <0>O societate fără cazuri noi de HIV în rândul tinerilor, în care discriminarea persoanelor seropozitive nu există</0>.",
+    "origin": [
+      [
+        "containers/about/SecondParagraphFragment.js",
+        23
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Waiting time": {
+    "translation": "Timpul de așteptare",
+    "origin": [
+      [
+        "components/CenterDetailsDialog/index.js",
+        152
+      ]
+    ],
+    "extractedComments": []
+  },
+  "We are implementing the <0>first application in Romania</0> for HIV testing, where details regarding the location, schedule and cost of testing for HIV infection will be available, we provide counseling before and after testing for people who need additional information, we provide details on how to test people under the age of 16.": {
+    "translation": "Implementăm <0>prima aplicație din România</0> de testare HIV, unde vor fi disponibile detalii legate de localizarea, programul și costul necesar pentru testarea infecției cu HIV, asigurăm consiliere înainte și după testare pentru persoanele care au nevoie de informații suplimentare, oferim detalii legate de modalitățile de testare a persoanelor cu vârsta sub 16 ani.",
+    "origin": [
+      [
+        "containers/about/FirstParagraphsFragment.js",
+        28
+      ]
+    ],
+    "extractedComments": []
+  },
+  "We are setting up advocacy actions with local authorities based on the results of the <0>Services for youth from Norway in Romania – PILOT</0> program in order to bring to the attention of the authorities the need to invest in services aimed at ensuring young people access to information on sexual and reproductive health, easy access to contraception and testing for HIV infection.": {
+    "translation": "Punem bazele unor acțiuni de advocacy cu autoritățile locale pe baza rezultatelor programului <0>Servicii din Norvegia pentru tinerii din România - PILOT</0>cu scopul de a aduce în atenția autorităților nevoia de a investi în servicii ce urmăresc să asigure tinerilor accesul la informații despre sănătatea sexuală și a reproducerii, accesul facil la metode contraceptive și la testarea pentru infecția cu HIV.",
+    "origin": [
+      [
+        "containers/about/FirstParagraphsFragment.js",
+        43
+      ]
+    ],
+    "extractedComments": []
+  },
+  "We can only do this with the help of people who believe in the cause for which the project is fighting and who want to contribute to achieving the ultimate goal - a Romania with informed young people, who know their sexual and reproductive rights and who protect their health.": {
+    "translation": "Nu putem face acest lucru decât cu ajutorul oamenilor care cred în cauză pentru care luptă proiectul și care își doresc să contribuie la atingerea scopului final- o Românie cu tineri informați, care își cunosc drepturile sexuale și reproductive și care își protejează sănătatea.",
+    "origin": [
+      [
+        "containers/donate/SupportFragment.js",
+        37
+      ]
+    ],
+    "extractedComments": []
+  },
+  "We collect information from young people aged 15-35 on their access to sexual and reproductive health education. We want to know what they know about contraceptive methods and HIV infection as well as testing methods.": {
+    "translation": "Colectăm informații de la tinerii între 15-35 de ani cu privire la accesul lor la educație pentru sănătatea sexuală și a reproducerii. Vrem să aflăm ce știu despre metodele contraceptive și infecția cu virusul HIV precum și despre metodele de testare.",
+    "origin": [
+      [
+        "containers/about/FirstParagraphsFragment.js",
+        15
+      ]
+    ],
+    "extractedComments": []
+  },
+  "We don't like being alone. We believe in success with other NGOs with common values and good people. We want to know opinions and give rise to discussions and impressions that will make a difference, but also to offer in our turn. Every problem has a solution, and the solution lies in the community. For any question, suggestion, recommendation, or even reproach, do not hesitate to contact us. Networking is just a click away!": {
+    "translation": "Nu ne place să fim singuri. Credem într-un succes obținut alături de alte ONG-uri cu valori comune și de oameni de bine. Vrem să cunoaștem opinii și să dăm naștere discuțiilor și impresiilor care vor face diferența, dar și să oferim la rândul nostru. Orice problemă are o rezolvare, iar rezolvarea stă în comunitate. Pentru orice întrebare, sugestie, recomandare, sau chiar reproș, nu ezita să ne contactezi. Networking-ul este la un click distanță!",
+    "origin": [
+      [
+        "containers/contact/HeroFragment.js",
+        15
+      ]
+    ],
+    "extractedComments": []
+  },
+  "We have some strong values and we do not distance ourselves from them: <0>innovation</0>, <1>diversity</1>, <2>responsibility and quality</2>, <3>involvement and action</3>.": {
+    "translation": "Avem câteva valori puternice și nu ne distanțăm de ele: <0>inovare</0>,<1>diversitate</1>, <2>responsabilitate și calitate</2>, <3>implicare și acțiune</3>.",
+    "origin": [
+      [
+        "containers/about/SecondParagraphFragment.js",
+        43
+      ]
+    ],
+    "extractedComments": []
+  },
+  "We organize a process of informing students and young people through non-formal sessions following the Norwegian model of sexual and reproductive health education.": {
+    "translation": "Organizăm un proces de informare al elevilor și tinerilor prin sesiuni non-formale după modelul norvegian de educație cu privire la sănătatea sexuală și a reproducerii.",
+    "origin": [
+      [
+        "containers/about/FirstParagraphsFragment.js",
+        37
+      ]
+    ],
+    "extractedComments": []
+  },
+  "We present the results of the analysis of the local authorities through press conferences to make them aware of the needs of young people.": {
+    "translation": "Prezentăm rezultatele analizei autorităților locale prin intermediul unor conferințe de presă pentru a aduce la cunoștință acestora nevoile tinerilor.",
+    "origin": [
+      [
+        "containers/about/FirstParagraphsFragment.js",
+        22
+      ]
+    ],
+    "extractedComments": []
+  },
+  "We're glad you want to call the test center directly. Please help us provide you with the best information and services and improve your experience at testing centers and beyond. Leave us an email address so we can keep in touch with you.": {
+    "translation": "Ne bucurăm că vrei să apelezi direct centrul de testare. Te rugăm să ne ajuți să îți oferim cele mai bune informații și servicii și să îmbunătățim experiența la centrele de testare și nu numai. Lasă-ne o adresă de e-mail prin care să putem păstra legătura cu tine.",
+    "origin": [
+      [
+        "components/HelpUsDialog/index.js",
+        38
+      ]
+    ],
+    "extractedComments": []
+  },
   "Website": {
     "translation": "Pagină web",
     "origin": [
       [
         "components/CenterDetails/index.js",
-        34
+        52
+      ],
+      [
+        "components/CenterDetailsDialog/index.js",
+        240
       ]
     ],
     "extractedComments": []
   },
-  "Welcome!": {
-    "translation": "Bine ai venit!",
+  "What are the benefits of cookies?": {
+    "translation": "Care sunt avantajele cookie-urilor?",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        51
+      ]
+    ],
+    "extractedComments": []
+  },
+  "What are third-party cookies?": {
+    "translation": "Ce sunt cookie-urile plasate de terți?",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        71
+      ]
+    ],
+    "extractedComments": []
+  },
+  "What is a \"cookie\"": {
+    "translation": "Ce este un \"cookie\"",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        12
+      ]
+    ],
+    "extractedComments": []
+  },
+  "What is the lifetime of a cookie?": {
+    "translation": "Care este durata de viață a unui cookie?",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        61
+      ]
+    ],
+    "extractedComments": []
+  },
+  "What kind of information is stored and accessed through cookies?": {
+    "translation": "Ce tip de informații sunt stocate și accesate prin intermediul cookie-urilor?",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        135
+      ]
+    ],
+    "extractedComments": []
+  },
+  "When you register on this site, we generate a cookie with your registration data. The cookie helps us in the next steps to communicate with the server. This cookie may remain on your device if you do not follow all the registration steps. However, this cookie will be overwritten the next time you try to register on this website.": {
+    "translation": "La înregistrarea pe acest site, generăm un cookie cu datele dumneavoastră de înregistrare. Cookie-ul ne ajută în următorii pași pentru comunicarea cu serverul. Este posibil ca acest cookie să rămână pe dispozitivul dvs. dacă nu urmați toți pașii de înregistrare. Cu toate acestea, acest cookie va fi suprascris data viitoare când încercați să vă înregistrați pe acest site web.",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        115
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Why are cookies important for the Internet?": {
+    "translation": "De ce sunt cookie-urile importante pentru Internet?",
+    "origin": [
+      [
+        "containers/policy/PolicyFragment.js",
+        146
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Working together for an inclusive Europe": {
+    "translation": "Lucrăm împreună pentru o Europă incluzivă",
     "origin": [
       [
         "containers/home/HeroFragment.js",
-        13
+        19
       ]
     ],
     "extractedComments": []
   },
-  "Written by {authorFullName} • {0}": {
-    "translation": "Scris de {authorFullName} • {0}",
+  "Yes": {
+    "translation": "Da",
     "origin": [
       [
-        "components/BlogItem/index.js",
-        21
+        "components/CenterDetailsDialog/index.js",
+        140
+      ],
+      [
+        "components/CenterDetailsDialog/index.js",
+        172
+      ],
+      [
+        "components/CenterDetailsDialog/index.js",
+        184
+      ],
+      [
+        "containers/center-review/FormFragment.js",
+        109
       ]
     ],
     "extractedComments": []
   },
-  "about.first_paragraph": {
-    "translation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque nec nam aliquam sem et tortor consequat id. Varius morbi enim nunc faucibus a pellentesque sit amet porttitor. Diam donec adipiscing tristique risus nec feugiat in. Purus in mollis nunc sed id semper. Adipiscing at in tellus integer feugiat scelerisque. Vitae nunc sed velit dignissim sodales ut eu sem. Lacus viverra vitae congue eu consequat.",
+  "day(s)": {
+    "translation": "zi/zile",
     "origin": [
       [
-        "containers/about/FirstParagraphsFragment.js",
-        13
-      ]
-    ],
-    "extractedComments": []
-  },
-  "about.last_paragraph": {
-    "translation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque nec nam aliquam sem et tortor consequat id. Varius morbi enim nunc faucibus a pellentesque sit amet porttitor. Diam donec adipiscing tristique risus nec feugiat in. Purus in mollis nunc sed id semper. Adipiscing at in tellus integer feugiat scelerisque. Vitae nunc sed velit dignissim sodales ut eu sem. Lacus viverra vitae congue eu consequat. Lacus vestibulum sed arcu non odio euismod lacinia at. Tincidunt nunc pulvinar sapien et ligula ullamcorper. Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. Fermentum et sollicitudin ac orci phasellus egestas tellus rutrum. Nam libero justo laoreet sit amet cursus. Augue ut lectus arcu bibendum at varius. Duis at tellus at urna condimentum. Ornare suspendisse sed nisi lacus sed viverra tellus in hac. Varius quam quisque id diam vel quam elementum. Malesuada bibendum arcu vitae elementum curabitur vitae nunc. Viverra maecenas accumsan lacus vel.",
-    "origin": [
-      [
-        "containers/about/ThirdParagraphFragment.js",
-        13
-      ]
-    ],
-    "extractedComments": []
-  },
-  "about.project_details": {
-    "translation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque nec nam aliquam sem et tortor consequat id. Varius morbi enim nunc faucibus a pellentesque sit amet porttitor. Diam donec adipiscing tristique risus nec feugiat in. Purus in mollis nunc sed id semper. Adipiscing at in tellus integer feugiat scelerisque. Vitae nunc sed velit dignissim sodales ut eu sem. Lacus viverra vitae congue eu consequat.",
-    "origin": [
-      [
-        "containers/about/TextBoxFragment.js",
-        14
-      ]
-    ],
-    "extractedComments": []
-  },
-  "about.second_paragraph": {
-    "translation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque nec nam aliquam sem et tortor consequat id. Varius morbi enim nunc faucibus a pellentesque sit amet porttitor. Diam donec adipiscing tristique risus nec feugiat in. Purus in mollis nunc sed id semper. Adipiscing at in tellus integer feugiat scelerisque. Vitae nunc sed velit dignissim sodales ut eu sem. Lacus viverra vitae congue eu consequat.",
-    "origin": [
-      [
-        "containers/about/FirstParagraphsFragment.js",
-        17
-      ]
-    ],
-    "extractedComments": []
-  },
-  "about.third_paragraph": {
-    "translation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque nec nam aliquam sem et tortor consequat id. Varius morbi enim nunc faucibus a pellentesque sit amet porttitor. Diam donec adipiscing tristique risus nec feugiat in. Purus in mollis nunc sed id semper. Adipiscing at in tellus integer feugiat scelerisque. Vitae nunc sed velit dignissim sodales ut eu sem. Lacus viverra vitae congue eu consequat.",
-    "origin": [
-      [
-        "containers/about/SecondParagraphFragment.js",
-        13
+        "components/CenterDetailsDialog/index.js",
+        156
       ]
     ],
     "extractedComments": []
@@ -558,6 +1938,10 @@
   "form.email": {
     "translation": "Email:",
     "origin": [
+      [
+        "components/HelpUsDialog/index.js",
+        47
+      ],
       [
         "containers/contact/FormFragment.js",
         83
@@ -657,12 +2041,26 @@
     ],
     "extractedComments": []
   },
+  "min.": {
+    "translation": "min.",
+    "origin": [
+      [
+        "components/CenterDetailsDialog/index.js",
+        156
+      ]
+    ],
+    "extractedComments": []
+  },
   "see how to get there": {
     "translation": "vezi cum ajungi acolo",
     "origin": [
       [
+        "components/CenterDetailsDialog/index.js",
+        106
+      ],
+      [
         "components/CenterDetailsTitle/index.js",
-        50
+        49
       ]
     ],
     "extractedComments": []

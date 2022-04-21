@@ -13,7 +13,7 @@ const HelpUsForm = ({ form }) => {
   const { mutate: submitHelpUsForm, isLoading } = useHelpUsFormMutation({
     onSuccess: () => {
       closeDialog();
-      message.success(t({ message: 'Adresa a fost trimisă cu succes. Iți mulțumim!' }));
+      message.success(t({ message: 'Email address sent successfully. We thank you!' }));
     },
   });
 
@@ -36,10 +36,9 @@ const HelpUsForm = ({ form }) => {
     <Form onSubmit={onSubmitHandler}>
       <Paragraph strong style={{ fontSize: '16px', marginBottom: '8px', marginTop: '8px' }}>
         <Trans>
-          Ne bucurăm că vrei să apelezi direct centrul de testare. Te rugăm să ne ajuți să îți
-          oferim cele mai bune informații și servicii și să îmbunătățim experiența la centrele de
-          testare și nu numai. Lasă-ne o adresă de e-mail prin care să putem păstra legătura cu
-          tine.
+          We're glad you want to call the test center directly. Please help us provide you with the
+          best information and services and improve your experience at testing centers and beyond.
+          Leave us an email address so we can keep in touch with you.
         </Trans>
       </Paragraph>
       <FormInput
@@ -51,10 +50,10 @@ const HelpUsForm = ({ form }) => {
 
       <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '8px' }}>
         <Button disabled={isLoading} type="ghost" onClick={closeDialog}>
-          <Trans>Continuă</Trans>
+          <Trans>Continue</Trans>
         </Button>
         <Button disabled={isLoading} loading={isLoading} type="primary" htmlType="submit">
-          <Trans>Ținem legătura</Trans>
+          <Trans>Keep in touch</Trans>
         </Button>
       </div>
     </Form>
