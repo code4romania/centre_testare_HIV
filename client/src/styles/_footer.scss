@@ -52,8 +52,7 @@ a.footer__donate {
 }
 
 .main-logos {
-  margin: 0 auto;
-  order: 2;
+  margin-right: auto;
   flex-wrap: wrap;
 
   & div {
@@ -67,9 +66,5 @@ a.footer__donate {
   .footer__links {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .made-by{
-    flex-direction: column-reverse;
   }
 }

@@ -16,7 +16,7 @@ export default () => {
       </Paragraph>
       <Paragraph>
         <Trans id="404.contact_message" />
-        <a href="mailto:contact@code4.ro"> contact@code4.ro</a>.
+        <a href="mailto:office@sempermusica.org">office@sempermusica.org</a>.
       </Paragraph>
       <Button type="primary" className="hero-btn-primary" href="/">
         <Trans>Back to home page</Trans>
