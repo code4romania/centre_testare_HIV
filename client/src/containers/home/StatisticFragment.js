@@ -72,7 +72,7 @@ export default () => {
       <Col xs={24} md={8}>
         <StatisticCard
           title={<Trans>Covered counties</Trans>}
-          value={state.statistics.counties_count}
+          value="11"
           icon={<MobileCaravansIcon />}
           type="mobile-caravans"
         />
@@ -80,7 +80,7 @@ export default () => {
       <Col xs={24} md={8}>
         <StatisticCard
           title={<Trans>Hotline</Trans>}
-          value={state.statistics.hotline}
+          value="0770437537"
           icon={<HotlineIcon />}
           type="hotline"
         />

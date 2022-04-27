@@ -20,14 +20,6 @@ const FooterFragment = () => {
     <Footer className="footer">
       <div className="container">
         <div className="made-by">
-          <div>
-            <Paragraph>
-              <Trans>Powered by:</Trans>
-            </Paragraph>
-            <Link to={{ pathname: `https://code4.ro/${currentLanguage}` }} target="_blank">
-              <img className="footerLogo__image" src={cfrLogo} alt="" height="40px" />
-            </Link>
-          </div>
           <div className="main-logos">
             <Paragraph>
               <Trans>Project by:</Trans>{' '}
@@ -43,6 +35,14 @@ const FooterFragment = () => {
                 <img className="footerLogo__image" src={sexOgLogo} height="60px" />
               </Link>
             </div>
+          </div>
+          <div>
+            <Paragraph>
+              <Trans>Powered by:</Trans>
+            </Paragraph>
+            <Link to={{ pathname: `https://code4.ro/${currentLanguage}` }} target="_blank">
+              <img className="footerLogo__image" src={cfrLogo} alt="" height="40px" />
+            </Link>
           </div>
         </div>
         <div className="footer__links">
