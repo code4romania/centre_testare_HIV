@@ -5,6 +5,7 @@ import tablib
 from django.conf import settings
 from django.contrib import admin, messages
 from django.contrib.admin import display
+from django.db.models import Avg
 from django.urls import reverse
 from django.utils.safestring import mark_safe
 from django.utils.translation import gettext_lazy as _
@@ -26,14 +27,19 @@ admin.site.register(models.NecessaryDocuments, CommonNameAdmin)
 admin.site.register(models.FreeTestingConditions, CommonNameAdmin)
 
 
-class CommonCenterContactAdmin(ImportExportModelAdmin):
+class CommonCenterAdmin(ImportExportModelAdmin):
     @staticmethod
-    def testing_centers(obj):
+    def linked_testing_center(center_id, center_name):
+        center_url = reverse("admin:centers_testingcenter_change", args=[center_id])
+        center_link = f"<a href='{center_url}'>{center_name}</a>"
+        return center_link
+
+    def testing_centers(self, obj):
         centers_listing = obj.centers.values_list("pk", "name")
         data = []
         for center_id, center_name in centers_listing:
-            center_url = reverse("admin:centers_testingcenter_change", args=[center_id])
-            data.append(f"<a href='{center_url}'>{center_name}</a>")
+            center_url = self.linked_testing_center(center_id, center_name)
+            data.append(center_url)
         formatted_data = ", ".join(data)
         return mark_safe(formatted_data)
 
@@ -41,13 +47,13 @@ class CommonCenterContactAdmin(ImportExportModelAdmin):
 
 
 @admin.register(models.CenterEmail)
-class CenterEmailAdmin(CommonCenterContactAdmin):
+class CenterEmailAdmin(CommonCenterAdmin):
     list_display = ("email", "testing_centers")
     search_fields = ("centers__name", "email")
 
 
 @admin.register(models.CenterPhoneNumber)
-class CenterPhoneNumberAdmin(CommonCenterContactAdmin):
+class CenterPhoneNumberAdmin(CommonCenterAdmin):
     list_display = ("phone_number", "testing_centers")
     search_fields = ("centers__name", "email")
 
@@ -70,7 +76,18 @@ class StatisticAdmin(admin.ModelAdmin):
 
 @admin.register(models.CenterRating)
 class TestingCenterRatings(admin.ModelAdmin):
-    pass
+    list_display = ("__str__", "linked_testing_center", "created_at")
+    list_filter = ("rating", "testing_center")
+    ordering = ("-created_at",)
+
+    @staticmethod
+    def get_rating(obj: models.CenterRating):
+        return f"{obj.rating}/{obj.MAX_VALUE}"
+
+    @staticmethod
+    def linked_testing_center(obj: models.CenterRating):
+        center_url = CommonCenterAdmin.linked_testing_center(obj.testing_center.id, obj.testing_center)
+        return mark_safe(center_url)
 
 
 @admin.register(models.TestingCenter)
@@ -79,6 +96,7 @@ class TestingCenterAdmin(AdminWithStatusChanges):
         model = models.CenterRating
         extra = 1
 
+    ordering = ("-id",)
     list_filter = (
         "status",
         "county",
@@ -88,7 +106,14 @@ class TestingCenterAdmin(AdminWithStatusChanges):
         "has_pre_testing_counseling",
         "has_post_testing_counseling",
     )
-    list_display = ("get_testing_center_address", "status", "website", "schedule_start", "schedule_end")
+    list_display = (
+        "get_testing_center_address",
+        "status",
+        "get_average_rating",
+        "website",
+        "schedule_start",
+        "schedule_end",
+    )
     list_editable = ("status",)
 
     search_fields = ("full_address",)
@@ -170,6 +195,12 @@ class TestingCenterAdmin(AdminWithStatusChanges):
         return mark_safe(
             "{} / {} {} ({}, {})".format(obj.name, obj.street_name, obj.street_number, obj.locality, county)
         )
+
+    @staticmethod
+    @display(ordering="ratings", description=_("Average Rating"))
+    def get_average_rating(obj: models.TestingCenter):
+        center_rating = obj.ratings.aggregate(Avg("rating"))["rating__avg"]
+        return float(center_rating) if center_rating else None
 
     def make_pending(self, request, queryset):
         self._perform_status_change(
