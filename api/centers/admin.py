@@ -200,7 +200,7 @@ class TestingCenterAdmin(AdminWithStatusChanges):
     @display(ordering="ratings", description=_("Average Rating"))
     def get_average_rating(obj: models.TestingCenter):
         center_rating = obj.ratings.aggregate(Avg("rating"))["rating__avg"]
-        return float(center_rating) if center_rating else None
+        return f"{center_rating:.2f}" if center_rating else None
 
     def make_pending(self, request, queryset):
         self._perform_status_change(
