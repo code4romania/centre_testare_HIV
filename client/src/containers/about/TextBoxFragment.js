@@ -13,10 +13,10 @@ export default () => {
           <Trans>
             The project is implemented by the Semper Musica Association in partnership with the
             Federation of Medical Student Associations from Romania and with Sex and society and
-            benefits from a 𝟮𝟲𝟯.𝟲𝟰𝟬, 𝟱𝟬 € grant from Active Citizens Fund Romania, programme funded
-            by Iceland, Liechtenstein and Norway through the EEA Grants 2014-2021. The content of
-            this website does not necessarily reflect the official position of the EEA and Norway
-            Grants 2014-2021; for more information visit{' '}
+            benefits from a 249.896 € grant from Active Citizens Fund Romania, programme funded by
+            Iceland, Liechtenstein and Norway through the EEA Grants 2014-2021. The content of this
+            website does not necessarily reflect the official position of the EEA and Norway Grants
+            2014-2021; for more information visit{' '}
             <Link to={{ pathname: 'https://eeagrants.org/' }} target="_blank">
               www.eeagrants.org
             </Link>
