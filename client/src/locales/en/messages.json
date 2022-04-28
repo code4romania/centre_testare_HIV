@@ -980,7 +980,7 @@
       ],
       [
         "containers/center-review/FormFragment.js",
-        110
+        119
       ]
     ],
     "extractedComments": []
@@ -1123,7 +1123,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        25
+        41
       ]
     ],
     "extractedComments": []
@@ -1157,7 +1157,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        33
+        25
       ]
     ],
     "extractedComments": []
@@ -1221,7 +1221,7 @@
     "origin": [
       [
         "containers/center-review/FormFragment.js",
-        96
+        105
       ]
     ],
     "extractedComments": []
@@ -1290,7 +1290,7 @@
     "origin": [
       [
         "containers/center-review/FormFragment.js",
-        136
+        145
       ],
       [
         "containers/contact/FormFragment.js",
@@ -1429,7 +1429,7 @@
       ],
       [
         "containers/center-review/FormFragment.js",
-        73
+        82
       ]
     ],
     "extractedComments": []
@@ -1439,7 +1439,7 @@
     "origin": [
       [
         "containers/center-review/FormFragment.js",
-        70
+        79
       ]
     ],
     "extractedComments": []
@@ -1540,6 +1540,10 @@
   "The form was submitted successfully.": {
     "origin": [
       [
+        "containers/center-review/FormFragment.js",
+        62
+      ],
+      [
         "containers/contact/FormFragment.js",
         34
       ]
@@ -1556,7 +1560,7 @@
     ],
     "extractedComments": []
   },
-  "The project is implemented by the Semper Musica Association in partnership with the Federation of Medical Student Associations from Romania and with Sex and society and benefits from a 𝟮𝟲𝟯.𝟲𝟰𝟬, 𝟱𝟬 € grant from Active Citizens Fund Romania, programme funded by Iceland, Liechtenstein and Norway through the EEA Grants 2014-2021. The content of this website does not necessarily reflect the official position of the EEA and Norway Grants 2014-2021; for more information visit <0>www.eeagrants.org</0>. More details about Active Citizens Fund Romania are available at <1>www.activecitizensfund.ro</1>.": {
+  "The project is implemented by the Semper Musica Association in partnership with the Federation of Medical Student Associations from Romania and with Sex and society and benefits from a 249.896 € grant from Active Citizens Fund Romania, programme funded by Iceland, Liechtenstein and Norway through the EEA Grants 2014-2021. The content of this website does not necessarily reflect the official position of the EEA and Norway Grants 2014-2021; for more information visit <0>www.eeagrants.org</0>. More details about Active Citizens Fund Romania are available at <1>www.activecitizensfund.ro</1>.": {
     "translation": "",
     "origin": [
       [
@@ -1642,6 +1646,10 @@
   },
   "There was an error submitting the form. Please try again.": {
     "origin": [
+      [
+        "containers/center-review/FormFragment.js",
+        66
+      ],
       [
         "containers/contact/FormFragment.js",
         37
@@ -1889,7 +1897,7 @@
       ],
       [
         "containers/center-review/FormFragment.js",
-        109
+        118
       ]
     ],
     "extractedComments": []

@@ -996,7 +996,7 @@
       ],
       [
         "containers/center-review/FormFragment.js",
-        110
+        119
       ]
     ],
     "extractedComments": []
@@ -1144,7 +1144,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        25
+        41
       ]
     ],
     "extractedComments": []
@@ -1178,7 +1178,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        33
+        25
       ]
     ],
     "extractedComments": []
@@ -1242,7 +1242,7 @@
     "origin": [
       [
         "containers/center-review/FormFragment.js",
-        96
+        105
       ]
     ],
     "extractedComments": []
@@ -1312,7 +1312,7 @@
     "origin": [
       [
         "containers/center-review/FormFragment.js",
-        136
+        145
       ],
       [
         "containers/contact/FormFragment.js",
@@ -1456,7 +1456,7 @@
       ],
       [
         "containers/center-review/FormFragment.js",
-        73
+        82
       ]
     ],
     "extractedComments": []
@@ -1466,7 +1466,7 @@
     "origin": [
       [
         "containers/center-review/FormFragment.js",
-        70
+        79
       ]
     ],
     "extractedComments": []
@@ -1569,6 +1569,10 @@
     "translation": "Formularul a fost trimis cu succes.",
     "origin": [
       [
+        "containers/center-review/FormFragment.js",
+        62
+      ],
+      [
         "containers/contact/FormFragment.js",
         34
       ]
@@ -1585,8 +1589,8 @@
     ],
     "extractedComments": []
   },
-  "The project is implemented by the Semper Musica Association in partnership with the Federation of Medical Student Associations from Romania and with Sex and society and benefits from a 𝟮𝟲𝟯.𝟲𝟰𝟬, 𝟱𝟬 € grant from Active Citizens Fund Romania, programme funded by Iceland, Liechtenstein and Norway through the EEA Grants 2014-2021. The content of this website does not necessarily reflect the official position of the EEA and Norway Grants 2014-2021; for more information visit <0>www.eeagrants.org</0>. More details about Active Citizens Fund Romania are available at <1>www.activecitizensfund.ro</1>.": {
-    "translation": "Proiectul este derulat de Asociația Semper Musica în parteneriat cu Federația Asociațiilor Studenților în Medicină din România și cu Sex and society și beneficiază de o finanțare în valoare de 𝟮𝟲𝟯.𝟲𝟰𝟬,𝟱𝟬 €, prin programul Active Citizens Fund România, finanțat de Islanda, Liechtenstein și Norvegia prin Granturile SEE 2014-2021. Conținutul acestui website nu reprezintă în mod necesar poziția oficială a Granturilor SEE și Norvegiene 2014-2021; pentru mai multe informații accesați <0>www.eeagrants.org</0>. Informații despre Active Citizens Fund România sunt disponibile la <1>www.activecitizensfund.ro</1>.",
+  "The project is implemented by the Semper Musica Association in partnership with the Federation of Medical Student Associations from Romania and with Sex and society and benefits from a 249.896 € grant from Active Citizens Fund Romania, programme funded by Iceland, Liechtenstein and Norway through the EEA Grants 2014-2021. The content of this website does not necessarily reflect the official position of the EEA and Norway Grants 2014-2021; for more information visit <0>www.eeagrants.org</0>. More details about Active Citizens Fund Romania are available at <1>www.activecitizensfund.ro</1>.": {
+    "translation": "Proiectul este derulat de Asociația Semper Musica în parteneriat cu Federația Asociațiilor Studenților în Medicină din România și cu Sex and society și beneficiază de o finanțare în valoare de 249.896 €, prin programul Active Citizens Fund România, finanțat de Islanda, Liechtenstein și Norvegia prin Granturile SEE 2014-2021. Conținutul acestui website nu reprezintă în mod necesar poziția oficială a Granturilor SEE și Norvegiene 2014-2021; pentru mai multe informații accesați <0>www.eeagrants.org</0>. Informații despre Active Citizens Fund România sunt disponibile la <1>www.activecitizensfund.ro</1>.",
     "origin": [
       [
         "containers/about/TextBoxFragment.js",
@@ -1672,6 +1676,10 @@
   "There was an error submitting the form. Please try again.": {
     "translation": "Formularul nu a putut fi trimis. Te rog încearcă din nou.",
     "origin": [
+      [
+        "containers/center-review/FormFragment.js",
+        66
+      ],
       [
         "containers/contact/FormFragment.js",
         37
@@ -1920,7 +1928,7 @@
       ],
       [
         "containers/center-review/FormFragment.js",
-        109
+        118
       ]
     ],
     "extractedComments": []
