@@ -31,7 +31,7 @@ const FormFragment = ({ form }) => {
         message: '',
         gdpr: false,
       });
-      message.info(t({ message: 'The form was submitted successfully.' }));
+      message.success(t({ message: 'The form was submitted successfully.' }));
     },
     onError: () => {
       message.error(t({ message: 'There was an error submitting the form. Please try again.' }));

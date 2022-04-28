@@ -31,7 +31,7 @@ const FooterFragment = () => {
               <Link to={{ pathname: 'https://fasmr.ro/' }} target="_blank">
                 <img className="footerLogo__image" src={fasmrLogo} />
               </Link>
-              <Link to={{ pathname: 'https://fasmr.ro/' }} target="_blank">
+              <Link to={{ pathname: 'https://www.sexogsamfunn.no/' }} target="_blank">
                 <img className="footerLogo__image" src={sexOgLogo} height="60px" />
               </Link>
             </div>

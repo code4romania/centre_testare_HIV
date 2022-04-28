@@ -8,13 +8,10 @@ import HeroFragment from './HeroFragment';
 
 export default () => (
   <Layout hero={<HeroFragment />}>
-    <Row type="flex" align="center" gutter={[20, 60]} style={{ paddingTop: 20 }}>
+    <Row type="flex" justify="center" gutter={[20, 60]} style={{ paddingTop: 20 }}>
       <Col xs={24} md={12}>
         <FormFragment />
       </Col>
-      {/* <Col xs={24} md={{ span: 12, order: 2 }}>
-        <MapFragment />
-      </Col> */}
     </Row>
   </Layout>
 );

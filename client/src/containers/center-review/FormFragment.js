@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
-import { Button, Col, Form, Row, Select, Typography, Rate } from 'antd';
-import { Trans } from '@lingui/macro';
+import { Button, Col, Form, Row, Select, Typography, Rate, message } from 'antd';
+import { Trans, t } from '@lingui/macro';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import { pickBy, startsWith } from 'lodash';
 import useCreateFormValidationRules from '../../hooks/form/useFormValidationRules';
@@ -57,7 +57,16 @@ const FormFragment = ({ form }) => {
           },
         };
 
-        sendReview(body);
+        sendReview(body, {
+          onSuccess: () => {
+            message.success(t({ message: 'The form was submitted successfully.' }));
+          },
+          onError: () => {
+            message.error(
+              t({ message: 'There was an error submitting the form. Please try again.' }),
+            );
+          },
+        });
       });
     },
     [form, sendReview],
@@ -80,7 +89,7 @@ const FormFragment = ({ form }) => {
                 style={{ width: 200 }}
                 optionFilterProp="children"
                 filterOption={(input, option) =>
-                  option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                  option.props.children.join('').toLowerCase().indexOf(input?.toLowerCase()) >= 0
                 }
               >
                 {testingCenters?.map((center) => (

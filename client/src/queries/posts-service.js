@@ -18,20 +18,20 @@ const SLICE_START = 0;
 const SLICE_END = 3;
 
 export const useBlogPreviewPostsQuery = (postSlug) => {
-  const { data, getPosts, ...rest } = usePostsQuery();
+  const { data, getPosts, isError, ...rest } = usePostsQuery();
 
   const { results: posts } = data ?? {};
 
   useEffect(() => {
-    if (data) return;
+    if (data || isError) return;
 
     getPosts(blogPreviewPostsQueryParams);
-  }, [data, getPosts]);
+  }, [data, getPosts, isError]);
 
   const blogPreviewPosts = useMemo(
     () => posts?.filter(({ slug }) => slug !== postSlug).slice(SLICE_START, SLICE_END),
     [posts, postSlug],
   );
 
-  return { blogPreviewPosts, ...rest };
+  return { blogPreviewPosts, isError, ...rest };
 };
