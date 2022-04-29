@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-29 10:12+0300\n"
+"POT-Creation-Date: 2022-04-29 10:35+0300\n"
 "PO-Revision-Date: 2022-02-03 20:22+0200\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -14,36 +14,52 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: blog/admin.py:16
+msgid "Title"
+msgstr ""
+
+#: blog/admin.py:24
+msgid "Metadata"
+msgstr ""
+
+#: blog/admin.py:37
+msgid "Preview"
+msgstr ""
+
+#: blog/admin.py:48
+msgid "Text"
+msgstr ""
+
 #: blog/apps.py:7
 msgid "Blog"
 msgstr ""
 
-#: blog/models.py:10 blog/models.py:34
-msgid "post"
+#: blog/models.py:10
+msgid "author"
 msgstr ""
 
 #: blog/models.py:12 pages/models.py:30
 msgid "slug"
 msgstr ""
 
-#: blog/models.py:14
-msgid "preview text"
-msgstr ""
-
-#: blog/models.py:15
-msgid "image"
-msgstr ""
-
-#: blog/models.py:16
-msgid "tags"
-msgstr ""
-
-#: blog/models.py:18 pages/models.py:28
+#: blog/models.py:14 pages/models.py:28
 msgid "title"
 msgstr ""
 
-#: blog/models.py:19
+#: blog/models.py:15
 msgid "text"
+msgstr ""
+
+#: blog/models.py:17
+msgid "preview text"
+msgstr ""
+
+#: blog/models.py:18
+msgid "image"
+msgstr ""
+
+#: blog/models.py:19
+msgid "tags"
 msgstr ""
 
 #: blog/models.py:21
@@ -60,6 +76,10 @@ msgstr ""
 
 #: blog/models.py:25
 msgid "updated"
+msgstr ""
+
+#: blog/models.py:34
+msgid "post"
 msgstr ""
 
 #: blog/models.py:35

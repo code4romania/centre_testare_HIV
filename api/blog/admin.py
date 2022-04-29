@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.translation import gettext_lazy as _
 from import_export.admin import ImportExportModelAdmin
 from taggit.admin import TagAdmin
 from taggit.models import Tag
@@ -12,11 +13,20 @@ class PostAdmin(ImportExportModelAdmin):
     list_display = ("title", "slug", "created", "published", "is_visible")
     fieldsets = [
         (
-            None,
+            _("Title"),
+            {
+                "fields": (
+                    "title",
+                    "title_ro",
+                    "title_en",
+                )
+            },
+        ),
+        (
+            _("Metadata"),
             {
                 "fields": (
                     "author",
-                    "title",
                     "slug",
                     "image",
                     "tags",
@@ -25,8 +35,28 @@ class PostAdmin(ImportExportModelAdmin):
                 )
             },
         ),
-        ("Preview", {"classes": ("full-width",), "fields": ("preview_text",)}),
-        ("Text", {"classes": ("full-width",), "fields": ("text",)}),
+        (
+            _("Preview"),
+            {
+                "classes": ("full-width",),
+                "fields": (
+                    "preview_text",
+                    "preview_text_ro",
+                    "preview_text_en",
+                ),
+            },
+        ),
+        (
+            _("Text"),
+            {
+                "classes": ("full-width",),
+                "fields": (
+                    "text",
+                    "text_ro",
+                    "text_en",
+                ),
+            },
+        ),
     ]
 
 
