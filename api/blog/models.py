@@ -7,16 +7,16 @@ from taggit.managers import TaggableManager
 
 
 class Post(models.Model):
-    author = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name=_("post"))
+    author = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name=_("author"))
 
     slug = models.SlugField(_("slug"), unique=True)
+
+    title = models.CharField(_("title"), max_length=200)
+    text = RichTextUploadingField(_("text"))
 
     preview_text = models.CharField(_("preview text"), max_length=300)
     image = models.ImageField(_("image"), upload_to="blog/")
     tags = TaggableManager(_("tags"))
-
-    title = models.CharField(_("title"), max_length=200)
-    text = RichTextUploadingField(_("text"))
 
     is_visible = models.BooleanField(_("is visible"), default=False)
     published = models.DateTimeField(_("published"), blank=True, null=True)

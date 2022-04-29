@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-29 10:12+0300\n"
+"POT-Creation-Date: 2022-04-29 10:35+0300\n"
 "PO-Revision-Date: 2022-02-03 20:22+0200\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -15,37 +15,53 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
 "2:1));\n"
 
+#: blog/admin.py:16
+msgid "Title"
+msgstr "Titlu"
+
+#: blog/admin.py:24
+msgid "Metadata"
+msgstr "Metadate"
+
+#: blog/admin.py:37
+msgid "Preview"
+msgstr "Text previzualizare"
+
+#: blog/admin.py:48
+msgid "Text"
+msgstr "Text"
+
 #: blog/apps.py:7
 msgid "Blog"
 msgstr "Blog"
 
-#: blog/models.py:10 blog/models.py:34
-msgid "post"
-msgstr "articol"
+#: blog/models.py:10
+msgid "author"
+msgstr "autor"
 
 #: blog/models.py:12 pages/models.py:30
 msgid "slug"
 msgstr "adresă"
 
-#: blog/models.py:14
-msgid "preview text"
-msgstr "text previzualizare"
-
-#: blog/models.py:15
-msgid "image"
-msgstr "imagine"
-
-#: blog/models.py:16
-msgid "tags"
-msgstr "cuvinte cheie"
-
-#: blog/models.py:18 pages/models.py:28
+#: blog/models.py:14 pages/models.py:28
 msgid "title"
 msgstr "titlu"
 
-#: blog/models.py:19
+#: blog/models.py:15
 msgid "text"
 msgstr "text"
+
+#: blog/models.py:17
+msgid "preview text"
+msgstr "text previzualizare"
+
+#: blog/models.py:18
+msgid "image"
+msgstr "imagine"
+
+#: blog/models.py:19
+msgid "tags"
+msgstr "cuvinte cheie"
 
 #: blog/models.py:21
 msgid "is visible"
@@ -62,6 +78,10 @@ msgstr "creat"
 #: blog/models.py:25
 msgid "updated"
 msgstr "actualizat"
+
+#: blog/models.py:34
+msgid "post"
+msgstr "articol"
 
 #: blog/models.py:35
 msgid "posts"
@@ -656,9 +676,6 @@ msgstr[2] "{updated} de {item_pl} au fost marcate ca {status}"
 
 #~ msgid "Yes/No"
 #~ msgstr "Da/Nu"
-
-#~ msgid "Text"
-#~ msgstr "Text"
 
 #~ msgid "Testing Centers Admin"
 #~ msgstr "Administrare Centre de Testare HIV"
