@@ -13,17 +13,16 @@ export default () => {
         </Title>
         <Paragraph>
           <Trans>
-            The Semper Musica Association was born from the desire to make a change for the better.
-            We act mainly in the field of education for the prevention of HIV infection among high
-            school students and young people nationwide. We guide our activities according to our
-            vision and mission.
+            Semper Musica Association was born out of a desire to make a change for the better. We
+            work mainly in the field of education for HIV prevention among high school students and
+            young people nationwide. We guide our activities according to our vision and mission.
           </Trans>
         </Paragraph>
         <Paragraph>
           <Trans>
             Vision:{' '}
             <Text strong>
-              A society without new HIV cases among young people, in which discrimination against
+              A society without new HIV cases among young people, where discrimination against
               HIV-positive people does not exist
             </Text>
             .
@@ -33,8 +32,8 @@ export default () => {
           <Trans>
             Mission:{' '}
             <Text strong>
-              We fight for the free access of young people to education and protection for HIV
-              prevention and against discrimination of people living with HIV
+              We fight for free access of young people to education and protection for HIV
+              prevention and against discrimination of HIV positive people
             </Text>
             .
           </Trans>
@@ -49,11 +48,11 @@ export default () => {
         </Paragraph>
         <Paragraph>
           <Trans>
-            The projects we have carried out have brought a change for young people in Romania, and
-            their involvement and quality have propelled us to various galas and competitions,
-            totaling from the establishment until today no less than 10 awards. Since its inception,
-            we have been educating young people from disadvantaged backgrounds on HIV prevention and
-            sexual and reproductive health.
+            Our projects have brought a change for young people in Romania, and their involvement
+            and quality have propelled us to various galas and competitions, totaling no less than
+            10 awards since our creation. Since its inception, we have been involved in educating
+            young people from disadvantaged backgrounds about HIV prevention and sexual and
+            reproductive health.
           </Trans>
         </Paragraph>
       </Col>
