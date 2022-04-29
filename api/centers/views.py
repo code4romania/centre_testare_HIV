@@ -5,7 +5,6 @@ from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
 from django.core.cache import caches
 from django.db.models import Q
 from django.utils import timezone
-from django.utils.translation import gettext_lazy as _
 from django_filters.rest_framework import DjangoFilterBackend
 from django_q.models import Schedule
 from drf_spectacular.utils import OpenApiParameter, extend_schema
@@ -30,6 +29,7 @@ from centers.serializers import (
     TestingCenterPaginatedListSerializer,
     TestingCenterSerializer,
 )
+from contact.models import ContactEmailReminder
 
 
 class AddRatingQueryBurstAnonRateThrottle(AnonRateThrottle):
@@ -190,31 +190,21 @@ class ScheduleRatingReminder(viewsets.GenericViewSet):
             user_email = serializer.data["user_email"]
             next_run = timezone.localtime() + timedelta(seconds=60)
 
-            email_arg = f"{user_email}"
-            subject_arg = f"{_('Reminder to rate your testing center')}"
-            template_arg = "center_rating_reminder"
-            context_arg = f'{{"site_url": "{settings.SITE_URL}"}}'
+            contact_email = ContactEmailReminder.objects.create(email=user_email, status=ContactEmailReminder.UNSENT)
 
-            mail_args = (
-                "email_user",
-                "--email",
-                email_arg,
-                "--subject",
-                subject_arg,
-                "--template",
-                template_arg,
-                "--context",
-                context_arg,
-            )
+            mail_args = ("remind_user", "--contact_obj", contact_email.pk)
             formatted_mail_args = ", ".join((f"'{arg}'" for arg in mail_args))
 
-            Schedule.objects.create(
+            new_schedule = Schedule.objects.create(
                 func="django.core.management.call_command",
                 args=formatted_mail_args,
                 name=f"Center rating remind {user_email} on {next_run.strftime('%Y-%m-%d %H:%M:%S')}",
                 schedule_type=Schedule.ONCE,
                 next_run=next_run,
+                repeats=1,
             )
+            contact_email.scheduled_task = new_schedule
+            contact_email.save()
 
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

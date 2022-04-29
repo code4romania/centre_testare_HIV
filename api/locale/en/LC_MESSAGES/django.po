@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-14 23:24+0300\n"
+"POT-Creation-Date: 2022-04-29 10:12+0300\n"
 "PO-Revision-Date: 2022-02-03 20:22+0200\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -66,89 +66,93 @@ msgstr ""
 msgid "posts"
 msgstr ""
 
-#: centers/admin.py:40 centers/admin.py:180 centers/admin.py:192
-#: centers/admin.py:204 centers/models.py:218
+#: centers/admin.py:46 centers/admin.py:211 centers/admin.py:223
+#: centers/admin.py:235 centers/models.py:218
 msgid "testing center"
 msgstr ""
 
-#: centers/admin.py:99
+#: centers/admin.py:124
 msgid "Operational Data"
 msgstr ""
 
-#: centers/admin.py:101
+#: centers/admin.py:126
 msgid "Geo Data"
 msgstr ""
 
-#: centers/admin.py:116
+#: centers/admin.py:141
 msgid "Center Details"
 msgstr ""
 
-#: centers/admin.py:126
+#: centers/admin.py:151
 msgid "Contact Information"
 msgstr ""
 
-#: centers/admin.py:137
+#: centers/admin.py:162
 msgid "Testing Costs"
 msgstr ""
 
-#: centers/admin.py:148
+#: centers/admin.py:173
 msgid "Testing Details"
 msgstr ""
 
-#: centers/admin.py:167
+#: centers/admin.py:192
 msgid "Address"
 msgstr ""
 
-#: centers/admin.py:181 centers/admin.py:193 centers/admin.py:205
+#: centers/admin.py:200
+msgid "Average Rating"
+msgstr ""
+
+#: centers/admin.py:212 centers/admin.py:224 centers/admin.py:236
 #: centers/models.py:219
 msgid "testing centers"
 msgstr ""
 
-#: centers/admin.py:184
+#: centers/admin.py:215
 msgid "Mark selected testing centers as pending"
 msgstr ""
 
-#: centers/admin.py:196
+#: centers/admin.py:227
 msgid "Mark selected testing centers as accepted"
 msgstr ""
 
-#: centers/admin.py:208
+#: centers/admin.py:239
 msgid "Mark selected testing centers as rejected"
 msgstr ""
 
-#: centers/admin.py:266
+#: centers/admin.py:297
 msgid "testing center resource"
 msgstr ""
 
-#: centers/admin.py:267
+#: centers/admin.py:298
 msgid "testing center resources"
 msgstr ""
 
-#: centers/admin.py:292
+#: centers/admin.py:323
 #, python-brace-format
 msgid "File with name '{file_name}' wasn't imported. Errors: {row_errors}"
 msgstr ""
 
-#: centers/admin.py:299
+#: centers/admin.py:330
 #, python-brace-format
 msgid "File with name '{file_name}' was imported."
 msgstr ""
 
-#: centers/admin.py:306
+#: centers/admin.py:337
 #, python-brace-format
 msgid ""
 "File with name '{file_name}' wasn't a proper data file. Accepted formats "
 "are: CSV, XLSX."
 msgstr ""
 
-#: centers/admin.py:315
+#: centers/admin.py:346
 #, python-brace-format
 msgid ""
 "File with name '{file_name}' couldn't be imported. The error received was: "
 "`{error_args}`"
 msgstr ""
 
-#: centers/apps.py:7 testing_centers_site/settings/base.py:45
+#: centers/apps.py:7 testing_centers_site/settings/base.py:49
 msgid "Testing Centers"
 msgstr ""
 
@@ -208,7 +212,7 @@ msgstr ""
 msgid "emails"
 msgstr ""
 
-#: centers/models.py:80 centers/models.py:91 contact/models.py:15
+#: centers/models.py:80 centers/models.py:91 contact/models.py:16
 msgid "phone number"
 msgstr ""
 
@@ -264,7 +268,7 @@ msgstr ""
 msgid "Platform"
 msgstr ""
 
-#: centers/models.py:131 centers/models.py:289
+#: centers/models.py:131 centers/models.py:288
 msgid "status"
 msgstr ""
 
@@ -408,7 +412,7 @@ msgstr ""
 msgid "comment"
 msgstr ""
 
-#: centers/models.py:248 contact/models.py:22
+#: centers/models.py:248 contact/models.py:23 contact/models.py:49
 msgid "creation date"
 msgstr ""
 
@@ -425,75 +429,71 @@ msgid "center ratings"
 msgstr ""
 
 #: centers/models.py:263
-msgid "mobile caravans"
-msgstr ""
-
-#: centers/models.py:264
 msgid "hotline"
 msgstr ""
 
-#: centers/models.py:269
+#: centers/models.py:268
 msgid "statistic"
 msgstr ""
 
-#: centers/models.py:270
+#: centers/models.py:269
 msgid "statistics"
 msgstr ""
 
-#: centers/models.py:282
+#: centers/models.py:281
 msgid "Not tried"
 msgstr ""
 
-#: centers/models.py:283
+#: centers/models.py:282
 msgid "Imported successfully"
 msgstr ""
 
-#: centers/models.py:284
+#: centers/models.py:283
 msgid "Import failed"
 msgstr ""
 
-#: centers/models.py:287 contact/models.py:13 pages/models.py:9
+#: centers/models.py:286 contact/models.py:14 pages/models.py:9
 #: pages/models.py:95
 msgid "name"
 msgstr ""
 
-#: centers/models.py:288
+#: centers/models.py:287
 msgid "file"
 msgstr ""
 
-#: centers/models.py:294
+#: centers/models.py:293
 msgid "Data file"
 msgstr ""
 
-#: centers/models.py:295
+#: centers/models.py:294
 msgid "Data files"
 msgstr ""
 
-#: contact/admin.py:19
+#: contact/admin.py:21
 msgid "Contact info"
 msgstr ""
 
-#: contact/admin.py:20
+#: contact/admin.py:22
 msgid "Message"
 msgstr ""
 
-#: contact/admin.py:21
+#: contact/admin.py:23
 msgid "Status"
 msgstr ""
 
-#: contact/admin.py:26 contact/admin.py:33 contact/models.py:16
+#: contact/admin.py:28 contact/admin.py:35 contact/models.py:17
 msgid "message"
 msgstr ""
 
-#: contact/admin.py:26 contact/admin.py:33
+#: contact/admin.py:28 contact/admin.py:35
 msgid "messages"
 msgstr ""
 
-#: contact/admin.py:29
+#: contact/admin.py:31
 msgid "Mark selected messages as unread"
 msgstr ""
 
-#: contact/admin.py:36
+#: contact/admin.py:38
 msgid "Mark selected messages as read"
 msgstr ""
 
@@ -501,28 +501,44 @@ msgstr ""
 msgid "Contact Message"
 msgstr ""
 
-#: contact/models.py:9
+#: contact/models.py:10
 msgid "Unread"
 msgstr ""
 
-#: contact/models.py:10
+#: contact/models.py:11
 msgid "Read"
 msgstr ""
 
-#: contact/models.py:14
+#: contact/models.py:15 contact/models.py:43
 msgid "email address"
 msgstr ""
 
-#: contact/models.py:19
+#: contact/models.py:20
 msgid "message status"
 msgstr ""
 
-#: contact/models.py:27
+#: contact/models.py:28
 msgid "contact message"
 msgstr ""
 
-#: contact/models.py:28
+#: contact/models.py:29
 msgid "contact messages"
+msgstr ""
+
+#: contact/models.py:39
+msgid "Unsent"
+msgstr ""
+
+#: contact/models.py:40
+msgid "Sent"
+msgstr ""
+
+#: contact/models.py:45
+msgid "email reminder status"
+msgstr ""
+
+#: contact/models.py:54 contact/models.py:55
+msgid "contact email reminders"
 msgstr ""
 
 #: pages/apps.py:7
@@ -613,11 +629,11 @@ msgstr ""
 msgid "attachments"
 msgstr ""
 
-#: testing_centers_site/settings/base.py:176
+#: testing_centers_site/settings/base.py:216
 msgid "Romanian"
 msgstr ""
 
-#: testing_centers_site/settings/base.py:177
+#: testing_centers_site/settings/base.py:217
 msgid "English"
 msgstr ""
 

@@ -8,7 +8,7 @@ from testing_centers_site.utils import send_email
 
 
 class Command(BaseCommand):
-    help = "Dumps Models into Excel and sends email with xlsx as attachment"
+    help = "Sends an e-mail using a pre-defined template."
     logger = None
 
     def __init__(self):
@@ -34,4 +34,4 @@ class Command(BaseCommand):
         template_context = json.loads(email_context)
 
         send_email(template, template_context, email_subject, to=email_addresses)
-        self.logger.info("Sent email reminder to {}".format(email_addresses))
+        self.logger.info("Sent email to {}".format(email_addresses))
