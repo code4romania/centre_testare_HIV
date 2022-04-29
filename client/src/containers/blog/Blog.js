@@ -1,60 +1,60 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Spin, Typography } from 'antd';
 import { Trans } from '@lingui/macro';
 import BlogItem from '../../components/BlogItem';
-import config from '../../config';
 import LoadMore from '../../components/LoadMoreArticlesLink';
+import { useBlogPostsQuery, useBlogPostsEnQuery } from '../../queries/posts-queries';
+import { useGlobalContext } from '../../context';
 
 const { Title } = Typography;
-
-const { POST_URL } = config;
 
 const LIMIT = 3;
 
 const Blog = () => {
+  const { currentLanguage } = useGlobalContext();
   const [state, setState] = useState({
-    posts: [],
-    requestError: false,
-    loading: true,
     index: 0,
     showMore: true,
+    roPosts: [],
+    enPosts: [],
   });
 
-  const loadPosts = useCallback(async () => {
-    try {
-      const res = await fetch(
-        `${POST_URL}?limit=${LIMIT}&offset=${state.index}&ordering=-published`,
-      );
-      if (res.ok) {
-        const { results: posts, next } = await res.json();
-        setState((prevState) => ({
-          ...prevState,
-          posts: [...prevState.posts, ...posts],
-          loading: false,
-          index: prevState.index + posts.length,
-          showMore: next !== null,
-          requestError: false,
-        }));
-      } else {
-        throw new Error(res.statusText);
-      }
-    } catch (err) {
+  const {
+    isLoading,
+    isError,
+    refetch: refetchRo,
+  } = useBlogPostsQuery({ limit: LIMIT, offset: state.index, ordering: '-published' }, 'ro', {
+    onSuccess: ({ results, next }) => {
       setState((prevState) => ({
         ...prevState,
-        posts: [],
-        requestError: true,
-        loading: false,
-        index: 0,
-        showMore: true,
+        index: prevState.index + results.length,
+        showMore: next !== null,
+        roPosts: [...prevState.roPosts, ...results],
       }));
-    }
-  }, [state.index]);
+    },
+  });
 
-  useEffect(() => {
-    loadPosts();
-  }, []);
+  const { refetch: refetchEn } = useBlogPostsEnQuery(
+    { limit: LIMIT, offset: state.index, ordering: '-published' },
+    'en',
+    {
+      onSuccess: ({ results }) => {
+        setState((prevState) => ({
+          ...prevState,
+          enPosts: [...prevState.enPosts, ...results],
+        }));
+      },
+    },
+  );
 
-  if (state.loading) {
+  const posts = currentLanguage === 'ro' ? state.roPosts : state.enPosts;
+
+  const onLoadMoreHandler = useCallback(() => {
+    refetchRo();
+    refetchEn();
+  }, [refetchEn, refetchRo]);
+
+  if (isLoading) {
     return (
       <div className="blog-wrapper">
         <Spin size="large" />
@@ -62,7 +62,7 @@ const Blog = () => {
     );
   }
 
-  if (state.requestError) {
+  if (isError) {
     return (
       <div className="blog-wrapper">
         <Title level={3}>
@@ -74,12 +74,12 @@ const Blog = () => {
 
   return (
     <div className="blog-wrapper loaded">
-      {state.posts.map((post) => {
+      {posts?.map((post) => {
         const { slug } = post;
         return <BlogItem key={slug} postDetails={post} />;
       })}
       {state.showMore && (
-        <LoadMore onClick={loadPosts}>
+        <LoadMore onClick={onLoadMoreHandler}>
           <Trans>Load more articles</Trans>
         </LoadMore>
       )}

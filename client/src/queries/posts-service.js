@@ -1,37 +1,33 @@
-import { useEffect, useMemo } from 'react';
-import { useGet } from './requests';
 import config from '../config';
+import { mapKeysToCamelCase } from '../utils';
 
 const { POST_URL } = config;
 
-export const usePostsQuery = () => {
-  const { data, fetchData: getPosts, ...rest } = useGet(POST_URL, { enabled: false });
+export const getPostBySlug = async (slug, language = 'ro') => {
+  const res = await fetch(`${POST_URL(language)}${slug}/`);
 
-  return { data, getPosts, ...rest };
+  if (!res.ok) {
+    throw new Error(res.statusText);
+  }
+
+  const data = await res.json();
+  return mapKeysToCamelCase(data);
 };
 
 const blogPreviewPostsQueryParams = {
   limit: 4,
   ordering: '-published',
 };
-const SLICE_START = 0;
-const SLICE_END = 3;
 
-export const useBlogPreviewPostsQuery = (postSlug) => {
-  const { data, getPosts, isError, ...rest } = usePostsQuery();
+export const getBlogPosts = async (params, language = 'ro') => {
+  const queryParams = new URLSearchParams(params ?? blogPreviewPostsQueryParams);
+  const res = await fetch(`${POST_URL(language)}?${queryParams}`);
 
-  const { results: posts } = data ?? {};
+  if (!res.ok) {
+    throw new Error(res.statusText);
+  }
 
-  useEffect(() => {
-    if (data || isError) return;
+  const data = await res.json();
 
-    getPosts(blogPreviewPostsQueryParams);
-  }, [data, getPosts, isError]);
-
-  const blogPreviewPosts = useMemo(
-    () => posts?.filter(({ slug }) => slug !== postSlug).slice(SLICE_START, SLICE_END),
-    [posts, postSlug],
-  );
-
-  return { blogPreviewPosts, isError, ...rest };
+  return mapKeysToCamelCase(data);
 };

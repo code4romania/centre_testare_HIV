@@ -19,7 +19,11 @@ export const MapFragment = () => {
   const clearSelectedMarkers = useClearSelectedMarkers();
   const { showPhoneNumber, setShowPhoneNumber } = usePhoneNumber();
 
-  const { data: centerDetails, isLoading: isLoadingCenter } = useTestingCenterByIdQuery(
+  const {
+    data: centerDetails,
+    isLoading: isLoadingCenter,
+    refetch: refetchCenterDetails,
+  } = useTestingCenterByIdQuery(
     { pk: selectedCenterPk, language: currentLanguage },
     {
       enabled: Boolean(selectedCenterPk),
@@ -42,6 +46,10 @@ export const MapFragment = () => {
 
     map.getViewPort().resize();
   }, [map, showRightPanel]);
+
+  useEffect(() => {
+    refetchCenterDetails();
+  }, [refetchCenterDetails, currentLanguage]);
 
   return (
     <div style={{ height: '422px', position: 'relative' }}>

@@ -7,7 +7,7 @@ export default {
   CENTERS_URL: (language) => `${HOST_URL}${API_PORT}/${language}/${API}/centers/`,
   CONTACT_URL: `${HOST_URL}${API_PORT}/${API}/contact/`,
   PAGE_URL: `${HOST_URL}${API_PORT}/${API}/page/`,
-  POST_URL: `${HOST_URL}${API_PORT}/${API}/post/`,
+  POST_URL: (language) => `${HOST_URL}${API_PORT}/${language}/${API}/post/`,
   STATISTICS_URL: `${HOST_URL}${API_PORT}/${API}/statistics/`,
   TEST_TYPE: `${HOST_URL}${API_PORT}/${API}/test_type/`,
   MAP_API_KEY: process.env.REACT_APP_HERE_MAPS_API_KEY,
