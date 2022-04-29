@@ -14,10 +14,10 @@ export const TermsFragment = () => {
       <Paragraph>
         <Trans>
           The aim of the project{' '}
-          <Text strong>Services for youth from Norway in Romania – PILOT</Text> is to increase the
-          access of young people aged 15-35 from disadvantaged areas to education for sexual health
-          and reproduction according to the Norwegian model, adopting the Active Citizens Fund
-          Romania slogan <Text strong>Working together for an inclusive Europe</Text>.
+          <Text strong>Services from Norway for Young People in Romania - PILOT</Text> is to
+          increase access to sexual and reproductive health education for young people aged 15-35 in
+          disadvantaged areas, following the Norwegian model, adopting the slogan Active Citizens
+          Fund Romania <Text strong>Working together for an inclusive Europe</Text>.
         </Trans>
       </Paragraph>
       <Title level={3}>

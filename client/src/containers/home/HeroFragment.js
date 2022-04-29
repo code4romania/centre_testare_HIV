@@ -20,7 +20,7 @@ export default () => {
       </Title>
       <Paragraph>
         <Trans>
-          <Text strong>TestHIV</Text> is the first application in Romania for HIV testing, where
+          <Text strong>Centre HIV</Text> is the first application in Romania for HIV testing, where
           institutions from 11 counties in Romania that offer HIV testing are centralized. In the
           application we provide details such as the location of the institution, the work schedule,
           the cost of a test and details needed to test for HIV infection, how to test people under

@@ -139,8 +139,8 @@
     ],
     "extractedComments": []
   },
-  "<0>TestHIV</0> is the first application in Romania for HIV testing, where institutions from 11 counties in Romania that offer HIV testing are centralized. In the application we provide details such as the location of the institution, the work schedule, the cost of a test and details needed to test for HIV infection, how to test people under 16 and provide counseling for people who need more information.": {
-    "translation": "<0>TestHIV</0> este prima aplicație din România de testare HIV, unde sunt centralizate instituții din 11 județe din România care oferă testare HIV. În cadrul aplicației oferim detalii precum localizarea instituției, programul de lucru, costul unui test cât și detalii necesare pentru testarea infecției cu HIV, modalitățile de testare a persoanelor sub 16 ani și asigurarea consilierii pentru persoanele care au nevoie de mai multe informații.",
+  "<0>Centre HIV</0> is the first application in Romania for HIV testing, where institutions from 11 counties in Romania that offer HIV testing are centralized. In the application we provide details such as the location of the institution, the work schedule, the cost of a test and details needed to test for HIV infection, how to test people under 16 and provide counseling for people who need more information.": {
+    "translation": "<0>Centre HIV</0> este prima aplicație din România de testare HIV, unde sunt centralizate instituții din 11 județe din România care oferă testare HIV. În cadrul aplicației oferim detalii precum localizarea instituției, programul de lucru, costul unui test cât și detalii necesare pentru testarea infecției cu HIV, modalitățile de testare a persoanelor sub 16 ani și asigurarea consilierii pentru persoanele care au nevoie de mai multe informații.",
     "origin": [
       [
         "containers/home/HeroFragment.js",
@@ -199,21 +199,21 @@
     ],
     "extractedComments": []
   },
-  "About Semper Musica": {
-    "translation": "Despre Semper Musica",
+  "About HIV Centers": {
+    "translation": "Despre Centre HIV",
     "origin": [
       [
-        "containers/about/SecondParagraphFragment.js",
+        "containers/about/ThirdParagraphFragment.js",
         12
       ]
     ],
     "extractedComments": []
   },
-  "About TestHIV": {
-    "translation": "Despre TestHIV",
+  "About Semper Musica": {
+    "translation": "Despre Semper Musica",
     "origin": [
       [
-        "containers/about/ThirdParagraphFragment.js",
+        "containers/about/SecondParagraphFragment.js",
         12
       ]
     ],
@@ -241,7 +241,7 @@
     ],
     "extractedComments": []
   },
-  "About the project stages": {
+  "About the project phases": {
     "translation": "Despre fazele proiectului",
     "origin": [
       [
@@ -471,6 +471,26 @@
       [
         "hooks/useMenuItems.js",
         13
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Centre HIV - is the first HIV testing app in Romania, where institutions from 11 counties in Romania offering HIV testing are centralized. Within the app we provide details such as the location of the institution, opening hours, cost of a test as well as details needed for HIV testing, how to test people under 16 and provide counseling for people who need more information.": {
+    "translation": "Centre HIV - este prima aplicație din România de testare HIV, unde sunt centralizate instituții din 11 județe din România care oferă testare HIV. În cadrul aplicației oferim detalii precum localizarea instituției, programul de lucru, costul unui test cât și detalii necesare pentru testarea infecției cu HIV, modalitățile de testare a persoanelor sub 16 ani și asigurarea consilierii pentru persoanele care au nevoie de mai multe informații.",
+    "origin": [
+      [
+        "containers/about/ThirdParagraphFragment.js",
+        15
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Centre HIV Blog": {
+    "translation": "Blog Centre HIV",
+    "origin": [
+      [
+        "containers/blog/HeroFragment.js",
+        10
       ]
     ],
     "extractedComments": []
@@ -969,12 +989,12 @@
     ],
     "extractedComments": []
   },
-  "Mission: <0>We fight for the free access of young people to education and protection for HIV prevention and against discrimination of people living with HIV</0>.": {
+  "Mission: <0>We fight for free access of young people to education and protection for HIV prevention and against discrimination of HIV positive people</0>.": {
     "translation": "Misiunea: <0>Luptăm pentru acces liber al tinerilor la educație și protecție pentru prevenirea HIV și împotriva discriminării persoanelor seropozitive</0>.",
     "origin": [
       [
         "containers/about/SecondParagraphFragment.js",
-        33
+        32
       ]
     ],
     "extractedComments": []
@@ -1081,6 +1101,16 @@
       [
         "containers/contact/MapFragment.js",
         16
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Our projects have brought a change for young people in Romania, and their involvement and quality have propelled us to various galas and competitions, totaling no less than 10 awards since our creation. Since its inception, we have been involved in educating young people from disadvantaged backgrounds about HIV prevention and sexual and reproductive health.": {
+    "translation": "Proiectele realizate de noi au adus o schimbare pentru tinerii din România, iar implicarea și calitatea lor ne-au propulsat către diverse gale și concursuri, însumând de la înființare și până astăzi nu mai puțin de 10 premii. Încă de la înființare ne ocupăm cu educarea tinerilor din medii defavorizate cu privire la prevenirea infecției cu HIV și despre sănătatea sexuală și a reproducerii.",
+    "origin": [
+      [
+        "containers/about/SecondParagraphFragment.js",
+        50
       ]
     ],
     "extractedComments": []
@@ -1287,6 +1317,16 @@
     ],
     "extractedComments": []
   },
+  "Semper Musica Association was born out of a desire to make a change for the better. We work mainly in the field of education for HIV prevention among high school students and young people nationwide. We guide our activities according to our vision and mission.": {
+    "translation": "Asociația Semper Musica a luat naștere din dorința de a face o schimbare în mai bine. Acționăm preponderent în domeniul educației pentru prevenirea infecției cu HIV în rândul liceenilor și tinerilor de la nivel național. Ne ghidăm activitățile după viziunea și misiunea noastră.",
+    "origin": [
+      [
+        "containers/about/SecondParagraphFragment.js",
+        15
+      ]
+    ],
+    "extractedComments": []
+  },
   "Semper Musica Association will apply all technical and organizational security measures to protect the data over which it has control against any situation of accidental or intentional manipulation, loss, destruction or access by an unauthorized person.": {
     "translation": "Asociația Semper Musica va aplica toate măsurile de securitate tehnică și organizatorică pentru protejarea datelor asupra cărora deține controlul împotriva oricărei situații de manipulare accidentală sau intenționată, pierdere, distrugere sau împotriva accesului unei persoane neautorizate.",
     "origin": [
@@ -1331,7 +1371,7 @@
     ],
     "extractedComments": []
   },
-  "Services for youth from Norway in Romania – PILOT": {
+  "Services from Norway for young people in Romania - PILOT": {
     "translation": "Servicii din Norvegia pentru tinerii din România - PILOT",
     "origin": [
       [
@@ -1427,26 +1467,6 @@
     ],
     "extractedComments": []
   },
-  "TestHIV - is the first application in Romania for HIV testing, where there are centralized institutions from 11 counties in Romania that offer HIV testing. In the application we provide details such as the location of the institution, the work schedule, the cost of a test and details needed to test for HIV infection, how to test people under 16 and provide counseling for people who need more information.": {
-    "translation": "TestHIV - este prima aplicație din România de testare HIV, unde sunt centralizate instituții din 11 județe din România care oferă testare HIV. În cadrul aplicației oferim detalii precum localizarea instituției, programul de lucru, costul unui test cât și detalii necesare pentru testarea infecției cu HIV, modalitățile de testare a persoanelor sub 16 ani și asigurarea consilierii pentru persoanele care au nevoie de mai multe informații.",
-    "origin": [
-      [
-        "containers/about/ThirdParagraphFragment.js",
-        15
-      ]
-    ],
-    "extractedComments": []
-  },
-  "TestHIV Blog": {
-    "translation": "Blog TestHIV",
-    "origin": [
-      [
-        "containers/blog/HeroFragment.js",
-        11
-      ]
-    ],
-    "extractedComments": []
-  },
   "Testing center": {
     "translation": "Centru de testare",
     "origin": [
@@ -1521,17 +1541,7 @@
     ],
     "extractedComments": []
   },
-  "The Semper Musica Association was born from the desire to make a change for the better. We act mainly in the field of education for the prevention of HIV infection among high school students and young people nationwide. We guide our activities according to our vision and mission.": {
-    "translation": "Asociația Semper Musica a luat naștere din dorința de a face o schimbare în mai bine. Acționăm preponderent în domeniul educației pentru prevenirea infecției cu HIV în rândul liceenilor și tinerilor de la nivel național. Ne ghidăm activitățile după viziunea și misiunea noastră.",
-    "origin": [
-      [
-        "containers/about/SecondParagraphFragment.js",
-        15
-      ]
-    ],
-    "extractedComments": []
-  },
-  "The aim of the project <0>Services for youth from Norway in Romania – PILOT</0> is to increase the access of young people aged 15-35 from disadvantaged areas to education for sexual health and reproduction according to the Norwegian model, adopting the Active Citizens Fund Romania slogan <1>Working together for an inclusive Europe</1>.": {
+  "The aim of the project <0>Services from Norway for Young People in Romania - PILOT</0> is to increase access to sexual and reproductive health education for young people aged 15-35 in disadvantaged areas, following the Norwegian model, adopting the slogan Active Citizens Fund Romania <1>Working together for an inclusive Europe</1>.": {
     "translation": "Scopul proiectului <0>Servicii din Norvegia pentru tinerii din România - PILOT</0> este acela de a spori accesul tinerilor din categoria de vârstă 15-35 ani din zonele defavorizate la educație pentru sănătatea sexuală și a reproducerii după model norvegian, adoptând sloganul Active Citizens Fund România <1>Lucrăm împreună pentru o Europă incluzivă</1>.",
     "origin": [
       [
@@ -1589,7 +1599,7 @@
     ],
     "extractedComments": []
   },
-  "The project is implemented by the Semper Musica Association in partnership with the Federation of Medical Student Associations from Romania and with Sex and society and benefits from a 249.896 € grant from Active Citizens Fund Romania, programme funded by Iceland, Liechtenstein and Norway through the EEA Grants 2014-2021. The content of this website does not necessarily reflect the official position of the EEA and Norway Grants 2014-2021; for more information visit <0>www.eeagrants.org</0>. More details about Active Citizens Fund Romania are available at <1>www.activecitizensfund.ro</1>.": {
+  "The project is implemented by Semper Musica Association in partnership with the Federation of Medical Students' Associations in Romania and Sex and Society and benefits from a funding of 249.896 €, through the Active Citizens Fund Romania programme, funded by Iceland, Liechtenstein and Norway through EEA Grants 2014-2021. The content of this website does not necessarily represent the official position of the EEA and Norway Grants 2014-2021. For more information visit <0>www.eeagrants.org</0>. Information about Active Citizens Fund Romania is available at <1>www.activecitizensfund.ro</1>.": {
     "translation": "Proiectul este derulat de Asociația Semper Musica în parteneriat cu Federația Asociațiilor Studenților în Medicină din România și cu Sex and society și beneficiază de o finanțare în valoare de 249.896 €, prin programul Active Citizens Fund România, finanțat de Islanda, Liechtenstein și Norvegia prin Granturile SEE 2014-2021. Conținutul acestui website nu reprezintă în mod necesar poziția oficială a Granturilor SEE și Norvegiene 2014-2021; pentru mai multe informații accesați <0>www.eeagrants.org</0>. Informații despre Active Citizens Fund România sunt disponibile la <1>www.activecitizensfund.ro</1>.",
     "origin": [
       [
@@ -1609,16 +1619,6 @@
       [
         "containers/donate/SupportFragment.js",
         27
-      ]
-    ],
-    "extractedComments": []
-  },
-  "The projects we have carried out have brought a change for young people in Romania, and their involvement and quality have propelled us to various galas and competitions, totaling from the establishment until today no less than 10 awards. Since its inception, we have been educating young people from disadvantaged backgrounds on HIV prevention and sexual and reproductive health.": {
-    "translation": "Proiectele realizate de noi au adus o schimbare pentru tinerii din România, iar implicarea și calitatea lor ne-au propulsat către diverse gale și concursuri, însumând de la înființare și până astăzi nu mai puțin de 10 premii. Încă de la înființare ne ocupăm cu educarea tinerilor din medii defavorizate cu privire la prevenirea infecției cu HIV și despre sănătatea sexuală și a reproducerii.",
-    "origin": [
-      [
-        "containers/about/SecondParagraphFragment.js",
-        51
       ]
     ],
     "extractedComments": []
@@ -1707,12 +1707,12 @@
     ],
     "extractedComments": []
   },
-  "Vision: <0>A society without new HIV cases among young people, in which discrimination against HIV-positive people does not exist</0>.": {
+  "Vision: <0>A society without new HIV cases among young people, where discrimination against HIV-positive people does not exist</0>.": {
     "translation": "Viziunea: <0>O societate fără cazuri noi de HIV în rândul tinerilor, în care discriminarea persoanelor seropozitive nu există</0>.",
     "origin": [
       [
         "containers/about/SecondParagraphFragment.js",
-        23
+        22
       ]
     ],
     "extractedComments": []
@@ -1727,7 +1727,7 @@
     ],
     "extractedComments": []
   },
-  "We are implementing the <0>first application in Romania</0> for HIV testing, where details regarding the location, schedule and cost of testing for HIV infection will be available, we provide counseling before and after testing for people who need additional information, we provide details on how to test people under the age of 16.": {
+  "We are implementing Romania's <0>first HIV testing app</0>, where details of location, schedule and cost of HIV testing will be available, provide pre- and post-test counseling for people who need further information, provide details of how to test people under 16.": {
     "translation": "Implementăm <0>prima aplicație din România</0> de testare HIV, unde vor fi disponibile detalii legate de localizarea, programul și costul necesar pentru testarea infecției cu HIV, asigurăm consiliere înainte și după testare pentru persoanele care au nevoie de informații suplimentare, oferim detalii legate de modalitățile de testare a persoanelor cu vârsta sub 16 ani.",
     "origin": [
       [
@@ -1737,12 +1737,12 @@
     ],
     "extractedComments": []
   },
-  "We are setting up advocacy actions with local authorities based on the results of the <0>Services for youth from Norway in Romania – PILOT</0> program in order to bring to the attention of the authorities the need to invest in services aimed at ensuring young people access to information on sexual and reproductive health, easy access to contraception and testing for HIV infection.": {
+  "We are setting up advocacy actions with local authorities based on the results of the Norwegian <0>Services for Young People in Romania programme - PILOT</0> - with the aim to bring to the attention of the authorities the need to invest in services that aim to provide young people with access to sexual and reproductive health information, easy access to contraceptives and HIV testing.": {
     "translation": "Punem bazele unor acțiuni de advocacy cu autoritățile locale pe baza rezultatelor programului <0>Servicii din Norvegia pentru tinerii din România - PILOT</0>cu scopul de a aduce în atenția autorităților nevoia de a investi în servicii ce urmăresc să asigure tinerilor accesul la informații despre sănătatea sexuală și a reproducerii, accesul facil la metode contraceptive și la testarea pentru infecția cu HIV.",
     "origin": [
       [
         "containers/about/FirstParagraphsFragment.js",
-        43
+        42
       ]
     ],
     "extractedComments": []
@@ -1757,7 +1757,7 @@
     ],
     "extractedComments": []
   },
-  "We collect information from young people aged 15-35 on their access to sexual and reproductive health education. We want to know what they know about contraceptive methods and HIV infection as well as testing methods.": {
+  "We collect information from young people aged 15-35 about their access to sexual and reproductive health education. We want to find out what they know about contraception and HIV infection as well as testing methods.": {
     "translation": "Colectăm informații de la tinerii între 15-35 de ani cu privire la accesul lor la educație pentru sănătatea sexuală și a reproducerii. Vrem să aflăm ce știu despre metodele contraceptive și infecția cu virusul HIV precum și despre metodele de testare.",
     "origin": [
       [
@@ -1782,22 +1782,22 @@
     "origin": [
       [
         "containers/about/SecondParagraphFragment.js",
-        43
+        42
       ]
     ],
     "extractedComments": []
   },
-  "We organize a process of informing students and young people through non-formal sessions following the Norwegian model of sexual and reproductive health education.": {
+  "We organise outreach to students and young people through non-formal sessions following the Norwegian model of sexual and reproductive health education.": {
     "translation": "Organizăm un proces de informare al elevilor și tinerilor prin sesiuni non-formale după modelul norvegian de educație cu privire la sănătatea sexuală și a reproducerii.",
     "origin": [
       [
         "containers/about/FirstParagraphsFragment.js",
-        37
+        36
       ]
     ],
     "extractedComments": []
   },
-  "We present the results of the analysis of the local authorities through press conferences to make them aware of the needs of young people.": {
+  "We present the results of the survey to local authorities through press conferences to make them aware of the needs of young people.": {
     "translation": "Prezentăm rezultatele analizei autorităților locale prin intermediul unor conferințe de presă pentru a aduce la cunoștință acestora nevoile tinerilor.",
     "origin": [
       [
