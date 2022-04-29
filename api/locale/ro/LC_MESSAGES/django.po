@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-14 23:24+0300\n"
+"POT-Creation-Date: 2022-04-29 10:12+0300\n"
 "PO-Revision-Date: 2022-02-03 20:22+0200\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -67,76 +67,80 @@ msgstr "actualizat"
 msgid "posts"
 msgstr "articole"
 
-#: centers/admin.py:40 centers/admin.py:180 centers/admin.py:192
-#: centers/admin.py:204 centers/models.py:218
+#: centers/admin.py:46 centers/admin.py:211 centers/admin.py:223
+#: centers/admin.py:235 centers/models.py:218
 msgid "testing center"
 msgstr "centru de testare"
 
-#: centers/admin.py:99
+#: centers/admin.py:124
 msgid "Operational Data"
 msgstr "Date operaționale"
 
-#: centers/admin.py:101
+#: centers/admin.py:126
 msgid "Geo Data"
 msgstr "Date geografice"
 
-#: centers/admin.py:116
+#: centers/admin.py:141
 msgid "Center Details"
 msgstr "Detaliile Centrului"
 
-#: centers/admin.py:126
+#: centers/admin.py:151
 msgid "Contact Information"
 msgstr "Informații de contact"
 
-#: centers/admin.py:137
+#: centers/admin.py:162
 msgid "Testing Costs"
 msgstr "Costuri de Testare"
 
-#: centers/admin.py:148
+#: centers/admin.py:173
 msgid "Testing Details"
 msgstr "Detalii despre Testare"
 
-#: centers/admin.py:167
+#: centers/admin.py:192
 msgid "Address"
 msgstr "Adresă"
 
-#: centers/admin.py:181 centers/admin.py:193 centers/admin.py:205
+#: centers/admin.py:200
+msgid "Average Rating"
+msgstr "Evaluare Medie"
+
+#: centers/admin.py:212 centers/admin.py:224 centers/admin.py:236
 #: centers/models.py:219
 msgid "testing centers"
 msgstr "centre de testare"
 
-#: centers/admin.py:184
+#: centers/admin.py:215
 msgid "Mark selected testing centers as pending"
 msgstr "Marchează centrele selectate ca în așteptare"
 
-#: centers/admin.py:196
+#: centers/admin.py:227
 msgid "Mark selected testing centers as accepted"
 msgstr "Marchează centrele selectate ca acceptate"
 
-#: centers/admin.py:208
+#: centers/admin.py:239
 msgid "Mark selected testing centers as rejected"
 msgstr "Marchează centrele selectate ca respinse"
 
-#: centers/admin.py:266
+#: centers/admin.py:297
 msgid "testing center resource"
 msgstr "resursă centru de testare"
 
-#: centers/admin.py:267
+#: centers/admin.py:298
 msgid "testing center resources"
 msgstr "resurse centru de testare"
 
-#: centers/admin.py:292
+#: centers/admin.py:323
 #, python-brace-format
 msgid "File with name '{file_name}' wasn't imported. Errors: {row_errors}"
 msgstr ""
 "Fișierul cu numele '{file_name}' nu a fost importat. Erori: {row_errors}"
 
-#: centers/admin.py:299
+#: centers/admin.py:330
 #, python-brace-format
 msgid "File with name '{file_name}' was imported."
 msgstr "Fișierul cu numele '{file_name}' a fost importat."
 
-#: centers/admin.py:306
+#: centers/admin.py:337
 #, python-brace-format
 msgid ""
 "File with name '{file_name}' wasn't a proper data file. Accepted formats "
@@ -145,7 +149,7 @@ msgstr ""
 "Fișierul cu numele '{file_name}' un fișier de date corect. Formatele "
 "acceptate sunt: CSV, XLSX."
 
-#: centers/admin.py:315
+#: centers/admin.py:346
 #, python-brace-format
 msgid ""
 "File with name '{file_name}' couldn't be imported. The error received was: "
@@ -154,7 +158,7 @@ msgstr ""
 "Fișierul cu numele '{file_name}' nu a putut fi importat. Eroarea primită "
 "este: `{error_args}`"
 
-#: centers/apps.py:7 testing_centers_site/settings/base.py:45
+#: centers/apps.py:7 testing_centers_site/settings/base.py:49
 msgid "Testing Centers"
 msgstr "Centre de Testare"
 
@@ -214,7 +218,7 @@ msgstr "timpul actualizării"
 msgid "emails"
 msgstr "adrese de e-mail"
 
-#: centers/models.py:80 centers/models.py:91 contact/models.py:15
+#: centers/models.py:80 centers/models.py:91 contact/models.py:16
 msgid "phone number"
 msgstr "număr de telefon"
 
@@ -270,7 +274,7 @@ msgstr "Poștă"
 msgid "Platform"
 msgstr "Platformă"
 
-#: centers/models.py:131 centers/models.py:289
+#: centers/models.py:131 centers/models.py:288
 msgid "status"
 msgstr "stare"
 
@@ -414,7 +418,7 @@ msgstr "răspunsuri"
 msgid "comment"
 msgstr "comentariu"
 
-#: centers/models.py:248 contact/models.py:22
+#: centers/models.py:248 contact/models.py:23 contact/models.py:49
 msgid "creation date"
 msgstr "data primirii"
 
@@ -431,75 +435,71 @@ msgid "center ratings"
 msgstr "evaluările centrului"
 
 #: centers/models.py:263
-msgid "mobile caravans"
-msgstr "caravane mobile"
-
-#: centers/models.py:264
 msgid "hotline"
 msgstr "linia de asistenta directa"
 
-#: centers/models.py:269
+#: centers/models.py:268
 msgid "statistic"
 msgstr "statistică"
 
-#: centers/models.py:270
+#: centers/models.py:269
 msgid "statistics"
 msgstr "statistici"
 
-#: centers/models.py:282
+#: centers/models.py:281
 msgid "Not tried"
 msgstr "Neîncercat"
 
-#: centers/models.py:283
+#: centers/models.py:282
 msgid "Imported successfully"
 msgstr "Importat cu succes"
 
-#: centers/models.py:284
+#: centers/models.py:283
 msgid "Import failed"
 msgstr "Importare eșuată"
 
-#: centers/models.py:287 contact/models.py:13 pages/models.py:9
+#: centers/models.py:286 contact/models.py:14 pages/models.py:9
 #: pages/models.py:95
 msgid "name"
 msgstr "nume"
 
-#: centers/models.py:288
+#: centers/models.py:287
 msgid "file"
 msgstr "nume"
 
-#: centers/models.py:294
+#: centers/models.py:293
 msgid "Data file"
 msgstr "fișier"
 
-#: centers/models.py:295
+#: centers/models.py:294
 msgid "Data files"
 msgstr "Fișier de date"
 
-#: contact/admin.py:19
+#: contact/admin.py:21
 msgid "Contact info"
 msgstr "Informații de contact"
 
-#: contact/admin.py:20
+#: contact/admin.py:22
 msgid "Message"
 msgstr "Mesaj"
 
-#: contact/admin.py:21
+#: contact/admin.py:23
 msgid "Status"
 msgstr "Stare"
 
-#: contact/admin.py:26 contact/admin.py:33 contact/models.py:16
+#: contact/admin.py:28 contact/admin.py:35 contact/models.py:17
 msgid "message"
 msgstr "mesaj"
 
-#: contact/admin.py:26 contact/admin.py:33
+#: contact/admin.py:28 contact/admin.py:35
 msgid "messages"
 msgstr "mesaje"
 
-#: contact/admin.py:29
+#: contact/admin.py:31
 msgid "Mark selected messages as unread"
 msgstr "Marchează mesajele selectate ca respinse"
 
-#: contact/admin.py:36
+#: contact/admin.py:38
 msgid "Mark selected messages as read"
 msgstr "Marchează mesajele selectate ca respinse"
 
@@ -507,29 +507,45 @@ msgstr "Marchează mesajele selectate ca respinse"
 msgid "Contact Message"
 msgstr "Mesaj de contact"
 
-#: contact/models.py:9
+#: contact/models.py:10
 msgid "Unread"
 msgstr "Necitit"
 
-#: contact/models.py:10
+#: contact/models.py:11
 msgid "Read"
 msgstr "Citit"
 
-#: contact/models.py:14
+#: contact/models.py:15 contact/models.py:43
 msgid "email address"
 msgstr "adresă de e-mail"
 
-#: contact/models.py:19
+#: contact/models.py:20
 msgid "message status"
 msgstr "stare mesaj"
 
-#: contact/models.py:27
+#: contact/models.py:28
 msgid "contact message"
 msgstr "mesaj de contact"
 
-#: contact/models.py:28
+#: contact/models.py:29
 msgid "contact messages"
 msgstr "mesaje de contact"
+
+#: contact/models.py:39
+msgid "Unsent"
+msgstr "Netrimis"
+
+#: contact/models.py:40
+msgid "Sent"
+msgstr "Trimis"
+
+#: contact/models.py:45
+msgid "email reminder status"
+msgstr "status e-mail de re-amintire"
+
+#: contact/models.py:54 contact/models.py:55
+msgid "contact email reminders"
+msgstr "reminder de contact"
 
 #: pages/apps.py:7
 msgid "Pages"
@@ -619,11 +635,11 @@ msgstr "fișier încărcat"
 msgid "attachments"
 msgstr "atașamente"
 
-#: testing_centers_site/settings/base.py:176
+#: testing_centers_site/settings/base.py:216
 msgid "Romanian"
 msgstr "Română"
 
-#: testing_centers_site/settings/base.py:177
+#: testing_centers_site/settings/base.py:217
 msgid "English"
 msgstr "Engleză"
 
@@ -634,6 +650,9 @@ msgid_plural "{updated} {item_pl} were successfully marked as {status}."
 msgstr[0] "{updated} {item_sg} a fost marcat ca {status}"
 msgstr[1] "{updated} {item_pl} au fost marcate ca {status}"
 msgstr[2] "{updated} de {item_pl} au fost marcate ca {status}"
+
+#~ msgid "mobile caravans"
+#~ msgstr "caravane mobile"
 
 #~ msgid "Yes/No"
 #~ msgstr "Da/Nu"

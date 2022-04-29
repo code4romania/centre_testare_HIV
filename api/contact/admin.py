@@ -1,8 +1,10 @@
 from django.contrib import admin
+from django.utils.safestring import mark_safe
 from django.utils.translation import gettext_lazy as _
 
-from contact.models import ContactMessage
+from contact.models import ContactEmailReminder, ContactMessage
 from testing_centers_site.utils import AdminWithStatusChanges
+from django.urls import reverse
 
 
 @admin.register(ContactMessage)
@@ -34,3 +36,19 @@ class ContactMessageAdmin(AdminWithStatusChanges):
         )
 
     mark_as_read.short_description = _("Mark selected messages as read")
+
+
+@admin.register(ContactEmailReminder)
+class ContactEmailReminderAdmin(admin.ModelAdmin):
+    list_filter = ("status",)
+    list_display = ("email", "status", "get_scheduled_task")
+
+    @staticmethod
+    def get_scheduled_task(obj: ContactEmailReminder):
+        if not obj.scheduled_task:
+            return None
+
+        schedule_url = reverse("admin:django_q_schedule_change", args=[obj.scheduled_task.id])
+        schedule_link = f"<a href='{schedule_url}'>{obj.scheduled_task.name}</a>"
+
+        return mark_safe(schedule_link)

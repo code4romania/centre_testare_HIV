@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from django_q.models import Schedule
 
 
 class ContactMessage(models.Model):
@@ -29,3 +30,29 @@ class ContactMessage(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class ContactEmailReminder(models.Model):
+    UNSENT = 0
+    SENT = 1
+    EMAIL_REMINDER_STATUS_CHOICES = [
+        (UNSENT, _("Unsent")),
+        (SENT, _("Sent")),
+    ]
+
+    email = models.EmailField(_("email address"))
+    status = models.SmallIntegerField(
+        _("email reminder status"), choices=EMAIL_REMINDER_STATUS_CHOICES, db_index=True, default=UNSENT
+    )
+    scheduled_task = models.ForeignKey(Schedule, on_delete=models.SET_NULL, null=True, blank=True)
+
+    created_at = models.DateTimeField(_("creation date"), auto_now_add=True)
+
+    objects = models.Manager()
+
+    class Meta:
+        verbose_name = _("contact email reminders")
+        verbose_name_plural = _("contact email reminders")
+
+    def __str__(self):
+        return self.email
