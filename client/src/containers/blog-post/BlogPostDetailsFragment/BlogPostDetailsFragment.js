@@ -1,44 +1,34 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Col, Row } from 'antd';
 import { Trans } from '@lingui/macro';
 import ReactHtmlParser from 'react-html-parser';
 import { useHtmlParserOptions } from '../../../hooks';
-import config from '../../../config';
-
-const { POST_URL } = config;
+import { useGlobalContext } from '../../../context';
+import { useBlogPostQuery } from '../../../queries/posts-queries';
 
 const BlogPostDetailsFragment = ({ handlePostLoaded }) => {
+  const { currentLanguage } = useGlobalContext();
   const { slug } = useParams();
-  const [state, setState] = React.useState({
-    postDetails: null,
-    requestError: false,
-  });
 
   const htmlParserOptions = useHtmlParserOptions();
 
-  React.useEffect(() => {
-    fetch(`${POST_URL}${slug}/`)
-      .then((res) => (res.status === 200 ? res.json() : null))
-      .then((postDetails) => {
-        setState((prevState) => ({
-          ...prevState,
-          postDetails,
-          requestError: postDetails === null,
-        }));
-        handlePostLoaded(postDetails);
-      })
-      .catch(() => {
-        setState((prevState) => ({
-          ...prevState,
-          postDetails: null,
-          requestError: true,
-        }));
-      });
-  }, [handlePostLoaded, slug]);
+  const {
+    data: postDetails,
+    isError,
+    refetch,
+  } = useBlogPostQuery(slug, currentLanguage, {
+    onSuccess: (post) => {
+      handlePostLoaded(post);
+    },
+  });
 
-  if (state.postDetails === null) {
-    return state.requestError ? (
+  useEffect(() => {
+    refetch();
+  }, [currentLanguage, refetch]);
+
+  if (postDetails === null) {
+    return isError ? (
       <p>
         <Trans>Article not found</Trans>
       </p>
@@ -55,7 +45,7 @@ const BlogPostDetailsFragment = ({ handlePostLoaded }) => {
       style={{ marginTop: '2rem', marginBottom: '2rem' }}
     >
       <Col span={24} className="blog-post-content">
-        {ReactHtmlParser(state.postDetails.text, htmlParserOptions)}
+        {ReactHtmlParser(postDetails?.text, htmlParserOptions)}
       </Col>
     </Row>
   );
