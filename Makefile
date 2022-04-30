@@ -22,13 +22,13 @@ install-docker-macos:             ## installs homebrew (you can skip this at run
 	brew cask install docker
 	brew install docker-compose gettext
 
-build:                            ## builds the container
+build:                            ## builds the container for production
 	ENVIRONMENT=production docker-compose up -d --build --force-recreate --remove-orphans
 
 build-dev:                        ## builds the container with the development flag
 	ENVIRONMENT=development docker-compose up -d --build --force-recreate --remove-orphans
 
-build-stage:                        ## builds the container with the staging flag
+build-stage:                      ## builds the container with the staging flag
 	ENVIRONMENT=staging docker-compose up -d --build --force-recreate --remove-orphans
 
 superuser:                        ## creates a superuser for the API
@@ -63,7 +63,7 @@ makemessages:                     ## generate the strings marked for translation
 compilemessages:                  ## compile the translations
 	docker-compose exec api ./manage.py compilemessages
 
-collectstatic:
+collectstatic:                    ## collect static files (this will take a while)
 	docker-compose exec api ./manage.py collectstatic --no-input
 
 pyshell:                          ## start a django shell
@@ -81,13 +81,13 @@ seed_center_types:                ## seed the center types
 seed_necessary_docs:              ## seed the necessary documents
 	docker-compose exec api ./manage.py seed_center_data -t necessary_documents
 
-seed_free_testing:              ## seed the free testing conditions data
+seed_free_testing:                ## seed the free testing conditions data
 	docker-compose exec api ./manage.py seed_center_data -t free_testing_conditions
 
-seed_center_email:              ## seed the center emails
+seed_center_email:                ## seed the center emails
 	docker-compose exec api ./manage.py seed_center_data -t center_email
 
-seed_center_phone:              ## seed the center phone numbers
+seed_center_phone:                ## seed the center phone numbers
 	docker-compose exec api ./manage.py seed_center_data -t center_phone
 
 seed: seed_test_types seed_center_types seed_necessary_docs seed_free_testing seed_center_email seed_center_phone
