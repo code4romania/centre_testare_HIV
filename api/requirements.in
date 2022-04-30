@@ -8,13 +8,13 @@ django-taggit-serializer==0.1.7
 
 # REST framework
 djangorestframework==3.13.1
-drf-spectacular==0.22.0
+drf-spectacular==0.22.1
 django-filter==21.1
 
 # django admin
 django-jquery==3.1.0
-django-ckeditor==6.3.0
-django-modeltranslation==0.17.5
+django-ckeditor==6.4.0
+django-modeltranslation==0.17.6
 django-import-export==2.8.0
 django-jazzmin==2.5.0
 
@@ -29,13 +29,13 @@ psycopg2<2.10
 dj-database-url==0.5.0
 
 # file handling
-boto3==1.21.35
+boto3==1.22.4
 pillow==9.1.0
 whitenoise==6.0.0
 brotlipy==0.7.0
 
 # misc libraries
-tablib==3.2.0
+tablib==3.2.1
 
 # wsgi server
 gunicorn==20.1.0
