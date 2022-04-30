@@ -1,25 +1,25 @@
 # django
-django-debug-toolbar==3.2.4
+django-debug-toolbar==3.3.0
 django-extensions==3.1.5
-werkzeug==2.0.1
+werkzeug==2.1.2
 
 # tests
-pytest==7.1.1
+pytest==7.1.2
 pytest-flake8==1.1.1
 pytest-cov==3.0.0
 pytest-django==4.5.2
-faker==13.3.4
+faker==13.6.0
 tqdm==4.64.0
 
 # utils
 pdbpp==0.10.3
-ipython==8.2.0
+ipython==8.3.0
 
 # style checker
 black==22.3.0
 
 # dependency management
-pip-tools==6.5.1
+pip-tools==6.6.0
 
 # scripting tools
 pandas==1.4.2
