@@ -24,7 +24,7 @@
     "origin": [
       [
         "containers/Terms/TermsFragment.js",
-        189
+        195
       ]
     ],
     "extractedComments": []
@@ -44,7 +44,7 @@
     "origin": [
       [
         "containers/Terms/TermsFragment.js",
-        38
+        44
       ]
     ],
     "extractedComments": []
@@ -54,7 +54,7 @@
     "origin": [
       [
         "containers/Terms/TermsFragment.js",
-        48
+        54
       ]
     ],
     "extractedComments": []
@@ -94,7 +94,7 @@
     "origin": [
       [
         "containers/Terms/TermsFragment.js",
-        57
+        63
       ]
     ],
     "extractedComments": []
@@ -104,7 +104,7 @@
     "origin": [
       [
         "containers/Terms/TermsFragment.js",
-        67
+        73
       ]
     ],
     "extractedComments": []
@@ -114,7 +114,7 @@
     "origin": [
       [
         "containers/Terms/TermsFragment.js",
-        113
+        119
       ]
     ],
     "extractedComments": []
@@ -124,7 +124,7 @@
     "origin": [
       [
         "containers/Terms/TermsFragment.js",
-        155
+        161
       ]
     ],
     "extractedComments": []
@@ -134,7 +134,7 @@
     "origin": [
       [
         "containers/Terms/TermsFragment.js",
-        177
+        183
       ]
     ],
     "extractedComments": []
@@ -296,7 +296,7 @@
     "origin": [
       [
         "containers/Terms/TermsFragment.js",
-        126
+        132
       ]
     ],
     "extractedComments": []
@@ -316,7 +316,7 @@
     "origin": [
       [
         "containers/blog-post/BlogPostDetailsFragment/BlogPostDetailsFragment.js",
-        43
+        33
       ]
     ],
     "extractedComments": []
@@ -326,7 +326,7 @@
     "origin": [
       [
         "containers/Terms/TermsFragment.js",
-        70
+        76
       ]
     ],
     "extractedComments": []
@@ -336,7 +336,7 @@
     "origin": [
       [
         "containers/Terms/TermsFragment.js",
-        106
+        112
       ]
     ],
     "extractedComments": []
@@ -704,7 +704,7 @@
     "origin": [
       [
         "containers/Terms/TermsFragment.js",
-        34
+        37
       ]
     ],
     "extractedComments": []
@@ -744,7 +744,7 @@
     "origin": [
       [
         "containers/Terms/TermsFragment.js",
-        192
+        198
       ]
     ],
     "extractedComments": []
@@ -775,6 +775,16 @@
       [
         "components/CenterDetailsDialog/index.js",
         139
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Full name": {
+    "translation": "Nume și prenume",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        34
       ]
     ],
     "extractedComments": []
@@ -864,7 +874,7 @@
     "origin": [
       [
         "containers/Terms/TermsFragment.js",
-        133
+        139
       ]
     ],
     "extractedComments": []
@@ -874,7 +884,7 @@
     "origin": [
       [
         "containers/Terms/TermsFragment.js",
-        171
+        177
       ]
     ],
     "extractedComments": []
@@ -934,7 +944,7 @@
     "origin": [
       [
         "containers/Terms/TermsFragment.js",
-        141
+        147
       ]
     ],
     "extractedComments": []
@@ -1135,6 +1145,16 @@
     ],
     "extractedComments": []
   },
+  "Phone number": {
+    "translation": "Număr de telefon",
+    "origin": [
+      [
+        "containers/Terms/TermsFragment.js",
+        40
+      ]
+    ],
+    "extractedComments": []
+  },
   "Phone number missing": {
     "translation": "Număr telefon lipsă",
     "origin": [
@@ -1282,7 +1302,7 @@
     "origin": [
       [
         "containers/Terms/TermsFragment.js",
-        87
+        93
       ]
     ],
     "extractedComments": []
@@ -1292,7 +1312,17 @@
     "origin": [
       [
         "containers/Terms/TermsFragment.js",
-        78
+        84
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Search for the nearest center on the map, see the available tests, free or charged, call and make and appointment": {
+    "translation": "Caută pe hartă cel mai apropiat centru de tine, vezi ce teste pune la dispoziție, gratuite sau contra cost, sună și fă o programare",
+    "origin": [
+      [
+        "containers/home/SearchFragment.js",
+        75
       ]
     ],
     "extractedComments": []
@@ -1307,12 +1337,12 @@
     ],
     "extractedComments": []
   },
-  "Semper Musica Association processes the data of legal entities, public or private, only in order to provide them with information on the field distribution of HIV centers, relevant information for testing and other data useful to people with HIV.": {
-    "translation": "Asociația Semper Musica prelucrează datele entităților persoane juridice, publice sau private, doar în scopul de a le oferi informații privind distribuția în teren a centrelor HIV, a informațiilor relevante pentru testare și alte date utile persoanelor cu HIV.",
+  "Semper Musica Association processes the data of legal entities, public or private, and individuals only in order to provide them with information on the field distribution of HIV centers, relevant information for testing and other data useful to people with HIV.": {
+    "translation": "Asociația Semper Musica prelucrează datele entităților persoane juridice, publice sau private, și persoanelor fizice doar în scopul de a le oferi informații privind distribuția în teren a centrelor HIV, a informațiilor relevante pentru testare și alte date utile persoanelor cu HIV.",
     "origin": [
       [
         "containers/Terms/TermsFragment.js",
-        41
+        47
       ]
     ],
     "extractedComments": []
@@ -1332,7 +1362,7 @@
     "origin": [
       [
         "containers/Terms/TermsFragment.js",
-        148
+        154
       ]
     ],
     "extractedComments": []
@@ -1342,7 +1372,7 @@
     "origin": [
       [
         "containers/Terms/TermsFragment.js",
-        165
+        171
       ]
     ],
     "extractedComments": []
@@ -1356,7 +1386,7 @@
       ],
       [
         "containers/contact/FormFragment.js",
-        155
+        156
       ]
     ],
     "extractedComments": []
@@ -1512,11 +1542,11 @@
     "extractedComments": []
   },
   "The \"General Terms and Conditions of Use\" constitutes, in its entirety, an agreement between you and the Semper Musica Association regarding the use of <0>centrehiv.edreptultau.ro</0>.": {
-    "translation": "\"Termenii și Condițiile generale de utilizare\" constituie, în întregime, un acord încheiat între dumneavoastră și Asociația Semper Musica în privința utilizării<0>centrehiv.edreptultau.ro</0>.",
+    "translation": "\"Termenii și Condițiile generale de utilizare\" constituie, în întregime, un acord încheiat între dumneavoastră și Asociația Semper Musica în privința utilizării <0>centrehiv.edreptultau.ro</0>.",
     "origin": [
       [
         "containers/Terms/TermsFragment.js",
-        158
+        164
       ]
     ],
     "extractedComments": []
@@ -1536,7 +1566,7 @@
     "origin": [
       [
         "containers/Terms/TermsFragment.js",
-        180
+        186
       ]
     ],
     "extractedComments": []
@@ -1560,7 +1590,7 @@
     "origin": [
       [
         "containers/Terms/TermsFragment.js",
-        60
+        66
       ]
     ],
     "extractedComments": []
@@ -1570,7 +1600,7 @@
     "origin": [
       [
         "containers/Terms/TermsFragment.js",
-        51
+        57
       ]
     ],
     "extractedComments": []
@@ -1628,7 +1658,7 @@
     "origin": [
       [
         "containers/Terms/TermsFragment.js",
-        116
+        122
       ]
     ],
     "extractedComments": []
@@ -1638,7 +1668,7 @@
     "origin": [
       [
         "containers/Terms/TermsFragment.js",
-        81
+        87
       ]
     ],
     "extractedComments": []
@@ -1648,7 +1678,7 @@
     "origin": [
       [
         "containers/Terms/TermsFragment.js",
-        93
+        99
       ]
     ],
     "extractedComments": []
@@ -1658,7 +1688,7 @@
     "origin": [
       [
         "containers/Terms/TermsFragment.js",
-        103
+        109
       ]
     ],
     "extractedComments": []
@@ -1958,8 +1988,8 @@
     "extractedComments": []
   },
   "form.gdpr_agreement": {
-    "translation": "Prin această bifă îți exprimi acordul ca datele furnizate de tine prin acest formular să fie procesate exclusiv in scopul de a încărca în platformă acest document și ca echipa MKBT să te contacteze doar în legătură cu această submisie. Aici puteți găsi <0>regulamentul nostru cu privire la prelucrarea datelor cu caracter personal</0>.",
-    "message": "By this check, you agree that the data provided by you through this form will be processed exclusively to upload this document on the platform and that the MKBT team will contact you only in connection with this submission. Here you can find <0>our regulations on the processing of personal data</0>.",
+    "translation": "Prin această bifă îți exprimi acordul ca datele furnizate de tine prin acest formular să fie procesate exclusiv in scopul de a încărca în platformă acest document și ca echipa Semper Musica să te contacteze doar în legătură cu această submisie. Aici puteți găsi <0>regulamentul nostru cu privire la prelucrarea datelor cu caracter personal</0>.",
+    "message": "By this check, you agree that the data provided by you through this form will be processed exclusively to upload this document on the platform and that the Semper Musica team will contact you only in connection with this submission. Here you can find <0>our regulations on the processing of personal data</0>.",
     "origin": [
       [
         "containers/contact/FormFragment.js",

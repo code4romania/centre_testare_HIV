@@ -1,0 +1,16 @@
+import ReactGA from 'react-ga';
+
+export const initializeGA = () => {
+  if (document.location.hostname !== 'centrehiv.edreptultau.ro') {
+    return;
+  }
+  ReactGA.initialize('G-XBPSFRVQZT');
+};
+
+export const logPageView = (history) => {
+  history.listen((location) => {
+    const page = location.pathname || window.location.pathname;
+    ReactGA.set({ page });
+    ReactGA.pageview(page);
+  });
+};

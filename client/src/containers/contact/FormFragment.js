@@ -117,8 +117,9 @@ const FormFragment = ({ form }) => {
             <Checkbox disabled={isSubmittingContactForm} style={{ lineHeight: 1.5 }}>
               <Trans id="form.gdpr_agreement">
                 By this check, you agree that the data provided by you through this form will be
-                processed exclusively to upload this document on the platform and that the MKBT team
-                will contact you only in connection with this submission. Here you can find{' '}
+                processed exclusively to upload this document on the platform and that the Semper
+                Musica team will contact you only in connection with this submission. Here you can
+                find{' '}
                 <Link to="/termeni-si-conditii" target="_blank">
                   our regulations on the processing of personal data
                 </Link>
