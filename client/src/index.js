@@ -4,7 +4,9 @@ import { AppProvider } from './context';
 import App from './App';
 import '@fontsource/source-sans-pro';
 import * as serviceWorker from './serviceWorker';
+import { initializeGA } from './analyticsTracker';
 
+initializeGA();
 ReactDOM.render(
   <AppProvider>
     <App />

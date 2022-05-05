@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Switch, Route, useHistory } from 'react-router-dom';
 import { I18nProvider } from '@lingui/react';
 import { i18n } from '@lingui/core';
 import { en, ro } from 'make-plural/plurals';
@@ -19,6 +19,7 @@ import ScrollToTop from './components/ScrollToTop';
 import './styles/theme.scss';
 import { messages as messagesRo } from './locales/ro/messages';
 import { HelpUsDialog } from './components/HelpUsDialog';
+import { logPageView } from './analyticsTracker';
 
 const queryClient = new QueryClient();
 
@@ -32,49 +33,60 @@ i18n.load({
 i18n.activate('ro');
 
 const App = () => {
+  const history = useHistory();
+  useEffect(() => {
+    logPageView(history);
+  }, [history]);
+
   return (
     <I18nProvider i18n={i18n} forceRenderOnLocaleChange={false}>
       <QueryClientProvider client={queryClient}>
         <HelpUsDialog />
-        <Router>
-          <ScrollToTop />
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/despre">
-              <About />
-            </Route>
-            <Route path="/centre">
-              <Centers />
-            </Route>
-            <Route exact path="/blog">
-              <Blog />
-            </Route>
-            <Route path="/blog/:slug">
-              <BlogPost />
-            </Route>
-            <Route path="/contact">
-              <Contact />
-            </Route>
-            <Route path="/termeni-si-conditii">
-              <Terms />
-            </Route>
-            <Route path="/politica-de-confidentialitate">
-              <Policy />
-            </Route>
-            <Route path="/chestionar">
-              <CenterReview />
-            </Route>
-            <Route path="/doneaza">
-              <Donate />
-            </Route>
-            <Route component={NotFound} />
-          </Switch>
-        </Router>
+        <ScrollToTop />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/despre">
+            <About />
+          </Route>
+          <Route path="/centre">
+            <Centers />
+          </Route>
+          <Route exact path="/blog">
+            <Blog />
+          </Route>
+          <Route path="/blog/:slug">
+            <BlogPost />
+          </Route>
+          <Route path="/contact">
+            <Contact />
+          </Route>
+          <Route path="/termeni-si-conditii">
+            <Terms />
+          </Route>
+          <Route path="/politica-de-confidentialitate">
+            <Policy />
+          </Route>
+          <Route path="/chestionar">
+            <CenterReview />
+          </Route>
+          <Route path="/doneaza">
+            <Donate />
+          </Route>
+          <Route component={NotFound} />
+        </Switch>
       </QueryClientProvider>
     </I18nProvider>
   );
 };
 
-export default App;
+const AppWrapper = () => {
+  return (
+    <Router>
+      <App />
+    </Router>
+  );
+};
+
+export default AppWrapper;
