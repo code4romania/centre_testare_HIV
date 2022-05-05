@@ -28,7 +28,7 @@ export default () => {
                 www.eeagrants.org
               </Link>
               . Information about Active Citizens Fund Romania is available at{' '}
-              <Link to={{ pathname: 'htpps://activecitizensfund.ro' }} target="_blank">
+              <Link to={{ pathname: 'https://activecitizensfund.ro' }} target="_blank">
                 www.activecitizensfund.ro
               </Link>
               .

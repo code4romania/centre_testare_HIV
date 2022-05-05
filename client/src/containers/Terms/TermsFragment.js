@@ -31,7 +31,13 @@ export const TermsFragment = () => {
       </Paragraph>
       <ul>
         <li>
+          <Trans>Full name</Trans>
+        </li>
+        <li>
           <Trans>Email address</Trans>
+        </li>
+        <li>
+          <Trans>Phone number</Trans>
         </li>
       </ul>
       <Title level={3}>
@@ -39,9 +45,9 @@ export const TermsFragment = () => {
       </Title>
       <Paragraph>
         <Trans>
-          Semper Musica Association processes the data of legal entities, public or private, only in
-          order to provide them with information on the field distribution of HIV centers, relevant
-          information for testing and other data useful to people with HIV.
+          Semper Musica Association processes the data of legal entities, public or private, and
+          individuals only in order to provide them with information on the field distribution of
+          HIV centers, relevant information for testing and other data useful to people with HIV.
         </Trans>
       </Paragraph>
       <Title level={3}>

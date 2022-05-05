@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { AutoComplete, Col, Icon, Input, Radio, Row, Spin, Tooltip, Typography } from 'antd';
-import { Trans } from '@lingui/macro';
+import { Trans, t } from '@lingui/macro';
 import { debounce } from 'lodash';
 import { arrayOf, bool, element, func, oneOf, oneOfType, shape, string } from 'prop-types';
 import { ReactComponent as InfoIcon } from '../../images/info-circle-solid.svg';
@@ -72,12 +72,10 @@ export const SearchFragment = ({
           <Trans>
             Find the nearest{' '}
             <Tooltip
-              // @TODO replace lorem text with actual text + translations
-              title="
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam nemo, cum ratione
-                  explicabo architecto ex dolore incidunt nisi quisquam dolores? Facere ipsa quam
-                  modi laborum possimus, accusantium dolor a adipisci.
-                "
+              title={t({
+                message:
+                  'Search for the nearest center on the map, see the available tests, free or charged, call and make and appointment',
+              })}
               placement="top"
               trigger={['hover', 'click']}
             >
