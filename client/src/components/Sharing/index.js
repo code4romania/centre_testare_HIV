@@ -1,6 +1,6 @@
-import React, { useCallback } from 'react';
-import { Trans } from '@lingui/macro';
-import { Col, Row } from 'antd';
+import React, { useCallback, useState } from 'react';
+import { Trans, t } from '@lingui/macro';
+import { Col, Row, Tooltip } from 'antd';
 
 import copyToClipboardIcon from '../../images/copy-to-clipboard.svg';
 import facebookLogo from '../../images/facebook.svg';
@@ -8,9 +8,11 @@ import whatsappLogo from '../../images/whatsapp.svg';
 
 function Sharing() {
   const URL = window.location.href;
+  const [visible, setVisible] = useState(false);
 
   const copyToClipboard = useCallback(() => {
     navigator.clipboard.writeText(URL);
+    setVisible(true);
   }, [URL]);
 
   return (
@@ -19,9 +21,22 @@ function Sharing() {
         <Trans>Share:</Trans>
       </Col>
       <Col>
-        <a className="sharing-icon" onClick={copyToClipboard}>
-          <img src={copyToClipboardIcon} alt="" />
-        </a>
+        <Tooltip
+          trigger={['click']}
+          title={t({
+            message: 'Copied',
+          })}
+          placement="bottom"
+          visible={visible}
+        >
+          <a
+            className="sharing-icon"
+            onClick={copyToClipboard}
+            onMouseLeave={() => setVisible(false)}
+          >
+            <img src={copyToClipboardIcon} alt="" />
+          </a>
+        </Tooltip>
         <a
           className="sharing-icon"
           target="_blank"

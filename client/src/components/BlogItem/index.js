@@ -6,8 +6,7 @@ const { Paragraph, Text, Title } = Typography;
 
 const BlogItem = ({ postDetails }) => {
   const { url } = useRouteMatch();
-  const { image, title, published, slug } = postDetails;
-  const previewText = postDetails.preview_text;
+  const { image, title, published, slug, previewText } = postDetails;
 
   return (
     <Link to={`${url}/${slug}`} className="show-more">

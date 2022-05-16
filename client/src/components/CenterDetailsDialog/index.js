@@ -136,13 +136,13 @@ export const CenterDetailsDialog = () => {
         )}
         {details?.isFreeTestingAvailable && (
           <>
-            <Descriptions.Item label={<Trans>Free testing</Trans>}>
+            <Descriptions.Item label={<Trans>Free testing</Trans>} span={2}>
               {details?.isFreeTestingAvailable ? <Trans>Yes</Trans> : <Trans>No</Trans>}
             </Descriptions.Item>
-            {details?.freeTestingConditions && details?.freeTestingConditions.length > 0 && (
+            {details?.freeTesting && details?.freeTesting.length > 0 && (
               <Descriptions.Item label={<Trans>Free test conditions</Trans>}>
-                {details?.freeTestingConditions.map((condition) => (
-                  <div key={condition}>{condition}</div>
+                {details?.freeTesting.map((condition) => (
+                  <div key={condition}>&bull; {condition}</div>
                 ))}
               </Descriptions.Item>
             )}

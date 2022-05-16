@@ -4,7 +4,7 @@ export const initializeGA = () => {
   if (document.location.hostname !== 'centrehiv.edreptultau.ro') {
     return;
   }
-  ReactGA.initialize('G-XBPSFRVQZT');
+  ReactGA.initialize('G-EDWX54WGNJ');
 };
 
 export const logPageView = (history) => {
