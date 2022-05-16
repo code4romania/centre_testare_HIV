@@ -68,6 +68,10 @@ class Command(BaseCommand):
             "Prin poștă": models.TestingCenter.DISCLOSURE_MAIL,
             "Da": True,
             "Nu": False,
+            "da": True,
+            "nu": False,
+            "DA": True,
+            "NU": False,
         }
         dynamic_data_mapping = self._get_dynamic_data_mapping()
         for r_index, row in df.iterrows():
@@ -99,7 +103,7 @@ class Command(BaseCommand):
                             if item_model == models.CenterEmail:
                                 for item in row_value:
                                     if "@" in item:
-                                        email_object, _ = models.CenterEmail.objects.get_or_create(email=item)
+                                        email_object, _ = models.CenterEmail.objects.get_or_create(email=item.strip())
                                         emails.append(email_object)
                                 if emails:
                                     new_center["online_contact_type"] = models.TestingCenter.CONTACT_EMAIL
@@ -115,7 +119,7 @@ class Command(BaseCommand):
                                 for item in row_value:
                                     if item:
                                         phone_object, _ = models.CenterPhoneNumber.objects.get_or_create(
-                                            phone_number=item
+                                            phone_number=item.strip()
                                         )
                                         phone_numbers.append(phone_object)
                             elif item_model == models.CenterTestTypes:
