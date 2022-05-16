@@ -40,6 +40,7 @@ class TestingCenterSerializer(serializers.ModelSerializer):
     test_types = serializers.SerializerMethodField("get_test_types")
     docs_u18 = serializers.SerializerMethodField("get_necessary_documents_under_18")
     docs_u16 = serializers.SerializerMethodField("get_necessary_documents_under_16")
+    free_testing = serializers.SerializerMethodField("get_free_testing_conditions")
     county_code = serializers.SerializerMethodField("get_county_code")
     average_rating = serializers.SerializerMethodField("get_average_rating")
     number_of_ratings = serializers.SerializerMethodField("get_number_of_ratings")
@@ -62,6 +63,9 @@ class TestingCenterSerializer(serializers.ModelSerializer):
 
     def get_necessary_documents_under_16(self, obj: TestingCenter) -> List:
         return self._get_many_to_many_name_center_field(obj, "necessary_documents_under_16")
+
+    def get_free_testing_conditions(self, obj: TestingCenter) -> List:
+        return self._get_many_to_many_name_center_field(obj, "free_testing_conditions")
 
     def get_negative_disclosure(self, obj: TestingCenter) -> str:
         return self._get_disclosure_field(obj, obj.TEST_DISCLOSURE_CHOICES, "negative_result_disclosure")
@@ -135,7 +139,7 @@ class TestingCenterSerializer(serializers.ModelSerializer):
             "test_types",
             "testing_price",
             "is_free_testing_available",
-            "free_testing_conditions",
+            "free_testing",
             "quick_test_wait_time_minutes",
             "quick_test_wait_time_days",
             "negative_disclosure",
