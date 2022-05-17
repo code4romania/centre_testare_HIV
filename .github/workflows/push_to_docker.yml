@@ -5,7 +5,7 @@ on:
     tags:
       - v*
 
-name: Deploy to Docker Hub
+name: Build & Push to Docker Hub
 
 jobs:
   push-to-gcloud:
@@ -29,7 +29,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: tamariei/centre_testare_hiv-backend
+          images: ${{ secrets.DOCKER_OWNER }}/${{ secrets.DOCKER_REPO }}
           tags: |
             type=edge
             type=semver,pattern={{version}}
