@@ -46,7 +46,6 @@ urlpatterns = (
         path("i18n/", include("django.conf.urls.i18n")),
         path("api/v1/schema/", SpectacularAPIView.as_view(), name="schema"),
         path("api/v1/schema/swagger-ui/", SpectacularSwaggerView.as_view(url_name="swagger-ui"), name="swagger-ui"),
-        path("", admin.site.urls, name="admin"),
     )
     + [
         # TODO: Remove this when we have a proper frontend
@@ -62,6 +61,7 @@ urlpatterns = (
         ),
     ]
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    + i18n_patterns(path("", admin.site.urls, name="admin"))
 )
 
 if settings.ENABLE_DEBUG_TOOLBAR:
