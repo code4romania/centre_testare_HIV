@@ -36,37 +36,16 @@ router.register(r"test_type", CenterTestTypesViewSet, basename="test_type")
 urlpatterns = (
     i18n_patterns(
         # URL patterns which accept a language prefix
-        path(
-            "admin/password_reset/",
-            auth_views.PasswordResetView.as_view(),
-            name="admin_password_reset",
-        ),
-        path(
-            "admin/password_reset/done/",
-            auth_views.PasswordResetDoneView.as_view(),
-            name="password_reset_done",
-        ),
-        path(
-            "admin/reset/<uidb64>/<token>/",
-            auth_views.PasswordResetConfirmView.as_view(),
-            name="password_reset_confirm",
-        ),
-        path(
-            "admin/reset/done/",
-            auth_views.PasswordResetCompleteView.as_view(),
-            name="password_reset_complete",
-        ),
-        path("admin/", admin.site.urls),
+        path("password_reset/", auth_views.PasswordResetView.as_view(), name="admin_password_reset"),
+        path("password_reset/done/", auth_views.PasswordResetDoneView.as_view(), name="password_reset_done"),
+        path("reset/<uidb64>/<token>/", auth_views.PasswordResetConfirmView.as_view(), name="password_reset_confirm"),
+        path("reset/done/", auth_views.PasswordResetCompleteView.as_view(), name="password_reset_complete"),
         path("ckeditor/", include("ckeditor_uploader.urls")),
         path("api/v1/", include(router.urls)),
         path("api/v1/statistics/", statistics, name="statistics"),
         path("i18n/", include("django.conf.urls.i18n")),
         path("api/v1/schema/", SpectacularAPIView.as_view(), name="schema"),
-        path(
-            "api/v1/schema/swagger-ui/",
-            SpectacularSwaggerView.as_view(url_name="swagger-ui"),
-            name="swagger-ui",
-        ),
+        path("api/v1/schema/swagger-ui/", SpectacularSwaggerView.as_view(url_name="swagger-ui"), name="swagger-ui"),
     )
     + [
         # TODO: Remove this when we have a proper frontend
@@ -82,6 +61,7 @@ urlpatterns = (
         ),
     ]
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    + i18n_patterns(path("", admin.site.urls, name="admin"))
 )
 
 if settings.ENABLE_DEBUG_TOOLBAR:
