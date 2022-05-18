@@ -188,7 +188,7 @@ class ScheduleRatingReminder(viewsets.GenericViewSet):
         serializer = ScheduleRatingReminderSerializer(data=request.data)
         if serializer.is_valid():
             user_email = serializer.data["user_email"]
-            next_run = timezone.localtime() + timedelta(seconds=60)
+            next_run = timezone.localtime() + timedelta(days=14)
 
             contact_email = ContactEmailReminder.objects.create(email=user_email, status=ContactEmailReminder.UNSENT)
 
