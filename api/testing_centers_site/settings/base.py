@@ -20,6 +20,7 @@ env = environ.Env(
     AWS_S3_REGION_NAME=(str, ""),
     AWS_SECRET_ACCESS_KEY=(str, ""),
     AWS_STORAGE_BUCKET_NAME=(str, ""),
+    AWS_SUBDOMAIN=(str, "s3.amazonaws.com"),
     DEBUG=(str, "no"),
     DEFAULT_FROM_EMAIL=(str, "noreply@code4.ro"),
     DEV_ENABLE_EMAIL_SMTP=(str, "no"),
@@ -40,7 +41,7 @@ env = environ.Env(
     REACT_APP_DJANGO_SITE_URL=(str, ""),
     REDIS_HOST=(str, "redis"),
     REDIS_PORT=(int, 6379),
-    USE_S3=(bool, False),
+    USE_S3=(str, "no"),
 )
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -239,24 +240,27 @@ EMAIL_USE_SSL = env("EMAIL_USE_SSL") == "yes"
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-USE_S3 = env("USE_S3")
+USE_S3 = (
+    (env("USE_S3")) == "yes"
+    and env("AWS_ACCESS_KEY_ID")
+    and env("AWS_SECRET_ACCESS_KEY")
+    and env("AWS_STORAGE_BUCKET_NAME")
+)
+
 if USE_S3:
     # aws settings
     AWS_ACCESS_KEY_ID = env("AWS_ACCESS_KEY_ID")
     AWS_SECRET_ACCESS_KEY = env("AWS_SECRET_ACCESS_KEY")
     AWS_STORAGE_BUCKET_NAME = env("AWS_STORAGE_BUCKET_NAME")
-    AWS_DEFAULT_ACL = "public-read"
-    AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
+    AWS_DEFAULT_ACL = None
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.{env("AWS_SUBDOMAIN")}'
     AWS_S3_OBJECT_PARAMETERS = {"CacheControl": "max-age=86400"}
+    AWS_S3_FILE_OVERWRITE = False
+    AWS_S3_REGION_NAME = env("AWS_S3_REGION_NAME")
     # s3 public media settings
     PUBLIC_MEDIA_LOCATION = "media"
     MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/"
     DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-    # s3 private media settings
-    PRIVATE_MEDIA_LOCATION = "private"
-    PRIVATE_FILE_STORAGE = "hub.storage_backends.PrivateMediaStorage"
-    AWS_S3_REGION_NAME = env("AWS_S3_REGION_NAME")
-    AWS_S3_SIGNATURE_VERSION = "s3v4"
 else:
     PRIVATE_FILE_STORAGE = "django.core.files.storage.FileSystemStorage"
     MEDIA_URL = "/media/"
