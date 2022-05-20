@@ -4,7 +4,7 @@ DEBUG = TEMPLATE_DEBUG = False
 
 SECRET_KEY = env.str("SECRET_KEY")
 
-INSTALLED_APPS.append("request_logging.middleware.LoggingMiddleware")
+MIDDLEWARE.append("request_logging.middleware.LoggingMiddleware")
 
 EMAIL_BACKEND = "django_q_email.backends.DjangoQBackend"
 
