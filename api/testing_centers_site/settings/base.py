@@ -45,7 +45,7 @@ env = environ.Env(
 )
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../..")
+BASE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..")
 
 ADMIN_TITLE = _("Testing Centers")
 
@@ -64,9 +64,6 @@ DJANGO_PORT = f":{DJANGO_PORT}" if DJANGO_PORT else ""
 
 SITE_URL = f"{DJANGO_SITE_URL}{DJANGO_PORT}"
 HOME_SITE_URL = env("HOME_SITE_URL") or SITE_URL
-
-REDIS_HOST = env("REDIS_HOST")
-REDIS_PORT = env("REDIS_PORT")
 
 ALLOWED_HOSTS = []
 CORS_ORIGIN_ALLOW_ALL = False
@@ -264,7 +261,7 @@ if USE_S3:
 else:
     PRIVATE_FILE_STORAGE = "django.core.files.storage.FileSystemStorage"
     MEDIA_URL = "/media/"
-    MEDIA_ROOT = os.path.join(BASE_DIR, "./public/media")
+    MEDIA_ROOT = os.path.join(BASE_DIR, "public", "media")
 
 STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
@@ -274,10 +271,13 @@ LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
+REDIS_HOST = env("REDIS_HOST")
+REDIS_PORT = env("REDIS_PORT")
+
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": f"redis://{REDIS_HOST}:{REDIS_PORT}/?db=2",
+        "LOCATION": f"redis://{REDIS_HOST}:{REDIS_PORT}/?db=0",
         "KEY_PREFIX": "default",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
@@ -295,7 +295,7 @@ CACHES = {
     },
     "scheduling": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": f"redis://{REDIS_HOST}:{REDIS_PORT}/?db=0",
+        "LOCATION": f"redis://{REDIS_HOST}:{REDIS_PORT}/?db=2",
         "KEY_PREFIX": "scheduling",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
@@ -306,6 +306,21 @@ CACHES = {
 
 DJANGO_REDIS_IGNORE_EXCEPTIONS = False
 DJANGO_REDIS_LOGGER = "django"
+
+# django-q https://django-q.readthedocs.io/en/latest/configure.html
+Q_CLUSTER = {
+    "name": "centre-hiv",
+    "recycle": 500,
+    "timeout": 60,
+    "workers": 2,
+    "cpu_affinity": 2,
+    "save_limit": 0,
+    "queue_limit": 500,
+    "label": "Django Q",
+    "scheduler": True,
+    "catch_up": True,
+    "django_redis": "scheduling",
+}
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
@@ -396,20 +411,6 @@ COUNTIES_SHORTNAME = {
     "Vaslui": "VS",
     "Vrancea": "VN",
     "Vâlcea": "VL",
-}
-
-# django-q https://django-q.readthedocs.io/en/latest/configure.html
-Q_CLUSTER = {
-    "name": "centre-hiv",
-    "recycle": 500,
-    "timeout": 60,
-    "workers": 4,
-    "cpu_affinity": 2,
-    "save_limit": 250,
-    "queue_limit": 500,
-    "label": "Django Q",
-    "scheduler": True,
-    "django_redis": "scheduling",
 }
 
 # django-jazzmin

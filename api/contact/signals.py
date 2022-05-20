@@ -1,22 +1,13 @@
 from typing import List
 
 from django.conf import settings
-from django.contrib.auth.models import Permission, User
-from django.db.models import Q
+from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.utils.safestring import mark_safe
 
-from contact.models import ContactMessage
+from contact.models import CONTACT_ADMIN_GROUP, ContactMessage
 from testing_centers_site.utils import send_email
-
-
-def _get_user_emails_by_permission_name(permission_name):
-    perm: Permission = Permission.objects.get(codename=permission_name)
-    users: List[User] = User.objects.filter(Q(groups__permissions=perm) | Q(user_permissions=perm)).distinct()
-    user_mails: List[str] = [user.email for user in users]
-
-    return user_mails
 
 
 @receiver(post_save, sender=ContactMessage)
@@ -26,9 +17,8 @@ def send_email_on_new_contact_message(sender: ContactMessage, instance: ContactM
 
     subject: str = "Mesaj nou prin formularul de contact"
 
-    classname_lowercase: str = str(sender).split(".")[-1][:-2].lower()
-    permission_name = f"view_{classname_lowercase}"
-    user_mails = _get_user_emails_by_permission_name(permission_name)
+    users = User.objects.filter(groups__name=CONTACT_ADMIN_GROUP)
+    user_mails: List[str] = [user.email for user in users]
 
     for user_mail in user_mails:
         send_email(
