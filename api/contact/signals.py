@@ -1,3 +1,4 @@
+import logging
 from typing import List
 
 from django.conf import settings
@@ -12,13 +13,19 @@ from testing_centers_site.utils import send_email
 
 @receiver(post_save, sender=ContactMessage)
 def send_email_on_new_contact_message(sender: ContactMessage, instance: ContactMessage, created: bool, **kwargs):
+    logger = logging.getLogger("django")
+
     if not created or not isinstance(instance, ContactMessage):
         return
+
+    logger.info("Sending new contact message notification.")
 
     subject: str = "Mesaj nou prin formularul de contact"
 
     users = User.objects.filter(groups__name=CONTACT_ADMIN_GROUP)
     user_mails: List[str] = [user.email for user in users]
+
+    logger.info(f"Sending message to {len(user_mails)} users.")
 
     for user_mail in user_mails:
         send_email(
@@ -31,3 +38,5 @@ def send_email_on_new_contact_message(sender: ContactMessage, instance: ContactM
             subject=subject,
             to=user_mail,
         )
+
+    logger.info("Message(s) sent.")
