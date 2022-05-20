@@ -3,6 +3,9 @@ from django.utils.translation import gettext_lazy as _
 from django_q.models import Schedule
 
 
+CONTACT_ADMIN_GROUP = "Contact Admin"
+
+
 class ContactMessage(models.Model):
     UNREAD = 0
     READ = 1

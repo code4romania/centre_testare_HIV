@@ -90,7 +90,10 @@ seed_center_email:                ## seed the center emails
 seed_center_phone:                ## seed the center phone numbers
 	docker-compose exec api ./manage.py seed_center_data -t center_phone
 
-seed: seed_test_types seed_center_types seed_necessary_docs seed_free_testing seed_center_email seed_center_phone
+seed_groups:
+	docker-compose exec api ./manage.py seed_contact_group
+
+seed: seed_test_types seed_center_types seed_necessary_docs seed_free_testing seed_center_email seed_center_phone seed_groups
 
 ## [TEST]
 test:                             ## run all tests

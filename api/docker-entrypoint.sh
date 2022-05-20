@@ -27,6 +27,7 @@ if [[ ${ENVIRONMENT} != "production" && ${RUN_LOAD_DUMMY_DATA} = "yes" ]] ; then
   ./manage.py loaddata pages
 fi
 
+./manage.py seed_contact_group
 ./manage.py seed_superuser
 
 if [[ ${RUN_COLLECT_STATIC} = "yes" ]] ; then
