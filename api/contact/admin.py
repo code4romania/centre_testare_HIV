@@ -41,7 +41,7 @@ class ContactMessageAdmin(AdminWithStatusChanges):
 @admin.register(ContactEmailReminder)
 class ContactEmailReminderAdmin(admin.ModelAdmin):
     list_filter = ("status",)
-    list_display = ("email", "status", "get_scheduled_task")
+    list_display = ("email", "status", "get_scheduled_task", "created_at")
 
     @staticmethod
     def get_scheduled_task(obj: ContactEmailReminder):
