@@ -83,7 +83,7 @@ LOGGING = {
     },
     "handlers": {
         "console": {
-            "level": "INFO",
+            "level": env("DJANGO_LOG_LEVEL"),
             "class": "logging.StreamHandler",
             "formatter": "simple" if ENVIRONMENT == "production" else "verbose",
         },
