@@ -83,7 +83,7 @@ LOGGING = {
     },
     "handlers": {
         "console": {
-            "level": "INFO",
+            "level": env("DJANGO_LOG_LEVEL"),
             "class": "logging.StreamHandler",
             "formatter": "simple" if ENVIRONMENT == "production" else "verbose",
         },
@@ -312,7 +312,7 @@ Q_CLUSTER = {
     "name": "centre-hiv",
     "recycle": 500,
     "timeout": 60,
-    "workers": 2,
+    "workers": 4,
     "cpu_affinity": 2,
     "save_limit": 0,
     "queue_limit": 500,

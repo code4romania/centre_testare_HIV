@@ -9,7 +9,7 @@ from contact.serializers import ContactSerializer
 
 class SendContactQueryBurstAnonRateThrottle(AnonRateThrottle):
     cache = caches["throttling"]
-    rate = "1/min"
+    rate = "5/min"
 
 
 class SendContactQuerySustainedAnonRateThrottle(AnonRateThrottle):
