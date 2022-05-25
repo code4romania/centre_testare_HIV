@@ -234,6 +234,8 @@ EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
 EMAIL_USE_TLS = env("EMAIL_USE_TLS") == "yes"
 EMAIL_USE_SSL = env("EMAIL_USE_SSL") == "yes"
 
+PRODUCTION_EMAIL_PROVIDER = "django.core.mail.backends.smtp.EmailBackend"
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 

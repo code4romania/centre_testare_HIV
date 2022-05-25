@@ -8,7 +8,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 SECRET_KEY = "secret"
 
 if env("DEV_ENABLE_EMAIL_SMTP") == "yes":
-    EMAIL_BACKEND = "django_q_email.backends.DjangoQBackend"
+    EMAIL_BACKEND = PRODUCTION_EMAIL_PROVIDER
 else:
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
