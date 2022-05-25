@@ -25,7 +25,10 @@ class Command(BaseCommand):
         contact_obj = ContactEmailReminder.objects.get(pk=options["contact_obj"])
 
         template_arg = f"email/center_rating_reminder.html"
-        template_context = {"site_url": f"{settings.SITE_URL}"}
+        template_context = {
+            "site_url": f"{settings.SITE_URL}",
+            "home_site_url": settings.HOME_SITE_URL,
+        }
         subject_arg = f"{_('Reminder to rate your testing center')}"
         email_arg = contact_obj.email
 
