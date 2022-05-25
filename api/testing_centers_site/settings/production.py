@@ -6,7 +6,7 @@ SECRET_KEY = env.str("SECRET_KEY")
 
 MIDDLEWARE.append("request_logging.middleware.LoggingMiddleware")
 
-EMAIL_BACKEND = "django_q_email.backends.DjangoQBackend"
+EMAIL_BACKEND = PRODUCTION_EMAIL_PROVIDER
 
 ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
 
