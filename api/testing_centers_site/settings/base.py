@@ -39,6 +39,7 @@ env = environ.Env(
     NO_REPLY_EMAIL=(str, "noreply@code4.ro"),
     REACT_APP_DJANGO_PORT=(str, ""),
     REACT_APP_DJANGO_SITE_URL=(str, ""),
+    SITE_URL=(str, ""),
     REDIS_HOST=(str, "redis"),
     REDIS_PORT=(int, 6379),
     USE_S3=(str, "no"),
@@ -62,7 +63,7 @@ DJANGO_SITE_URL = env("REACT_APP_DJANGO_SITE_URL")
 DJANGO_PORT = env("REACT_APP_DJANGO_PORT")
 DJANGO_PORT = f":{DJANGO_PORT}" if DJANGO_PORT else ""
 
-SITE_URL = f"{DJANGO_SITE_URL}{DJANGO_PORT}"
+SITE_URL = env("SITE_URL") or f"{DJANGO_SITE_URL}{DJANGO_PORT}"
 HOME_SITE_URL = env("HOME_SITE_URL") or SITE_URL
 
 ALLOWED_HOSTS = []
