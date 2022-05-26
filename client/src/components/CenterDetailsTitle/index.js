@@ -24,7 +24,9 @@ export const CenterDetailsTitle = ({
 
   const coordinates = `${parseFloat(lat, 10)},${parseFloat(lng, 10)}`;
 
-  const locationHref = isIos ? `geo:${coordinates}` : `https://maps.google.com?q=${coordinates}`;
+  const locationHref = isIos
+    ? `http://maps.apple.com/?ll=${coordinates}`
+    : `https://maps.google.com?q=${coordinates}`;
 
   return (
     <Col span={22} className="center-details-title">
