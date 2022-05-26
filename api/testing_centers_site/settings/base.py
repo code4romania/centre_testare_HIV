@@ -506,6 +506,7 @@ JAZZMIN_SETTINGS: Dict[str, Any] = {
         "blog.post": "fas fa-blog",
         "taggit.tag": "fas fa-tag",
         "contact.contactmessage": "fas fa-envelope-open-text",
+        "contact.contactemailreminder": "fas fa-bell",
         "centers.testingcenter": "fas fa-hospital",
         "centers.centerrating": "fas fa-star",
         "centers.centerratingquestion": "fas fa-question",
