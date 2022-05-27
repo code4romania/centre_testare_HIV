@@ -64,16 +64,7 @@ export const CenterDetails = ({ onClose, isLoading, details }) => {
   return (
     <Card className="center-details" loading={isLoading}>
       <Row type="flex" gutter={10} className="center-details-header">
-        <CenterDetailsTitle
-          streetName={details?.streetName ?? ''}
-          streetNumber={details?.streetNumber}
-          locality={details?.locality}
-          countyCode={details?.countyCode}
-          lat={details?.lat}
-          lng={details?.lng}
-          averageRating={details?.averageRating}
-          totalRatings={details?.numberOfRatings}
-        />
+        <CenterDetailsTitle details={details} />
         <Col span={2}>
           <Icon type="close" onClick={onClose} />
         </Col>

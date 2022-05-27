@@ -10,22 +10,14 @@ const { Paragraph, Text } = Typography;
 
 const { isIos } = getDeviceType();
 
-export const CenterDetailsTitle = ({
-  streetName,
-  streetNumber,
-  locality,
-  countyCode,
-  lat,
-  lng,
-  averageRating,
-  totalRatings,
-}) => {
-  const showSubtext = locality || countyCode;
+export const CenterDetailsTitle = ({ details }) => {
+  const showSubtext = details?.locality || details?.countyCode;
 
-  const coordinates = `${parseFloat(lat, 10)},${parseFloat(lng, 10)}`;
+  const coordinates = `${parseFloat(details?.lat ?? 0, 10)},${parseFloat(details?.lng ?? 0, 10)}`;
+  const urlQuery = details?.name.replaceAll(' ', '+') ?? '';
 
   const locationHref = isIos
-    ? `http://maps.apple.com/?ll=${coordinates}`
+    ? `http://maps.apple.com/?q=${urlQuery}&ll=${coordinates}`
     : `https://maps.google.com?q=${coordinates}`;
 
   return (
@@ -36,13 +28,15 @@ export const CenterDetailsTitle = ({
         </Col>
         <Col span={22}>
           <Paragraph className="center-details-title__text">
-            {streetName} {streetNumber}{' '}
+            {details?.streetName} {details?.streetNumber}{' '}
           </Paragraph>
 
           <Paragraph>
             {showSubtext && (
               <Text className="center-details-title__subtext">
-                {locality && countyCode ? `${locality}, ${countyCode}` : locality ?? countyCode}
+                {details?.locality && details?.countyCode
+                  ? `${details?.locality}, ${details?.countyCode}`
+                  : details?.locality ?? details?.countyCode}
               </Text>
             )}{' '}
             <Text className="center-details-title__link" underline>
@@ -54,9 +48,10 @@ export const CenterDetailsTitle = ({
             </Text>
           </Paragraph>
 
-          {Boolean(averageRating) && (
+          {Boolean(details?.averageRating) && (
             <Text className="center-details-rating">
-              <StarIcon /> {Math.round(averageRating * 10) / 10} <span>({totalRatings})</span>
+              <StarIcon /> {Math.round(details.averageRating * 10) / 10}{' '}
+              <span>({details?.numberOfRatings})</span>
             </Text>
           )}
         </Col>

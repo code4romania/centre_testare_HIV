@@ -398,7 +398,7 @@
     "origin": [
       [
         "containers/home/SearchMapFragment.js",
-        16
+        17
       ]
     ],
     "extractedComments": []
@@ -408,7 +408,7 @@
     "origin": [
       [
         "containers/home/SearchMapFragment.js",
-        20
+        21
       ]
     ],
     "extractedComments": []
@@ -432,7 +432,7 @@
     "origin": [
       [
         "components/CenterDetails/index.js",
-        105
+        96
       ],
       [
         "components/CenterDetailsCard/index.js",
@@ -609,6 +609,16 @@
     ],
     "extractedComments": []
   },
+  "Copied": {
+    "translation": "Copiat",
+    "origin": [
+      [
+        "components/Sharing/index.js",
+        26
+      ]
+    ],
+    "extractedComments": []
+  },
   "Covered counties": {
     "translation": "Județe acoperite",
     "origin": [
@@ -734,7 +744,7 @@
     "origin": [
       [
         "containers/home/SearchFragment.js",
-        72
+        81
       ]
     ],
     "extractedComments": []
@@ -914,7 +924,7 @@
     "origin": [
       [
         "components/CenterDetails/index.js",
-        92
+        83
       ]
     ],
     "extractedComments": []
@@ -975,6 +985,16 @@
       [
         "containers/centers/CentersFragment.js",
         57
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Location is blocked. To use this option grant location permission and try again.": {
+    "translation": "Locația este blocată. Pentru a folosi această opțiune permite folosirea locației și încearcă din nou.",
+    "origin": [
+      [
+        "containers/home/SearchMapFragment.js",
+        113
       ]
     ],
     "extractedComments": []
@@ -1322,7 +1342,7 @@
     "origin": [
       [
         "containers/home/SearchFragment.js",
-        75
+        84
       ]
     ],
     "extractedComments": []
@@ -1426,7 +1446,7 @@
     "origin": [
       [
         "components/Sharing/index.js",
-        19
+        21
       ]
     ],
     "extractedComments": []
@@ -1733,6 +1753,16 @@
       [
         "containers/policy/PolicyFragment.js",
         214
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Use current location": {
+    "translation": "Folosește locația curentă",
+    "origin": [
+      [
+        "containers/home/SearchMapFragment.js",
+        53
       ]
     ],
     "extractedComments": []
@@ -2098,7 +2128,7 @@
       ],
       [
         "components/CenterDetailsTitle/index.js",
-        49
+        45
       ]
     ],
     "extractedComments": []
