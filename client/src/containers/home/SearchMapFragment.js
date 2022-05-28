@@ -1,5 +1,6 @@
 import React, { useCallback, useMemo, useState } from 'react';
-import { Trans } from '@lingui/macro';
+import { Trans, t } from '@lingui/macro';
+import { message } from 'antd';
 import { MapFragment } from './MapFragment';
 import { SearchFragment } from './SearchFragment';
 import { useGeoCodeSearch } from '../../hooks/map/useGeoCodeSearch';
@@ -49,7 +50,7 @@ export const SearchMapFragment = () => {
 
   const data = useMemo(() => {
     if (searchOption.value === SEARCH_OPTIONS.byLocation.value) {
-      return [{ value: 'Current location', text: 'Use current location' }];
+      return [{ value: 'Current location', text: t({ message: 'Use current location' }) }];
     }
     return searchResults?.map((item) => {
       return {
@@ -97,14 +98,25 @@ export const SearchMapFragment = () => {
       if (searchOption.value === SEARCH_OPTIONS.byLocation.value) {
         clearSelectedCenterPk();
         setIsLoadingLocation(true);
-        navigator.geolocation.getCurrentPosition(({ coords }) => {
-          setIsLoadingLocation(false);
-          zoomToNearestPointToPosition(
-            map,
-            { lat: coords.latitude, lng: coords.longitude },
-            testingCenters,
-          );
-        });
+        navigator.geolocation.getCurrentPosition(
+          ({ coords }) => {
+            setIsLoadingLocation(false);
+            zoomToNearestPointToPosition(
+              map,
+              { lat: coords.latitude, lng: coords.longitude },
+              testingCenters,
+            );
+          },
+          () => {
+            setIsLoadingLocation(false);
+            message.warning(
+              t({
+                message:
+                  'Location is blocked. To use this option grant location permission and try again.',
+              }),
+            );
+          },
+        );
       } else {
         showCenterOnMap(event);
         setSelectedCenterPk(event);

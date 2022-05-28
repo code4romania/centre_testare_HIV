@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState, useRef } from 'react';
 import { AutoComplete, Col, Icon, Input, Radio, Row, Spin, Tooltip, Typography } from 'antd';
 import { Trans, t } from '@lingui/macro';
 import { debounce } from 'lodash';
@@ -32,6 +32,7 @@ export const SearchFragment = ({
 
   const [searchInput, setSearchInput] = useState('');
   const [searchPlaceholderText, setSearchPlaceholderText] = useState('');
+  const autoCompleteRef = useRef(null);
 
   useEffect(() => {
     switch (currentLanguage) {
@@ -59,6 +60,14 @@ export const SearchFragment = ({
   const onSearchInputChange = (newSearchInput) => {
     setSearchInput(newSearchInput);
   };
+
+  const onSelectHandler = useCallback(
+    (event) => {
+      onSelectResult(event);
+      autoCompleteRef?.current.blur();
+    },
+    [onSelectResult],
+  );
 
   return (
     <Row
@@ -96,6 +105,7 @@ export const SearchFragment = ({
         </Radio.Group>
 
         <AutoComplete
+          ref={autoCompleteRef}
           className="search-box"
           allowClear={!isLoading}
           value={searchInput}
@@ -103,7 +113,8 @@ export const SearchFragment = ({
           onChange={onSearchInputChange}
           onSearch={debouncedSearchHandler}
           placeholder={searchPlaceholderText}
-          onSelect={onSelectResult}
+          onSelect={onSelectHandler}
+          defaultActiveFirstOption={false}
         >
           <Input minLength={3} suffix={<Suffix input={searchInput} loading={isLoading} />} />
         </AutoComplete>
