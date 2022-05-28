@@ -1,14 +1,17 @@
 import { arrayOf, bool, number, shape, string } from 'prop-types';
 
 export const CenterDetailsTitleType = {
-  countyCode: string,
-  lat: string,
-  lng: string,
-  locality: string,
-  streetName: string.isRequired,
-  streetNumber: string,
-  averageRating: number,
-  totalRatings: number,
+  details: shape({
+    countyCode: string,
+    lat: string,
+    lng: string,
+    locality: string,
+    name: string,
+    streetName: string.isRequired,
+    streetNumber: string,
+    averageRating: number,
+    totalRatings: number,
+  }),
 };
 
 export const CenterDetailsType = {
