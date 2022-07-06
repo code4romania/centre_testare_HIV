@@ -13,6 +13,9 @@ export default () => {
           <Icon type="environment" />
           <Trans>About project</Trans>
         </Title>
+        <Title level={3} style={{ marginTop: 0 }}>
+          <Trans>Working together for an inclusive Europe</Trans>
+        </Title>
       </Row>
       <Row gutter={[0, 32]} type="flex" justify="space-between">
         <Col>
