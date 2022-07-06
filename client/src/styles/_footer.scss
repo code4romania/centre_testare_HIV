@@ -25,8 +25,12 @@
 }
 
 .footerLogo__image {
-  max-height: 60px;
+  max-height: 35px;
   max-width: 100%;
+
+  &.main {
+    max-height: 90px;
+  }
 }
 
 .footer__links {
@@ -57,8 +61,21 @@ a.footer__donate {
 
   & div {
     display: flex;
-    gap: 8px;
+    gap: 12px;
   }
+
+  & a {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.dev-logo {
+  & a {
+      height: 100%;
+        display: flex;
+        align-items: center;
+      }
 }
 
 @media (max-width: $breakpoint-tablet) {

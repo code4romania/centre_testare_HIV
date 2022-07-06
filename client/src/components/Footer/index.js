@@ -26,17 +26,17 @@ const FooterFragment = () => {
             </Paragraph>
             <div className="main-logos">
               <Link to={{ pathname: 'https://sempermusica.org/' }} target="_blank">
-                <img className="footerLogo__image" src={smLogo} />
+                <img className="footerLogo__image main" src={smLogo} />
               </Link>
               <Link to={{ pathname: 'https://fasmr.ro/' }} target="_blank">
                 <img className="footerLogo__image" src={fasmrLogo} />
               </Link>
               <Link to={{ pathname: 'https://www.sexogsamfunn.no/' }} target="_blank">
-                <img className="footerLogo__image" src={sexOgLogo} height="60px" />
+                <img className="footerLogo__image" src={sexOgLogo} />
               </Link>
             </div>
           </div>
-          <div>
+          <div className="dev-logo">
             <Paragraph>
               <Trans>Powered by:</Trans>
             </Paragraph>
