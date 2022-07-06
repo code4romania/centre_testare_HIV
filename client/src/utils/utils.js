@@ -1,4 +1,5 @@
 import { camelCase, isArray, isObject, snakeCase } from 'lodash';
+import { getDeviceType } from './getDeviceType';
 
 const createObjectKeyMapper = (keyMappingFunction) => {
   function mapper(data) {
@@ -51,4 +52,14 @@ export const getNearestPoint = (origin, points) => {
 
 export const sortCoordinates = (x, y) => {
   return [parseFloat(x.lat), parseFloat(x.lng), parseFloat(y.lat), parseFloat(y.lng)].sort();
+};
+
+export const mapCoordinatesToLocationHref = (lat, lng, urlQuery) => {
+  const { isIos } = getDeviceType();
+
+  const coordinates = `${parseFloat(lat, 10)},${parseFloat(lng, 10)}`;
+
+  return isIos
+    ? `http://maps.apple.com/?q=${urlQuery}&ll=${coordinates}`
+    : `https://maps.google.com?q=${coordinates}`;
 };
