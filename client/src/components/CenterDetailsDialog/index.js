@@ -3,11 +3,9 @@ import { Button, Descriptions, Modal, Tag, Typography } from 'antd';
 import { Trans } from '@lingui/macro';
 import { Link } from 'react-router-dom';
 import { useCenterDetailsDialog, useHelpUsDialog } from '../../store';
-import { getDeviceType } from '../../utils';
+import { mapCoordinatesToLocationHref } from '../../utils';
 
 const { Paragraph } = Typography;
-
-const { isIos } = getDeviceType();
 
 export const CenterDetailsDialog = () => {
   const { isOpen, details, closeDialog } = useCenterDetailsDialog();
@@ -15,9 +13,8 @@ export const CenterDetailsDialog = () => {
 
   const [showPhoneNumbers, setShowPhoneNumbers] = useState(false);
 
-  const coordinates = `${parseFloat(details?.lat, 10)},${parseFloat(details?.lng, 10)}`;
-
-  const locationHref = isIos ? `geo:${coordinates}` : `https://maps.google.com?q=${coordinates}`;
+  const urlQuery = details?.name.replaceAll(' ', '+') ?? '';
+  const locationHref = mapCoordinatesToLocationHref(details?.lat ?? 0, details?.lng ?? 0, urlQuery);
 
   const isMissingPhoneNumbers = !details?.phoneNumbers || details?.phoneNumbers.length === 0;
 
