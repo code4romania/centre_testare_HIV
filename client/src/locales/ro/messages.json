@@ -144,7 +144,7 @@
     "origin": [
       [
         "containers/home/HeroFragment.js",
-        129
+        122
       ]
     ],
     "extractedComments": []
@@ -185,6 +185,16 @@
       [
         "containers/policy/PolicyFragment.js",
         54
+      ]
+    ],
+    "extractedComments": []
+  },
+  "A new page in Google Maps will show you the shortest way to get to the chosen center.": {
+    "translation": "O nouă pagină în Google Maps îți va arăta drumul cel mai scurt până la centrul de testare selectat.",
+    "origin": [
+      [
+        "containers/home/HeroFragment.js",
+        97
       ]
     ],
     "extractedComments": []
@@ -261,12 +271,22 @@
     ],
     "extractedComments": []
   },
-  "Activează din telefon localizarea Google/Hărți și caută centrul de testare HIV care este cel mai aproape de tine.": {
-    "translation": "",
+  "Activate your phone's location and search for the nearest HIV testing centre.": {
+    "translation": "Activează din telefon localizarea Google/Hărți și caută centrul de testare HIV care este cel mai aproape de tine.",
     "origin": [
       [
         "containers/home/HeroFragment.js",
         61
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Add the app to your phone:": {
+    "translation": "Pune-ți aplicația pe telefon:",
+    "origin": [
+      [
+        "containers/home/HeroFragment.js",
+        109
       ]
     ],
     "extractedComments": []
@@ -301,16 +321,6 @@
     ],
     "extractedComments": []
   },
-  "Alege dacă vrei să cauți după locația ta curentă sau dacă vrei să introduci o adresă exactă.": {
-    "translation": "",
-    "origin": [
-      [
-        "containers/home/HeroFragment.js",
-        66
-      ]
-    ],
-    "extractedComments": []
-  },
   "All data on the site is stored and processed on servers located in the European Union, which fall under the European legislation on personal data protection. No information provided on this site leaves the territory of the European Union.": {
     "translation": "Toate datele de pe site sunt stocate și procesate pe servere situate în Uniunea Europeană, ce cad sub incidența legislației europene de protecție a datelor personale. Nicio informație oferită pe acest site nu părăsește teritoriul Uniunii Europene.",
     "origin": [
@@ -327,16 +337,6 @@
       [
         "containers/policy/PolicyFragment.js",
         281
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Aplicația Google sau Hărți îți vor arăta drumul cel mai scurt până la centrul de testare selectat.": {
-    "translation": "",
-    "origin": [
-      [
-        "containers/home/HeroFragment.js",
-        94
       ]
     ],
     "extractedComments": []
@@ -521,6 +521,26 @@
       [
         "containers/blog/HeroFragment.js",
         10
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Choose if you want to search after the current location or if you want to introduce a fixed address.": {
+    "translation": "Alege dacă vrei să cauți după locația ta curentă sau dacă vrei să introduci o adresă exactă.",
+    "origin": [
+      [
+        "containers/home/HeroFragment.js",
+        65
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Click on the Settings button <0/> in the browser you are using and choose ”Add to Homescreen” and our app will be always one tap away.": {
+    "translation": "Dă click pe butonul de Setări <0/> din browserul pe care îl folosești și alege ”Adaugă pe ecran pornire/Add to Homescreen” iar aplicația noastră va fi mereu la îndemână pe telefon!",
+    "origin": [
+      [
+        "containers/home/HeroFragment.js",
+        111
       ]
     ],
     "extractedComments": []
@@ -729,16 +749,6 @@
     ],
     "extractedComments": []
   },
-  "Dă click pe butonul de Setări <0/> din browserul pe care îl folosești și alege ”Adaugă pe ecran pornire/Add to Homescreen” iar aplicația noastră va fi mereu la îndemână pe telefon!": {
-    "translation": "",
-    "origin": [
-      [
-        "containers/home/HeroFragment.js",
-        113
-      ]
-    ],
-    "extractedComments": []
-  },
   "Each time a user visits this site, the analytics software provided by a third party generates a user analysis cookie. This cookie tells us if you've visited this site before. The browser will tell us if you have this cookie, and if not, we will generate one. It allows monitoring of unique users who visit us and how often they do so. This cookie cannot be used to identify individuals, they are only used for statistical purposes.": {
     "translation": "De fiecare dată când un utilizator vizitează acest site softul de analytics furnizat de o terță parte generează un cookie de analiză a utilizatorului. Acest cookie ne spune dacă ați mai vizitat acest site până acum. Browser-ul ne va spune dacă aveți acest cookie, iar dacă nu, vom genera unul. Acesta permite monitorizarea utilizatorilor unici care ne vizitează și cât de des o fac. Acest cookie nu poate fi folosit pentru a identifica persoanele fizice, ele sunt folosite doar în scop statistic.",
     "origin": [
@@ -775,6 +785,16 @@
       [
         "containers/donate/SupportFragment.js",
         11
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Find an HIV TESTING CENTER in 3 easy steps! Here's how:": {
+    "translation": "Găsește un CENTRU DE TESTARE HIV în 3 pași simpli! Iată cum:",
+    "origin": [
+      [
+        "containers/home/HeroFragment.js",
+        40
       ]
     ],
     "extractedComments": []
@@ -839,12 +859,12 @@
     ],
     "extractedComments": []
   },
-  "Găsește un CENTRU DE TESTARE HIV în 3 pași simpli! Iată cum:": {
-    "translation": "",
+  "Google/Apple Maps will show you the shortest way to get to the chosen center.": {
+    "translation": "Aplicația Google sau Hărți îți vor arăta drumul cel mai scurt până la centrul de testare selectat.",
     "origin": [
       [
         "containers/home/HeroFragment.js",
-        40
+        93
       ]
     ],
     "extractedComments": []
@@ -1111,16 +1131,6 @@
     ],
     "extractedComments": []
   },
-  "O nouă pagină în Google Maps îți va arăta drumul cel mai scurt până la centrul de testare selectat.": {
-    "translation": "",
-    "origin": [
-      [
-        "containers/home/HeroFragment.js",
-        99
-      ]
-    ],
-    "extractedComments": []
-  },
   "On some pages, third parties may set their own anonymous cookies in order to track the success of an application, or to customize an application. Due to our usage, this site cannot access these cookies, just as third parties cannot access the cookies held by this site. For example, when you share a page using the social media button on this site, that social network will record your activity.": {
     "translation": "Pe unele pagini, terții pot seta propriile cookie-uri anonime, în scopul de a urmări succesul unei aplicații, sau pentru a customiza o aplicație. Datorită modului de utilizare, acest site nu poate accesa aceste cookie-uri, la fel cum terțele părți nu pot accesa cookie-urile deținute de acest site. De exemplu, când distribuiți o pagină folosind butonul pentru rețelele sociale aflat pe acest site, acea rețea socială va înregistra activitatea dvs.",
     "origin": [
@@ -1313,16 +1323,6 @@
     ],
     "extractedComments": []
   },
-  "Pune-ți aplicația pe telefon:": {
-    "translation": "",
-    "origin": [
-      [
-        "containers/home/HeroFragment.js",
-        111
-      ]
-    ],
-    "extractedComments": []
-  },
   "RON Account:": {
     "translation": "Cont RON:",
     "origin": [
@@ -1427,12 +1427,12 @@
     ],
     "extractedComments": []
   },
-  "Selectează de pe hartă centrul la care vrei să mergi și apasă pe ”<0>Vezi cum ajungi acolo</0>”.": {
-    "translation": "",
+  "Select the center you want to go to on the map and Click on ”<0>See how to get there</0>”.": {
+    "translation": "Selectează de pe hartă centrul la care vrei să mergi și apasă pe ”<0>Vezi cum ajungi acolo</0>”",
     "origin": [
       [
         "containers/home/HeroFragment.js",
-        80
+        79
       ]
     ],
     "extractedComments": []
@@ -1560,7 +1560,7 @@
     "origin": [
       [
         "containers/home/HeroFragment.js",
-        77
+        76
       ]
     ],
     "extractedComments": []
@@ -1570,7 +1570,7 @@
     "origin": [
       [
         "containers/home/HeroFragment.js",
-        90
+        89
       ]
     ],
     "extractedComments": []

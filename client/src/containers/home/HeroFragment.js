@@ -37,7 +37,7 @@ export default () => {
           <Col span={24}>
             <img width="200px" src={logo} style={{ marginBottom: '24px' }} />
             <Title level={2} style={{ marginTop: 0 }}>
-              <Trans>Găsește un CENTRU DE TESTARE HIV în 3 pași simpli! Iată cum:</Trans>
+              <Trans>Find an HIV TESTING CENTER in 3 easy steps! Here's how:</Trans>
             </Title>
           </Col>
         </Row>
@@ -59,13 +59,12 @@ export default () => {
               <Text>
                 {isSmallDevice ? (
                   <Trans>
-                    Activează din telefon localizarea Google/Hărți și caută centrul de testare HIV
-                    care este cel mai aproape de tine.
+                    Activate your phone's location and search for the nearest HIV testing centre.
                   </Trans>
                 ) : (
                   <Trans>
-                    Alege dacă vrei să cauți după locația ta curentă sau dacă vrei să introduci o
-                    adresă exactă.
+                    Choose if you want to search after the current location or if you want to
+                    introduce a fixed address.
                   </Trans>
                 )}
               </Text>
@@ -78,8 +77,8 @@ export default () => {
               </Title>
               <Text>
                 <Trans>
-                  Selectează de pe hartă centrul la care vrei să mergi și apasă pe ”
-                  <span style={{ color: PRIMARY_COLOR }}>Vezi cum ajungi acolo</span>”.
+                  Select the center you want to go to on the map and Click on ”
+                  <span style={{ color: PRIMARY_COLOR }}>See how to get there</span>”.
                 </Trans>
               </Text>
             </div>
@@ -92,13 +91,12 @@ export default () => {
               <Text>
                 {isSmallDevice ? (
                   <Trans>
-                    Aplicația Google sau Hărți îți vor arăta drumul cel mai scurt până la centrul de
-                    testare selectat.
+                    Google/Apple Maps will show you the shortest way to get to the chosen center.
                   </Trans>
                 ) : (
                   <Trans>
-                    O nouă pagină în Google Maps îți va arăta drumul cel mai scurt până la centrul
-                    de testare selectat.
+                    A new page in Google Maps will show you the shortest way to get to the chosen
+                    center.
                   </Trans>
                 )}
               </Text>
@@ -108,12 +106,12 @@ export default () => {
             <Col span={24}>
               <div style={mobileCard}>
                 <Title level={3} style={{ marginTop: 0, color: '#fff' }}>
-                  <Trans>Pune-ți aplicația pe telefon:</Trans>
+                  <Trans>Add the app to your phone:</Trans>
                 </Title>
                 <Trans>
-                  Dă click pe butonul de Setări <Button icon="more" shape="circle" size="small" />{' '}
-                  din browserul pe care îl folosești și alege ”Adaugă pe ecran pornire/Add to
-                  Homescreen” iar aplicația noastră va fi mereu la îndemână pe telefon!
+                  Click on the Settings button <Button icon="more" shape="circle" size="small" /> in
+                  the browser you are using and choose ”Add to Homescreen” and our app will be
+                  always one tap away.
                 </Trans>
               </div>
             </Col>
