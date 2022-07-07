@@ -4,15 +4,21 @@ import { Trans } from '@lingui/macro';
 import { Link } from 'react-router-dom';
 import { CenterDetailsTitleType } from '../../types/centers';
 import { ReactComponent as StarIcon } from '../../images/star-solid.svg';
-import { mapCoordinatesToLocationHref } from '../../utils';
+import { getDeviceType } from '../../utils';
 
 const { Paragraph, Text } = Typography;
+
+const { isIos } = getDeviceType();
 
 export const CenterDetailsTitle = ({ details }) => {
   const showSubtext = details?.locality || details?.countyCode;
 
+  const coordinates = `${parseFloat(details?.lat ?? 0, 10)},${parseFloat(details?.lng ?? 0, 10)}`;
   const urlQuery = details?.name.replaceAll(' ', '+') ?? '';
-  const locationHref = mapCoordinatesToLocationHref(details?.lat ?? 0, details?.lng ?? 0, urlQuery);
+
+  const locationHref = isIos
+    ? `http://maps.apple.com/?q=${urlQuery}&ll=${coordinates}`
+    : `https://maps.google.com?q=${coordinates}`;
 
   return (
     <Col span={22} className="center-details-title">

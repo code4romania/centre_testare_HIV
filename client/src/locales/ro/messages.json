@@ -144,7 +144,7 @@
     "origin": [
       [
         "containers/home/HeroFragment.js",
-        129
+        22
       ]
     ],
     "extractedComments": []
@@ -261,22 +261,12 @@
     ],
     "extractedComments": []
   },
-  "Activează din telefon localizarea Google/Hărți și caută centrul de testare HIV care este cel mai aproape de tine.": {
-    "translation": "",
-    "origin": [
-      [
-        "containers/home/HeroFragment.js",
-        61
-      ]
-    ],
-    "extractedComments": []
-  },
   "Address": {
     "translation": "Adresa",
     "origin": [
       [
         "components/CenterDetailsDialog/index.js",
-        96
+        99
       ]
     ],
     "extractedComments": []
@@ -286,7 +276,7 @@
     "origin": [
       [
         "components/CenterDetailsDialog/index.js",
-        108
+        111
       ]
     ],
     "extractedComments": []
@@ -297,16 +287,6 @@
       [
         "containers/centers/CentersFragment.js",
         44
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Alege dacă vrei să cauți după locația ta curentă sau dacă vrei să introduci o adresă exactă.": {
-    "translation": "",
-    "origin": [
-      [
-        "containers/home/HeroFragment.js",
-        66
       ]
     ],
     "extractedComments": []
@@ -327,16 +307,6 @@
       [
         "containers/policy/PolicyFragment.js",
         281
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Aplicația Google sau Hărți îți vor arăta drumul cel mai scurt până la centrul de testare selectat.": {
-    "translation": "",
-    "origin": [
-      [
-        "containers/home/HeroFragment.js",
-        94
       ]
     ],
     "extractedComments": []
@@ -448,11 +418,11 @@
     "origin": [
       [
         "components/CenterDetailsDialog/index.js",
-        72
+        75
       ],
       [
         "components/CenterDetailsDialog/index.js",
-        220
+        223
       ]
     ],
     "extractedComments": []
@@ -476,7 +446,7 @@
     "origin": [
       [
         "components/CenterDetailsDialog/index.js",
-        228
+        231
       ]
     ],
     "extractedComments": []
@@ -486,7 +456,7 @@
     "origin": [
       [
         "components/CenterDetailsDialog/index.js",
-        89
+        92
       ]
     ],
     "extractedComments": []
@@ -540,7 +510,7 @@
     "origin": [
       [
         "components/CenterDetailsDialog/index.js",
-        207
+        210
       ]
     ],
     "extractedComments": []
@@ -674,7 +644,7 @@
     "origin": [
       [
         "components/CenterDetailsDialog/index.js",
-        85
+        88
       ]
     ],
     "extractedComments": []
@@ -684,7 +654,7 @@
     "origin": [
       [
         "components/CenterDetailsDialog/index.js",
-        115
+        118
       ]
     ],
     "extractedComments": []
@@ -725,16 +695,6 @@
       [
         "containers/policy/PolicyFragment.js",
         217
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Dă click pe butonul de Setări <0/> din browserul pe care îl folosești și alege ”Adaugă pe ecran pornire/Add to Homescreen” iar aplicația noastră va fi mereu la îndemână pe telefon!": {
-    "translation": "",
-    "origin": [
-      [
-        "containers/home/HeroFragment.js",
-        113
       ]
     ],
     "extractedComments": []
@@ -814,7 +774,7 @@
     "origin": [
       [
         "components/CenterDetailsDialog/index.js",
-        140
+        143
       ]
     ],
     "extractedComments": []
@@ -824,7 +784,7 @@
     "origin": [
       [
         "components/CenterDetailsDialog/index.js",
-        136
+        139
       ]
     ],
     "extractedComments": []
@@ -839,22 +799,12 @@
     ],
     "extractedComments": []
   },
-  "Găsește un CENTRU DE TESTARE HIV în 3 pași simpli! Iată cum:": {
-    "translation": "",
-    "origin": [
-      [
-        "containers/home/HeroFragment.js",
-        40
-      ]
-    ],
-    "extractedComments": []
-  },
   "HIV post-test counseling is provided": {
     "translation": "Se oferă consiliere post-testare HIV",
     "origin": [
       [
         "components/CenterDetailsDialog/index.js",
-        180
+        183
       ]
     ],
     "extractedComments": []
@@ -864,13 +814,13 @@
     "origin": [
       [
         "components/CenterDetailsDialog/index.js",
-        168
+        171
       ]
     ],
     "extractedComments": []
   },
-  "Hotline WhatsApp": {
-    "translation": "Linia de asistență directă prin WhatsaApp",
+  "Hotline": {
+    "translation": "Linia de asistență directă",
     "origin": [
       [
         "containers/home/StatisticFragment.js",
@@ -904,7 +854,7 @@
     "origin": [
       [
         "components/CenterDetailsDialog/index.js",
-        157
+        160
       ]
     ],
     "extractedComments": []
@@ -914,7 +864,7 @@
     "origin": [
       [
         "components/CenterDetailsDialog/index.js",
-        162
+        165
       ]
     ],
     "extractedComments": []
@@ -1084,15 +1034,15 @@
     "origin": [
       [
         "components/CenterDetailsDialog/index.js",
-        137
+        140
       ],
       [
         "components/CenterDetailsDialog/index.js",
-        169
+        172
       ],
       [
         "components/CenterDetailsDialog/index.js",
-        181
+        184
       ],
       [
         "containers/center-review/FormFragment.js",
@@ -1107,16 +1057,6 @@
       [
         "components/BlogPreview/index.js",
         29
-      ]
-    ],
-    "extractedComments": []
-  },
-  "O nouă pagină în Google Maps îți va arăta drumul cel mai scurt până la centrul de testare selectat.": {
-    "translation": "",
-    "origin": [
-      [
-        "containers/home/HeroFragment.js",
-        99
       ]
     ],
     "extractedComments": []
@@ -1136,7 +1076,7 @@
     "origin": [
       [
         "components/CenterDetailsDialog/index.js",
-        244
+        247
       ]
     ],
     "extractedComments": []
@@ -1150,7 +1090,7 @@
       ],
       [
         "components/CenterDetailsDialog/index.js",
-        92
+        95
       ]
     ],
     "extractedComments": []
@@ -1240,11 +1180,11 @@
     "origin": [
       [
         "components/CenterDetailsDialog/index.js",
-        74
+        77
       ],
       [
         "components/CenterDetailsDialog/index.js",
-        222
+        225
       ]
     ],
     "extractedComments": []
@@ -1254,7 +1194,7 @@
     "origin": [
       [
         "components/CenterDetailsDialog/index.js",
-        210
+        213
       ]
     ],
     "extractedComments": []
@@ -1264,7 +1204,7 @@
     "origin": [
       [
         "components/CenterDetailsDialog/index.js",
-        184
+        187
       ]
     ],
     "extractedComments": []
@@ -1284,7 +1224,7 @@
     "origin": [
       [
         "components/CenterDetailsDialog/index.js",
-        172
+        175
       ]
     ],
     "extractedComments": []
@@ -1309,16 +1249,6 @@
       [
         "components/Footer/index.js",
         25
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Pune-ți aplicația pe telefon:": {
-    "translation": "",
-    "origin": [
-      [
-        "containers/home/HeroFragment.js",
-        111
       ]
     ],
     "extractedComments": []
@@ -1362,7 +1292,7 @@
     "origin": [
       [
         "components/CenterDetailsDialog/index.js",
-        198
+        201
       ]
     ],
     "extractedComments": []
@@ -1372,7 +1302,7 @@
     "origin": [
       [
         "components/CenterDetailsDialog/index.js",
-        191
+        194
       ]
     ],
     "extractedComments": []
@@ -1423,16 +1353,6 @@
       [
         "containers/policy/PolicyFragment.js",
         163
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Selectează de pe hartă centrul la care vrei să mergi și apasă pe ”<0>Vezi cum ajungi acolo</0>”.": {
-    "translation": "",
-    "origin": [
-      [
-        "containers/home/HeroFragment.js",
-        80
       ]
     ],
     "extractedComments": []
@@ -1545,36 +1465,6 @@
     ],
     "extractedComments": []
   },
-  "Step 1": {
-    "translation": "Pasul 1",
-    "origin": [
-      [
-        "containers/home/HeroFragment.js",
-        57
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Step 2": {
-    "translation": "Pasul 2",
-    "origin": [
-      [
-        "containers/home/HeroFragment.js",
-        77
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Step 3": {
-    "translation": "Pasul 3",
-    "origin": [
-      [
-        "containers/home/HeroFragment.js",
-        90
-      ]
-    ],
-    "extractedComments": []
-  },
   "Support the project": {
     "translation": "Susține proiect",
     "origin": [
@@ -1622,7 +1512,7 @@
       ],
       [
         "components/CenterDetailsDialog/index.js",
-        119
+        122
       ]
     ],
     "extractedComments": []
@@ -1632,7 +1522,7 @@
     "origin": [
       [
         "components/CenterDetailsDialog/index.js",
-        41
+        44
       ],
       [
         "containers/center-review/FormFragment.js",
@@ -1666,7 +1556,7 @@
     "origin": [
       [
         "components/CenterDetailsDialog/index.js",
-        130
+        133
       ]
     ],
     "extractedComments": []
@@ -1768,7 +1658,7 @@
       ],
       [
         "containers/home/ParagraphFragment.js",
-        23
+        20
       ]
     ],
     "extractedComments": []
@@ -1892,7 +1782,7 @@
     "origin": [
       [
         "components/CenterDetailsDialog/index.js",
-        149
+        152
       ]
     ],
     "extractedComments": []
@@ -1996,7 +1886,7 @@
       ],
       [
         "components/CenterDetailsDialog/index.js",
-        237
+        240
       ]
     ],
     "extractedComments": []
@@ -2075,8 +1965,8 @@
     "translation": "Lucrăm împreună pentru o Europă incluzivă",
     "origin": [
       [
-        "containers/home/ParagraphFragment.js",
-        17
+        "containers/home/HeroFragment.js",
+        19
       ]
     ],
     "extractedComments": []
@@ -2086,15 +1976,15 @@
     "origin": [
       [
         "components/CenterDetailsDialog/index.js",
-        137
+        140
       ],
       [
         "components/CenterDetailsDialog/index.js",
-        169
+        172
       ],
       [
         "components/CenterDetailsDialog/index.js",
-        181
+        184
       ],
       [
         "containers/center-review/FormFragment.js",
@@ -2108,7 +1998,7 @@
     "origin": [
       [
         "components/CenterDetailsDialog/index.js",
-        153
+        156
       ]
     ],
     "extractedComments": []
@@ -2224,7 +2114,7 @@
     "origin": [
       [
         "components/CenterDetailsDialog/index.js",
-        153
+        156
       ]
     ],
     "extractedComments": []
@@ -2234,11 +2124,11 @@
     "origin": [
       [
         "components/CenterDetailsDialog/index.js",
-        103
+        106
       ],
       [
         "components/CenterDetailsTitle/index.js",
-        39
+        45
       ]
     ],
     "extractedComments": []

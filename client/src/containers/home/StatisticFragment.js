@@ -79,7 +79,7 @@ export default () => {
       </Col>
       <Col xs={24} md={8}>
         <StatisticCard
-          title={<Trans>Hotline WhatsApp</Trans>}
+          title={<Trans>Hotline</Trans>}
           value="0770437537"
           icon={<HotlineIcon />}
           type="hotline"
