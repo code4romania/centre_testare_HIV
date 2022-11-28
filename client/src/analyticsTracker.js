@@ -4,7 +4,7 @@ export const initializeGA = () => {
   if (document.location.hostname !== 'testarehiv.edreptultau.ro') {
     return;
   }
-  ReactGA.initialize('G-EDWX54WGNJ');
+  ReactGA.initialize('G-2GD7REP5RG');
 };
 
 export const logPageView = (history) => {
