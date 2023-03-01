@@ -4,7 +4,7 @@ import { Trans } from '@lingui/macro';
 
 import { ReactComponent as PublicCentersIcon } from '../../images/hospital-solid.svg';
 import { ReactComponent as MobileCaravansIcon } from '../../images/ambulance-solid.svg';
-import { ReactComponent as HotlineIcon } from '../../images/phone-alt-solid.svg';
+
 import { ReactComponent as StatsIconBackground } from '../../images/stats-icon-background.svg';
 
 import config from '../../config';
@@ -13,7 +13,7 @@ const { STATISTICS_URL } = config;
 
 const StatisticCard = ({ title, value, icon, type = '' }) => (
   <Card className={`stats-card ${type}`} size="small">
-    {value > 0 ? (
+    {value !== '' ? (
       <>
         <h3 className="stats-heading">{value}</h3>
         <h4 className="stats-sub-heading">{title}</h4>
@@ -80,8 +80,8 @@ export default () => {
       <Col xs={24} md={8}>
         <StatisticCard
           title={<Trans>Hotline WhatsApp</Trans>}
-          value="0770437537"
-          icon={<HotlineIcon />}
+          value="office@sempermusica.org"
+          // icon={<HotlineIcon />}
           type="hotline"
         />
       </Col>

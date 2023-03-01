@@ -26,12 +26,6 @@ export default () => {
           <a href="mailto:office@sempermusica.org">office@sempermusica.org</a>
         </Text>
       </Paragraph>
-      <Paragraph>
-        Tel:{' '}
-        <Text strong>
-          <a href="tel:0770437537">0770437537</a>
-        </Text>
-      </Paragraph>
     </Hero>
   );
 };
