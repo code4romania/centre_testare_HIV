@@ -890,7 +890,7 @@
     "extractedComments": []
   },
   "Hotline WhatsApp": {
-    "translation": "Pentru probleme legate de utilizare ne poți scrie pe e-mail de mai sus",
+    "translation": "Pentru probleme legate de utilizare ne poți scrie pe e-mail-ul de mai sus",
     "origin": [
       [
         "containers/home/StatisticFragment.js",
