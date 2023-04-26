@@ -1,4 +1,4 @@
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 
 export const initializeGA = () => {
   if (document.location.hostname !== 'testarehiv.edreptultau.ro') {
@@ -11,6 +11,5 @@ export const logPageView = (history) => {
   history.listen((location) => {
     const page = location.pathname || window.location.pathname;
     ReactGA.set({ page });
-    ReactGA.pageview(page);
   });
 };
